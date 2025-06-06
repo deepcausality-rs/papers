@@ -1,3 +1,9 @@
+[//]: # (---)
+
+[//]: # (SPDX-License-Identifier: MIT)
+
+[//]: # (---)
+
 # The Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality
 
 {{TOC}}
