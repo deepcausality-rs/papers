@@ -72,7 +72,7 @@ In short, we cannot know reliably anything about emerging causality up to the mo
 These three problems, non-Euclidean representation, non-linear temporal structures, and emerging causality deeply interrelate with each other, thus defy overly simplistic solutions. For example, advanced graph neural networks work on non-Euclidean data representation, but fail on non-linear temporal structures. One might be tempted to build non-linear-time graph neural networks, but this does not address the problem of non-Euclidean data representation and emerging causality. There is research to combine methods from computational causality with deep learning, but these approaches are focused on non-Euclidean representation without integrating the challenges of non-linear temporality and emergent causal logic.
 
 
-### Why Existing Methods Fail?
+### Why Existing Methods Struggle?
 
 
 The established methods of causal inference remain important milestones and they work well within their defined domain; they were not architected for the challenges imposed by handling non-Euclidean representation, non-linear temporal structures, and emerging causality. Therefore, the subsequent analysis does not criticize any of the existing methods, as they remain valid. Instead, the analysis states how the underlying assumption(s) of each method conflict with the previously established problems.
@@ -88,8 +88,8 @@ Granger causality assumes a stable causal structure and a linear, uniform time r
 
 **Implications:**
 
-* Non-Linear Time: It cannot handle non-linear time representation
-* Non-Euclidean Representation:  Granger causality operates on time-series values within a Euclidean representation. It cannot be applied to a non-Euclidean representation.
+* Non-Linear Time: Granger causality cannot handle non-linear time representation
+* Non-Euclidean Representation: Granger causality operates on time-series values within a Euclidean representation. It cannot be applied to a non-Euclidean representation.
 * Emergent Causality: Because of the assumption of a stable causal structure, Granger causality cannot operate on emergent causal structures.
 
 **Pearl's Causal DAGs and Structural Causal Models (SCMs):**
@@ -153,8 +153,7 @@ It is important to understand that, without something similar to EPP, convention
 
 ## History of Causality
 
-Plato is believed to be the first who explored the cause (aitia) in the book of Timaeus (c 360 BC). In it, Plato stipulates that multiple indispensable factors, the model, the maker (Demiurge), the material, and the space (receptacle), explain how the physical world with all the things in it are made[^1].
-Aristotle (c 350 BC) formalized the notion of causality in his Metaphysics[^2] with the "Four Causes”[^3]. These are:
+Plato is believed to be the first who explored the cause (aitia) in the book of Timaeus (c 360 BC). In it, Plato stipulates that multiple indispensable factors, the model, the maker (Demiurge), the material, and the space (receptacle), explain how the physical world with all the things in it are made[^1]. Aristotle (c 350 BC) formalized the notion of causality in his Metaphysics[^2] with the "Four Causes”[^3]. These are:
 
 1) The material cause or that which is given in reply to the question “What is it made out of?”
 
@@ -170,8 +169,6 @@ The idea of space and time as a background for causality, however, did not remai
 Through rigorous first-principles analysis, Leibniz argued that the concept of absolute space and time was logically untenable.
 His relational perspective offered a significant alternative to the preeminent Newtonian worldview of his time.
 
-## The impact of General Relativity on Causality
-
 Albert Einstein (1879 - 1955) departed from Newtonian physics through his theory of General Relativity[^5] (GR) in which he established that space and time are one manifold, spacetime, that is bent by gravitational influence from large masses. General Relativity preserves the prerequisite of a spatiotemporal context for causality, echoing Seneca's key insight. However, the notion of dynamic spacetime requires a dynamic view of causality to fit into the dynamic spacetime manifold.
 
 Bertrand Russell (1872 - 1970) observed that successful physics has its roots in sophisticated, law-based descriptions of how a system evolves dynamically. In modern physics, the focus is on the state of a system (e.g., position, velocity, field strength across space) and how that entire state evolves continuously and dynamically. Therefore, for Russell, the idea of classical  causality, a strict happen-before relation, does not match the reality of modern physics anymore. Consequently, Russell wrote in his 1912 essay "On the Notion of Cause"[^6]:
@@ -181,7 +178,7 @@ Bertrand Russell (1872 - 1970) observed that successful physics has its roots in
 
 Many modern physics laws are time symmetric, and that means if state S1 at time t1 is related to state S2 at time t2 by a law, it's equally true that state S2 at time t2 is related to state S1 at time t1. This relationship isn't a simple, linear, one-way street from a necessary "cause" to a dependent "effect." Knowing the state at any time allows you to calculate the state at any other time, past or future. Therefore, which state is the "cause" and which one is the "effect" becomes arbitrary.
 
-Russell wasn’t opposed to causality itself; instead his primary argument was that the traditional philosophical interpretation of causality as a fundamental, temporally asymmetric, and directed link is not what he observed in physics. His critique resonates with challenges encountered in contemporary quantum research.
+Russell was not opposed to causality itself; instead his primary argument was that the traditional philosophical interpretation of causality as a fundamental, temporally asymmetric, and directed link is not what he observed in physics. His critique resonates with challenges encountered in contemporary quantum research.
 
 ## The impact of Quantum Gravity on Causality
 
@@ -189,7 +186,7 @@ Quantum Field Theory[^10] (QFT) stands out as one of the most rigorously tested 
 
 The physics standard model, built on top of QFT, despite being one of the most successful theories of all time, accurately describes three of the four known fundamental forces: electromagnetism, the strong nuclear force, and the weak nuclear force. Notably absent remains gravity due to complex discrepancies between Einstein’s (pre-quantum) theory of relativity and Quantum Field Theory. It is important to point out that General Relativity in itself is successful in the sense of high accuracy and strong predictive power, albeit in a non-quantum realm.
 
-The unification of general relativity with quantum field theory would complete the standard physics model, but doing so faces a non-trivial impasse, as Lucian Hardy[^7] formulated: “Quantum theory is a probabilistic theory with fixed causal structure. General relativity is a deterministic theory but where the causal structure is dynamic.” Furthermore, the emergence of Quantum Gravity[^7] directly challenges the traditional separation of causality through the introduction of indefinite causal order with time symmetry[^8].
+The unification of general relativity with quantum field theory would complete the standard physics model, but doing so faces a non-trivial impasse, as Lucian Hardy[^7] formulated: “Quantum theory is a probabilistic theory with fixed causal structure. General relativity is a deterministic theory but where the causal structure is dynamic.” Furthermore, the emergence of Quantum Gravity directly challenges the traditional separation of causality through the introduction of indefinite causal order with time symmetry[^8].
 
 Indefinite causal order means the order of causal events is not fixed. It might be that A happens before B, or that B happens before A, or a quantum superposition where both orders (A before B, and B before A) coexist simultaneously.
 
@@ -216,8 +213,8 @@ The conceptualization of this fundamental level as a "generating function" captu
 The notion of a quantum generative process that underlies the fabric of spacetime leads to the implication that causality has to evolve beyond the strict “before-after” relation towards a spacetime-agnostic view. When removing time from causality, it is indeed no longer possible to discern cause from effect because, in the absence of time, there is no “happen-before” relation any longer, and therefore, the designation of cause or effect indeed becomes arbitrary, just as Russell hinted at earlier on.
 When removing space from causality, the location of a cause or effect in space is not possible anymore because space itself is no longer available.
 
-> Naturally, the absence of space and time raises the
-> question of: What is the essence of causality?
+> The absence of spacetime raises the question:
+> What is the essence of causality?
 
 Logically, the answer comes in three parts:
 
@@ -327,10 +324,10 @@ Instead of trying to capture the exact conditions under which a causal relations
 
 The inspiration from causality in quantum gravity was carefully chosen because of its unique ability to reconcile dynamic and static structures and its handling of deterministic and probabilistic modality. The underlying idea in quantum gravity is that the spacetime fabric of reality itself emerges from an underlying process. While we do not have the scientific methods and technology to verify this idea on the quantum level, we can carefully, within boundaries, transfer the idea to the EPP notion that causality itself emerges from an underlying generative process and, therefore, model the dynamics of causal emergence.
 
-The properties of EPP become apparent when looking from the lense of modeling the dynamics of causal emergence.
+The properties of EPP become apparent when looking from the lens of modeling the dynamics of causal emergence.
 
 * **Temporal order becomes irrelevant**: Because causal relations can emerge from an underlying process
-* **spacetime-agnostic becomes necessary:** Because the generative process is concerned with establishing relations of effect propagation, the exact fabric through which those effects propagate is conceptualized as an external context; therefore, EPP itself has to be spacetime-agnostic.
+* **Spacetime-agnostic becomes necessary:** Because the generative process is concerned with establishing relations of effect propagation, the exact fabric through which those effects propagate is conceptualized as an external context; therefore, EPP itself has to be spacetime-agnostic.
 * **Hardy's causaloids are necessary:** Because the EPP itself is spacetime-agnostic, a different representation of causal relationship that is also spacetime-agnostic becomes necessary and the causaloid proposed by Lucian Hardy has been deemed the best fit.
 * **Centrality of the generative function:** Because the EPP can represent causal relations as either static, dynamic, or emergent, the generative function takes on a central role to express those causal relations. Furthermore, a generative function may generate the engulfing context as a specific fabric for the effect propagation process.
 
@@ -338,11 +335,9 @@ The Effect Propagation Process framework constitutes a  foundational shift to vi
 
 Because of its flexibility, EPP can express static causal relationships similar to Pearl’s Causal DAG, it can handle dynamic causal systems similar to Dynamic Bayesian Networks, but then goes further and enables dynamic causal emergence. Dynamic causal emergence has real-world applications:
 
-**Financial Markets:** Causal relationships between assets change based on market conditions. EPP can be used to model how these relationships emerge and dissolve.
-
-**Biological Systems:** Gene regulatory networks where modulating relationships emerge based on cellular state.
-
-**Social Systems:** How influence relationships emerge and change in social networks.
+* **Financial Markets:** Causal relationships between assets change based on market conditions. EPP can be used to model how these relationships emerge and dissolve.
+* **Biological Systems:** Gene regulatory networks where modulating relationships emerge based on cellular state.
+* **Social Systems:** How influence relationships emerge and change in social networks.
 
 
 ## Contrast
@@ -371,7 +366,7 @@ The absence of a temporal order does not imply the absence of time; it means the
 
 4) Focus on the Generative Function
 
-**Classic causality:** Classic causality tries to simplify reality into tractable causal chains operating on observable states.
+**Classical causality:** Classical causality tries to simplify reality into tractable causal chains operating on observable states.
 
 **EPP:** EPP does not presume the existence of a linear causal chain. Instead, it assumes the existence of a generating function from which the observable fabric (i.e., spacetime) and causal relationships emerge. The effects then propagate through the observable fabric.
 
@@ -379,13 +374,9 @@ The absence of a temporal order does not imply the absence of time; it means the
 
 **Classic causality:** Classical causality assumes the existing of a definitive causal structure that, once discovered, can be modeled. This leads directly to the notoriously hard causal discovery problem as it is not yet clear how to find a definitive causal structure assuming it exists.
 
-**EPP:** EPP does not assume the pre-existence of a definitive causal structure. Instead, it embraces indefinite causal order in which it is not yet clear if A happened before B or B happened before A. Conceptually, this mechanism not only allows for the existence of superposed causal pathways, but enables the handling of emergent causal structures.
-
-**Inversion:** While the practicality of superposed causal pathways remains an open topic, there is a clear use case for emergent causal structures in dynamic systems. Moving away from a presumed definitive causal structure towards emergent causal structures in dynamic systems not only inverts the core capability, but also elevates causal modeling to deal with the intricate uncertainty of dynamic systems.
+**EPP:** EPP does not assume the pre-existence of a definitive causal structure. Instead, it embraces indefinite causal order in which it is not yet clear if A happened before B or B happened before A. Conceptually, this mechanism not only allows for the existence of superposed causal pathways, but enables the handling of emergent causal structures. While the practicality of superposed causal pathways remains an open topic, there is a clear use case for emergent causal structures in dynamic systems. Moving away from a presumed definitive causal structure towards emergent causal structures in dynamic systems elevates causal modeling to deal with the intricate uncertainty of dynamic systems.
 
 ## Validity
-
-Philosophical concepts may not be subject to the same rigor as empirical science, but the author feels that critically assessing the validity of the Effect Propagation Process framework contributes an important step towards a holistic perspective.
 
 In empirical science, internal validity focuses on the extent to which a study accurately establishes a causal relationship between variables, whereas external validity considers the extent to which the findings can be generalized.
 In the absence of empirical evidence, it is appropriate to consider the soundness and consistency as internal validity and consider the boundaries of generalization as a proxy for external validity.
