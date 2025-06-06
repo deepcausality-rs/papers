@@ -9,7 +9,7 @@ Papers, articles, and other content written by the DeepCausality team
 
 ## 2025
 
-* [The Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality, June 2025]()
+* [The Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality, June 2025](https://github.com/deepcausality-rs/papers/blob/main/effect_propagation_process/Effect_Propagation_Process.pdf)
 
 ## About
 
