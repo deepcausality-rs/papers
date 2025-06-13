@@ -52,7 +52,7 @@ Furthermore, the definition does not imply any spatial constraints and thus make
 
 Because X and E are seen as effects, there is no meaningful distinction between cause and effect any longer. This directly leads to the EPP’s adoption of the Causaloid, a uniform entity proposed by Hardy[^7], that merges the ‘cause' and 'effect' into one entity. Instead of dealing with two nearly identical concepts discernible from each other by temporal order, the causaloid is one concept that defines causality in terms of its effect transfer without presupposing a fixed spacetime background[^7].
 
-In EPP,' effect propagation' denotes the operation of a specific, definable mechanism (via the causaloid) that links states through the underlying fabric regardless of how that fabric might be defined.
+In EPP, effect propagation denotes the operation of a specific, definable mechanism (via the causaloid) that links states through the underlying fabric regardless of how that fabric might be defined.
 
 The first part, the causaloid, operationalizes effect transfer within a system without relying on any metaphysical causal power. The effect transfer encapsulated in the causaloid is intrinsic to its mechanistic definition. The identification of relevant causaloids requires explicit modeling and hypothesis testing or (future) discovery processes. EPP provides the formal structure for the representation of Causeloids once discovered.
 
@@ -145,8 +145,7 @@ Regardless of the mechanism, emergent EPP does not interact with its Context usi
 
 Like a static or dynamic EPP, when the static context has been defined upfront, it determines fundamentally what determines the epistemology of what can be known through the dynamic EPP within the contextual boundaries.
 
-Unlike a static or dynamic EPP, an emergent EPP may or may not generate a new static context and that indeed alters the Epistemology emerging from an emerging EPP. And once more, the resulting outcomes of an altered emerging Epistemology cannot be determined any longer.
-
+Unlike a static or dynamic EPP, an emergent EPP may or may not generate a new static context and that indeed alters the Epistemology emerging from an emerging EPP.
 **Dynamic context**
 
 Likewise, when an emerging EPP creates or modifies a dynamic context, the emerging Epistemology cannot be determined any longer because of the resulting co-emergence of the EPP and its context.
