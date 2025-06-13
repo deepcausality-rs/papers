@@ -77,7 +77,7 @@ These three problems, non-Euclidean representation, non-linear temporal structur
 
 The established methods of causal inference remain important milestones and they work well within their defined domain; they were not architected for the challenges imposed by handling non-Euclidean representation, non-linear temporal structures, and emerging causality. Therefore, the subsequent analysis does not criticize any of the existing methods, as they remain valid. Instead, the analysis states how the underlying assumption(s) of each method conflict with the previously established problems.
 
-#### Granger Causality:
+**Granger Causality:**
 
 Granger Causality[^12] is used for time-series data where past values of one time-series are used to predict values of another time-series. In a strict sense, Granger Causality tests if one variable (say X) predicts another variable (Y) through a series of t-tests and F-tests on lagged values of variable X.
 
@@ -214,7 +214,7 @@ The notion of a quantum generative process that underlies the fabric of spacetim
 When removing space from causality, the location of a cause or effect in space is not possible anymore because space itself is no longer available.
 
 > The absence of spacetime raises the question:
-> What is the essence of causality?
+> What is the essence of causality
 
 Logically, the answer comes in three parts:
 
@@ -240,7 +240,7 @@ The effect propagation process definition is more general and treats the classic
 
 In EPP,'effect propagation' denotes the operation of a specific, definable mechanism (via the causaloid) that links states through the underlying fabric regardless of how that fabric might be defined.
 
-The first part, the causaloid, operationalizes effect transfer within a system without relying on any metaphysical causal power. The effect transfer encapsulated in the causaloid is  intrinsic to its mechanistic definition. The identification of relevant causaloids requires explicit modeling and hypothesis testing or (future) discovery processes. EPP provides the formatl structure for representation of Causeloids once discovered.
+The first part, the causaloid, operationalizes effect transfer within a system without relying on any metaphysical causal power. The effect transfer encapsulated in the causaloid is  intrinsic to its mechanistic definition. The identification of relevant causaloids requires explicit modeling and hypothesis testing or (future) discovery processes. EPP provides the formal structure for representation of Causeloids once discovered.
 
 The second part, the non-defined fabric, through which effects propagate, serves the purpose of externalizing the fabric as a specific, definable context. Instead of assuming an implicit background spacetime, the EPP externalizes the fabric through which effects propagate as a specific context that is defined by a different generative function.
 Therefore, EPP fundamentally moves away from invoking a metaphysical causal power towards definable, testable, and verifiable functions (Causaloids) that define the functional relationships describing how a system changes if these functions   are active.
