@@ -13,7 +13,7 @@ Papers, articles, and other content written by the DeepCausality team
 
 Citation:
 ```latex
- @misc{Hansen2025EPP,
+@misc{Hansen2025EPP,
   author       = {Hansen, Marvin},
   title        = {The Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality},
   year         = {2025},
@@ -27,14 +27,14 @@ Citation:
 
 Citation:
 ```latex
-     @misc{Hansen2025EPP_Epistemology,
-      author       = {Hansen, Marvin},
-      title        = {The Epistemology of the Effect Propagation Process},
-      year         = {2025},
-      month        = {June},
-      howpublished = {\url{https://github.com/deepcausality-rs/papers}},
-      note         = {Accessed: June 2025}
-    }
+@misc{Hansen2025EPP_Epistemology,
+  author       = {Hansen, Marvin},
+  title        = {The Epistemology of the Effect Propagation Process},
+  year         = {2025},
+  month        = {June},
+  howpublished = {\url{https://github.com/deepcausality-rs/papers}},
+  note         = {Accessed: June 2025}
+}
 ```
 
 ## About
