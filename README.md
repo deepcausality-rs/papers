@@ -9,7 +9,7 @@ Papers, articles, and other content written by the DeepCausality team
 
 ## 2025
 
-### [The Effect Propagation Process,June 2025](/effect_propagation_process/Effect_Propagation_Process.pdf)
+### [The Effect Propagation Process, June 2025](/effect_propagation_process/Effect_Propagation_Process.pdf)
 
 Citation:
 ```latex
