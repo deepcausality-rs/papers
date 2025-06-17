@@ -9,13 +9,13 @@ Papers, articles, and other content written by the DeepCausality team
 
 ## 2025
 
-### [The Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality, June 2025](/effect_propagation_process/Effect_Propagation_Process.pdf)
+### [The Effect Propagation Process,June 2025](/effect_propagation_process/Effect_Propagation_Process.pdf)
 
 Citation:
 ```latex
 @misc{Hansen2025EPP,
   author       = {Hansen, Marvin},
-  title        = {The Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality},
+  title        = {The Effect Propagation Process: A Generalized Framework for Causal Inference in Dynamic Systems},
   year         = {2025},
   month        = {June},
   howpublished = {\url{https://github.com/deepcausality-rs/papers}},
