@@ -23,11 +23,9 @@
 
 % Update your Headers here
 \fancyhead[LO]{Effect Propagation Process: A Philosophical Framework}
-% \fancyhead[RE]{Firstauthor and Secondauthor} % Firstauthor et al. if more than 2 - must use \documentclass[twoside]{article}
-
   
 %% Title
-\title{Effect Propagation Process: A Philosophical Framework for Post-Quantum Causality}
+\title{Effect Propagation Process: A Generalized Framework for Causal Inference in Dynamic Systems}
 
 %% Author
 \author{
@@ -41,17 +39,31 @@
 \maketitle
 
 \begin{abstract}
-The study of causality dates back to Aristotle and was later formalized in its commonly known form by Seneca. Seneca’s assumption of a background space and time was later challenged by relationalists like Leibniz and critiqued scientifically by Russell.
-
-However, contemporary research in quantum gravity suggests that spacetime itself might be emergent from the quantum level and causal structures can be indefinite, thus fundamentally challenging the assumption of a background spacetime. While these concepts may sound specific to quantum physics, the underlying problem of a fixed spacetime assumption's conflict with representing causality in non-linear structures also occurs in advanced system engineering. Three specific problems arise in advanced system engineering that previous methods of causality cannot address anymore: non-Euclidean data representation, non-linear time representation, and emerging causality.\newline
-
-In response, the author introduces the "Effect Propagation Process" (EPP) framework to address these new challenges. The EPP departs from the classical notion of time-linear causality, borrows new concepts from physics, and proposes a view of  causality as a spacetime-agnostic continuous effect propagation process. The Effect Propagation Process offers a unified philosophical framework of causality that remains compatible with classical causality and conceptually congruent with physics theories of quantum gravity.\newline
-
-Philosophically, the epistemology of the EPP begins with positivist foundations in static configurations where truth aligns with a predefined model. 
-In a dynamic EPP, epistemology requires an interpretive stance where truth emphasizes coherent adaptability amidst non-linear temporal evolution. 
-Lastly, its epistemology evolves further into a pragmatic understanding in co-emergent systems where the truth of relativistic, emergent causal relationships is validated by their functional efficacy. The new epistemology lays the groundwork for analyzing the dynamic emergence of causality that results from the application of the EPP.\newline
-
-Practical application of the Effect Propagation Process enables the handling of uncertainties, causal reasoning over non-Euclidean data, and non-linear complex feedback loops in dynamic systems. The Effect Propagation Process does not seek to replace the classical notion of causality; instead it seeks to advance and generalize the concept of causality to address the new challenges of causal inference over non-Euclidean data, non-linear temporal structures, and handling emergent causality in dynamic systems.
+The study of causality dates back to Aristotle and was later formalized in its commonly known form by Seneca. Seneca’s assumption of a background space and time was later challenged by relationalists like Leibniz and critiqued scientifically by Russell. However, contemporary research in quantum gravity suggests that spacetime itself might be emergent from the quantum level 
+and causal structures can be indefinite, thus fundamentally challenging the assumption of a background spacetime. 
+While these concepts may sound specific to quantum physics, the underlying problem of a fixed spacetime assumption's conflict with representing causality in non-linear structures also occurs in advanced system engineering. 
+Three specific problems arise in advanced system engineering that previous methods of causality cannot address anymore: 
+non-Euclidean data representation, non-linear time representation, and emerging causality.\newline
+In response, the author introduces the "Effect Propagation Process" (EPP) framework to address these new challenges. 
+The EPP departs from the classical notion of time-linear causality, borrows new concepts from physics, and proposes 
+a view of  causality as a spacetime-agnostic continuous effect propagation process. The Effect Propagation Process offers 
+a unified philosophical framework of causality that remains compatible with classical causality and conceptually congruent 
+with physics theories of quantum gravity.\newline
+The EPP was developed to serve as the foundational theory for DeepCausality, a Rust-based computational library designed 
+to handle causal inference in complex and dynamic systems. The engineering challenges faced during its development, 
+such as representing non-linear time structures, handling dynamic feedback loops, and modeling emergent causal shifts, 
+necessitated a new generalization of causality. In absence of precedence of spacetime agnostic causality, 
+the EPP was formulated as a direct response to these demands, providing both the philosophical grounding and the 
+architectural blueprint for a new category of context-aware causal reasoning. The DeepCausality project solves 
+the inevitable structural complexity challenge with recursive isomorphic causal data structures. However, because the aspect of isomorphic causal datastructures is implementation specific to Rust, it is not covered in the presented EPP framework.\newline
+Philosophically, the epistemology of the EPP begins with positivist foundations in static configurations where truth aligns with 
+a predefined model. In a dynamic EPP, epistemology requires an interpretive stance where truth emphasizes coherent adaptability 
+amidst non-linear temporal evolution. Lastly, its epistemology evolves further into a pragmatic understanding in co-emergent 
+systems where the truth of relativistic, emergent causal relationships is validated by their functional efficacy. 
+The new epistemology lays the groundwork for analyzing the dynamic emergence of causality that results from the application of the EPP.
+Practical application of the Effect Propagation Process enables the handling of uncertainties, causal reasoning 
+over non-Euclidean data, and non-linear complex feedback loops in dynamic systems.\newline
+The Effect Propagation Process does not seek to replace the classical notion of causality; instead it seeks to advance and generalize the concept of causality to address the new challenges of causal inference over non-Euclidean data, non-linear temporal structures, and handling of emergent causality.
 \end{abstract}
 
 % keywords 
@@ -188,16 +200,13 @@ Dynamic Bayesian Networks, similar to Granger causality, require a linear and un
     \item \textbf{Emergent Causality:}  DBNs assume a static causal structure and thus cannot handle emergent causality
 \end{itemize}
 
-As stated earlier, all these methods remain valid in their respective domains. Granger causality remains vital in time series forecasting. Pearl’s causal DAG remains relevant, among others, in empirical healthcare. Dynamic Bayesian Networks find applications in healthcare, data mining, and robotics. This analysis, however, shows why each method cannot be applied to the previously established problems. It is important to recognize that there is no shortcoming in any particular methodology since each one remains valid and sound. Instead, as Russell indicated, there is an inadequacy in the classical interpretation of causality itself that warrants fundamental rethinking.
+As stated earlier, all these methods remain valid in their respective domains. Granger causality remains vital in time series forecasting. Pearl’s causal DAG remains relevant, among others, in empirical healthcare. Dynamic Bayesian Networks find applications in healthcare, data mining, and robotics. This analysis, however, shows why each method cannot be applied to the previously established problems. It is important to recognize that, as Russell indicated, it is the classical interpretation of causality itself that warrants fundamental rethinking.
 
 \subsection{Why a new philosophy of causality?}
 
 Upon studying Hardy’s work on causality for quantum gravity\cite{HardyDynamicCausalStructure}, the author noticed the clear emphasis on operational causality; a sensible choice given the entire field of quantum gravity can be best described as work in progress.
-
-However, the lack of a philosophical foundation became apparent when attempting to combine Hardy’s unified causality with non-linear time, and uniform context over Euclidean and non-Euclidean structures: There was no “big idea” that would help to bring everything together. However, a new idea was much needed to solve the vexing problem of handling causal inference across complex hypergraph structures let alone tackling emergent causality.
-
-The presented Effect Propagation Process closes this foundational gap and brings together previously disjoint ideas into one coherent philosophical framework of causality that elegantly solves the non-Euclidean representation problem by defining causality as a fundamentally spacetime-agnostic process.
-
+However, the lack of a philosophical foundation became apparent when attempting to combine Hardy’s unified causality with non-linear time, and uniform context over Euclidean and non-Euclidean structures: There was no “big idea” that would help to bring everything together. However, a new idea was much needed to solve the vexing problem of handling causal inference across complex hypergraph structures let alone tackling emergent causality. The presented Effect Propagation Process closes this foundational gap and brings together previously disjoint ideas into one coherent philosophical framework of causality that elegantly solves the non-Euclidean representation problem by defining causality as a fundamentally spacetime-agnostic process.\newline
+The EPP framework is conceptual and exploratory by design and offers a philosophically coherent generalization of causality that addresses the limitations of classical models under emerging scientific paradigms. By no means does the EPP claims empirical completeness, but instead borrows concept from theoretical developments in quantum gravity to tackle the challenges imposed by those domains where conventional methods of computational causality no longer work. Like all foundational frameworks, its value derives from opening a new way of thinking about causality in domains where the classical spacetime assumption no longer holds.\newline
 It is important to understand that, without something similar to EPP, conventional causality cannot work across complex hypergraph structures and solve new challenges of causal inference over non-Euclidean data, non-linear temporal structures, and handling emergent causality in dynamic systems. The foundational work inspired by Quantum Gravity is a direct testament to the problem complexity that EPP solves.
  
 \newpage
@@ -346,18 +355,22 @@ When the fundamental structure gives rise to classical spacetime, this fundament
 \textbf{Causaloid as building block}
 
 In the Effect Propagation Process framework, due to the detachment from a fixed spacetime, this fundamental temporal order is absent. Consequently, the entire classical concept of causality, where a cause must happen before its effect, can no longer be fundamentally established. The distinction between a definitive 'Cause' and a definitive 'Effect' becomes untenable as Russell foresaw. When the separation between cause and effect becomes untenable, then the obvious question arises: why even preserve an untenable separation?
-Therefore, the Effect Propagation Process framework adopts the causaloid, a uniform entity proposed by Hardy\cite{HardyDynamicCausalStructure}, that merges the ‘cause' and 'effect' into one entity. Instead of dealing with two nearly identical concepts discernible from each other by temporal order, the causaloid is one concept that defines causality in terms of its effect transfer without presupposing a fixed spacetime background.
+
+Therefore, the Effect Propagation Process framework adopts the causaloid, a uniform entity proposed by Hardy\cite{HardyDynamicCausalStructure}, that merges the ‘cause' and 'effect' into one entity. Instead of dealing with two nearly identical concepts discernible from each other by temporal order, the causaloid is one concept that defines causality in terms of its effect transfer without presupposing a fixed spacetime background. It is important to note that the EPP framework adopts the conceptual role of the Causaloid as a spacetime-agnostic unit of causal interaction, inspired by Hardy’s work on Quantum Gravity, but it does not uses Hardy's formal definition. Instead, the EPP formulates the Causaloid as an abstract structure, thereby decoupling it from any particular physical theory while preserving its core philosophical utility and making it practical implementable in software.
 \newline
 In the post-quantum context, the term "propagation" does not imply movement through a pre-existing space or time in the classical sense. Instead, it refers to the fundamental process by which an effect is transferred within the underlying structure of reality itself. This fundamental process is what gives rise to the appearance of propagation through spacetime in the classical view. Furthermore, while classical causality relies on a definite temporal order, the Effect Propagation Process treats temporal order as an emergent property, arising from the fundamental process itself.
 
-While the Effect Propagation Process involves the transfer of effects within the fundamental structure, it is crucial to distinguish this from mere accidental correlation. The process reflects the fundamental way the underlying structure of reality establishes dependencies between its components and how it is gives rise to the non-accidental relationships we recognize as observed causal relations.This fundamental determination, rather than simple co-occurrence, is what the "Effect Propagation Process" captures at the deepest level. Consequently, causality is understood as an effect propagation process that emerges from the fundamental structure or set of rules (akin to a generating function) from which spatiotemporal relationships emerge. This philosophical concept of the Effect Propagation Process finds support in physical theories that propose fundamental structures underlying spacetime, such as Causal Set Theory, and generalizes the idea of effect transfer present in Quantum Field Theory.
+While the Effect Propagation Process involves the transfer of effects within the fundamental structure, it is crucial to distinguish this from mere accidental correlation. The process reflects the fundamental way the underlying structure of reality establishes dependencies between its components and how it is gives rise to the non-accidental relationships we recognize as observed causal relations.This fundamental determination, rather than simple co-occurrence, is what the "Effect Propagation Process" captures at the deepest level.\newline
+Consequently, causality is understood as an effect propagation process that emerges from the fundamental structure or set of rules (akin to a generating function) from which spatiotemporal relationships emerge. This philosophical concept of the Effect Propagation Process finds support in physical theories that propose fundamental structures underlying spacetime, such as Causal Set Theory, and generalizes the idea of effect transfer present in Quantum Field Theory.
 
 Lastly, the Effect Propagation Process offers a philosophical interpretation for mathematical tools that describe non-classical causal behavior, such as Process Matrices. However, the Effect Propagation Process remains agnostic to the operational details of any particular physics theory and, instead, it offers a coherent way of thinking about causality that aligns with the absence of finite spacetime in the quantum realm.
 
 \section{The Epistemology of the Effect Propagation Process:}
 \label{sec:epp_epistemology}
 
-Epistemology entails the study of understanding the sources of knowledge, how we derive knowledge, and how we determine the truthfulness of the derived knowledge within a contextualized Effect Propagation Process. Epistemological approaches to acquiring knowledge in research fall into three categories: positivism, interpretivism, and pragmatism. Positivism concerns itself with observable facts based on the scientific method and thus seeks to achieve generalizability and objectivity. Interpretivism maintains that our knowledge depends greatly on our interpretation of observations of human actions, experiences, and environments thus making interpretive research more subjective. Pragmatism focuses on practical effects or solutions to address problems that are suitable for existing situations or conditions. The epistemology of pragmatism is that knowledge is a self-correcting process based on experience thus, it must be evaluated and revised in view of subsequent experience.
+Epistemological approaches to acquiring knowledge in research fall into three categories: positivism, interpretivism, and pragmatism. Positivism concerns itself with observable facts based on the scientific method and thus seeks to achieve generalizability and objectivity. Interpretivism maintains that our knowledge depends greatly on our interpretation of observations of human actions, experiences, and environments thus making interpretive research more subjective. Pragmatism focuses on practical effects or solutions to address problems that are suitable for existing situations or conditions. The epistemology of pragmatism is that knowledge is a self-correcting process based on experience thus, it must be evaluated and revised in view of subsequent experience.
+
+The  presented EPP epistemology changes depending on whether the context is static or dynamic, and, equally profound, whether the EPP is static, dynamic, or emergent. A detailed exploration of the epistemological structure of the EPP including formal definitions, knowledge ontologies, multi-modal truth justification, and the role of observer perspectives, is provided in a dedicated companion paper\cite{Hansen2025EPP_Epistemology}. 
 
 \textbf{Ontology of Knowledge sources}
 
@@ -715,9 +728,11 @@ Feature Assessed &
 \section{Conclusion}
 \label{sec:conclusion}
 
-The Effect Propagation Process framework rethinks causality as a continuous transfer of effects originating from a potentially non-spatiotemporal underlying structure.
+The Effect Propagation Process framework rethinks causality as a continuous transfer of effects originating from a potentially non-spatiotemporal underlying structure. 
 
-The framework navigates the challenges of detachment from fixed spacetime paths, aligns with the concept of emergence, accommodates indefinite causal order, and remains compatible with classical causality. Furthermore, the notion of an Effect Propagation Process reshapes the ontology of causality by suggesting that the most fundamental reality is not spacetime, but the generative process that materializes the spacetime context through which effects propagate.
+The EPP is implemented in the DeepCausality\footnote{\url{https://deepcausality.com}} Rust library, which is a hypergeometric computational causality library that enables fast and deterministic context-aware causal reasoning across Euclidean and non-Euclidean spaces. This operational realization substantiates the EPP’s core principles and demonstrates he EPP’s applicability to real-world complex systems.  DeepCausality finds its application in modeling dynamic control systems used in financial markets, advanced analytics, and complex control systems.
+
+The framework navigates the challenges of spacetime agnosticism, aligns with the concept of emergence, accommodates indefinite causal order, and remains compatible with classical causality. Furthermore, the notion of an Effect Propagation Process reshapes the ontology of causality by suggesting that the most fundamental reality is not spacetime, but the generative process that materializes the spacetime context through which effects propagate.
 
 The epistemology of the Effect Propagation Process reflects the complex systems it is designed to model by scaling with the modality of the EPP. For a static EPP, a positivist epistemology remains sufficient. For a dynamic EPP, the epistemology evolves towards an interpretivism perspective, and for an emergent EPP, a pragmatism perspective on the epistemology becomes necessary.
 
@@ -725,9 +740,8 @@ Likewise, for the justification of knowledge in an EPP, the underlying notion of
 
 The framework provides a robust conceptual grounding for exploring the nature of causal effect propagation in a universe that may fundamentally defy classical intuition while leaving traditional teleology as a likely emergent property. It redefines the scope and methods of epistemology, shifting the focus of causal knowledge from observing event sequences in spacetime to inferring the rules and dynamics of this deeper process.
 
-The Effect Propagation Process offers a unified philosophical language of causality that is powerful enough to handle new challenges, remains compatible with classical causality, and conceptually aligns with contemporary theories of quantum gravity.
+The Effect Propagation Process offers a unified philosophical language of causality that is powerful enough to handle new challenges, remains compatible with classical causality, and conceptually aligns with contemporary theories of quantum gravity. Future work may explores the realm of dynamic emergent causality further. 
 
-The EPP framework has proven itself as a potent foundation for a new category of computational causality. The DeepCausality\footnote{\url{https://deepcausality.com)}} project implements the Effect Propagation Process framework as a Rust library for context-aware computational causality that reasons uniformly across Euclidean and non-Euclidean hypergeometric spaces. DeepCausality finds its application in modeling dynamic control systems used in financial markets, advanced analytics, and complex control systems.
 
 \newpage
 
