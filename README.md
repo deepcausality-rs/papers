@@ -37,6 +37,25 @@ Citation:
 }
 ```
 
+## Community
+
+### Discord
+
+* [DeepCausality Discord Server](https://discord.gg/Bxj9P7JXSj)
+
+### GitHub Discussions
+
+* Announcements
+    - [Top-level milestone messages that affect the entire ecosystem](https://github.com/orgs/deepcausality-rs/discussions/categories/announcements)
+
+* General
+    - [General technical discussions and questions](https://github.com/orgs/deepcausality-rs/discussions/categories/general)
+
+
+* Q&A
+    - [Questions & answers related to DeepCausality](https://github.com/orgs/deepcausality-rs/discussions/categories/q-a)
+
+
 ## About
 
 [DeepCausality](https://deepcausality.com/) is a hyper-geometric computational causality library that enables fast and
