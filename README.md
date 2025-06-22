@@ -9,7 +9,7 @@ Papers, articles, and other content written by the DeepCausality team
 
 ## 2025
 
-### [The Effect Propagation Process,June 2025](/effect_propagation_process/Effect_Propagation_Process.pdf)
+### [The Effect Propagation Process, June 2025](/effect_propagation_process/Effect_Propagation_Process.pdf)
 
 Citation:
 ```latex
@@ -36,6 +36,25 @@ Citation:
   note         = {Accessed: June 2025}
 }
 ```
+
+## Community
+
+### Discord
+
+* [DeepCausality Discord Server](https://discord.gg/Bxj9P7JXSj)
+
+### GitHub Discussions
+
+* Announcements
+    - [Top-level milestone messages that affect the entire ecosystem](https://github.com/orgs/deepcausality-rs/discussions/categories/announcements)
+
+* General
+    - [General technical discussions and questions](https://github.com/orgs/deepcausality-rs/discussions/categories/general)
+
+
+* Q&A
+    - [Questions & answers related to DeepCausality](https://github.com/orgs/deepcausality-rs/discussions/categories/q-a)
+
 
 ## About
 
