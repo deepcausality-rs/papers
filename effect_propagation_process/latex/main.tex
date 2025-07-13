@@ -55,7 +55,7 @@ such as representing non-linear time structures, handling dynamic feedback loops
 necessitated a new generalization of causality. In absence of precedence of spacetime agnostic causality, 
 the EPP was formulated as a direct response to these demands, providing both the philosophical grounding and the 
 architectural blueprint for a new category of context-aware causal reasoning. The DeepCausality project solves 
-the inevitable structural complexity challenge with recursive isomorphic causal data structures. However, because the aspect of isomorphic causal datastructures is implementation specific to Rust, it is not covered in the presented EPP framework.\newline
+the inevitable structural complexity challenge with recursive isomorphic causal data structures.\newline
 Philosophically, the epistemology of the EPP begins with positivist foundations in static configurations where truth aligns with 
 a predefined model. In a dynamic EPP, epistemology requires an interpretive stance where truth emphasizes coherent adaptability 
 amidst non-linear temporal evolution. Lastly, its epistemology evolves further into a pragmatic understanding in co-emergent 
@@ -722,6 +722,99 @@ Feature Assessed &
 \end{table}
 
 \textbf{Emergent Causality:} If the problem involves emergent causal structures (where the causal graph itself is not fixed and changes dynamically based on context, i.e., dynamic regime shifts), EPP-based methodologies become the only viable option.
+
+
+\newpage
+
+\section{Future Work}
+\label{sec:future_work}
+
+The architectural principles of the Effect Propagation Process, particularly the formalization of causal relationships
+as computable Causaloids, have profound implications beyond modeling causality. A key challenge in contemporary AI is
+that of verifiable AI alignment, safety, and ethics. Leading industry deep learning frameworks such as PyTorch and
+TensorFlow, despite access to vast resources and talent, have not explored verifiable ethics as a native, architectural
+feature. The predominant approaches remain external to the framework and applied as post-hoc analysis.
+
+The Effect Propagation Process architecture offers a practical pathway towards a normative framework by introducing two
+new, first-class ontological primitives:
+
+\begin{itemize}
+    \item \textbf{The Teloid:} A computable unit of purpose. Functioning as a prospective guard of intent, a Teloid would be a
+  verifiable function that intercepts a proposed action from a Causal State Machine and evaluates it against a defined
+  goal or policy before execution. This introduces a real, deliberative step of teleological verification against stated
+  intent deeply integrated into the system's core reasoning engine.
+    \item \textbf{The Effect Ethos:}  A framework for validating outcomes. Functioning as a retrospective validator, the Effect Ethos
+  would assess the holistic, emergent state of the system after a reasoning cycle to ensure fundamental principles such
+  as safety, fairness, or regulatory compliance have been upheld. The Effect Ethos would leverage the EPP's isomorphic
+  design to construct a verifiable 'machine ethos' from simpler Teloid primitives, creating a composable and mechanistic
+  ethical framework from first principles. Instead of external post-hoc analysis, the proposed Effect Ethos would become
+  an integral part of the EPP and its implementation DeepCausality.
+\end{itemize}
+
+When combined, the Teloid and Effect Ethos, form a plausible architecture within which ethics becomes a computable and
+verifiable. The distinction between a prospective "Teloid" (guarding actions) and a retrospective "Effect Ethos"
+(validating outcomes) exists for a specific reason. A proposes action A proposed action, i.e., "shut down air-flow,"
+can be vetted upfront against a set of codified rules to prevent catastrophic failures before they can happen.
+However, a reasoning outcome, especially when the reasoning is conducted throughout a complex causal hypergraph
+connected to multiple static and dynamic contexts, can only be evaluated after completion.
+Many real-world ethical dilemmas involve balancing a locally "correct" action (which a Teloid might permit) against a
+holistically undesirable emergent outcome that the Effect Ethos may prevent. For instance, a series of
+individually-approved financial trades could, in aggregate, run against global risk management.
+The Effect Ethos provides the necessary tools for this kind of holistic and balanced systemic validation.
+
+The concepts of the Teloid and Effect Ethos are directly recognizable as "computable policy" and "auditable safety
+layers" that broadly translate into two new categories:
+
+\begin{itemize}
+  \item \textbf{Compliance-as-Code:} The idea of modular Teloids for regulations (e.g., a "Reg-T Teloid") that could be audited
+  directly would lower regulatory risk (fines) and operational cost (standardization).
+  \item \textbf{Verifiable Safety for Autonomous Systems:} This provides a concrete architecture for satisfying safety standards (
+  like ISO 26262 for automotive), which is currently a major challenge for any autonomous systems.
+\end{itemize}
+
+
+One practical application of Compliance-as-Code would be the formal verification of adherence to regulatory requirements
+directly embedded into the model itself. It is not unthinkable that regulators might want to see audits of the codifying
+teloids as a means to ascertain and monitor regulatory compliance. Another practical application is the development of
+modular reference Teloids that codify specific regulations for certain domains with mandatory industry rules,
+for example in finance, to lower the cost of compliance. For autonomous systems, embedding specific safety rules
+becomes not only streamlined, but easier to audit, verify, and simulate. Lastly, while neither the Teloid nor the Effect
+Ethos can directly answer the question of whether a specific inference or proposed action is the right thing
+with respect to its context, at least these are feasible primitives to build a solution to answer those questions.
+
+Challenges will arise mostly from formalization and verification of the proposed Teloid and Effect Ethos. Specifically,
+at least the following questions need to be addressed in future development:
+
+\begin{itemize}
+    \item How do we formally verify the Teloid itself
+    \item How do we prove that a composite Effect Ethos is complete and covers all necessary edge cases?
+    \item How do we prove, even if a composite Effect Ethos is correct, that it will be deterministically applied?
+\end{itemize}
+
+\newpage
+
+The Teloid and Effect Ethos are presented as future work since developing because these immense challenges clearly
+fall outside the scope of the presented EPP, but still warrant further consideration. 
+While the formalization is
+subject for extensive future work, the implementation can re-use existing concepts and primitives already built in
+DeepCausality and thus substantiate the feasibility of the proposal. For the actual implementation, the EPP and its
+implementation DeepCausality, provides the staging ground because:
+
+\begin{itemize}
+    \item Real-world safety problems are not confined to simple geometries. Avionics and robotics safety needs native support
+  for non-Euclidean geometries.
+    \item Ethics never occurs in a vacuum. Therefore, an Effect Ethos requires multi-contextual support.
+    \item Holistic ethical outcomes are emergent properties, thus dynamic and emergent causality are necessary to capture these.
+\end{itemize}
+
+Furthermore, the proposed Effect Ethos represents a significant departure from connectionist models and offers a novel,
+verifiable approach to building intelligent systems that can reason not just about what is true, but also about what is
+right with respect to a formalized ethos.
+
+The author acknowledges that realizing this vision, irrespective of any particular implementation, will require deep
+inquiry, probing questions, and different perspectives from a multitude of diverse stakeholders. The transparent and
+open-governance model of the DeepCausality project, hosted at the LF AI \& Data Foundation, provides a vendor-neutral
+venue for facilitating this discussion.
 
 \newpage
 
