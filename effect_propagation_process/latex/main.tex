@@ -554,8 +554,21 @@ EPP does not assume the pre-existence of a definitive causal structure. Instead,
 \section{Validity}
 \label{sec:validity}
 
-In empirical science, internal validity focuses on the extent to which a study accurately establishes a causal relationship between variables, whereas external validity considers the extent to which the findings can be generalized.
-In the absence of empirical evidence, it is appropriate to consider the soundness and consistency as internal validity and consider the boundaries of generalization as a proxy for external validity.
+The validity of the Effect Propagation Process must be assessed according to the nature of its contribution. The EPP is
+a philosophy-informed, formal computational framework designed to provide a new, more expressive language for modeling
+dynamic, contextual causal systems. Therefore, its validity rests on the criteria appropriate for such a framework,
+analogous to how one would assess a mathematical logic or a new programming language:
+
+\begin{itemize}
+    \item \textbf{Internal Validity} (Soundness & Consistency): The framework's internal validity is determined by its logical and
+  mathematical soundness and coherence. As detailed in the accompanying specification, the EPP is built on a foundation
+  of first-principles reasoning to ensure its components are consistent and its operations are sound.
+  \item \textbf{External Validity} (Expressive Power & Scoped Generalization): The framework's external validity is demonstrated by its
+  robustness against alternative interpretations of its premises and how well it defines the boundaries of its
+  generalization.
+\end{itemize}
+
+
 
 \subsection{Internal validity}
 \label{sec:validity_internal}
@@ -628,13 +641,29 @@ DARPA disagrees\cite{DARPA_ANSR}:
     “In the real world, observations are often correlated and a product of an underlying causal mechanism, which can be modeled and understood.”
 \end{quote}
 
-The problem is not correlation versus causation as an either-or distinction. Instead, EPP solves the problem of lifting causality into a spacetime-agonistic generalization that is required to model increasingly complex dynamic systems that do not longer adhere to a fixed background spacetime.
+The problem is not a simple choice between correlation and causation. The deeper issue, as contemporary philosophers
+like Luciano Floridi have argued, is that the predominant mental model underlying complex system design remains rooted
+in an outdated Aristotelian and Newtonian "Ur-philosophy" of fixed space and time. This leads to tools that are
+inadequate for the intricate complexity of reality. To address this core critique, the EPP lifts causality into a
+contextual generalization required to model dynamic systems that no longer adhere to a fixed background spacetime. This
+includes systems with non-Euclidean geometries, multiple interacting contexts, and emergent causal structures, as found
+in domains like avionics. The question of falsifiability, therefore, applies not to the EPP framework itself, but to the
+specific, testable models that are constructed within it. A model of an avionics system built using the EPP is indeed
+falsifiable against simulation data; the framework itself simply provides the language for expressing that model.
+
+The author argues, a similar shift towards a richer contextualization of advanced dynamic models needs to happen in the
+correlation-based methodologies of deep learning as well to build tools more suitable for today's reality. A
+transfer of core EPP concepts, i.e., the contextual hypergraph, uniform Euclidean and non-Euclidean geometries, into the
+foundations of deep learning is welcomed by the author.
 
 \textbf{Pluralism of causal concepts}
 
 Instead of a unified framework like EPP, one can argue in favor of the existing pluralistic reality where multiple disjoint concepts of (computational) causality exist for different levels of causal analysis.
 
-As stated before, EPP does not seek to replace classical causality and all tools that are built atop the classical definition. Instead, EPP seeks to advance the core concept of causality to meet increasingly challenging demands. Due to the novelty of this foundational work, a single coherent framework is preferred until it becomes clear which parts may branch out into more specialized applications.
+As stated before, EPP does not seek to replace classical causality and all tools that are built atop the classical
+definition of causality. Instead, EPP seeks to advance the core concept of causality to meet increasingly challenging
+demands. Due to the novelty of this foundational work, a single coherent framework is preferred until it becomes clear
+which parts may branch out and become more specialized domains over time.
 
 
 \textbf{Different Interpretations of Quantum Gravity}
@@ -730,10 +759,19 @@ Feature Assessed &
 \label{sec:future_work}
 
 The architectural principles of the Effect Propagation Process, particularly the formalization of causal relationships
-as computable Causaloids, have profound implications beyond modeling causality. A key challenge in contemporary AI is
-that of verifiable AI alignment, safety, and ethics. Leading industry deep learning frameworks such as PyTorch and
-TensorFlow, despite access to vast resources and talent, have not explored verifiable ethics as a native, architectural
-feature. The predominant approaches remain external to the framework and applied as post-hoc analysis.
+as computable Causaloids, have profound implications beyond modeling causality.
+
+
+One unexplored area is the critical question of causal discovery: how can causal models be learned within such a rich,
+multi-contextual framework? The framework's explicit representation of context impose a novel challenge, but also
+an opportunity to explore causal structural learning by adapting, for example, methods from deep neuroevolution to find
+causal hyper-graph that best explain a designated effect under observation. Causal discovery for EPP based methods
+is subject to future investigation.
+
+However, a more pressing challenge in contemporary AI is that of verifiable AI alignment, safety, and ethics. Leading
+industry deep learning frameworks such as PyTorch and TensorFlow, despite access to vast resources and talent, have not
+explored verifiable ethics as a native, architectural feature. The predominant approaches remain external to the
+framework and applied as post-hoc analysis.
 
 The Effect Propagation Process architecture offers a practical pathway towards a normative framework by introducing two
 new, first-class ontological primitives:
