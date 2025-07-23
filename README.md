@@ -51,7 +51,7 @@ Citation:
 }
 ```
 
-### [The Metaphysics of the Effect Propagation Process](/metaphysics_propagation_process/epp_metaphysics.pdf)
+### [The Metaphysics of the Effect Propagation Process](/metaphysics_effect_propagation_process/epp_metaphysics.pdf)
 
 Citation:
 ```latex
@@ -65,7 +65,7 @@ Citation:
 }
 ```
 
-### [The Ontology of the Effect Propagation Process](/ontology_propagation_process/epp_ontology.pdf)
+### [The Ontology of the Effect Propagation Process](/ontology_effect_propagation_process/epp_ontology.pdf)
 
 Citation:
 ```latex
