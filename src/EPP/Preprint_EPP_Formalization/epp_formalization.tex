@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{../styles/PRIMEarxiv} % imports style
+\input{../shared/package} % imports packages 
+
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
+
+  
+% Update your Headers here
+\fancyhead[LO]{Formalization of the Effect Propagation Process}
+
+  
+%% Title
+\title{Formalization of the Effect Propagation Process}
+
+%% Author
+\author{
+  Marvin Hansen \\
+  \texttt{marvin.hansen@gmail.com} \\
+  Draft: \today
+}
+
+
+\begin{document}
+\maketitle
+
+%% ======================================================================
+%% Abstract
+%% ======================================================================
+
+\begin{abstract}
+The Effect Propagation Process (EPP), introduced as a novel philosophical framework implemented in the DeepCausality project, fundamentally redefines causality to address the limitations inherent in classical, spacetime-bound conceptions. These limitations become particularly acute when considering insights from contemporary quantum gravity—which suggest emergent spacetime and indefinite causal order—and when tackling the practical complexities of advanced system engineering, such as non-Euclidean data structures, non-linear temporal dynamics, and emergent causal regimes. This paper presents a first-principles mathematical formalization of the EPP, thereby establishing a rigorous and unambiguous foundation crucial for its continued theoretical development, consistent computational instantiation, and broader interdisciplinary engagement.
+
+The core of this formalization lies in precise set-theoretic definitions of EPP's key components. We define the {Contextual Fabric} (\(\mathcal{C}\)), an explicit and potentially dynamic structure composed of {Contextoids} and {Context Hypergraphs}, which can represent diverse Euclidean, non-Euclidean, temporal, and abstract relational information, thus operationalizing EPP's spacetime agnosticism. Subsequently, we formalize {Causal Units} (\(\mathcal{G}\)), built from operational {Causaloids} (\(\chi\))—unified entities of testable effect transfer that transcend the classical cause-effect dichotomy—and their composition into recursively isomorphic {CausaloidGraphs} (\(G\)) for modeling intricate causal webs. The Causal State Machine (CSM) is then formalized as the mechanism linking causal inferences to deterministic actions.
+
+Beyond these structural entities, the formalism meticulously details the {core dynamics} of EPP. This includes the Effect Propagation Process (\(\Pi_{EPP}\)) itself, which describes how the activation states of {Causaloids} evolve through a {CausaloidGraph} based on their intrinsic functions, contextual inputs, and defined relational logic. Furthermore, we formalize the Operational Generative Function (\(\Phi_{gen}\)), which provides the mechanisms for the dynamic evolution and emergence of both the Contextual Fabric and the CausaloidGraph structures, a key feature enabling the modeling of emergent causality and regime shifts. The paper also demonstrates how foundational EPP philosophical principles, such as the emergence of temporal order and congruence with classical causality under specific conditions, are naturally reflected within this mathematical framework.
+
+By providing this clear mathematical language, this work aims to enhance the overall clarity, consistency, and testability of the EPP. It seeks to empower researchers and engineers across diverse fields to apply EPP for modeling complex, context-dependent, and dynamically evolving causal phenomena, fostering a more robust and nuanced understanding of causality in both theoretical and practical domains.
+\end{abstract}
+
+%% keywords
+% \keywords{Computational Causality \and Context-Aware Reasoning \and Causaloid \and  Causal Models \and Explainable AI}
+\noindent\textbf{Keywords}: Computational Causality \textperiodcentered{} Context-Aware Reasoning \textperiodcentered{} Causaloid \textperiodcentered{} Causal Models \textperiodcentered{} Explainable AI \textperiodcentered{} Effect Propagation Process
+
+\clearpage
+
+%% ======================================================================
+%% Table of Contents
+%% ======================================================================
+
+\tableofcontents
+\newpage
+
+%% Introduction
+\input{introduction.tex}
+
+%% Foundation
+\input{foundation.tex}
+
+%% Formalization
+\input{../epp_chapters/formalization.tex}
+
+%% Conclusion
+\input{conclusion.tex}
+
+%% Bibliography
+\newpage
+\bibliographystyle{unsrt}  
+\addcontentsline{toc}{section}{References} % Add it to the Table of Contents
+\bibliography{../shared/references}  
+
+%% Glossary
+\input{../epp_chapters/glossary.tex}
+
+\end{document}

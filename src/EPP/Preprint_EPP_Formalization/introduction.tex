@@ -1,0 +1,41 @@
+
+\section{Introduction}
+\label{sec:formalization_introduction}
+
+The Effect Propagation Process framework rethinks causality as a continuous effect transfer originating from a potentially non-spatiotemporal context fabric. The framework navigates the challenges from leaving the fixed spacetime path, aligns with the concept of emergence, accommodates indefinite causal order, and remains compatible with classical causality. Furthermore, the Effect Propagation Process reshapes the ontology of causality by defining a generative process that materializes the EPP and the spacetime context through which effects propagate.
+
+This paper presents a mathematical formalization of the core components and processes underpinning the EPP. The goal is to provide a precise definition of all aspects of the EPP as a foundation for its future development and its computational implementation in systems like DeepCausality\footnote{\url{https://deepcausality.com}}.
+
+\subsection{Motivation}
+\label{sec:formal_intro_motivation}
+
+Classical formalisms of causality, while powerful, often presuppose spatiotemporal backgrounds and linear temporal order. 
+These assumptions are increasingly at odds with the demand of dynamic complex systems that increasingly exhibit
+non-Euclidean relational structures, multi-scale non-linear temporal structures, and dynamic causal regime changes. 
+Existing formalizations of computational causality, such as Granger Causality, Pearl's SCMs/DAGs, or Dynamic Bayesian Networks
+were not designed for these challenges and thus struggle to address them. 
+
+The EPP philosophy proposes a significant departure by defining causality as a fundamentally spacetime-agnostic process of effect transfer. The presented formalism aims to establish a clear convention and serves as an invitation for collaboration. It seeks to offer a common ground for researchers and system engineers alike to advance the understanding of dynamic, context-dependent, and emergent causality.
+
+This paper focuses on providing a foundational, primarily set-theoretic formalization of the Effect Propagation Process. The scope includes:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Precise definitions of the core EPP entities
+    \item Formal articulation of the dynamic processes
+    \item Demonstration of how key EPP philosophical principles
+    \item The structure of the Causal State Machine as an action-oriented component.
+\end{itemize}
+
+This work formalizes the generalized theory of causality EPP proposes, but does not detail specific implementations of 
+algorithms or data structures, which are subjects of dedicated publications. 
+
+\subsection{Overview}
+\label{sec:formal_intro_overview}
+
+   This formalization will proceed by systematically defining the key entities and processes of the EPP.
+    Section \ref{sec:epp_foundations_recap} will briefly recap the core philosophical tenets of EPP that guide this formalization.
+    Section \ref{sec:conext} will introduce the formal definition of the Contextual Fabric (\(\mathcal{C}\)), starting with its atomic unit, the Contextoid (\(v\)), and building up to Context Hypergraphs (\(C\)) and Collections (\(\mathcal{C}_{sys}\)). This section will detail how diverse data types, including spatial and temporal information (both Euclidean and non-Euclidean), are represented.
+    Section \ref{sec:causal_units} will then formalize Causal Units and Structures (\(\mathcal{G}\)). This includes the Causaloid (\(\chi\)) as the fundamental unit of causal influence transfer, and the CausaloidGraph (\(G\)) as a hypergraph structure for composing complex causal models with recursive isomorphism.
+    Section \ref{sec:epp_core} delves into the core dynamics, formalizing the Effect Propagation Process (\(\Pi_{EPP}\)) itself, the Operational Generative Function (\(\Phi_{gen}\)) responsible for dynamic contexts and emergent causal structures, and how these formalisms embody key EPP principles.
+    Subsequently, Section \ref{sec:csm_in_epp} will outline the formal structure of the Causal State Machine (CSM) and its interaction with the EPP components to enable action based on causal inference.
+    Finally, Section \ref{sec:discussion} will discuss the expressive power of the presented formalism; the conclusion follows in Section \ref{sec:conclusion}.

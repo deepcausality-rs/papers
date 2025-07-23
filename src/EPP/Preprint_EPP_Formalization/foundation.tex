@@ -1,0 +1,59 @@
+%% ======================================================================
+%% Foundational Concepts 
+%% ======================================================================
+
+%% The purpose of this section in the formalization paper is to briefly recap the core philosophical tenets of EPP that will be 
+%% formalized in the subsequent sections. It's not meant to re-argue them in full detail (as the main EPP philosophical paper does) but %% to set the conceptual stage for their mathematical definition.
+
+\section{Foundational Concepts of the Effect Propagation Process}
+\label{sec:epp_foundations_recap}
+
+This section briefly recaps the core philosophical concepts of the Effect Propagation Process (EPP) framework\cite{Hansen2025EPP} that motivate the subsequent formalization in the following sections. A comprehensive exposition of the implications of the concepts can be found in the accompanying epistemology\cite{Hansen2025EPP_Epistemology}. The aim of this section is to provide a brief summary of the core concepts.
+    
+\subsection{Spacetime Agnosticism}
+\label{ssec:recap_spacetime_agnosticism}
+
+A central tenet of EPP is its departure from the classical presupposition of a background spacetime as a necessary stage for causal processes. The EPP proposes that causality can be defined and operate independently of any specific spatiotemporal fabric. 
+Effects propagate through an underlying structure that is defined separately as external context. 
+
+A context can be static or dynamic, depending on the situation. The context structure is defined beforehand for a static context, whereas for a dynamic context, the structure is generated dynamically at runtime from a generative function. A context is constrained from being recursive. Self-referential recursion in the absence of a stop criterion may lead to infinite time or even spacetime loops, which conflict with explainability and touches upon exotic scientific ideas. Therefore, for EPP's current formulation, context is constrained from being recursive to prevent problematic corner cases and to ensure a straightforward implementation of the presented concepts. Regardless of the specific structure, the context is explicitly defined, either by a (static) structure or by a generating function that generates the context structure dynamically.
+Data in any context changes over time, hence requiring constant updating. A change of context structure may happen and may affect the effect propagation process. 
+In the EPP, the context is designed as the source of factual knowledge. For context, facts may remain invariant (e.g. the value of Pi) or receive continuous updates. The designation whether a context is static or dynamic refers to its structure, not to the factual data in it. Furthermore, the EPP may rely on one or more contexts and potentially multiple external data sources.
+    
+\subsection{Effect Propagation as the Essence of Causality}
+\label{ssec:recap_effect_propagation}
+
+EPP redefines the essence of causality  as a continuous (or discrete, depending on the underlying structure) \textit{process} of effect transfer. Because of the detachment from a fixed spacetime, the fundamental linear temporal order is absent. Consequently, the entire classical concept of causality, where a cause must happen before its effect, can no longer be established 
+    
+\subsection{The Causaloid as a Unified Entity}
+\label{ssec:recap_causaloid}
+
+In absence of a fixed spacetime, the Effect Propagation Process framework adopts the causaloid, a uniform entity proposed by Hardy\cite{HardyDynamicCausalStructure}, that merges the ‘cause’ and ’effect’ into one entity. The causaloid defines causality in terms of its effect transfer without presupposing a fixed spacetime background and thus makes it ideal as a building block for the EPP. 
+
+The EPP encodes each causal relationship in a designated Causaloid. The Causaloid encodes the causal rule, whereas the context encodes supporting data required to apply the rules. The Causaloid may use external data or data from the context to apply its rule. 
+The EPP derives knowledge by applying data to the Causaloid that models that causal relationship to determine
+whether the causal relation holds true within the applicable context. Consequently, multi-stage reasoning maps directly
+to the topology of the EPP itself because each effect from a Causaloid propagates further through the EPP topology,
+which is the structure of the EPP manifested as all connected Causaloids. From this perspective, a “line of reasoning”
+literally becomes a pathway through the EPP topology.
+
+It is important to note that the EPP framework adopts the concept of the Causaloid as a spacetime-agnostic unit of causal interaction,  it does not use Hardy's formal definition. Instead, the EPP formulates the Causaloid as an abstract structure, thereby decoupling it from any particular physical theory while preserving its core philosophical utility and making it practically implementable in software.    
+\subsection{The Generative Function}
+\label{ssec:recap_generative_function}
+
+The generative function refers to the underlying rules that can dynamically shape and evolve both the contextual fabric and the causal structures themselves. The plural is deliberate, as it is assumed that in an EPP multiple generative functions will shape certain parts
+of the EPP. The mechanism resulting from leveraging generative functions allows EPP to model systems where regimes may change, the engulfing context may change dynamically, causal pathway might be dynamic or any combination thereof. 
+    
+\subsection{Causal Emergence}           
+\label{ssec:recap_emergence}
+
+ A key philosophical implication of EPP is the notion of causal emergence relative to its context.  The understanding of the EPP changes depending on whether the context is static or dynamic, and, equally profound, whether the EPP is static, dynamic, or emergent.
+
+For a static Effect Propagation Process, the knowledge is explicitly modeled during the design stage and confined in the context thus leading to deterministic causal inference. 
+
+For a dynamic Effect Propagation Process, the dynamics are captured in generative functions that evolve either the EPP, the context, or both. Conceptually, these generative functions could range from deterministic, rule-based algorithms that construct or modify Causaloids and Context structures based on predefined logic or specific triggers, to more adaptive mechanisms such as higher order functions.
+
+An emergent EPP does not evolve based on pre-determined triggers that initiate pre-defined generative functions. Instead, an EPP is considered emergent when the underlying generation process leads to novel causal configurations, reasoning pathways, or new generative principles for Causaloids context interactions that were not explicitly encoded beforehand.
+The generation process may incorporate principles from evolutionary computation, novelty search, or machine learning embedded in the EPP itself. While the full exploration of AI-driven generative functions for EPP remains future work, the foundational idea of using programmable functions to dynamically define and evolve both the EPP and its context is a natural extension of EPP's core design philosophy. Regardless of the mechanism, emergent EPP does not interact with its Context using pre-defined procedures but instead relies on procedures generated by the EPP itself. The key indicator of emergence is that its novel behavior was not foreseeable by its initial designers.
+
+The epistemology of the EPP\cite{Hansen2025EPP_Epistemology} explores how knowledge and truth are understood in static, dynamic, and co-emergent EPP modalities. This formalization aims to provide structures that can support the modeling of such emergent phenomena, particularl

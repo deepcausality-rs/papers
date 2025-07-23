@@ -1,0 +1,182 @@
+
+\subsection{UltraGraph}
+\label{sec:implementation_ultragraph}
+
+The importance of hypergraphs in the EPP lead to the decision to implement a hypergrah in a dedicated Rust crate called UltraGraph. Initially, UltraGraph wrapped the MatrixGraph implementation of the 
+Petgraph\footnote{\url{https://docs.rs/petgraph/latest/petgraph}} crate. This was a deliberate decision
+to speed up the bootstrapping of the DeepCausality project while preserving the option to 
+replace the implementation when the need arises. And indeed, as the requirements  of the
+DeepCausality project keep advancing with the introduction of emergence, a new hypergraph implementation became necessary. The UltraGraph v0.8 release adds a ground-up rewrite of  UltraGraph inspired the NWHypergraph (NWHy)\cite{liu2022nwhy} architecture that was further optimized for Rust's memory model. 
+  
+The key elements of the new UltraGraph implementation are:
+  
+\begin{itemize}
+	\item The introduction of a dual-state graph lifecycle.
+	\item The introduction of a SoA CsrAdjacency type
+	\item The separation of forward and backward CsrAdjacency.
+\end{itemize}
+
+\subsubsection{Dual-state graph life-cycle}
+
+
+UltraGraph v0.8 introduces a dual-state architecture. This recognize that graph-based systems that implement the EPP have two distinct phases: a dynamic "Evolve" phase, where the structure is built and modified, and a stable "Analyze" phase, where high-speed queries are essential. 
+
+\textbf{The Dynamic Graph State:} 
+
+This is the default state for every new graph. It's an adjacency-list-based structure
+optimized for flexibility. Adding nodes and edges is a cheap O(1) operation, perfect for systems where the graph structure emerges dynamically over time.
+
+\textbf{The Static Graph State:}
+
+When the graph is ready, a on time  call to \textit{.freeze()} transforms the graph into a hyper-optimized, immutable Compressed Sparse Row (CSR) format designed for peak performance. All algorithms check if a graph is in a frozen state therefore it is impossible by design to run any graph algorithm on a dynamic graph. 
+
+\textbf{The graph life-cycle:}
+
+A Graph begins in a flexible DynamicGraph state, optimized for fast, O(1) mutations as the structure evolves. When the state has been finalized, and causal reasoning ca begin, a single \textit{.freeze()} call transforms the graph into a hyper-optimized, immutable CsmGraph based on a cache-friendly Struct of Arrays (SoA) memory layout. This step is the key eliminating cache misses and unlocking near-linear scaling. 
+If the graph needs to evolve further, simply cal \textit{.unfreeze().} There is a memory trade-off in the state transition because, in each state, the memory usage is roughly $(e+v)$ whereas during a state transition, the memory usage temporarily peaks at $(e+v)^{2}$ and that warrants carefully consideration when a graph grows large i.e. beyond 1 billion nodes. 
+
+
+\subsubsection{SoA CsrAdjacency Type}
+
+In conventional CSR-based graph representations (like NWHypergraph), adjacency information is typically packed together row-wise in a "single structure" per edge or neighbor, which is technically an Array of Structs (AoS) layout, or in simple terms, “rows of neighbors.” UltraGraph, however, takes a different approach by introducing a CsrAdjacency<W> type that implements a Struct of Arrays (SoA) pattern:
+
+\begin{lstlisting}[language=Rust, label={list:CsrAdjacency}, caption={UltraGraph: CsrAdjacency}]
+#[derive(Default)]
+pub(crate) struct CsrAdjacency<W> {
+    pub(crate) offsets: Vec<usize>,
+    pub(crate) targets: Vec<usize>,
+    pub(crate) weights: Vec<W>,
+}
+\end{lstlisting}
+
+\newpage
+
+The CsrAdjacency layout divides each component of the adjacency data (offsets, targets, and weights) into separate, contiguous memory regions:
+
+\begin{itemize}
+\item offsets: Starting positions of each node’s adjacency list.
+\item targets: The target node indices for each edge.
+\item weights: Edge weights (optional).
+\end{itemize}
+
+The struct of Arrays design of the CsrAdjacency has two advantages:
+
+
+\textbf{Better cache utilization:} When performing traversal or shortest path algorithms, the CPU can stream just the fields it needs (often offsets and targets) without pulling in unnecessary weight data and thus avoiding cache pollution and improving CPU data prefecht.
+
+\textbf{SIMD-friendliness:} SoA layouts enable vectorized processing (e.g., with AVX) far more easily 
+than Array of Structs (AoS). Also, a SOA layout is easier for the compiler to optimize and thus unlock
+meaningful performance gains without the need of complex optimization. 
+
+
+\subsubsection{Separation of Forward and Backward CsrAdjacency.}
+
+Moreover, UltraGraph uses two separate CsrAdjacency instances: one for successor or outbound edges and another one for backward or inbound edges. This dual-CSR setup is more explicit and efficient than mixing directions within a single row layout because it reduces CPU cache pollution and thereby directly supports fast and efficient algorithm implementations. UltraGraph deliberately traded a bit more
+memory for better algorithm performance, as shown in the benchmarks.
+
+
+\begin{lstlisting}[language=Rust, label={list:SeparatedCsrAdjacency}, caption={UltraGraph: Forward and Backward CsrAdjacency}]
+#[derive(Clone)]
+pub struct CsmGraph<N, W>
+where
+    N: Clone,
+    W: Clone + Default,
+{
+    // Node payloads, indexed directly by `usize`.
+    nodes: Vec<N>,
+    // CsrAdjacency structure for forward traversal (successors).
+    forward_edges: CsrAdjacency<W>,
+    // CSR structure for backward traversal (predecessors).
+    backward_edges: CsrAdjacency<W>,
+    // Index of the designated root node.
+    root_index: Option<usize>,
+}
+\end{lstlisting}
+
+
+The backward node list is particularly useful in causality-based inference algorithms, where backtracking is often required, and is thus particularly well suited for DeepCausality. Memory usage remains low due to the combined effects of the Struct of Arrays layout and the clean separation between forward and backward adjacency.This design leads to a predictable, flat memory layout with minimal overhead:
+
+\begin{itemize}
+	\item No per-node allocation overhead
+	\item No padding, no vtables, no boxed pointers
+	\item No HashMaps, linked lists, or other complex types
+	\item No indexing needed due to simple offset\
+	\item When a node has no inbound or outbound nodes or weights, there is zero allocation, thus saving memory.
+\end{itemize}
+
+
+Memory fragmentation is largely prevented because of the freeze/unfreeze operation in the graph evolution lifecycle. Calling \textit{.freeze()} compacts the structure, which removes any prior allocation gaps from the dynamic phase and thus results in a clean, continuous memory structure.
+
+\subsubsection{Benchmarks}
+
+All benchmarks were completed on a 2023 Macbook Pro with a M3 Max CPU.
+
+\textbf{Dynamic Graph Benchmarks:}
+
+The dynamic graph structure, when the graph is in an unfrozen state, is optimized for efficient mutation. The table below summarizes the performance characteristics of the key operations.
+
+% In your preamble, make sure you have: \usepackage{booktabs}
+\begin{table}[h!]
+\centering
+\caption{Dynamic Graph Mutation Performance}
+\label{tab:dynamic-graph-perf}
+\begin{tabular}{lrlrr}
+\toprule
+\textbf{Benchmark Name} & \textbf{Graph Size} & \textbf{Operation} & \textbf{Estimated Time (Median)} & \textbf{Outliers Detected} \\
+\midrule
+\texttt{small\_add\_node}  & 10    & \texttt{add\_node} & 29.099 ns & 14\% (14 / 100) \\
+\texttt{medium\_add\_node} & 100   & \texttt{add\_node} & 45.864 ns & 12\% (12 / 100) \\
+\texttt{large\_add\_node}  & 1,000 & \texttt{add\_node} & 39.293 ns & 11\% (11 / 100) \\
+\texttt{small\_get\_node}  & 10    & \texttt{get\_node} & 3.9417 ns & 8\% (8 / 100)  \\
+\texttt{medium\_get\_node} & 100   & \texttt{get\_node} & 3.9849 ns & 2\% (2 / 100)  \\
+\texttt{large\_get\_node}  & 1,000 & \texttt{get\_node} & 3.9916 ns & 7\% (7 / 100)  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Benchmark source code is available in the UltrGraph Github repository\footnote{\url{https://github.com/deepcausality-rs/deep_causality/tree/main/ultragraph/benches}}.
+
+
+\textbf{Static Graph Benchmarks:}
+
+The new architecture causes the largest and most significant performance gains for algorithms running over large graphs (100k or more nodes) because of its close alignment with contemporary hardware.
+By combining an instantaneous O(1) lookup with a perfectly linear scan over a node's neighbors, Ultragraph creates the ideal scenario for the CPU's prefetcher to easily anticipates a straight-line sprint through memory. The result becomes more notable the more data the prefetcher can load ahead of time, thus the disproportional performance gains on larger graphs.
+
+% In your preamble, make sure you have: \usepackage{booktabs}
+\begin{table}[h!]
+\centering
+\caption{Memory Usage and Scaling Performance on a Linear Graph}
+\label{tab:memory-scaling}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Number of Nodes} & \textbf{Memory Usage} & \textbf{\texttt{eval\_subgraph}} & \textbf{\texttt{eval\_path}} & \textbf{\texttt{eval\_cause}} \\
+\midrule
+\textbf{100,000}         & 55 MB                 & 0.68 ms                         & 0.57 ms                      & \textbf{5.4 ns}               \\
+\textbf{1,000,000}       & 350 MB                & 11.12 ms                        & 6.95 ms                      & \textbf{5.5 ns}               \\
+\textbf{10,000,000}      & 3 GB                  & 114 ms                          & 85.80 ms                     & \textbf{5.6 ns}               \\
+\textbf{100,000,000}     & 32 GB                 & 1.23 s                          & 0.98 s                       & \textbf{5.5 ns}               \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Benchmark source code is available in the DeepCausality Github repository\footnote{\url{https://github.com/deepcausality-rs/deep_causality/tree/main/deep_causality/benches}}.
+
+\textbf{Observations}:
+
+\textbf{Constant Time to get a single node:} The benchmark evaluate\_single\_cause returns always takes about 5.5. ns regardless of
+ whether the node lookup happens before or during the benchmark loop and regardless of whether blackbox is used or not. 
+ The time does not change with the size of the graph because the implementation of the underlying get\_node is just two O(1) array lookup 
+ to find the index and than a straight redirect to a virtual memory address, which in this case, is close to the physical limit of the hardware memory architecture. 
+
+
+\textbf{Near-Linear Scalability:} Both the memory usage and the execution time for the subgraph and shortest\_path tasks appear to scale in a roughly linear fashion with the number of nodes. 
+A 10x increase in nodes results in a roughly 10x increase in time and memory. 
+
+\textbf{All benchmarks are single-threaded.} The performance shown in all benchmarks is from a single core. Initial experiments showed that for graphs up to 1 million nodes, the overhead of even highly-optimized parallel libraries like rayon resulted in a  net performance loss of 30\% or more compared to the single-threaded version. This is a testament to the extreme  efficiency of the CSR layout when paired with modern CPU caches and prefetchers.  The results suggest that meaningful gains from concurrency will only appear on massive graphs (likely 10M-50M nodes  and above). However, this requires a concurrency model carefully designed to avoid the cache-invalidation issues common in work-stealing schedulers (used by rayon and Tokio). Developing such a cache-friendly concurrency model is subject to future work. 
+
+\subsubsection{Discussion}
+
+This new implementation of UltraGraph based on its innovative two stage graph life-cycle and it CPU cache friendly design enables causal graph reasoning at scale. While it is unlikely in practice to see causal graphs exceeding a million nodes, a context may grow large. UltraGraph confidently handles graphs up to a 100 million nodes on consumer grade hardware and would only need a specialized high memory server when the graph size is expected to exceed a billion node. At this scale, the underlying CSR implementation will most likely benefit from contemporary reram-based\cite{zheng2023phgraph} hardware accelerators specifically designed to accelerate hypergraphs with sparse representation. 
+Furthermore, the two state graph life-cycle directly supports the implementation of emergence in DeepCausality because it cleanly separates the mutation from the analysis phase and thus enables the four stage process outlined in the EPP Ontology.  
+
+\newpage

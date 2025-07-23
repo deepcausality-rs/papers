@@ -9,13 +9,13 @@ Papers, articles, and other content written by the DeepCausality team
 
 ## 2025
 
-### [The Effect Propagation Process](/effect_propagation_process/Effect_Propagation_Process.pdf)
+### [The Effect Propagation Process](/effect_propagation_process/epp.pdf)
 
 Citation:
 ```latex
 @misc{Hansen2025EPP,
   author       = {Hansen, Marvin},
-  title        = {The Effect Propagation Process: A Generalized Framework for Causal Inference in Dynamic Systems},
+  title        = {The Effect Propagation Process (EPP): A Dynamic Theory of Causality},
   year         = {2025},
   month        = {June},
   howpublished = {\url{https://github.com/deepcausality-rs/papers}},
@@ -23,7 +23,7 @@ Citation:
 }
 ```
 
-### [The Epistemology of the Effect Propagation Process](/epistemology_effect_propagation_process/Epistemology_Effect_Propagation_Process.pdf)
+### [The Epistemology of the Effect Propagation Process](/epistemology_effect_propagation_process/epp_epistemology.pdf)
 
 Citation:
 ```latex
@@ -34,6 +34,48 @@ Citation:
   month        = {June},
   howpublished = {\url{https://github.com/deepcausality-rs/papers}},
   note         = {Accessed: June 2025}
+}
+```
+
+### [The Formalization of the Effect Propagation Process](/formalization_effect_propagation_process/epp_formalization.pdf)
+
+Citation:
+```latex
+@misc{Hansen2025EPP_Formalization,
+  author       = {Hansen, Marvin},
+  title        = {The Formalization  of the Effect Propagation Process},
+  year         = {2025},
+  month        = {July},
+  howpublished = {\url{https://github.com/deepcausality-rs/papers}},
+  note         = {Accessed: July 2025}
+}
+```
+
+### [The Metaphysics of the Effect Propagation Process](/metaphysics_effect_propagation_process/epp_metaphysics.pdf)
+
+Citation:
+```latex
+@misc{Hansen2025EPP_Metaphysics,
+  author       = {Hansen, Marvin},
+  title        = {The Metaphysics of the Effect Propagation Process},
+  year         = {2025},
+  month        = {July},
+  howpublished = {\url{https://github.com/deepcausality-rs/papers}},
+  note         = {Accessed: July 2025}
+}
+```
+
+### [The Ontology of the Effect Propagation Process](/ontology_effect_propagation_process/epp_ontology.pdf)
+
+Citation:
+```latex
+@misc{Hansen2025EPP_Ontology,
+  author       = {Hansen, Marvin},
+  title        = {The Ontology of the Effect Propagation Process},
+  year         = {2025},
+  month        = {July},
+  howpublished = {\url{https://github.com/deepcausality-rs/papers}},
+  note         = {Accessed: July 2025}
 }
 ```
 

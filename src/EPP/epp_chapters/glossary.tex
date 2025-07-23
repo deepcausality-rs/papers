@@ -1,0 +1,71 @@
+\section*{Glossary}
+\addcontentsline{toc}{section}{Glossary} % Add it to the Table of Contents
+
+This glossary provides definitions for the key formal terms and symbols used throughout this paper to describe the Effect Propagation Process (EPP) and its components.
+
+\begin{description}[style=nextline] % Using [style=nextline] if you have enumitem package and want this style
+
+    \item[Effect Propagation Process (EPP)] 
+    The overarching philosophical framework and the formalized dynamic process (\(\Pi_{EPP}\)) of effect transfer within a CausaloidGraph, conditioned by the Contextual Fabric.
+
+    \item[Contextual Fabric (\(\mathcal{C}\))] 
+    The structured environment, composed of Context Hypergraphs, within which effects propagate and causal relationships are conditioned. It is formalized as a Context Collection \(\mathcal{C}_{sys}\).
+
+    \item[Contextoid (\(v\))] 
+    The atomic unit of contextual information, defined as a tuple \(v = (id_v, \text{payload}_v, \text{adj}_v)\). It encapsulates data, time, space, or spacetime values. (See Definition 3.1)
+
+    \item[Contextoid Payload (\(\text{payload}_v\))] 
+    The tagged union representing the actual data, temporal, spatial, or spatiotemporal value held by a Contextoid.
+
+    \item[Context Hypergraph (\(C\))] 
+    A structured collection of Contextoids (\(V_C\)) and the N-ary relationships (Hyperedges \(E_C\)) between them, defined as \(C = (V_C, E_C, ID_C, \text{Name}_C)\). (See Definition 3.2)
+
+    \item[Context Collection (\(\mathcal{C}_{sys}\))] 
+    A finite set of distinct Context Hypergraphs, \(\mathcal{C}_{sys} = \{C_1, C_2, \dots, C_k\}\), representing the total available contextual information. (See Definition 3.4)
+
+    \item[Context Accessor (\(\text{ContextAccessor}(\mathcal{C}_{refs})\))] 
+    A functional interface providing read-access for Causaloids to a specified subset of Context Hypergraphs (\(\mathcal{C}_{refs} \subseteq \mathcal{C}_{sys}\)). (See Definition 3.5)
+
+    \item[Causaloid (\(\chi\))] 
+    The fundamental, operational unit of causal interaction, defined as \( \chi = (id_\chi, \text{type}_\chi, f_\chi, \mathcal{C}_{refs}, \text{desc}_\chi, \mathcal{A}_{linked}, I_{linked}) \). It encapsulates a testable mechanism for effect transfer. (See Definition 4.1)
+
+    \item[Causaloid Type (\(\text{type}_\chi\))] 
+    Specifies the structural nature of a Causaloid (Singleton, Collection, or Graph), determining how its causal function \(f_\chi\) is realized.
+
+    \item[Causal Function (\(f_\chi\))] 
+    The operational logic associated with a Causaloid \(\chi\), which maps input observations (\(\mathcal{O}_{\text{type}}\)) and accessed context to an activation status (\(\{\text{true, false}\}\)). (See Section 4.2.2)
+
+    \item[CausaloidGraph (\(G\))] 
+    A hypergraph, defined as \( G = (V_G, E_G, ID_G, \text{Name}_G) \), whose nodes (\(V_G\)) typically encapsulate Causaloids and whose hyperedges (\(E_G\)) define pathways and logic for effect propagation. Supports recursive isomorphism. (See Definition 4.2)
+
+    \item[Causal Node (\(v_g\))] 
+    A node within a CausaloidGraph \(G\), defined as \(v_g = (id_g, \text{payload}_g)\), where \(\text{payload}_g\) can be a Causaloid, a collection of Causaloids, or another CausaloidGraph.
+
+    \item[Causal Hyperedge (\(e_g\))] 
+    A hyperedge within a CausaloidGraph \(G\), defined as \(e_g = (V_{\text{source}}, V_{\text{target}}, \text{logic}_e)\), representing a directed functional relationship.
+
+    \item[State of CausaloidGraph (\(S_G\))] 
+    A function \(S_G: V_G \to \{\text{active}, \text{inactive}\}\) mapping each causal node in a CausaloidGraph to its current activation status. (See Definition 4.3)
+
+    \item[Effect (\(\varepsilon\))] 
+    Primarily the activation state (active/inactive) of a Causaloid within EPP, and the transfer of this status or derived information. (See Section 5.1.1)
+
+    \item[Input Observations/Triggers (\(O_{input}, O_{trig}\))] 
+    External data or events (\(O_{input}\) being the set of all possible, \(O_{trig}\) being the current set) that can initiate or influence the Effect Propagation Process. (See Definition 5.1)
+
+    \item[EPP Transition Function (\(\Pi_{EPP}\))] 
+    The core dynamic function \( \Pi_{EPP} : (G, S_G, \mathcal{C}_{sys}, O_{trig}) \to S_G' \), describing how the state of a CausaloidGraph evolves. (See Definition 5.2)
+
+    \item[Operational Generative Function (\(\Phi_{gen}\))] 
+    A formal function or set of functions representing meta-level rules for the dynamic evolution of the Contextual Fabric (\(\Phi_{gen\_C}\)), CausaloidGraphs (\(\Phi_{gen\_G}\)), or both (\(\Phi_{gen\_Total}\)). (See Section 5.2)
+
+    \item[Causal State Machine (CSM, \(M\))] 
+    An operational component, defined by its set of state-action pairs \(\mathcal{SA}_M\), that links recognized Causal States (\(q\)) to deterministic Causal Actions (\(a\)). (See Definition 6.3)
+
+    \item[Causal State (\(q\))] 
+    A specific condition within a CSM, \( q = (id_q, \text{data}_q, \chi_q, \text{version}_q) \), whose activation is determined by its associated Causaloid \(\chi_q\). (See Definition 6.1)
+
+    \item[Causal Action (\(a\))] 
+    A deterministic operation within a CSM, \( a = (\text{exec}_a, \text{descr}_a, \text{version}_a) \), triggered by an active Causal State. (See Definition 6.2)
+
+\end{description}
