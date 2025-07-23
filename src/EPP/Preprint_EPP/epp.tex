@@ -1,0 +1,110 @@
+\documentclass{article}
+
+ % import document style
+\usepackage{../styles/PRIMEarxiv}
+
+% import used packages 
+\input{../shared/package} 
+
+% imports code formatting used across the document 
+\input{../styles/rust-code-style.tex}
+
+%Formating code listings
+% https://nasa.github.io/nasa-latex-docs/html/examples/listing.html
+\usepackage{listings} 
+\lstset
+{ %Formatting for code in appendix
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    breakatwhitespace=false,
+}
+
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
+
+% Update your Headers here
+\fancyhead[LO]{The Effect Propagation Process (EPP): A Dynamic Theory of Causality}
+  
+%% Title
+\title{The Effect Propagation Process (EPP): A Dynamic Theory of Causality}
+
+%% Author
+\author{
+  Marvin Hansen \\
+  \texttt{marvin.hansen@gmail.com} \\
+   Date: \today
+}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\newpage
+
+%% Table of Contents
+\tableofcontents
+
+\newpage
+
+%% Introduction
+\input{introduction.tex}
+
+%% History
+\input{../epp_chapters/history.tex}
+
+%% Related Work
+\input{../epp_chapters/related_work.tex}
+
+%% Motivation
+\input{../epp_chapters/motivation.tex}
+
+%% Effect Propagation Process
+\input{../epp_chapters/causality_as_epp.tex}
+
+%% Metaphysics
+\input{../epp_chapters/metaphysics.tex}
+
+%% Ontology
+\input{../epp_chapters/ontology.tex}
+
+%% Epistemology
+\input{../epp_chapters/epistemology.tex}
+
+%% Formalization  
+\input{../epp_chapters/formalization.tex}
+
+%% Implementation 
+\input{../epp_chapters/implementation.tex}
+\input{../epp_chapters/implementation_ultragraph.tex}
+\input{../epp_chapters/implementation_deep_causality.tex}
+
+%% Validity 
+\input{../epp_chapters/validity.tex}
+
+%% Future Work
+\input{../epp_chapters/future_work.tex}
+
+%% Conclusion
+\input{conclusion.tex}
+
+%% Bibliography
+\newpage
+\bibliographystyle{unsrt}  
+\addcontentsline{toc}{section}{References} % Add it to the Table of Contents
+\bibliography{../shared/references}  
+
+\newpage
+
+%% Glossary
+\input{../epp_chapters/glossary.tex}
+
+\end{document}

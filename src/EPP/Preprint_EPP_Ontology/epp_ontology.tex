@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{../styles/PRIMEarxiv} % imports style
+\input{../shared/package} % imports packages 
+
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
+
+% Update your Headers here
+\fancyhead[LO]{The Ontology of the Effect Propagation Process}
+% \fancyhead[RE]{Firstauthor and Secondauthor} % Firstauthor et al. if more than 2 - must use \documentclass[twoside]{article}
+
+  
+%% Title
+\title{The Ontology of the Effect Propagation Process}
+
+%% Author
+\author{
+  Marvin Hansen \\
+  \texttt{marvin.hansen@gmail.com} \\
+   Date: \today
+}
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+%% Ontology
+\section{Ontology}
+\label{sec:ontology}
+\input{../epp_chapters/ontology.tex}
+
+%% Conclusion 
+\input{conclusion.tex}
+
+%Bibliography
+%\bibliographystyle{unsrt}  
+%\bibliography{../shared/references}  
+
+\end{document}
