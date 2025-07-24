@@ -1,0 +1,82 @@
+\documentclass{article}
+
+\input{misc/package} % imports packages 
+\input{styles/rust_style.tex} % imports code formatting 
+
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
+
+% Update your Headers here
+\fancyhead[LO]{DeepCausality: A Hypergeometric Framework for Context-Aware Causal Reasoning in Rust}
+  
+%% Title
+\title{DeepCausality: A Hypergeometric Framework for Context-Aware Causal Reasoning in Rust}
+
+%% Author
+\author{
+  Marvin Hansen \\
+  \texttt{marvin.hansen@gmail.com} \\
+  Draft: \today
+}
+
+
+\begin{document}
+\maketitle
+
+%% Abstract
+\begin{abstract}
+
+The rapid advancement of artificial intelligence, particularly Large Language Models (LLMs), has unlocked powerful capabilities in pattern recognition and information synthesis. However, these systems often exhibit fundamental limitations in genuine explainability, struggle with dynamic real-time contextual relevance, and operate primarily on correlational understanding rather than explicit causal mechanisms, leading to issues like "hallucinations" and unreliability with out-of-distribution data or tasks requiring deep, verifiable understanding. This paper introduces DeepCausality, an open-source computational causality framework implemented in Rust, designed to address these limitations by enabling the construction and reasoning over explicit, context-aware causal models.
+
+
+DeepCausality offers a robust system where causal models are deeply embedded within rich, multidimensional, and dynamic contexts. Unique to the framework is its hypergraph-based representation of both causality (via CausaloidGraphs of recursively composable, operational Causaloids – testable causal functions) and context (via hypergraphs of Contextoids representing data, time, space, and spacetime, supporting both Euclidean and non-Euclidean relational information). This structural approach facilitates transparent composability, the creation of static and dynamic causal models, deterministic evaluation with pathways for probabilistic extension, and complex interactions with multiple shared or distinct contexts. A key feature is the Causal State Machine (CSM), enabling the direct linkage of causal inferences to deterministic actions for building dynamic control and supervision systems.
+
+
+The paper details DeepCausality’s architecture, its theoretical foundations rooted in operational causality and a layered reasoning model, and its Rust implementation which leverages the language's type system for safety, performance, and expressiveness. We discuss current limitations, compare DeepCausality with established causal paradigms, and argue for its significance as a foundational causal engine. Furthermore, we outline a future vision for Grounded Intelligent Agency, proposing a synergistic fusion of DeepCausality with LLMs, where LLMs act as perception and hypothesis generation layers and DeepCausality provides the rigorous analytical and verification core for mechanistic understanding and explainable action. DeepCausality is available online is and hosted at the Linux Foundation.
+
+\begin{center}
+    \url{https://deepcausality.com}
+\end{center}
+
+\end{abstract}
+
+
+%% keywords
+\keywords{Computational Causality \and Context-Aware Reasoning \and Causaloid \and Quantum Gravity \and  Causal Models \and Explainable AI \and Hypergeometric Models \and Causal State Machines \and Grounded Intelligent Agency}
+
+\newpage
+
+%% Table of Contents 
+\tableofcontents
+
+%% Content
+
+%% Section 1: Intro (Problem)
+\include{sections/01_introduction}
+%% Section 2: Motivation 
+\include{sections/02_motivation}
+%% Section 3: Related Work (Existing landscape)
+\include{sections/03_related_work}
+%% Section 4: DeepCausality (Main contribution)
+\include{sections/04_causality_philosophy}
+\include{sections/04_deep_causality}
+%% Section 5: Advanced Modeling with DeepCausality 
+\include{sections/05_advanced_modeling}
+%% Section 6: Limitations and Threats to validity 
+\include{sections/06_limitations_validity}
+%% Section 7: Discussion
+\include{sections/07_discussion}
+%% Section 8: Future Work (including QEDC)
+\include{sections/08_future_work}
+%% Section 9: Conclusion
+\include{sections/09_conclusion}
+%% Appendix A
+\include{sections/appendix_a}
+
+%Bibliography
+\bibliographystyle{unsrt}  
+\bibliography{bib/references}  
+
+\end{document}
