@@ -2,11 +2,9 @@
 \label{sec:motivation}
 
 In his seminal 1985 essay, "Programming as Theory Building," \cite{naur1985programming}, Turing Award winner Peter Naur argued that the act of creating a significant software system is not one of mere coding, but of building a deep, explanatory theory. The source code is just a formal notation; the real program is the mental model of how it works and, more importantly, why it was built that way. 
-
 This monograph is a deliberate attempt to use programming and theory building as a joint force to 
 apply the Naur principle synergetically where the implementation imposes new challenges on the theory 
 and the theory guides a stronger, more principled implementation. 
-
 The pre-existing philosophy of causality served mankind for millennia, and one might be tempted to conclude that this is all there is to know about cause and effect. However, the origin of the Effect Propagation Process (EPP) did not start in philosophy, but in three distinct problems. The first problem is related to non-Euclidean data representation, the second problem is rooted in causal inference over non-linear time representations, and the third in handling dynamic causal structures.
 
 \subsection{Non-Euclidean representation}
@@ -16,7 +14,6 @@ The first problem applies equally to computational causality and deep learning; 
 \subsection{Non-linear Time}
 
 However, when generalizing space beyond Euclidean, then the second problem emerges: how to represent time? More profoundly, can we separate time and space from data? Out of this insight, the idea emerged to separate space, time, and data into a separate context usable by multiple models. As space and time were elevated from an implicit background into an explicit first-class context representation, then moving beyond correlation towards causality became the next obvious step. At this moment, a profound problem emerged: When space is non-Euclidean, and time might not be a simple linear progression, then how do we establish a causal relationship?
-
 As it turned out, establishing a clear causal relationship became problematic within the classical definition of causality, which fundamentally relies on a linear time-asymmetric ordering (cause preceding effect) within its assumed background spacetime.
 
 One might challenge the presumption of non-linear time progression, but in complex systems with dynamic feedback loops, it’s perfectly possible to see context structures that entail non-linear time regions. Non-linear time regions can occur when the background time is represented as a temporal hypergraph that holds multiple time resolutions simultaneously. The simultaneous presence of time units at different scales breaks the simple time-linear assumption (all time has the same unit, and moves therefore at the same rate) that computational causality tools commonly make.
@@ -26,8 +23,6 @@ Furthermore, in a temporal hypergraph, the unit of time is scale dependent which
 The problem is non-trivial because, as time progresses, the engulfing context engine continually generates the non-Euclidean temporal hypergraph representation with the implication that, at one lookup, the value of a temporal node is current, but at the next one, it might be past; however, the exact temporal distance at which a “present” value becomes “past” depends on the node's time scale. A node holding a temporal value “hour” will be valid for 60 minutes; that means a lookup every ten minutes will yield the current hour 6 times, but handling the seventh lookup leads to a fundamental design decision that illustrates the implied complexity.
 
 A “dynamic-position” design means, when a new hour starts, a new node will be added; therefore, the seventh lookup returns a past value. By implication, the index of the new node needs to be looked up to retrieve the value of the new current hour. Therefore, a “dynamic-position” design requires a dynamic index to locate current values.
-
-\newpage
 
 A “static-position” design means, when a new hour starts, the previous current value will be overwritten with the understanding that the seventh lookup returns the new current value. By implication, the index of the current value always remains static. Therefore, a “static-position” design requires a fixed index, i.e., a lookup table to locate current values. Use cases exist for both scenarios and in practice, temporal hypergraphs use a mixture of static and dynamic positioning to handle different types of relative values, e.g., current day, last year, next hour, and similar..
 
@@ -45,12 +40,11 @@ The previously identified limitation of temporal order directly applies to dynam
 
 These three problems, non-Euclidean representation, non-linear temporal structures, and emerging causality deeply interrelate with each other, thus defy overly simplistic solutions. For example, advanced graph neural networks work on non-Euclidean data representation, but fail on non-linear temporal structures. One might be tempted to build non-linear-time graph neural networks, but this does not address the problem of non-Euclidean data representation and emerging causality. There is research to combine methods from computational causality with deep learning, but these approaches are focused on non-Euclidean representation without integrating the challenges of non-linear temporality and emergent causal logic.
 
-
-\newpage
-
 \subsection{Boundaries of Classical Causal Models}
 
 The established methods of computational causality, particularly the frameworks developed by Pearl, Granger, and Rubin, represent monumental intellectual achievements that form the foundation of the field. The purpose of the following analysis is to carefully delineate the set of assumptions, such as a fixed spacetime and a static causal structure, upon which they were designed to operate. By clearly defining these boundaries, we can identify the emerging class of problems in modern dynamic systems that now fall outside this classical scope. 
+
+\newpage
 
 \subsubsection*{Granger Causality}
 
@@ -93,7 +87,6 @@ The framework assumes:
     \item \textbf{Emergent Causality:} The assumption of static causal structure prevents any handling of causal emergence.
 \end{itemize}
 
-\newpage
 
 \subsubsection*{Rubin causal model (RCM)}
 
@@ -128,8 +121,21 @@ Dynamic Bayesian Networks, similar to Granger causality, require a linear and un
     \item \textbf{Emergent Causality:}  DBNs assume a static causal structure and thus cannot handle emergent causality
 \end{itemize}
 
-As stated earlier, all these methods remain valid in their respective domains. Granger causality remains vital in time series forecasting. Pearl’s causal DAG remains relevant, among others, in empirical healthcare. Dynamic Bayesian Networks find applications in healthcare, data mining, and robotics. This analysis, however, shows why each method cannot be applied to the previously established problems. It is important to recognize that, as Russell indicated, it is the classical interpretation of causality itself that warrants fundamental rethinking.
+The analysis of classical models reveals a consistent set of boundaries, built upon assumptions of a fixed, linear spacetime and a static causal structure. While these assumptions enable powerful reasoning within their defined domains, they become untenable when confronted with a class of problems of increasing importance in safety-critical and complex systems. 
 
+\subsection{Beyond Classical Causal Models}
+
+The need for the Effect Propagation Process arises directly from the imperative to model these systems, which are characterized by three deeply interrelated challenges: non-Euclidean representation, non-linear temporality, and dynamic causal emergence. The most critical of these is the challenge of dynamic causal emergence, where the causal laws of a system are themselves subject to change. This is not a theoretical abstraction but a practical reality in numerous domains. In financial markets, for instance, the causal relationships between assets are relatively stable during normal conditions but undergo a fundamental "regime shift" following a black-swan event or a major policy change. The old causal graph becomes obsolete, and a new one emerges in response to the new market dynamics. Similarly, in climate science, ecological systems can cross "tipping points" where gradual changes trigger new, powerful feedback loops, fundamentally altering the causal structure of the climate model. In such cases, a framework is required that does not assume a-priori knowledge of the causal structure, but is instead capable of instantiating new structures in response to emergent events.
+
+This dynamic nature exacerbates the problem of non-linear time. In a system with emergent feedback loops, such as in climate modeling or high-frequency trading, the notion of a single, uniform temporal progression becomes untenable. Events on nanosecond, daily, and quarterly scales can all interact, forming a complex temporal hypergraph where causal influence is no longer a simple unidirectional arrow. A framework must therefore be capable of reasoning over these complex, multi-scale temporal structures without relying on the assumption of a linear time. 
+
+Complex causal relations are often expressed through non-Euclidean representations. For example, a medical record documenting a patient's health
+cannot be reduced to a simple vector of measurements. It is a complex graph of relationships between genomic data, electronic health records, comorbidities, and environmental factors. Likewise, a global supply chain is not a grid but a dynamic network of dependencies.  A new framework must therefore be able to operate natively on hypergraph representation regardless of the exact geometric representation. 
+
+It is a complex graph of relationships between genomic data, electronic health records, comorbidities, and environmental factors. Likewise, a global supply chain is not a grid but a dynamic network of dependencies. Reducing these relational structures to a Euclidean vector space to fit classical models often destroys the very information needed for accurate causal inference. A new framework must therefore be able to operate natively on these graph- and hypergraph-based representations.
+
+These challenges, emergent causal laws, complex temporality, and non-Euclidean data, are not independent issues to be solved in isolation. 
+They are deeply inter related and jointly point to a single, underlying problem: modeling reality in complex, adaptive, and dynamic systems. This requires a fundamental rethinking of causality itself, moving away from a static, linear interpretation and towards a dynamic, context-aware, and dynamic process. 
 
 \newpage
  

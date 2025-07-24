@@ -74,6 +74,15 @@ While classical causality can be derived from EPP, the reverse is not true becau
 
 Establishing the boundaries of generalization as a proxy for external validity requires a delicate balance of realistically acknowledging what EPP can address versus avoiding overstating  any particular capability. Related to external validity is always the possibility of an alternative interpretation of the underlying premises.
 
+
+\subsubsection{Falsifiability}
+
+A crucial distinction must be made regarding the role of falsifiability. The EPP, as a formal foundation, is not itself an empirical scientific theory and therefore is not directly falsifiable. One cannot falsify the established philosophical foundation of the EPP—its metaphysics, ontology, and epistemology—without challenging its underlying axiomatic assumptions. Instead, the validity of the EPP rests on its internal consistency and its expressive power.
+
+Falsifiability, however, is a critical property of the \textbf{specific, testable causal models that are constructed \textit{within} the EPP.} A model of an avionics system, for instance, represents a set of falsifiable hypotheses encoded as a `CausaloidGraph` and its associated `Context`. This model makes concrete predictions about system behavior that can be tested against simulation or real-world data. If the predictions fail, the \textit{model} is falsified, not the framework.
+
+The EPP provides the formal language and the computational primitives necessary to empower engineers and domain experts to express and test causal hypotheses in complex, contextual realities that were previously beyond the reach of formal modeling.
+
 \subsubsection{Alternative interpretations}
 
 There are several potential alternative interpretations of the premises underlying the Effect Propagation Process framework.
@@ -105,7 +114,8 @@ foundations of deep learning is welcomed by the author.
 
 \textbf{Pluralism of causal concepts}
 
-Instead of a unified framework like EPP, one can argue in favor of the existing pluralistic reality where multiple disjoint concepts of (computational) causality exist for different levels of causal analysis.
+Instead of a unified framework like EPP, one can argue in favor of the existing pluralistic reality where multiple 
+disjoint concepts of (computational) causality exist for different levels of causal analysis.
 
 As stated before, EPP does not seek to replace classical causality and all tools that are built atop the classical
 definition of causality. Instead, EPP seeks to advance the core concept of causality to meet increasingly challenging
@@ -116,13 +126,28 @@ which parts may branch out and become more specialized domains over time.
 
 \subsubsection{Boundaries of Generalization}
 
-The main boundary to EPP comes down to preventing the application of any quantum principle to macroscopic systems.
+The primary boundary of the Effect Propagation Process is one of scope: it is a foundational framework, not a final, comprehensive theory of all dynamic causal phenomena. 
+Its purpose is to provide the formal language and computational primitives necessary to begin a systematic exploration of dynamic causality, not to claim to have concluded it. 
+The EPP foundation defines two clear boundaries:
 
-EPP does not endorse nor attempt to apply any quantum principle to non-quantum systems. Instead, it takes inspiration from quantum gravity to advance causality. Furthermore, it is crucial to understand that EPP does not propose that macroscopic complex systems are quantum mechanical in the way they physically operate. Instead, EPP attempts to transfer concepts from quantum gravity to advance causality further to model advanced dynamic systems with complex feedback loops that are notoriously hard to model with conventional causality tools.
 
-Another boundary relates to the lower limit of complexity that can be solved with EPP. For example, abandoning the cause-effect distinction via the causaloid is too radical for many applications. EPP remains compatible with classical causality and therefore can potentially be used where classical causality would apply. However, when a simpler classical causality methodology can solve the problem at hand, it should be preferred over any more complex methodology.
+\begin{itemize}
+    \item \textbf{A Lower Boundary of Complexity:} The EPP is designed for a class of problems characterized by
+    non-linear temporality, non-Euclidean structures, multiple contexts, and the potential for emergence. For systems
+    that align well with the classical assumptions of a fixed spacetime and static causal rules, simpler, established
+    methodologies such as Pearl's SCMs are often more appropriate and should be preferred. The EPP's power is best
+    reserved for the complex realities that lie beyond the classical scope.
 
-To prevent conceptual overreach, the author does not claim to have invented post-quantum causality even though its inherent independence of spacetime would suggest this view. Furthermore, the author does not claim that the Effect Propagation Process framework would solve open questions in quantum physics or quantum gravity. However, because of the early stage of quantum gravity research, it is far from settled how causality fits into the suggested conceptualization of emergent spacetime. Instead, the Effect Propagation Process, as a philosophical framework inspired by concepts of quantum gravity, is defined as a spacetime-agnostic continuous effect propagation process.
+    \item \textbf{An Upper Boundary of Knowledge:} The EPP does not claim to have "solved" dynamic causality. On the
+    contrary, by providing the first formal tools to model phenomena like causal/contextual co-emergence, it reveals
+    the vastness of our current ignorance. The framework, in its early stages, makes it possible to ask new kinds of
+    questions and to begin building and testing the first generation of truly dynamic causal theories for which the 
+    specific characteristics need to be discovered
+\end{itemize}
+
+While the EPP draws conceptual inspiration from physics to address these new frontiers, it is a foundational and formal computational
+framework. It does not propose that macroscopic systems are quantum mechanical, but rather draws inspiration from these powerful
+concepts to engineer a more robust and flexible toolkit for modeling the complex, adaptive systems we face today.
 
 \subsubsection{Method Selection Criteria: Classical Causality vs. EPP}
 
