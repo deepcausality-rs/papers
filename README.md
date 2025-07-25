@@ -15,7 +15,7 @@ Citation:
 ```latex
 @misc{Hansen2025EPP,
   author       = {Hansen, Marvin},
-  title        = {The Effect Propagation Process (EPP): A Dynamic Theory of Causality},
+  title        = {The Effect Propagation Process (EPP): A Foundation for Dynamic Causality},
   year         = {2025},
   month        = {June},
   howpublished = {\url{https://github.com/deepcausality-rs/papers}},
