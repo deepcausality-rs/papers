@@ -5,7 +5,9 @@
 [//]: # (---)
 
 # Papers
-Papers, articles, and other content written by the DeepCausality team
+Papers, articles, and other content written by the DeepCausality team.
+All articles are formatted in [LaTex](https://www.latex-project.org) with the source code available in the [src folder](src). 
+The DeepCasuality project uses [texifier](https://www.texifier.com/mac) for live type-setting of all documents shared in this repository. 
 
 ## 2025
 
