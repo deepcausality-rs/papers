@@ -22,13 +22,35 @@ Luciano Floridi's view\cite{floridi2025applied} that the design principles for  
 Lucian Hardy introduced the "causaloid,"\cite{HardyDynamicCausalStructure} a concept that encapsulates a spatial region and the causal connections within  as foundation his work on finding a theory of Quantum Gravity. Critically, unlike all prior forms of causality, Hardy's causaloid is spacetime agonistic because it folds cause and effect into one entity and thus removes the need for temporal order. The EPP draws direct inspiration from Hardy’s pioneering work by using the term Causaloid honoring Hardy's concept of a unified, self-contained unit of causality, though it has been adapted for a more general, computational context. However, to operationalize spacetime agnostic causality, a new definition of causality became necessary. 
 
  
-%
+ \newpage
+ 
+ 
 % Definitions
 %
 \subsection{Definition}
 \label{sec:epp_definition}
 
-The notion of a generative process that underlies the fabric of spacetime leads to the implication that causality has to evolve beyond the strict “before-after” relation towards a spacetime-agnostic view. The classical definition of causality, taken from Judea Pearl's foundational work\cite{pearl2000causality}: 
+
+The notion of a generative process that underlies the fabric of spacetime leads to the implication that causality has to evolve beyond the strict “before-after” relation towards a spacetime-agnostic view. The critical question then becomes:
+
+\begin{quote}
+	"What is the minimum necessary and sufficient condition for a relationship to be considered causal, 
+	if one cannot use temporal precedence ('happen-before') in the definition?"
+\end{quote}
+
+The answer to this question entails the very foundation upon which computational causality is build upon. 
+The classical answer to this question for centuries has been: $Temporal Precedence + Counterfactual Dependence$.
+That means, the cause must come before the effect, AND the effect would not have happened without the cause. 
+
+The EPP, by its foundational act of detaching causality from spacetime, makes the "Temporal Precedence" condition untentable. 
+It requires an answer that entails the essence of causality independent of spacetime. Finding that answer, however, 
+starts with the classical definition of causality.
+
+
+\subsubsection{Classical Definition of Causality}
+
+
+The classical definition of causality, taken from Judea Pearl's foundational work\cite{pearl2000causality}: 
 
 \begin{quote}
     IF (cause) A then (effect) B.
@@ -40,7 +62,7 @@ The notion of a generative process that underlies the fabric of spacetime leads 
 
 When removing temporal order from causality, it is indeed no longer possible to discern cause from effect because, in the absence of time, there is no “happen-before” relation any longer, and therefore, the designation of cause or effect indeed becomes infeasible, just as Russell hinted at earlier on. When removing space from causality, the location of a cause or effect in space is not possible anymore because space itself is no longer available. 
 
-\newpage
+\subsubsection{Deconstructing Classical Causality}
 
 The absence of spacetime raises the question: \textit{What is the essence of causality?}
 
@@ -67,7 +89,11 @@ The third one, effect propagation, needs elaboration because it is commonly assu
     If X does not happen, then its effect does not propagate to Effect E.
 \end{quote}
 
-In this definition, X does not have a designated label and instead is described in terms of its emitting effect. Therefore, X can be seen as a preceding effect, which then propagates its effect further. Thus, we can write without loss of information:
+In this definition, X does not have a designated label and instead is described in terms of its emitting effect. Therefore, X can be seen as a preceding effect, which then propagates its effect further. 
+
+\newpage
+
+Thus, we can write without loss of information:
 
 
 \begin{quote}
@@ -78,8 +104,61 @@ In this definition, X does not have a designated label and instead is described 
 	If Effect E1 does not happen, then its effect does not propagate to Effect E2.
 \end{quote}
 
-Therefore, causality becomes an effect propagation process. The effect propagation process definition is more general and treats the classical happen-before definition of causality as a specialized derived form. When the preceding effect is designated as a “cause”, then you can rewrite the general definition back into the classical definition of causality therefore the generalized and the specialized definition of causality remain congruent. The EPP formalizes the 'effect' itself as a dedicated 'PropagatingEffect' together with supporting formalism to operationalize the effect propagation process. 
+Therefore, causality becomes an effect propagation process. The effect propagation process definition is more general and treats the classical happen-before definition of causality as a specialized derived form. When the preceding effect is designated as a “cause”, then you can rewrite the general definition back into the classical definition of causality therefore the generalized and the specialized definition of causality remain congruent. The EPP formalizes the 'effect' itself as a dedicated 'PropagatingEffect' together with supporting formalism to operationalize the effect propagation process.
 
+
+\subsubsection{Generalized Definition of Causality}
+
+The generalized definition of causality used by the EPP is:
+
+\begin{quote}
+	If Effect E1 happens, then its effect propagates to Effect E2.
+
+    AND
+    
+	If Effect E1 does not happen, then its effect does not propagate to Effect E2.
+\end{quote}
+
+
+The re-definition of causality as "effect propagation" is a more general, process-oriented term for functional dependency.
+To illustrate why that is the case, lets deconstruct the new definition:
+
+
+\begin{enumerate}
+    \item "If Effect E1 happens, then its effect propagates to Effect E2." Here, the state of E2 functionally depends on E1
+    \item "If Effect E1 does not happen, then its effect does not propagate to Effect E2." The counter-factual case for E2 is equally functional dependent on E1. That also means, a different input (NOT E1) necessarily leads to a different output (NOT E2), assuming the function is not a constant.
+\end{enumerate}
+
+
+For the initial question, "What is the minimum necessary and sufficient condition for a relationship to be considered causal, 
+	if one cannot use temporal precedence ('happen-before') in the definition?", the answer is that the relationship is causal because one effect state is a function of another's. As a direct consequence of the generalized definition of causality, the single, minimum necessary and sufficient condition for a relationship to be causal is Functional Dependency. 
+
+\subsubsection{Axiom of Causality}
+
+ For the generalized definition of causality, the only applicable axiom is a spacetime independent functional dependency between Effect E1 and Effect E2. Therefore, we can write:
+
+\begin{quotation}
+	\textbf{E2 = f(E1)}
+\end{quotation}
+
+It is important to recognize that E1 and E2 are deliberately chosen to be unconstraint. That means, effects E1 and E2 might be deterministic, probabilistic, symbolic, or of arbitrary complex structure. Furthermore, f() does not assume and particular modality either and thus could be a simple logical expression, a SCM, a DBN, a differential equation, or even a neuronal net. The only practical constraint is that the function must compute within a time constraint deemed acceptable to meet its requirements. 
+
+\subsubsection{Higher-Order Implications}
+
+
+The higher-Order Implications of a single axiomatic foundation of causality entail, among others:
+
+\begin{itemize}
+	\item If causality is functional dependency, then the fundamental unit of causality must be a container for a function. More precisely, the resulting unit will be equivalent to a higher order function of $apply(f(E1))$
+	\item If the function needs inputs to operate on, then the system must provide those inputs.  
+	\item If the output of one function is to be the input of another, then it follows that input and output are isomorphic. It also follows that effects propagating from one causal to another, hence this is the materialization of the effect propagation process. 
+	\item If the function interacts with the outside world, then the system must provide the context. 
+	\item If the outside world changes, then the system must provide a mechanism to reflect those changes in the context. 
+	\item If these function-containers are to relate to one another, there must be a structure to hold them and define their pathways. This logically necessitates a causal graph structure
+	\item If the cauasal graph is to model complex, real-world systems, it must be scalable and composable. 
+\end{itemize}
+
+The author needs to emphasize that the currently identified higher order effects most likely will remain incomplete for the foreseeable future despite the EPP's attempt to describe and formalize an initial set. A result of the an irreducible single axiomatic definition  is a vast space of new possibilities and, while this monograph captures a selected set of relevant to computational causality, the full exploration of the new possibilities will take some meaningful time. However, the EPP accepts the premise of detaching causality from spacetime, it embraces the necessary and sufficient condition of causality as functional dependency as its core tenants and, as a result, many of the properties of the EPP are necessary consequences that arise from its single axiomatic foundation. This monograph presents and explores the EPP to further understand its higher order implication and how to utilize it for causal modelling. 
 % 
 % Overview
 %
@@ -88,9 +167,6 @@ Therefore, causality becomes an effect propagation process. The effect propagati
 
 The starting point of the EPP is a generalized definition of causality as effect propagation, which detaches the concept from a pre-supposed spacetime. From the generalized definition of causality, a cascade of novelties followed to operationalize the EPP:
 
-%
-% TODO: Make this congruent with the subsequent sub sections of the EPP
-%
 \begin{enumerate}
 	\item Explicite Assumptions 
 	\item Externalized, Computable Context
@@ -100,7 +176,6 @@ The starting point of the EPP is a generalized definition of causality as effect
 	\item Causal State Machine 
 \end{enumerate}
 
-\newpage
 
 \textbf{Explicit Assumption:}
 
@@ -127,8 +202,6 @@ To facilitate reasoning within the causal structure, the EPP unifies causal inpu
 \textbf{Causal State Machine:}
 
 The EPP bridges the gap between causal reasoning and intervention with the causal state machine (CSM). The CSM uses a causal state that connects to the reasoning outcome via the  PropagatingEffect and ultimately converts all complex reasoning into a binary outcome to indicate whether to act according to the defined causal action. When the causal state of a CSM evaluates to true, it then fires its causal action. The action is a regular function that may interact with the context, the causal model, or any external system. The clear separation between context, causal logic, and intervention has been designed for regulatory reasons. In regulated industries, an auditable trail for each action is legally required  and by making the causal reasoning fully explainable before deciding upon an intervention directly supports internal auditing and external regulatory reporting.   
-
-\newpage
 
 %
 % Assumption
@@ -158,6 +231,9 @@ Each node in this hypergraph is a Contextoid, a unit of information that can rep
 \end{itemize}
 
 The causal logic is kept distinct from the contextual data it operates on. It also directly enables the  agnosticism to the structure of space and time, accommodating Euclidean, non-Euclidean, and symbolic representations within the same architecture. Furthermore,  causal logic  may operate on one or more contexts and, equally important, a particular context might be shared between different causal logic thus enable efficient and salable context representation in complex dynamic systems. 
+
+\newpage
+
 %
 % Causaloid
 %
@@ -188,7 +264,7 @@ The term "propagation" refers to the fundamental process by which an effect is t
 
 While the Effect Propagation Process involves the transfer of effects within the fundamental structure, it is crucial to distinguish this from mere accidental correlation. The process reflects the fundamental way the underlying structure of reality establishes dependencies between its components and how it is gives rise to the non-accidental relationships we recognize as observed causal relations.This fundamental determination, rather than simple co-occurrence, is what the "Effect Propagation Process" captures at the deepest level.
 
- The Effect Propagation Process fundamentally inverts the notion of causal structure. Before the EPP, the causal structure was pre-supposed (i.e. DAG, a set of equations) in which variables, events, objects are placed. The consequence of this order is the fixed and often flat causal structure observed in classical methods of computational causality. The EPP, however, inverts the order and puts the causal entities first as monoidic primitives, and then introduces structure as relationships between these . The consequences is an innate fractal, self-referential definition of causal structure:
+ The Effect Propagation Process fundamentally inverts the notion of causal structure. Before the EPP, the causal structure was pre-supposed (i.e. DAG, a set of equations) in which variables, events, objects are placed. The consequence of this order is the fixed and often flat causal structure observed in classical methods of computational causality. The EPP, however, inverts the order and puts the causal entities first as monoidic primitives, and then introduces structure as relationships between these. This results in the operationalization of the fractal, self-referential causal structure that directly follows from the adopted single axiomatic generalized definition of causality. Specifically, the self-referential structures materializes from the following:
 
 \begin{itemize}
 	\item What is a causal structure? A set of relationships between Causaloids.
@@ -227,8 +303,9 @@ In a conjunction, the causal collection is active only if all of its member Caus
 
  The causal collection might seem to break from the EPP's geometric foundation, as the relationships between its members are not defined by explicit hyperedges. However,  the relationship of a Causaloid within a collection is not to its peers, but to the collection's aggregate logic itself. For example, a collection with All logic is the formal equivalent of a single hyperedge connecting all member Causaloids as a source set to a single target representing a logical AND gate. Disjunctive and other logics follow a similar principle, allowing for a simpler and more intuitive alternative to modeling these common use cases with a full hypergraph. By providing the causal collection, the EPP allows for the concise and efficient modeling of the most frequent types of causal structures.
  
+ It is important to note that the configurable aggregate logic is only applicable to the causaloid collection. For a single causaloid, there is nothing to aggregate, and for the causal graph, the pathway through the graph provides the order of evaluation, therefore aggregation does not apply. 
+ 
   The Causaloid Collection proves particularly useful, for example, when modeling sensor fusion logic (k-of-n), multi-source object detection (All), or verifying safety interlocks (None). The verification of safety interlocks is a particular good example for causal collections because it allows for clear, verifiable, and auditable encoding of standard safety protocols commonly found in regulated industries such as robotics and avionics. For use cases that require nested or arbitrary complex causal relationships, the EPP provides the Causaloid Graph.
-
 
 %
 % Causaloid Graph
@@ -280,29 +357,64 @@ The deterministic mode facilitate logical reasoning using boolean logic. A state
 	\item Referral: A type that contains a PropagatingEffect and reference to another causaloid to process it.
 \end{itemize}
 
-The Contextual Link accommodates for advanced causal reasoning via non-numerical representations by writing a complex reasoning outcome directly into the context and then propagating the reference to the next reasoning stage which reads the complex reasoning outcome and processes it further. For example, the Symbolic context type combined with the Contextual Link establishes a foundation for a uniform integration of multi-modal causal reasoning with advanced neuro-symbolic reasoning.
+The Contextual Link accommodates for advanced causal reasoning via non-numerical representations by writing a complex reasoning outcome directly into the context and then propagating the reference to the next reasoning stage which reads the complex reasoning outcome and processes it further. For example, the Symbolic context type combined with the Contextual Link establishes a foundation for a uniform integration of multi-modal causal reasoning with advanced neuro-symbolic reasoning in a future revision of the EPP.
 
   
-The EPP then uses the propagating Effect to enables several distinct modes of causal reasoning. In a causal graph, the EPP enables complex reasoning in one of three ways: 
+%
+% Dynamic Reasoning Modalities
+%
+\subsection{Dynamic Reasoning Modalities}
+\label{sec:epp_dynamic_modalities}
+
+  
+The EPP uses context, the causaloid, and the propagating effect to enables several distinct modes of causal reasoning: 
 
 \begin{itemize}	
 	\item \textbf{Static Reasoning}
 	\item \textbf{Dynamic Reasoning}
 	\item \textbf{Adaptive Reasoning} 
+	\item \textbf{Emergent Reasoning} 
 \end{itemize}
 
 
-\textbf{Static Reasoning:} 
+\subsubsection{Static Reasoning}
 
-The entire causal graph is traversed according to its pre-defined structure. The reasoning is static because the reasoning path is always fixed. 
+The entire causal graph is traversed according to its pre-defined structure. The reasoning is static because the reasoning path is always fixed. There is a large category of static causal model in practice that needs this modality. Furthermore, just by making the static context dynamic, a fundamentally static causal model becomes more valuable without any modification as the core dynamics is shifted to the context.  
 
-\textbf{Dynamic Reasoning:} 
+\subsubsection{Dynamic Reasoning}
 
-A sub-graph or a specific path (such as the shortest path) is evaluated, allowing for targeted, context-dependent reasoning within the larger graph. It is dynamic reasoning because the pathway through the graph is determines at runtime via one of the EPP methods for graph traversal. 
 
-\textbf{Adaptive Reasoning:} 
+A sub-graph or a specific path (such as the shortest path) is evaluated, allowing for targeted, context-dependent reasoning within the larger graph. It is dynamic reasoning because the pathway through the graph is determines at runtime via one of the EPP methods for graph traversal. Furthermore, the context of a dynamic reasoning graph might be either static or dynamic. In practice, usually a combination of both is used. An immutable static context for factual data assumed to remain invariant. A classic example would be the ICD-10 catalogue. And then one or more dynamic contexts to model various data streams for real-time causal inference. 
 
-The Causaloid itself determines the next step in the reasoning process conditional on its reasoning outcome. Based on its own internal logic, a Causaloid can dynamically dispatch the flow of causality to another Causaloid in the graph, enabling adaptive reasoning. To illustrate conditional reasoning, a clinical patent risk model may operate very differently for patients with normal blood pressure compared to high blood pressure patients. Therefore, two highly specialized models are defined and a dedicated dispatch causaloid queries its context for the latest blood pressure measurements and its recent history, uses its internal logic to decided the level of blood pressure and then dispatches all further reasoning to the specialized causal model for the detected blood pressure level. Adaptive Reasoning can be combined with either a static or dynamic causal graph. In a static graph, all potential reasoning pathways must be defined upfront. In a dynamic causal graph, new causaloids might be added dynamically i.e. in response to a changing context and then the dispatch causaloid gets replaced with a new one that can dispatch to the newly created reasoning causaloids to enable dynamic adaptive reasoning.  
+\subsubsection{Adaptive Reasoning}
+
+
+The Causaloid itself determines the next step in the reasoning process conditional on its reasoning outcome. Based on its own internal logic, a Causaloid can dynamically dispatch the flow of causality to another Causaloid in the graph, enabling adaptive reasoning. To illustrate conditional reasoning, a clinical patent risk model may operate very differently for patients with normal blood pressure compared to high blood pressure patients. Therefore, two highly specialized models are defined and a dedicated dispatch causaloid queries its context for the latest blood pressure measurements and its recent history, uses its internal logic to decided the level of blood pressure and then dispatches all further reasoning to the specialized causal model for the detected blood pressure level. Adaptive Reasoning can be combined with either a static or dynamic causal graph. In a static graph, all potential reasoning pathways must be defined upfront. In a dynamic causal graph, new causaloids might be added dynamically i.e. in response to a changing context and then the dispatch causaloid gets replaced with a new one that can dispatch to the newly created reasoning causaloids to enable dynamic adaptive contextual reasoning.  
+
+\subsubsection{Emergent Reasoning}
+
+In case a dynamic context is combined with a dynamic causal reasoning graph that may even use adaptive reasoning, the fundamental assumption of causality, determinism, may not hold true any longer. Intuitively, when the reasoning graph is dynamically constructed and possibly mixed with adaptive reasoning, one would guess that determinism might not be feasible any longer. However that is not necessarily the case. When the rules of dynamic graph modification are carefully crafted and verified, then even in this complex scenario determinism might hold true. However, the actual problem is the dynamic context in this case. When context is constructed dynamically in response to, say, a sensor data stream and relative to the detected shift in sensor data the reasoning graph is modified dynamically, then the entire premise of determinism hangs on the generative function of the context and that is exactly were formal verification falls apart. It is simply not possible to proof that a context, dynamically constructed from a sensor stream, can be deterministic and therefore the inter-dependent dynamic causal graph, regardless of its reasoning modality, cannot be proven to be deterministic either. 
+
+It is important to understand that the "unprovability" roots in the system's coupling with an open, unpredictable world facilitated via the dynamic context. The precise problem isn't the existence of a dynamic adaptable context, but the door it opes to an open, unpredictable world that may produce states that fall outside the boundaries of the causal model that interacts with the open world through the dynamic context. 
+
+\subsubsection{Trade-off: Adaptability vs. Verifiability}
+
+
+There is a fundamental trade-off between adaptive and emergent reasoning in terms of adaptability and verifiability.     
+
+
+\begin{itemize}
+	\item \textbf{Adaptive Reasoning (Deterministic Dynamics)}
+	\item \textbf{Emergence (Non-deterministic Dynamics)}
+\end{itemize}
+
+Dynamic and adaptive reasoning in the EPP is fundamentally deterministic, but limited in adaptability. These systems may grow complex, but fundamentally remain deterministic and therefore can be formally verified. Here, the trade-off is to preserve determinism at the expense of dynamic adaptability to enable a large class of problems where the modalities are reasonable well known upfront. For example, a clinical model that can switch between a "Normal Response" subgraph and a "Drug Resistance" subgraph is adaptive relative to the known spectrum of modalities. A financial model that switches between "Bull Market" logic and "Bear Market" logic is adaptive relative to these two market modalities. Because the set of possible causal models is closed, pre-defined, and pre-validated, the system's dynamic behavior remains fully deterministic and verifiable. Here, the EPP provides a formal architecture for building systems that can adapt to changing contexts without sacrificing safety and predictability.
+ 
+Emergence on the other hand inverts the trade-off and enables dynamic adaptability at the expense of determinism and formal verification. Emergence is for systems where the causal rules themselves must be generated in response to dynamically emerging situations not foreseen by the designers. Even though determinism is not tenable any longer, restoring verifiability of dynamic emergence requires an entirely new set of methods. 
+
+The EPP deliberately supports both modalities to enable practitioners to choose the mode of dynamic that best fits their requirements and constraints. In regulated industries, emergence might be a non-starter, but a verified static causal model with a mixture of static and dynamic context might be able to get certified within clearly defined boundaries. In advanced research of system dynamics, emergence might be a good choice to explore and simulated scenarios that are otherwise complex to model. 
+
+In practice, it is realistic to see a largely deterministic system that leverages the full spectrum of static and dynamic context, static, dynamic, and even adaptive causal reasoning and only in very specific corner cases, a very small portion of a system would be designed as emergent albeit with  carefully crafted boundaries to the generating functions. The EPP already enables a large part of dynamic use cases with dynamic context, dynamic and adaptive reasoning and therefore it is most likely that dynamic emergence will be reserved for a small and highly specialized set of use cases. In that sense, the EPP scales with growing requirements, from simple static models, complex dynamic models interacting with multiple context, to most advanced use cases of dynamic emergence. 
 
 %
 % Causal State Machine
@@ -570,7 +682,16 @@ The EPP at this stage may have not causal structural learning, but it offers a d
 \subsection{Discussion}
 \label{sec:epp_discussion}
 
-The preceding sections have laid out the architectural components of the Effect Propagation Process. However, the capacity of the EPP to model dynamic systems where the causal structure itself can evolve introduces a class of challenges that reach beyond the scope of formalism alone. To ensure that the EPP is built upon a sound, coherent, and trustworthy foundation, it is required to first understand the inherent higher-order consequences of its dynamic design from first principles.
+The preceding sections have laid out the architectural components of the Effect Propagation Process. However, the capacity of the EPP to model dynamic systems where the causal structure itself can evolve introduces a class of challenges that reach beyond the scope of formalism alone. There is an important distinction between the reasoning modalities the EPP introduces:
+
+\begin{itemize}
+	\item Static
+	\item Dynamic
+	\item Adaptive 
+	\item Emergent 
+\end{itemize}
+
+For static, dynamic and even adaptive reasoning determinism remains preserved. However, when a dynamic context is combined with a dynamic causal model, the resulting co-evolving of context and causal logic might not be deterministic any longer and thus amounts to dynamic causal emergence. In practice, dynamic and adaptive causal reasoning already cover the vast majority of practical problems the EPP is designed to address. However, in situations where the dynamic change cannot be known upfront, the emergent modality closes the gap albeit at the expense of determinism which imposes a profound challenge. To ensure that the EPP is built upon a sound, coherent, and trustworthy foundation, it is required to first understand the inherent higher-order consequences of its dynamic design from first principles.
 
 Therefore, the subsequent philosophical chapters establish the first principles of the EPP. The Metaphysics in section \ref{sec:metaphysics} will establish the EPP's first principles of being and change. The Epistemology in section \ref{sec:epp_epistemology} will explore the far-reaching consequences for knowledge and truth in such a system. Finally, the Ontology in secction \ref{sec:epp_ontology} will use these insights to structure a safe and sound set of primitives that are ready for rigorous formalization in section \ref{sec:formalization} and implementation in section \ref{sec:implementation}. 
 
