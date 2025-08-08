@@ -9,6 +9,60 @@
 
 
 %% ======================================================================
+%  Axioms
+%% ======================================================================
+\subsection{Axioms}
+\label{sec:formalization_axioms}
+
+The theoretical foundation of the Effect Propagation Process is derived from a single axiom, which is itself a necessary consequence of detaching causality from a presupposed spacetime.
+
+\begin{quotation}
+\noindent\textbf{Axiom of Causality:} Every causal phenomenon is an instance of a spacetime-agnostic functional dependency. Let $\mathcal{C}$ be the universal set of all causal phenomena. The axiom states:
+\begin{equation}
+\forall c \in \mathcal{C}, \exists f \text{ such that } c \equiv (E_2 = f(E_1))
+\end{equation}
+where $E_1$ and $E_2$ are effects and $f$ is a function. The nature of $E$ and $f$ are deliberately unconstrained.
+\end{quotation}
+
+%% ======================================================================
+%  Formal Derivation of the EPP Primitives
+%% ======================================================================
+\subsection{Formal Derivation of the EPP Primitives}
+\label{sec:formalization_derivation}
+
+The core architectural primitives of the Effect Propagation Process are not a collection of independent design choices, but are necessary logical consequences that follow from the single causal axiom. This section provides a formal summary of that derivation.
+
+\begin{enumerate}
+    \item \textbf{The Contextual Fabric ($\mathcal{H}$): The Background Condition.}
+    A function $f(E_1)$ may be conditioned on a set of background variables, $K$. The general form of the axiom is thus $E_2 = f(E_1, K)$. 
+    A mechanism to hold and provide this background information $K$ is therefore necessary.
+    \begin{equation*}
+        \implies \text{Let the \textbf{Contextual Fabric} ($\mathcal{H}$) be this mechanism.}
+    \end{equation*}
+    
+    \item \textbf{The Causaloid ($\chi$): The Functional Primitive.}
+    Since every causal phenomenon $c$ is defined by a function $f$, a computational primitive to encapsulate $f$ is a logical necessity.
+    \begin{equation*}
+        \implies \text{Let the \textbf{Causaloid} ($\chi$) be this primitive, whose primary component is the \textbf{causal function} ($f_\chi$).}
+    \end{equation*}
+
+    \item \textbf{The PropagatingEffect ($\Pi_E$): The Isomorphic Message.}
+    A function requires inputs and produces an output. Given the compositional nature of functions (e.g., $g(f(E))$), where the output of one serves as the input to the next, a single, uniform message type is logically necessary.
+    \begin{equation*}
+        \implies \text{Let the \textbf{PropagatingEffect} ($\Pi_E$) be this isomorphic primitive serving as input to and output from a Causaloid.}
+    \end{equation*}
+
+    \item \textbf{The Causaloid Graph ($\mathcal{L}$): The Structural Composition.}
+    A system may contain multiple causal phenomena ($c_1, c_2, \dots, c_n$) that are themselves causally related. A structure is required to represent the set of Causaloids $\{\chi_1, \chi_2, \dots, \chi_n\}$ and the dependency pathways of their `PropagatingEffect`s.
+    \begin{equation*}
+        \implies \text{Let the \textbf{Causaloid Graph} ($\mathcal{L}$) be this structure, defined as a hypergraph where nodes are Causaloids and hyperedges are the propagation pathways.}
+    \end{equation*}
+
+\end{enumerate}
+
+The subsequent sections of this chapter provide the detailed set-theoretic definitions of these logically necessary primitives, which together form the operational core of the Effect Propagation Process.
+
+%% ======================================================================
 %  Contextual Fabric 
 %% ======================================================================
 \subsection[Contextual Fabric (C)]{Contextual Fabric (\(\mathcal{C}\))}
@@ -16,6 +70,7 @@
 
 The Effect Propagation Process (EPP), being spacetime-agnostic, requires a formally defined structure through which effects propagate and within which causal relationships are conditioned. This structure is termed the \textbf{Contextual Fabric}, denoted abstractly as \(\mathcal{C}\). The Contextual Fabric is not a monolithic entity but can be composed of multiple, distinct contextual realms, each potentially representing different aspects of a system's environment or internal state (e.g., physical space, temporal scales, relational networks, data streams). This section provides a set-theoretic formalization of this fabric, starting from its most granular component, the Contextoid, and building up to collections of Context Hypergraphs.
 
+\newpage
 
 \subsubsection[The Contextoid (v)]{The Contextoid (\(v\))}
 \label{ssec:contextoid_formal}
@@ -94,8 +149,6 @@ where $\mathcal{D}_T, \mathcal{T}, \mathcal{S}, \text{ and } \mathcal{ST}$ are p
         \end{itemize}
         The 'void' return type indicates that these functions perform a stateful update on the Contextoid \(v\). Their absence implies the Contextoid's payload is immutable post-instantiation.
 
-\newpage
-
 \subsubsection[The Context Hypergraph (C)]{The Context Hypergraph (\(C\))}
     \label{ssec:context_hypergraph_formal}
 
@@ -138,7 +191,6 @@ where $\mathcal{D}_T, \mathcal{T}, \mathcal{S}, \text{ and } \mathcal{ST}$ are p
     \end{itemize}
     The precise set of functions within the Context Accessor depends on the requirements of the Causaloid functions that utilize it. This formalism defines the accessor as a means to obtain relevant contextual data for causal evaluation based on identifiers and relational queries.
 
-\clearpage
 
 %% ======================================================================
 %% Causal Units and Structures
@@ -444,8 +496,6 @@ where:
 \end{itemize}
 The activation of Causal State \(q\) is determined by \( \text{eval}(q) = f_{\chi_q}(\text{data}_q, \text{ContextAccessor}(\mathcal{C}_{refs_q})) \).
 
-\newpage
-
 \noindent\textbf{Definition 6.2 (Causal Action):} A \textbf{Causal Action} \(a\) represents a deterministic operation. It is defined as a tuple:
 \[ a = (\text{exec}_a, \text{descr}_a, \text{version}_a) \]
 where:
@@ -492,8 +542,6 @@ The set of CausaloidGraphs \(\mathcal{G}_M\) supervised by \(M\) is implicitly d
             \end{enumerate}
     \end{enumerate}
     The order and concurrency of action execution in step 1(b) depend on the CSM's specific execution semantics (e.g., sequential, parallel, prioritized), which are an implementation detail beyond this core formalism. 
-
-\newpage
 
     \subsubsection[CSM Dynamics: Managing State-Action Pairs]{CSM Dynamics: Managing State-Action Pairs}
     \label{ssec:csm_dynamics_formal_merged}

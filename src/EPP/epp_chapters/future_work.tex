@@ -1,107 +1,32 @@
 \section{Future Work}
 \label{sec:future_work}
 
-
-The preceding chapters have established the Effect Propagation Process as a conceptual and formal framework for modeling dynamic causality. 
-The framework's  philosophical underpinnings have informed its implementation in DeepCausality. The framework's core principle, 
-Higher-Order Emergence, provides a formal language for describing systems capable of recursively evolving their own causal and contextual structures.
-
-The EPP, in its most advanced modalities, operates in a reality where the classical pillars of verification and trust are no longer guaranteed,
-as established in the Epistemology. However,the very power of this principle creates a set of three profound crisis,
- as foreshadowed in the metaphysics: 
-
-\begin{enumerate}
-	\item \textbf{The Crisis of Justification:} In a system where new causal rules and contexts are constantly emerging, the fixed principles needed for classical justification disappear.
-	\item \textbf{The Crisis of Truth:} In a system that co-evolves with its factual Context, the stable, external reality required for a correspondence theory of truth dissolves.
-	\item \textbf{The Crisis of Explainability:} It might not be possible any longer to explain the outcome because of the previous crisis of truth and the crisis of justification. 
-\end{enumerate}
+The preceding chapters have established the Effect Propagation Process as a foundational framework for modeling dynamic contextual causality. The framework's philosophical underpinnings have informed its implementation in DeepCausality. However, because of the single axiomatic definition of generalized causality the EPP is build upon, the resulting vast space of new possibilities will inform a substantial amount of future work that clearly falls outside of the scope the foundational work presented in this monograph. 
 
 
-These crises are fundamental properties of higher-order emergence encoded in the EPP and thus demands a new class of ontological primitive for a normative framework that shifts the  anchor from epistemology (what is true) to teleology (what is its purpose). 
-The Effect Propagation Process therefore proposes two new, first-class ontological primitives:
-
-\begin{itemize}
-    \item \textbf{The Teloid:} A computable unit of purpose. Functioning as a prospective guard of intent, a Teloid would be a
-  verifiable function that intercepts a proposed action from a Causal State Machine and evaluates it against a defined
-  goal or policy before execution. This introduces a real, deliberative step of teleological verification against stated
-  intent deeply integrated into the system's core reasoning engine.
-    \item \textbf{The Effect Ethos:}  A framework for validating outcomes. Functioning as a retrospective validator, the Effect Ethos
-  would assess the holistic, emergent state of the system after a reasoning cycle to ensure fundamental principles such
-  as safety, fairness, or regulatory compliance have been upheld. The Effect Ethos would leverage the EPP's isomorphic
-  design to construct a verifiable 'machine ethos' from simpler Teloid primitives, creating a composable and mechanistic
-  ethical framework from first principles. Instead of external post-hoc analysis, the proposed Effect Ethos would become
-  an integral part of the EPP and its implementation DeepCausality.
-\end{itemize}
-
-When combined, the Teloid and Effect Ethos, form a plausible architecture within which ethics becomes a computable and
-verifiable. The distinction between a prospective "Teloid" (guarding actions) and a retrospective "Effect Ethos"
-(validating outcomes) exists for a specific reason. A proposes action A proposed action, i.e., "shut down air-flow,"
-can be vetted upfront against a set of codified rules to prevent catastrophic failures before they can happen.
-However, a reasoning outcome, especially when the reasoning is conducted throughout a complex causal hypergraph
-connected to multiple static and dynamic contexts, can only be evaluated after completion.
-Many real-world ethical dilemmas involve balancing a locally "correct" action (which a Teloid might permit) against a
-holistically undesirable emergent outcome that the Effect Ethos may prevent. For instance, a series of
-individually-approved financial trades could, in aggregate, run against global risk management.
-The Effect Ethos provides the necessary tools for this kind of holistic and balanced systemic validation.
-
-The concepts of the Teloid and Effect Ethos are directly recognizable as "computable policy" and "auditable safety
-layers" that broadly translate into two new categories:
-
-\begin{itemize}
-  \item \textbf{Compliance-as-Code:} The idea of modular Teloids for regulations (e.g., a "Reg-T Teloid") that could be audited
-  directly would lower regulatory risk (fines) and operational cost (standardization).
-  \item \textbf{Verifiable Safety for Autonomous Systems:} This provides a concrete architecture for satisfying safety standards (
-  like ISO 26262 for automotive), which is currently a major challenge for any autonomous systems.
-\end{itemize}
+\subsection{Contextual Causal Discovery:} 
 
 
-One practical application of Compliance-as-Code would be the formal verification of adherence to regulatory requirements
-directly embedded into the model itself. It is not unthinkable that regulators might want to see audits of the codifying
-teloids as a means to ascertain and monitor regulatory compliance. Another practical application is the development of
-modular reference Teloids that codify specific regulations for certain domains with mandatory industry rules,
-for example in finance, to lower the cost of compliance. For autonomous systems, embedding specific safety rules
-becomes not only streamlined, but easier to audit, verify, and simulate. Lastly, while neither the Teloid nor the Effect
-Ethos can directly answer the question of whether a specific inference or proposed action is the right thing
-with respect to its context, at least these are feasible primitives to build a solution to answer those questions.
+A primary focus for future work is the development of a robust contextual causal discovery algorithm to automatically construct Causaloid Graphs for a given domain. The main challenge roots in the interaction between context and the causal model because and that results in triple challenge.
 
-Challenges will arise mostly from formalization and verification of the proposed Teloid and Effect Ethos. Specifically,
-at least the following questions need to be addressed in future development:
+First, for a given domain, one context graph structure may work better than others for a given model, thus finding an "optimal" context graph w.r.t. supporting the causal model is the first major challenge. 
 
-\begin{itemize}
-    \item How do we formally verify the Teloid itself
-    \item How do we prove that a composite Effect Ethos is complete and covers all necessary edge cases?
-    \item How do we prove, even if a composite Effect Ethos is correct, that it will be deterministically applied?
-\end{itemize}
+ Second, when holding the context graph constant, the structure of the graph has significant impact on the overall efficacy of the model and thus finding an optimal causal graph for a given context is the second major challenge. Unfortunately,  the context and causal graph cannot be separated from each other therefore it is most likely that these two challenges are deeply interrelated and require an integrated approach that searches for context representation and the causal model in tandem.  
+ 
+Third, the causal function embedded into each causaloid also implies a not-trivial search, construct, and validate challenge. This challenge deeply interrelates with contemporary work on decomposing causality during the discovery process. However, one complication is that causaloids are isomorphic recursive and may container another causaloid, a causal collection, or another causaloid graph to represent arbitrary complex causal structure. It is not known to the author if sufficiently advanced algorithms that can discover complex nested causal structure exist. 
 
-The Teloid and Effect Ethos are presented as future work since developing because these immense challenges clearly
-fall outside the scope of the presented EPP, but still warrant further consideration. 
-While the formalization is
-subject for extensive future work, the implementation can re-use existing concepts and primitives already built in
-DeepCausality and thus substantiate the feasibility of the proposal. For the actual implementation, the EPP and its
-implementation DeepCausality, provides the staging ground because:
 
-\begin{itemize}
-    \item Real-world safety problems are not confined to simple geometries. Avionics and robotics safety needs native support
-  for non-Euclidean geometries.
-    \item Ethics never occurs in a vacuum. Therefore, an Effect Ethos requires multi-contextual support.
-    \item Holistic ethical outcomes are emergent properties, thus dynamic and emergent causality are necessary to capture these.
-\end{itemize}
+Addressing the challenges imposed by contextual causal learning would require a hybrid approach. For example, for finding causal relation in raw data, an adaptation of the SURD algorithm\cite{martinez2024decomposing} may result in a workable foundation. For the challenge of the entangled context and causal graph structure, algorithms from the field of search based procedural content generation\cite{togelius2011search} may offer a path forward. Dealing with the expected computational cost of resulting from the high dimensional nature of the problem of finding two interdependent hypergraphs suggest the exploration of deep neuro\-evolution adapted to high dimensional data\cite{colas2020scaling}. Furthermore, the broader exploration of novelty search\cite{lehman2011abandoning} algorithms may yield deep insights about robust contextual causal discovery. 
 
-The capability for higher-order emergence carries the risk of uncontrolled or undesirable system evolution. The "Crisis of Truth" is not a theoretical abstraction but a practical safety concern. The proposed architecture of the Teloid and Effect Ethos is the primary mechanism for managing the risks that result from dynamic emergence. The Teloid can be engineered to constrain the generative process by rejecting proposed structural modifications that violate predefined safety, ethical, or operational policies. However, no set of prospective rules can be proven complete. The retrospective Effect Ethos provides a second layer of defense, assessing holistic outcomes where individually correct actions might lead to an undesirable emergent state. 
+\subsection{Formalization of the Effect Ethos:} 
 
-It is crucial, however, to recognize the pragmatic reality of applying EPP: real-world systems will be hybrid models. The majority of their components will be static or governed by predictable dynamics. Only a small but critical subset of the system will be designed to be truly emergent.
-Traditional brute-force testing is computationally infeasible due to combinatorial explosion. 
-Likewise, formal verification, while powerful for deterministic systems, may not be applicable to a system whose state space can evolve dynamically relative to a dynamic context.
-The most viable and rigorous path forward is adversarial stress-testing of the teloids and effect ethos. 
-It is possible to systematically search for emergent loopholes and stress-test the Effect Ethos
-by using Deep Reinforcement Learning to intelligently and adversarially explore the state space of the learned world model.
+The Teloid and Effect Ethos are introduced as ontological primitives. The next logical step is the formalization of a calculus to establish the foundation for verifiable teleological reasoning that enables the design and validation of systems whose adherence to specified intent or regulations is mathematically provable. This line of study might be particular valuable for regulated industries such as robotics, avionics, and defense. 
 
-Adversarial stress-testing  does not offer absolute safety guarantees. The potential for unforeseen behavior in a sufficiently complex system remains, as risk is intrinsic to the nature of dynamic emergence. It represent, however, a principled and practical engineering discipline for managing that unavoidable risk. 
-The alternative is to either forgo the benefits of adaptive dynamic systems or to deploy them without a comparably rigorous validation strategy. 
-The proposed Teloid and Effect Ethos, validated through adversarial stress-testing, serve as the tools for navigating causal emergence responsibly.
+\subsection{Exploration of Conceptual Blueprints}
 
-Managing the intrinsic risk of emergent causality is not a challenge for a single methodology; the problem represents an ongoing challenge for the fields of AI safety, formal verification, and causality. The EPP, with its transparent and auditable architecture, is therefore offered as a high-fidelity testbed for exploring these foundational issues. 
-The author acknowledges that the exploration of causal emergence requires deep inquiry, probing questions, and different perspectives from a multitude of diverse stakeholders. 
-The transparent and open-governance of the DeepCausality project, hosted at the LF AI \& Data Foundation, provides a vendor-neutral venue for facilitating such an essential discussion.
+
+The ultimate purpose of a foundational framework is its ability to provide a clear path to solving problems that were previously intractable. The following conceptual blueprints are presented as demonstrations of the EPP's expressive power. They represent a class of dynamic, and context-aware systems that were previously infeasible to solve with classical methods of computational causality.
+
+The engineering of these systems would require a major, dedicated effort to build the necessary domain-specific tooling (e.g., relativistic physics simulators, validated models of cancer biology, or resilient decentralized communication protocols). However, these blueprints serve to illustrate how the EPP and its implementation in DeepCausality could provide the foundation upon which such tooling and dynamic systems could be built. 
 
 \newpage
