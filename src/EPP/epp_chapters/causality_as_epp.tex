@@ -655,28 +655,32 @@ The final CATE value, `$\tau(x)$`, is the directly computed difference between t
 \end{itemize}
 
 
-\subsubsection*{Representing Dynamic CATE in the EPP}
+\subsection{Comparison}
+\label{sec:epp_comparison}
 
-In practice, complex systems evolve over time. Taking a patient's hospital stay as an example, diagnostic establishes a ground truth, treatment is administered, and depending on the effectiveness of the treatment, further treatment may follow until the patient's health has improved up to the stage at which a discharge is warranted. Medical professionals experience this reality every day but classical CATE struggles to capture the temporal progression because it can only provides a single estimate for a frozen moment in time, a property inherited from the underlying RCM methodology.   
+The established methods of computational causality, particularly the frameworks developed by Pearl, Rubin, and their successors like Bareinboim, represent monumental intellectual achievements that form the foundation of the field. These methods provide a powerful and mathematically rigorous toolkit to infer a fixed causal structure (the DAG) and reason within it, even with missing data and latent confounders. At its core, the existing methods enable causal reasoning in a world of stable systems and static laws.
 
-The EPP, by contrast, provides a complete architecture for Dynamic CATE that captures temporal causal progression by leveraging the existing EPP primitives:
-
-\begin{itemize}
-\item \textbf{Dynamic CATE ($\tau(x, t)$) via Evolving Contexts:}
-A patient's state is not static; it evolves. In the EPP, this is modeled by a dynamic \texttt{Context} that is updated with new clinical data over time. The EPP can therefore compute the CATE not just once, but continuously as the patient's \texttt{Context} changes. The result is a dynamic CATE estimate, $\tau(x, t)$, that provides a longitudinal, real-time view of treatment efficacy, allowing for intervention strategies that are continuously adapted to a patient's changing condition.
-
-\item \textbf{Context-Aware Model Selection:}
-The most profound challenge in long-term treatment is that the patient's underlying causal mechanisms can change. For example, a patient may develop a known pathway for drug resistance. The EPP can handles this not with unpredictable emergence, but with verifiable, dynamic model switching. A clinical EPP model can contain a library of multiple, pre-built, and independently validated causal sub-models (e.g., `SubGraph\_NormalResponse`, `SubGraph\_ResistancePathwayA`). A high-level `TriageCausaloid` continuously monitors the patient's evolving `Context`. If it detects a specific biomarker that indicates the onset of drug resistance, it uses the EPP's Dynamic Dispatch (`RelayTo`) mechanism to seamlessly and deterministically route all future reasoning through the appropriate `SubGraph\_ResistancePathwayA`. 
-
-This provides the full benefit of an adaptive system by responding correctly to a fundamental change in the patient's state while remaining fully deterministic, auditable, and verifiable, as the set of all possible causal models is fixed and validated at design time. Also, in case the TriageCausaloid encounters an undecidable situation, it can trigger a predefined and validated safety protocol to inform medical experts of the detected anomaly and provide the full proceeding context. 
-
-\item \textbf{Certified Assurance:}
-In a dynamic system, safety is paramount. The EPP integrates estimation with control at an architectural level. Any treatment recommendation, whether from a single model or as the result of a dynamic switch between models, is merely a proposal. The \texttt{Causal State Machine (CSM)} provides an architectural guarantee that this proposal will be deterministically verified against a \texttt{Certified Assurance Enclave} of immutable clinical safety rules (e.g., dose limits, contraindications, FDA rules) before any action is proposed to ensures the entire system remains verifiably safe at all times.
-
-\end{itemize}
+The Effect Propagation Process (EPP) framework re-architects causality from first principles as a  inherently dynamic, process-oriented, spacetime independent functional dependency. It enables causal reasoning for dynamic systems in which the causal laws themselves can evolve. These systems exist, for instance in quantitive finance that consistently deals with dynamic regime shifts, and system biology where dynamic pathways commonly occur. Table \ref{tab:epp_comparison} provide a detailed comparison of the core philosophical and architectural differences between the existing methods of causality and the EPP:
 
 
-The EPP at this stage may have not causal structural learning, but it offers a different set of properties that makes it well suited to implement dynamical causality in domains that require dynamic adaptation, context aware model selection, and verifiable safety. By converting existing static CATE model to the EPP, first hand experience can be gained which then informs the exploration of gradual introduction of dynamic causality and thus offers a scalable pathway forward.  
+\begin{table}[h!]
+\caption{Comparison Between Classical Methods and the EPP}
+\label{tab:epp_comparison}
+\begin{tabular}{|l|l|l|}
+\hline
+Feature           & Classical Causality                        & Effect Propagation Process      
+\\ \hline
+Core Axiom        & Causal Markov Condition \& Faithfulness       & Functional Dependency          \\ \hline
+Causal Structure  & Static                                       & Dynamic \& Emergent            \\ \hline
+Role of Spacetime & Implicit Background                          & Explicit \& Computable Context. \\ \hline
+Representation    & Euclidean-centric                            & Natively Non-Euclidean         \\ \hline
+Fundamental Unit  & Variables 									 & The Causaloid                  \\ \hline
+Primary Goal      & Causal Discovery \& Inference                 & Dynamic Causal Modeling         \\ \hline
+\end{tabular}
+\end{table}
+
+
+From table \ref{tab:epp_comparison}, it is evident that classical methods operate within a defined static structure, whereas the EPP is designed for less certain, dynamic structures. Therefore, classical causality provides verifiability through determinism: given a static model, one can prove the outcome of an intervention. The EPP treats static models as a specialized case for which determinism still holds. However, for its dynamic modalities, the EPP trades the predictability of a fixed structure for greater expressive power, which necessitates a different method of verifiability. The EPP provides this by shifting the focus of verification from system states to system intent. It introduces a computable teleology, enabling the formal verification of a system's actions against a predefined purpose (telos) and ethical constraints (ethos). Thus, while a system's causal structure may emerge, its behavior can be proven to remain aligned with its core principles as a prerequisite for establishing verifiable safety in complex adaptive systems.
 
 
 \subsection{Discussion}
