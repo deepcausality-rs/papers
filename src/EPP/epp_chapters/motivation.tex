@@ -3,7 +3,7 @@
 
 In his seminal 1985 essay, "Programming as Theory Building," \cite{naur1985programming}, Turing Award winner Peter Naur argued that the act of creating a significant software system is not one of mere coding, but of building a deep, explanatory theory. The source code is just a formal notation; the real program is the mental model of how it works and, more importantly, why it was built that way. 
 This monograph is a deliberate attempt to use programming and theory building as a joint force to 
-apply the Naur principle synergetically where the implementation imposes new challenges on the theory 
+apply the Naur principle synergistically where the implementation imposes new challenges on the theory 
 and the theory guides a stronger, more principled implementation. 
 
 
@@ -15,18 +15,18 @@ The first problem applies equally to computational causality and deep learning; 
 
 \subsection{Non-linear Time}
 
-However, when generalizing space beyond Euclidean, then the second problem emerges: how to represent time? More profoundly, can we separate time and space from data? Out of this insight, the idea emerged to separate space, time, and data into a separate context usable by multiple models. As space and time were elevated from an implicit background into an explicit first-class context representation, then moving beyond correlation towards causality became the next obvious step. At this moment, a profound problem emerged: When space is non-Euclidean, and time might not be a simple linear progression, then how do we establish a causal relationship?
+However, when generalizing space beyond Euclidean, then the second problem emerges: how to represent time? More profoundly, can we separate time and space from data? Out of this insight, the idea emerged to separate space, time, and data into a separate context usable by multiple models. As space and time were elevated from an implicit background into an explicit first-class context representation, moving beyond correlation towards causality became the next obvious step. At this moment, a profound problem emerged: When space is non-Euclidean, and time might not be a simple linear progression, then how do we establish a causal relationship?
 As it turned out, establishing a clear causal relationship became problematic within the classical definition of causality, which fundamentally relies on a linear time-asymmetric ordering (cause preceding effect) within its assumed background spacetime.
 
-One might challenge the presumption of non-linear time progression, but in complex systems with dynamic feedback loops, it’s perfectly possible to see context structures that entail non-linear time regions. Non-linear time regions can occur when the background time is represented as a temporal hypergraph that holds multiple time resolutions simultaneously. The simultaneous presence of time units at different scales breaks the simple time-linear assumption (all time has the same unit, and moves therefore at the same rate) that computational causality tools commonly make.
+One might challenge the presumption of non-linear time progression, but in complex systems with dynamic feedback loops, it is perfectly possible to see context structures that entail non-linear time regions. Non-linear time regions can occur when the background time is represented as a temporal hypergraph that holds multiple time resolutions simultaneously. The simultaneous presence of time units at different scales breaks the simple time-linear assumption (all time has the same unit, and therefore moves at the same rate) that computational causality tools commonly make.
 
-Furthermore, in a temporal hypergraph, the unit of time is scale dependent which means in order to compare temporal values one must consider the scale to make a valid comparison between equally scaled values (hour X compared to hour Y). Less obvious, a temporal hypergraph, by design, holds all past and present temporal values simultaneously within its structure. This co-existence of multiple temporal points simplifies non-trivial temporal arithmetic over hetero-scaled time units, yet it imposes a vexing problem: How do you know if a time value in a node of the graph is current or past?
+Furthermore, in a temporal hypergraph, the unit of time is scale-dependent, which means in order to compare temporal values, one must consider the scale to make a valid comparison between equally scaled values (hour X compared to hour Y). Less obvious, a temporal hypergraph, by design, holds all past and present temporal values simultaneously within its structure. This co-existence of multiple temporal points simplifies non-trivial temporal arithmetic over hetero-scaled time units, yet it imposes a vexing problem: How do you know if a time value in a node of the graph is current or past?
 
 The problem is non-trivial because, as time progresses, the engulfing context engine continually generates the non-Euclidean temporal hypergraph representation with the implication that, at one lookup, the value of a temporal node is current, but at the next one, it might be past; however, the exact temporal distance at which a “present” value becomes “past” depends on the node's time scale. A node holding a temporal value “hour” will be valid for 60 minutes; that means a lookup every ten minutes will yield the current hour 6 times, but handling the seventh lookup leads to a fundamental design decision that illustrates the implied complexity.
 
 A “dynamic-position” design means, when a new hour starts, a new node will be added; therefore, the seventh lookup returns a past value. By implication, the index of the new node needs to be looked up to retrieve the value of the new current hour. Therefore, a “dynamic-position” design requires a dynamic index to locate current values.
 
-A “static-position” design means, when a new hour starts, the previous current value will be overwritten with the understanding that the seventh lookup returns the new current value. By implication, the index of the current value always remains static. Therefore, a “static-position” design requires a fixed index, i.e., a lookup table to locate current values. Use cases exist for both scenarios and in practice, temporal hypergraphs use a mixture of static and dynamic positioning to handle different types of relative values, e.g., current day, last year, next hour, and similar..
+A “static-position” design means, when a new hour starts, the previous current value will be overwritten with the understanding that the seventh lookup returns the new current value. By implication, the index of the current value always remains static. Therefore, a “static-position” design requires a fixed index, i.e., a lookup table to locate current values. Use cases exist for both scenarios and in practice, temporal hypergraphs use a mixture of static and dynamic positioning to handle different types of relative values, e.g., current day, last year, next hour, and similar.
 
 Exacerbating the problem further, feedback loops across different time scales using different relative values may dynamically modify the temporal hypergraph itself to capture non-regular observations or to add estimations at future time values that have not yet occurred.   
 At this point, it becomes abundantly clear that the assumption of a simple, unidirectional linear temporal order required for establishing cause-and-effect becomes untenable.
@@ -36,11 +36,11 @@ At the same time, causal relations remain valid in those non-linear regions. Add
 
 \subsection{No a-priori causal structures}
 
-When modeling dynamic feedback loops across different time scales, the third problem emerges eventually: Not all causal structures are known upfront. There are cases where the causal structure emerges from the prevalent context predominantly in response to a change in externalities. For example, in the financial industry, a shifting volume imbalance indicates an emerging regime change. The exact cause for the shifting volume imbalance can be attributed to externalities such as breaking news. However, in absence of internal references, the subsequent  causal structure emerges as part of the unfolding regime change. There is no possible way to know the new structure upfront therefore, it cannot reliably be modeled ahead of time. Likewise, in correlation-based methods, a similar phenomenon unfolds because, in absence of internal references, the deep learning model cannot predict correctly anymore because data during an emerging regime change fall outside its training data distribution. The mechanism is different, but the outcome is the same: that previously reliable models crater in novel situations.
+When modeling dynamic feedback loops across different time scales, the third problem emerges eventually: Not all causal structures are known upfront. There are cases where the causal structure emerges from the prevalent context predominantly in response to a change in externalities. For example, in the financial industry, a shifting volume imbalance indicates an emerging regime change. The exact cause for the shifting volume imbalance can be attributed to externalities such as breaking news. However, in the absence of internal references, the subsequent  causal structure emerges as part of the unfolding regime change. There is no possible way to know the new structure upfront therefore, it cannot reliably be modeled ahead of time. Likewise, in correlation-based methods, a similar phenomenon unfolds because, in the absence of internal references, the deep learning model cannot predict correctly anymore because data during an emerging regime change falls outside its training data distribution. The mechanism is different, but the outcome is the same: that previously reliable models crater in novel situations.
 
 The previously identified limitation of temporal order directly applies to dynamic regime changes because, if the new causal structure has not yet emerged, how can we know its temporal structure beforehand? In short, we cannot know reliably anything about emerging causality up to the moment it emerges.
 
-These three problems, non-Euclidean representation, non-linear temporal structures, and emerging causality deeply interrelate with each other, thus defy overly simplistic solutions. For example, advanced graph neural networks work on non-Euclidean data representation, but fail on non-linear temporal structures. One might be tempted to build non-linear-time graph neural networks, but this does not address the problem of non-Euclidean data representation and emerging causality. There is research to combine methods from computational causality with deep learning, but these approaches are focused on non-Euclidean representation without integrating the challenges of non-linear temporality and emergent causal logic.
+These three problems, non-Euclidean representation, non-linear temporal structures, and emerging causality deeply interrelate with each other and thus defy overly simplistic solutions. For example, advanced graph neural networks work on non-Euclidean data representation, but fail on non-linear temporal structures. One might be tempted to build non-linear-time graph neural networks, but this does not address the problem of non-Euclidean data representation and emerging causality. There is research to combine methods from computational causality with deep learning, but these approaches are focused on non-Euclidean representation without integrating the challenges of non-linear temporality and emergent causal logic.
 
 \subsection{Boundaries of Classical Causal Models}
 
@@ -50,7 +50,7 @@ The established methods of computational causality, particularly the frameworks 
 
 \subsubsection*{Granger Causality}
 
-Granger Causality\cite{granger1969causal} is used for time-series data where past values of one time-series are used to predict values of another time-series. In a strict sense, Granger Causality tests if one variable (say X) predicts another variable (Y) through a series of t-tests and F-tests on lagged values of variable X.
+Granger Causality \cite{granger1969causal} is used for time-series data where past values of one time-series are used to predict values of another time series. In a strict sense, Granger Causality tests if one variable (say X) predicts another variable (Y) through a series of t-tests and F-tests on lagged values of variable X.
 
 \textbf{Assumptions:}
 
@@ -59,7 +59,7 @@ Granger causality assumes a stable causal structure and a linear, uniform time r
 \textbf{Implications:}
 
 \begin{itemize}
-    \item \textbf{Non-Linear Time:} Granger causality cannot handle non-linear time representation
+    \item \textbf{Non-Linear Time:} Granger causality cannot handle non-linear time representations.
     \item \textbf{Non-Euclidean Representation:} Granger causality operates on time-series values within a Euclidean representation. It cannot be applied to a non-Euclidean representation.
     \item \textbf{Emergent Causality:} Because of the assumption of a stable causal structure, Granger causality cannot operate on emergent causal structures.
 \end{itemize}
@@ -67,7 +67,7 @@ Granger causality assumes a stable causal structure and a linear, uniform time r
 
 \subsubsection*{Pearl's Causal DAGs and Structural Causal Models (SCMs)}
 
-Judea Pearl pioneered the formalization of causality that underpins the majority of contemporary methods of computational causality. The framework of Structural Causal Models\cite{pearl2000causality} (SCMs) rests upon the assumptions of Directed Acyclic Graphs (DAGs).
+Judea Pearl pioneered the formalization of causality that underpins the majority of contemporary methods of computational causality. The framework of Structural Causal Models \cite{pearl2000causality} (SCMs) rests upon the assumptions of Directed Acyclic Graphs (DAGs).
 
 \textbf{Assumptions:}
 
@@ -84,15 +84,15 @@ The framework assumes:
 \textbf{Implications:}
 
 \begin{itemize}
-    \item \textbf{Non-Linear Time:} The acyclical assumption explicitly prohibits feedback loops and the fixed background spacetime assumption prevents any form of non-linear time.
-    \item \textbf{Non-Euclidean Representation:} The DAG structure could potentially allow for non-Euclidean representation, but existing tooling assumes Euclidean structures and thus does not allow non-Euclidean representation
+    \item \textbf{Non-Linear Time:} The acyclical assumption explicitly prohibits feedback loops, and the fixed background spacetime assumption prevents any form of non-linear time.
+    \item \textbf{Non-Euclidean Representation:} The DAG structure could potentially allow for non-Euclidean representation, but existing tooling assumes Euclidean structures and thus does not allow non-Euclidean representation.
     \item \textbf{Emergent Causality:} The assumption of static causal structure prevents any handling of causal emergence.
 \end{itemize}
 
 
-\subsubsection*{Rubin causal model (RCM)}
+\subsubsection*{Rubin Causal Model (RCM)}
 
-The Rubin causal model\cite{rubin2005causal} (RCM) is a statistical framework for estimating causal effects by comparing potential outcomes under different treatment assignments.
+The Rubin Causal Model \cite{rubin2005causal} (RCM) is a statistical framework for estimating causal effects by comparing potential outcomes under different treatment assignments.
 
 \textbf{Assumptions:}
 
@@ -108,7 +108,7 @@ RCM assumes stable units, no interference between units (SUTVA), and that treatm
 
 \subsubsection*{Dynamic Bayesian Networks}
 
-Dynamic Bayesian Networks\cite{dagum1992dynamic} (DBN) extend Bayesian Networks to model temporal processes by defining transition probabilities between states.
+Dynamic Bayesian Networks \cite{dagum1992dynamic} (DBN) extend Bayesian Networks to model temporal processes by defining transition probabilities between states.
 
 \textbf{Assumptions:}
 
@@ -118,9 +118,9 @@ Dynamic Bayesian Networks, similar to Granger causality, require a linear and un
 \textbf{Implications:}
 
 \begin{itemize}
-    \item \textbf{Non-Linear Time:} DBN cannot handle non-linear time.
+    \item \textbf{Non-Linear Time:} DBNs cannot handle non-linear time.
     \item \textbf{Non-Euclidean Representation:} DBNs reason over probabilities, not non-Euclidean space itself.
-    \item \textbf{Emergent Causality:}  DBNs assume a static causal structure and thus cannot handle emergent causality
+    \item \textbf{Emergent Causality:}  DBNs assume a static causal structure and thus cannot handle emergent causality.
 \end{itemize}
 
 The analysis of classical models reveals a consistent set of boundaries, built upon assumptions of a fixed, linear spacetime and a static causal structure. While these assumptions enable powerful reasoning within their defined domains, they become untenable when confronted with a class of problems of increasing importance in safety-critical and complex systems. 
@@ -128,7 +128,7 @@ The analysis of classical models reveals a consistent set of boundaries, built u
 \subsection{Beyond Classical Causal Models}
 
 The need for the Effect Propagation Process arises directly from the imperative to model these systems, which are characterized by three deeply interrelated challenges: non-Euclidean representation, non-linear temporality, and dynamic causal emergence. The most critical of these is the challenge of dynamic causal emergence, where the causal laws of a system are themselves subject to change. This is not a theoretical abstraction but a practical reality in numerous domains. 
-In financial markets, for instance, the causal relationships between assets are relatively stable during normal conditions but undergo a fundamental "regime shift" following a black-swan event or a major policy change. The old causal graph becomes obsolete, and a new one emerges in response to the new market dynamics. 
+In financial markets, for instance, the causal relationships between assets are relatively stable during normal conditions but undergo a fundamental "regime shift" following a black swan event or a major policy change. The old causal graph becomes obsolete, and a new one emerges in response to the new market dynamics. 
 Similarly, in climate science, ecological systems can cross "tipping points" where gradual changes trigger new, 
 powerful feedback loops, fundamentally altering the causal structure of the climate model. 
 In such cases, a framework is required that does not assume a-priori knowledge of the causal structure, 
@@ -149,8 +149,9 @@ Likewise, a global supply chain is not a grid but a dynamic network of dependenc
 Reducing these relational structures to a Euclidean vector space to fit classical models often destroys the very information needed for accurate causal inference. 
 
 These challenges, emergent causality, complex temporality, and non-Euclidean data, are not independent issues to be solved in isolation. 
-They are deeply inter related and jointly point to a single, underlying problem: modeling reality in complex, adaptive, and dynamic systems. 
-This requires a fundamental rethinking of causality itself, moving away from a static, linear interpretation and towards a dynamic, context-aware, and dynamic process. 
+They are deeply interrelated and jointly point to a single, underlying problem: modeling reality in complex, adaptive, and dynamic systems. 
+This requires a fundamental rethinking of causality itself, moving away from a static, linear interpretation and towards a dynamic, context-aware, and dynamic process.
 
 \newpage
+
  
