@@ -1,39 +1,38 @@
-
 \subsection{UltraGraph}
 \label{sec:implementation_ultragraph}
 
-The importance of hypergraphs in the EPP lead to the decision to implement a hypergrah in a dedicated Rust crate called UltraGraph. Initially, UltraGraph wrapped the MatrixGraph implementation of the 
+The importance of hypergraphs in the EPP led to the decision to implement a hypergraph in a dedicated Rust crate called UltraGraph. Initially, UltraGraph wrapped the MatrixGraph implementation of the 
 Petgraph\footnote{\url{https://docs.rs/petgraph/latest/petgraph}} crate. This was a deliberate decision
 to speed up the bootstrapping of the DeepCausality project while preserving the option to 
-replace the implementation when the need arises. And indeed, as the requirements  of the
-DeepCausality project keep advancing with the introduction of emergence, a new hypergraph implementation became necessary. The UltraGraph v0.8 release adds a ground-up rewrite of  UltraGraph inspired the NWHypergraph (NWHy)\cite{liu2022nwhy} architecture that was further optimized for Rust's memory model. 
+replace the implementation when the need arose. And indeed, as the requirements  of the
+DeepCausality project kept advancing with the introduction of emergence, a new hypergraph implementation became necessary. The UltraGraph v0.8 release adds a ground-up rewrite of  UltraGraph inspired by the NWHypergraph (NWHy)\cite{liu2022nwhy} architecture that was further optimized for Rust's memory model. 
   
 The key elements of the new UltraGraph implementation are:
   
 \begin{itemize}
-	\item The introduction of a dual-state graph lifecycle.
-	\item The introduction of a SoA CsrAdjacency type
+	\item The introduction of a dual-state graph life-cycle.
+	\item The introduction of a SoA CsrAdjacency type.
 	\item The separation of forward and backward CsrAdjacency.
 \end{itemize}
 
 \subsubsection{Dual-state graph life-cycle}
 
 
-UltraGraph v0.8 introduces a dual-state architecture. This recognize that graph-based systems that implement the EPP have two distinct phases: a dynamic "Evolve" phase, where the structure is built and modified, and a stable "Analyze" phase, where high-speed queries are essential. 
+UltraGraph v0.8 introduces a dual-state architecture. This recognizes that graph-based systems that implement the EPP have two distinct phases: a dynamic "Evolve" phase, where the structure is built and modified, and a stable "Analyze" phase, where high-speed queries are essential. 
 
 \textbf{The Dynamic Graph State:} 
 
-This is the default state for every new graph. It's an adjacency-list-based structure
+This is the default state for every new graph. It is an adjacency-list-based structure
 optimized for flexibility. Adding nodes and edges is a cheap O(1) operation, perfect for systems where the graph structure emerges dynamically over time.
 
 \textbf{The Static Graph State:}
 
-When the graph is ready, a on time  call to \textit{.freeze()} transforms the graph into a hyper-optimized, immutable Compressed Sparse Row (CSR) format designed for peak performance. All algorithms check if a graph is in a frozen state therefore it is impossible by design to run any graph algorithm on a dynamic graph. 
+When the graph is ready, a one-time  call to \textit{.freeze()} transforms the graph into a hyper-optimized, immutable Compressed Sparse Row (CSR) format designed for peak performance. All algorithms check if a graph is in a frozen state; therefore, it is impossible by design to run any graph algorithm on a dynamic graph. 
 
 \textbf{The graph life-cycle:}
 
-A Graph begins in a flexible DynamicGraph state, optimized for fast, O(1) mutations as the structure evolves. When the state has been finalized, and causal reasoning ca begin, a single \textit{.freeze()} call transforms the graph into a hyper-optimized, immutable CsmGraph based on a cache-friendly Struct of Arrays (SoA) memory layout. This step is the key eliminating cache misses and unlocking near-linear scaling. 
-If the graph needs to evolve further, simply cal \textit{.unfreeze().} There is a memory trade-off in the state transition because, in each state, the memory usage is roughly $(e+v)$ whereas during a state transition, the memory usage temporarily peaks at $(e+v)^{2}$ and that warrants carefully consideration when a graph grows large i.e. beyond 1 billion nodes. 
+A Graph begins in a flexible DynamicGraph state, optimized for fast, O(1) mutations as the structure evolves. When the state has been finalized, and causal reasoning can begin, a single \textit{.freeze()} call transforms the graph into a hyper-optimized, immutable CsmGraph based on a cache-friendly Struct of Arrays (SoA) memory layout. This step is the key to eliminating cache misses and unlocking near-linear scaling. 
+If the graph needs to evolve further, simply call \textit{.unfreeze()}. There is a memory trade-off in the state transition because, in each state, the memory usage is roughly $(e+v)$ whereas during a state transition, the memory usage temporarily peaks at $(e+v)^{2}$ and that warrants careful consideration when a graph grows large, i.e., beyond 1 billion nodes. 
 
 
 \subsubsection{SoA CsrAdjacency Type}
@@ -59,19 +58,19 @@ The CsrAdjacency layout divides each component of the adjacency data (offsets, t
 \item weights: Edge weights (optional).
 \end{itemize}
 
-The struct of Arrays design of the CsrAdjacency has two advantages:
+The Struct of Arrays design of the CsrAdjacency has two advantages:
 
 
 \textbf{Better cache utilization:} When performing traversal or shortest path algorithms, the CPU can stream just the fields it needs (often offsets and targets) without pulling in unnecessary weight data and thus avoiding cache pollution and improving CPU data prefecht.
 
 \textbf{SIMD-friendliness:} SoA layouts enable vectorized processing (e.g., with AVX) far more easily 
-than Array of Structs (AoS). Also, a SOA layout is easier for the compiler to optimize and thus unlock
-meaningful performance gains without the need of complex optimization. 
+than Array of Structs (AoS). Also, a SoA layout is easier for the compiler to optimize and thus unlock
+meaningful performance gains without the need for complex optimization. 
 
 
-\subsubsection{Separation of Forward and Backward CsrAdjacency.}
+\subsubsection{Separation of Forward and Backward CsrAdjacency}
 
-Moreover, UltraGraph uses two separate CsrAdjacency instances: one for successor or outbound edges and another one for backward or inbound edges. This dual-CSR setup is more explicit and efficient than mixing directions within a single row layout because it reduces CPU cache pollution and thereby directly supports fast and efficient algorithm implementations. UltraGraph deliberately traded a bit more
+Moreover, UltraGraph uses two separate CsrAdjacency instances: one for successor or outbound edges and another for backward or inbound edges. This dual-CSR setup is more explicit and efficient than mixing directions within a single row layout because it reduces CPU cache pollution and thereby directly supports fast and efficient algorithm implementations. UltraGraph deliberately traded a bit more
 memory for better algorithm performance, as shown in the benchmarks.
 
 
@@ -94,22 +93,22 @@ where
 \end{lstlisting}
 
 
-The backward node list is particularly useful in causality-based inference algorithms, where backtracking is often required, and is thus particularly well suited for DeepCausality. Memory usage remains low due to the combined effects of the Struct of Arrays layout and the clean separation between forward and backward adjacency.This design leads to a predictable, flat memory layout with minimal overhead:
+The backward node list is particularly useful in causality-based inference algorithms, where backtracking is often required, and is thus particularly well suited for DeepCausality. Memory usage remains low due to the combined effects of the Struct of Arrays layout and the clean separation between forward and backward adjacency. This design leads to a predictable, flat memory layout with minimal overhead:
 
 \begin{itemize}
-	\item No per-node allocation overhead
-	\item No padding, no vtables, no boxed pointers
-	\item No HashMaps, linked lists, or other complex types
-	\item No indexing needed due to simple offset\
+	\item No per-node allocation overhead.
+	\item No padding, no vtables, no boxed pointers.
+	\item No HashMaps, linked lists, or other complex types.
+	\item No indexing needed due to simple offset.
 	\item When a node has no inbound or outbound nodes or weights, there is zero allocation, thus saving memory.
 \end{itemize}
 
 
-Memory fragmentation is largely prevented because of the freeze/unfreeze operation in the graph evolution lifecycle. Calling \textit{.freeze()} compacts the structure, which removes any prior allocation gaps from the dynamic phase and thus results in a clean, continuous memory structure.
+Memory fragmentation is largely prevented because of the freeze/unfreeze operation in the graph evolution life-cycle. Calling \textit{.freeze()} compacts the structure, which removes any prior allocation gaps from the dynamic phase and thus results in a clean, continuous memory structure.
 
 \subsubsection{Discussion}
 
-This new implementation of UltraGraph based on its innovative two stage graph life-cycle and it CPU cache friendly design enables causal graph reasoning at scale. While it is unlikely in practice to see causal graphs exceeding a million nodes, a context may grow large. UltraGraph confidently handles graphs up to a 100 million nodes on consumer grade hardware and would only need a specialized high memory server when the graph size is expected to exceed a billion node. At this scale, the underlying CSR implementation will most likely benefit from contemporary reram-based\cite{zheng2023phgraph} hardware accelerators specifically designed to accelerate hypergraphs with sparse representation. 
-Furthermore, the two state graph life-cycle directly supports the implementation of emergence in DeepCausality because it cleanly separates the mutation from the analysis phase and thus enables the four stage process outlined in the EPP Ontology.  
+This new implementation of UltraGraph based on its innovative two-stage graph life-cycle and its CPU-cache-friendly design enables causal graph reasoning at scale. While it is unlikely in practice to see causal graphs exceeding a million nodes, a context may grow large. UltraGraph confidently handles graphs up to a 100 million nodes on consumer-grade hardware and would only need a specialized high-memory server when the graph size is expected to exceed a billion nodes. At this scale, the underlying CSR implementation will most likely benefit from contemporary ReRAM-based\cite{zheng2023phgraph} hardware accelerators specifically designed to accelerate hypergraphs with sparse representation. 
+Furthermore, the two-stage graph life-cycle directly supports the implementation of emergence in DeepCausality because it cleanly separates the mutation from the analysis phase and thus enables the four-stage process outlined in the EPP Ontology.  
 
 \newpage
