@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: /Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP_Epistemology/.texpadtmp/epp_epistemology.aux
+The style file: unsrt.bst
+Database file #1: ../../epp_bib/references.bib
+You've used 5 entries,
+            1791 wiz_defined-function locations,
+            477 strings with 4546 characters,
+and the built_in function-call counts, 1013 in all, are:
+= -- 96
+> -- 31
+< -- 1
++ -- 13
+- -- 8
+* -- 45
+:= -- 157
+add.period$ -- 18
+call.type$ -- 5
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 48
+empty$ -- 113
+format.name$ -- 8
+if$ -- 237
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 4
+newline$ -- 30
+num.names$ -- 5
+pop$ -- 26
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 21
+stack$ -- 0
+substring$ -- 43
+swap$ -- 13
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 10
+width$ -- 6
+write$ -- 59

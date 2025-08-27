@@ -87,14 +87,28 @@ The Effect Ethos then takes this active set of Teloids and applies the DDIC's in
 
 \textbf{Conflict Resolution via Defeasibility}
 
-As the Effect Ethos infers new beliefs, it simultaneously checks the "defeater" conditions defined in the DDIC's axioms. If a potential inference is contradicted by a more recent (Lex Posterior) or more specific (Lex Specialis) norm from the active set, that inference is blocked ("defeated"). This step systematically eliminates contradictions, producing a final, coherent, and conflict-free set of normative beliefs.
+As the Effect Ethos infers new beliefs, it simultaneously checks the "defeater" conditions defined in the DDIC's axioms. The DDIC fomalizes two mechanisms for norm conflicts resolution.  However, the DDIC  acknowledges that Lex Superior, the rule with the highest priority wins, as a key strategy for norm conflict resolution, but does not formalizes it in its calculus most likely because a norm's priority is an external property that, unlike the other two modalities, cannot be derived from the logical content of the norms themselves. The EPP, does include Lex Superior for its practicality to simplify a normative order and give more design flexibility. In total, the EPP supports three modalities for normative conflict resolution:  
 
-\textbf{Verdict Finding via Modal Consensus}
+\textbf{Lex Posterior (The More Recent Rule Wins):}  This principle is based on the time a norm was stated. If two norms conflict, the one with the later timestamp is given precedence and defeats the earlier one\cite{olson2024DDIC}.
 
-The Effect Ethos examines this final consistent belief set seeks a verdict via a modal consensus. If the proposed Causal Action is present with a single modal of Impermissible, the Effect Ethos returns a Forbidden verdict, providing the specific Teloid(s) that led to the prohibition as a justification. In practice, it is expected that the set contains a mixture of modalities i.e., some are obligatory and must be adhered to, some might be impermissible, and others might be optional. The first consensus rule is that impermissible overrides all other modalities. The second  consensus rule is that  obligatory overrides optional. And the third consensus rule is that optional supports either of the other ones when its associated cost warrants it. In case the final consensus reaches an optional conclusion, the total  associated cost must fall below a defined threshold to convert the verdict into permissible, otherwise it will be designated as impermissible due to unjustifiable associated cost. In case the final verdict reaches an obligatory consensus, it then provides the specific Teloid(s) as a justification for the permission.
+\textbf{Lex Specialis (The More Specific Rule Wins):} This principle states that a more specific norm should override a more general one. The  DDIC establishes that in many cases, what appears to be a conflict resolved by Lex Specialis is actually just a natural consequence of deontic inheritance, where a more specific rule adds an exception or refinement to a general one without creating a true logical conflict\cite{olson2024DDIC}.  
 
-The Effect Ethos makes ethics a first-class component of the EPP that is rooted in the formal DDIC calculus. As a result, the reasons for any decision are fully transparent, traceable and auditable. Thus, the Effect Ethos  transforms abstract ethical principles into a concrete, computable, and reliable mechanism for guiding a system's behavior in a dynamic context.
+\textbf{Lex Superior (The Highest Priority Rule Wins): } This principle is based on the priority property of the norm with the and establishes that the rule with the highest priority is given precedence and defeats the rule with the lower priority.  
 
+The conflict resolution step uses these three principles to systematically eliminates contradictions and to producing a final, coherent, and conflict-free set of normative beliefs.
+
+\textbf{Verdict Finding via Consensus}
+
+The Effect Ethos examines this final set of norms and seeks a verdict via a  consensus. While the DDIC proves that, through defeasible inheritance, it can resolve the logical contradictions to yield a conflict-free set of norms, it does not have a mechanism of reaching consensus among all remaining norms. The EPP addresses this by establishing an order based  mechanism to reach a consensus based verdict. The uses a clear precedence $(Impermissible > Obligatory > Optional)$ to handle the output of a the previous deontic conflict resolution. 
+
+If the proposed Causal Action is present with a single norm that yields impermissible, the Effect Ethos returns a Forbidden verdict, providing the specific Teloid(s) that led to the prohibition as a justification. In practice, it is expected that the set contains a mixture of modalities i.e., some are obligatory and must be adhered to, some might be impermissible, and others might be optional. Thus the consensus rules are as following:
+
+The first consensus rule is that impermissible overrides all other modalities. 
+The second  consensus rule is that  obligatory overrides optional. 
+And the third consensus rule is that optional supports either of the other ones when its associated cost warrants it. In case the final consensus reaches an optional conclusion, the total  associated cost must fall below a defined threshold to convert the verdict into permissible, otherwise it will be designated as impermissible due to unjustifiable associated cost. In case the final verdict reaches an obligatory consensus, it then provides the specific Teloid(s) as a justification for the permission.
+
+The Effect Ethos makes ethics a first-class component of the EPP that is rooted in the formal DDIC calculus. As a result, the reasons for any decision are fully transparent, traceable and auditable. 
+\newpage
 
 \subsection{Discussion}
 
