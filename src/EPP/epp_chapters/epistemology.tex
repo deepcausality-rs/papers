@@ -3,25 +3,29 @@
 
 Epistemological approaches to acquiring knowledge in research fall into three categories: positivism, interpretivism, and pragmatism. Positivism concerns itself with observable facts based on the scientific method and thus seeks to achieve generalizability and objectivity. Interpretivism maintains that our knowledge depends greatly on our interpretation of observations of human actions, experiences, and environments, thus making interpretive research more subjective. Pragmatism focuses on practical effects or solutions to address problems that are suitable for existing situations or conditions. The epistemology of pragmatism is that knowledge is a self-correcting process based on experience; thus, it must be evaluated and revised in view of subsequent experience.
 
+\subsection{Overview}
+
 The presented EPP epistemology changes depending on whether the context is static or dynamic, and, equally profound, whether the EPP is static, dynamic, or emergent.
 
-\textbf{Ontology of Knowledge Sources}
+\subsubsection{Ontology of Knowledge Sources}
 
 In the EPP, the context is designed as the source of factual knowledge. For context, facts may remain invariant (e.g., the value of Pi) or receive continuous updates. The designation whether a context is static or dynamic refers to its structure, not to the factual data in it. Furthermore, a context might be shared between two or more defined EPPs and an EPP may use one or more context(s), thus simplifying modeling complex domains.
 The EPP encodes each causal relationship in a designated Causaloid. The Causaloid encodes the causal rule, whereas the context encodes supporting data required to apply the rules. The Causaloid may use external data or data from the context to apply its rule.
 For example, a context may encode a continuous signal feed from a LIDAR sensor and the Causaloid encodes a rule to infer whether an obstacle has been detected. In this case, the context provides all data. In another scenario, a context may encode several known defect patterns, a Causaloid tests incoming image data for the defect data from the context, but uses incoming real-time image feeds from a manufacturing monitoring system to determine if any of the produced items contain known defects. In this case, the Causaloid relies on context and external data. Therefore, the Effect Propagation Process emits a flexible knowledge ontology by relying on one or more contexts and potentially multiple external data sources.
 
-\textbf{Knowledge Derivation}
+\subsubsection{Knowledge Derivation}
 
 The EPP derives knowledge by applying data to the Causaloid that models that causal relationship to determine whether the causal relation holds true within the applicable context. Consequently, multi-stage reasoning maps directly to the topology of the EPP itself because each effect from a Causaloid propagates further through the EPP topology, which is the structure of the EPP manifested as all connected Causaloids.
 From this perspective, a “line of reasoning” literally becomes a pathway through the EPP topology. Through the topological approach of knowledge derivation, the Effect Propagation Process provides a flexible way to model complex, contextual, multi-causal domains.
 
-\textbf{Justification of Derived Knowledge}
+\subsubsection{Justification of Derived Knowledge}
 
 Discerning the truthfulness of knowledge is one key element of epistemology. The EPP with its explicit context, explicit causal function (Causaloid), and explicit support for external data provides all prerequisites to support the full explainability of each inference. Furthermore, in the case of multi-stage reasoning, the sequence of applied Causaloids establishes the order of explainability.
 Fundamentally, the EPP leads to explainable causal inference because of complete data, context, and inference function when assuming a static EPP. For a dynamic or emergent EPP, explainability might not be guaranteed for all potential state transitions. An implementation of the EPP has to specify the exact details to support explainable inference and where to establish sensible constraints on explainability.
 
 The gravitas of the EPP epistemology roots in its flexible, contextualized ontology, a powerful knowledge derivation mechanism, and its intrinsic support of explainable causal inference. The epistemology varies depending on whether the EPP process is static, dynamic, or emergent.
+
+\newpage
 
 \subsection{Static EPP Epistemology}
 
@@ -102,13 +106,6 @@ This dynamic interplay, where the EPP generates both its context and the Causalo
 
 The problem of modeling systems with no a priori causal structures motivates a different view of causality that sets the stage for tackling  causal emergence. The Effect Propagation Process framework's detachment from fixed spacetime and its focus on a generative function establish the foundation for causal emergence. Static causal discovery, for example, Pearl’s DAGs framework, assumes a fixed causal structure and thus cannot handle causal emergence. Granger causality assumes that time-dependent variables change, but the causal structure remains fixed and therefore cannot handle causal emergence either. This argument holds true for any dynamic system with fixed causality because of the inability of the underlying methodology to handle spacetime-agnostic causal structure. The Effect Propagation Process instead proposes that the causal relationships themselves emerge, change, and may even disappear. The implications of this approach lead to a fundamental reassessment of how to operationalize causality:
 
-\textbf{Causal discovery}
-
-Instead of trying to find a fixed causal structure, EPP models how causal relationships emerge from underlying (dynamic) processes. The existing work on causal discovery remains valid. The EPP, however, takes the idea one step further by incorporating a dynamic generative process. Further research will verify the utility of this perspective, but at least it expands the notion of discovering a static structure to describing a dynamic process.
-
-\textbf{Causal transferability}
-
-Instead of trying to capture the exact conditions under which a causal relationship holds true, the EPP specifies all presumptions as a generative function, which makes it fundamentally testable and thus transferability can be determined.
 
 \textbf{Causal dynamics}
 
@@ -120,5 +117,18 @@ The inspiration from causality in quantum gravity was carefully chosen because o
     \item \textbf{Hardy's Causaloids are necessary:} Because the EPP itself is spacetime-agnostic, a different representation of causal relationships that is also spacetime-agnostic becomes necessary and the causaloid proposed by Lucian Hardy has been deemed the best fit.
     \item \textbf{Centrality of the generative function:} Because the EPP can represent causal relations as either static, dynamic, or emergent, the generative function takes on a central role to express those causal relations. Furthermore, a generative function may generate the engulfing context as a specific fabric for the effect propagation process.
 \end{itemize}
+
+\newpage
+
+\subsection{Discussion}
+
+The epistemology of the Effect Propagation Process is a direct consequence of its architectural design. By externalizing the environment into a computable Context and defining causality as a composable Causaloid, the EPP creates a spectrum of epistemic possibilities. Each step along this spectrum, from the static to the emergent, represents a deliberate trade-off between verifiability and adaptability, fundamentally altering how knowledge is derived, justified, and what it means for a belief to be "true."
+
+In a Static EPP, the epistemology is one of positivism. Knowledge is a mirror of a pre-defined reality. With a fixed causal model and a static Context, the system's reasoning is deterministic and its conclusions are verifiable against a stable ground truth. This modality provides the strongest guarantees of correctness, making it suitable for well-understood, closed-world problems. As we introduce dynamism, first in the Context and then in the causal structure itself, the epistemic ground begins to shift.
+
+In a Dynamic EPP, where the model co-evolves with its context, the epistemology becomes one of coherence. Truth is no longer a simple correspondence to a fixed, external state, but the internal consistency of the causal model with an ever-changing stream of information. A belief is justified if it remains part of a coherent causal explanation of the world. This introduces an element of interpretivism, as the "truth" of the system's knowledge depends on its continuously evolving conceptual framework.
+
+Finally, in an Emergent EPP, where the rules of evolution are themselves subject to change, the epistemology becomes one of  pragmatism. When the system can generate novel causal structures not foreseeable by its designers, the classical notion of an objective, a priori truth becomes untenable. Knowledge is justified by its functional value: a belief is "true" if it leads to a successful outcome in navigating the system's complex environment. This shift to pragmatic efficacy, where truth is system-relative and context-dependent, is the necessary epistemic price for the EPP's ultimate adaptability. However, if we can no longer guarantee that a system's actions are based on what is verifiably true, we must instead ensure that the system's action are aligned with what is verifiably intended. This necessary shift from epistemology to teleology is the subject of the next chapter.
+
 
 \newpage
