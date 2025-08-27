@@ -7,7 +7,7 @@
 # Papers
 Papers, articles, and other content written by the DeepCausality team.
 All articles are formatted in [LaTex](https://www.latex-project.org) with the source code available in the [src folder](src). 
-The DeepCasuality project uses [texifier](https://www.texifier.com/mac) for live type-setting of all documents shared in this repository. 
+The DeepCasuality project uses [texifier](https://www.texifier.com/mac) for type-setting of all documents shared in this repository. 
 
 ## 2025
 
@@ -78,6 +78,20 @@ Citation:
   month        = {July},
   howpublished = {\url{https://github.com/deepcausality-rs/papers}},
   note         = {Accessed: July 2025}
+}
+```
+
+### [The Teleology of the Effect Propagation Process](/teleology_effect_propagation_process/epp_teleology.pdf)
+
+Citation:
+```latex
+@misc{Hansen2025EPP_Teleology,
+  author       = {Hansen, Marvin},
+  title        = {The Teleology of the Effect Propagation Process},
+  year         = {2025},
+  month        = {August},
+  howpublished = {\url{https://github.com/deepcausality-rs/papers}},
+  note         = {Accessed: August 2025}
 }
 ```
 
