@@ -5,28 +5,228 @@
 \subsubsection{Overview}
 \label{sec:implementation_overview}
 
+This chapter bridges the formal Effect Propagation Process (EPP) meta-calculus, as defined in Chapter 10,
+with the concrete architectural patterns of a real-world implementation. It introduces DeepCausality,
+the open-source reference implementation of the EPP, demonstrating how the abstract concepts of dynamic causality are realized in practice.
+
+The choice of the Rust programming language for DeepCausality is a deliberate engineering decision.
+The language's compile-time guarantees of memory and thread safety, combined with its high performance
+and expressive modern type system, are important for building of robust, verifiable,
+and safety-critical systems using the EPP and its implementation DeepCausality.
 
 \subsubsection{Implementing the Context}
 \label{sec:implementation_context}
 
+The Context, formalized in Section 10.4, is a core innovation of the EPP. Its implementation in DeepCausality is designed to be both powerful and flexible, serving as the dynamic fabric upon which causal reasoning operates. The key engineering decisions are reflected in its primary data structure, Context<D, S, T, ST, SYM, VS, VT>.
+
+The Context struct encapsulates a hypergraph provided by the ultragraph crate. This choice is fundamental, as hypergraphs can natively represent the n-ary relationships required for complex contextual models. The nodes within this graph are Contextoids, which are themselves a polymorphic enum, ContextoidType, capable of wrapping various kinds of data such as Datoid, Tempoid, or Spaceoid. This design allows the Context to store heterogeneous information without resorting to dynamic dispatch, preserving performance.
+
+To facilitate efficient access, the Context maintains an internal HashMap<ContextoidId, usize> that maps a Contextoid's public, stable ID to its internal graph index. This provides O(1) lookup complexity, which is critical for performance in context-aware reasoning. Furthermore, the Context struct contains an Option<HashMap<u64, ExtraContext>> field, which directly implements the mechanism for contextual counterfactuals (Section 5.13). This allows the system to manage multiple, parallel realities by creating and reasoning over alternate context graphs.
+
+\begin{lstlisting}[language=Rust, label={list:ContextStruct}, caption={The DeepCausality Context Struct}]
+pub struct Context<D, S, T, ST, SYM, VS, VT>
+where
+    D: Datable + Clone,
+    S: Spatial<VS> + Clone,
+    T: Temporal<VT> + Clone,
+    ST: SpaceTemporal<VS, VT> + Clone,
+    SYM: Symbolic + Clone,
+    VS: Clone,
+    VT: Clone,
+{
+    id: ContextId,
+    name: String,
+    base_context: UltraGraphWeighted<Contextoid<D, S, T, ST, SYM, VS, VT>, u64>,
+    id_to_index_map: HashMap<ContextoidId, usize>,
+    extra_contexts: Option<HashMap<u64, ExtraContext<...>>>,
+    // ... other fields for indexing
 }
-\subsubsection{Implementing the EPP Primitives}
-\label{sec:implementation_primitives}
+\end{lstlisting}
+
+\newpage
+
+\subsubsection{Implementing The Causaloid}
+%% Show the Rust type of the CausalFunction. Explain that this type is the
+%% mechanism that makes the Causaloid a "socket" for any object-level calculus.
+%% Provide ONE simple struct implementing the trait (e.g., a simple rule).
+
+The Causaloid, formalized in Section \ref{ssec:causaloid_formal}, is implemented as a struct that achieves polymorphism without dynamic dispatch by using an enum, CausaloidType, to determine whether it represents a Singleton, a Collection, or a Graph.
+
+The core of its functionality lies in its \textit{causal\_fn} and \textit{context\_causal\_fn} fields. These fields hold function pointers, making the Causaloid a holder for any object-level calculus. The specific function signature is defined by the type aliases CausalFn and ContextualCausalFn. This design allows any function that matches the signature to be embedded within a Causaloid, providing a powerful mechanism for composing different causal logics.
+
+\begin{lstlisting}[language=Rust, label={list:CausalFn}, caption={The Causal Function Type Alias}]
+// For stateless reasoning
+pub type CausalFn = fn(effect: &PropagatingEffect) -> Result<PropagatingEffect, CausalityError>;
+
+// For context-aware reasoning
+pub type ContextualCausalFn<D, S, T, ST, SYM, VS, VT> =
+    fn(
+        effect: &PropagatingEffect,
+        context: &Arc<Context<D, S, T, ST, SYM, VS, VT>>,
+    ) -> Result<PropagatingEffect, CausalityError>;
+\end{lstlisting}
+
+
+A key design feature is the causaloid's internal CausalType enum, which allows a single \texttt{Causaloid} struct to represent one of three distinct structural forms:
+\begin{enumerate}
+    \item A \texttt{Singleton}: This represents an elementary cause, directly holding an optional causal function. This function can be context-free (type \texttt{CausalFn}) or context-aware (type \texttt{ContextualCausalDataFn}), with the latter taking an immutable reference to a \texttt{Context} object.
+    \item A \texttt{Collection}: This allows a \texttt{Causaloid} to encapsulate an entire collection (e.g., a \texttt{Vec}) of other \texttt{Causaloids}. The evaluation of such a "collection" \texttt{Causaloid} typically involves applying reasoning logic over its constituent members, facilitated by the \texttt{CausableReasoning} trait.
+    \item A \texttt{CausalGraph}: This enables a \texttt{Causaloid} to encapsulate an entire \texttt{CausaloidGraph} struct, thereby directly realizing the recursive isomorphic nature of the causal modeling engine.
+\end{enumerate}
+
+\begin{lstlisting}[language=Rust, label={list:CausalType}, caption={The Causal CausaloidType Enum}]
+#[derive(Debug, Clone, Copy, PartialEq, PartialOrd)]
+pub enum CausaloidType {
+    Singleton,
+    Collection,
+    Graph,
+}
+\end{lstlisting}
+
+The CausalVec and CausalGraph types are type aliases in Rust, defined as shown below:
+
+\begin{lstlisting}[language=Rust, label={list:CausalTypeAliase}, caption={The Causal Vec and Graph Type Alias}]
+pub type CausalVec<D, S, T, ST, SYM, VS, VT> = 
+	Vec<Causaloid<D, S, T, ST, SYM, VS, VT>>;
+
+pub type CausalGraph<D, S, TM, ST, SYM, VS, VT> =
+    CausaloidGraph<Causaloid<D, S, TM, ST, SYM, VS, VT>>;
+\end{lstlisting}
+
+\newpage
+
+The Causaloid type itself is then defined as a Rust struct:
+
+\begin{lstlisting}[language=Rust, label={list:CausaloidType}, caption={The Causaloid Type}]
+#[derive(Clone)]
+pub struct Causaloid<D, S, T, ST, SYM, VS, VT>
+where
+    D: Datable + Clone,
+    S: Spatial<VS> + Clone,
+    T: Temporal<VT> + Clone,
+    ST: SpaceTemporal<VS, VT> + Clone,
+    SYM: Symbolic + Clone,
+    VS: Clone,
+    VT: Clone,
+{
+    id: IdentificationValue,
+    causal_type: CausaloidType,
+    causal_fn: Option<CausalFn>,
+    context_causal_fn: Option<ContextualCausalFn<D, S, T, ST, SYM, VS, VT>>,
+    context: Option<Arc<Context<D, S, T, ST, SYM, VS, VT>>>,
+    effect: ArcRWLock<Option<PropagatingEffect>>,
+    causal_coll: Option<Arc<CausalVec<D, S, T, ST, SYM, VS, VT>>>,
+    causal_graph: Option<Arc<CausalGraph<D, S, T, ST, SYM, VS, VT>>>,
+    description: String,
+    ty: PhantomData<(VS, VT)>,
+}
+\end{lstlisting}
+
+This enum-based design, combined with generic type parameters for context-related data types ($D, S, T, ST, V$), makes the \texttt{Causaloid} struct remarkably versatile. The last calculated effect of this causaloid. It's an Option because a causaloid may not have been evaluated yet. The PhantomData is neccessary because the generic parameters VS and VT are not bound and thus need a PhantomData binding to ensure the generic bound check by the Rust compiler. Various constructors for the Causaloid struct are provided to create \texttt{Causaloids} of each \texttt{CausalType}, optionally associating them with specific \texttt{Context} instances if their causal logic is context-dependent.
+
+\subsubsection{Implementing The Causaloid Collection}
+
+The CausaloidCollection, formalized in Section 10.5.2, is implemented within the Causaloid enum structure. A Causaloid of type Collection wraps a vector of other Causaloids, $Vec<Causaloid<...>>$. This approach maintains the isomorphic nature of the causal primitive, where a collection is treated with the same interface as a singleton.
+
+The reasoning over the collection is governed by the AggregateLogic enum, which specifies how the effects of the individual members are combined into a single outcome.
+
+\begin{lstlisting}[language=Rust, label={list:CausaloidType}, caption={The Causaloid Type}]
+pub enum AggregateLogic {
+    All,
+    Any,
+    None,
+    Some(usize),
+}
+\end{lstlisting}
+
+The evaluation logic is implemented in the CausableCollectionReasoning trait. This trait provides methods such as evaluate\_deterministic, evaluate\_probabilistic, and evaluate\_mixed, which take an AggregateLogic as an argument and apply the corresponding boolean or probabilistic aggregation to the collection's members. This provides a direct and verifiable implementation of the aggregation mechanisms required for many\-to\-one causal relationships.
+
+\subsubsection{The Causaloid Graph}
+The CausaloidGraph, the structural composition primitive from Section 10.5.3, is implemented as the CausaloidGraph<T> struct. This struct is a high-performance wrapper around ultragraph::UltraGraphWeighted, a graph library chosen for its memory efficiency and speed.
+
+A key architectural feature inherited from ultragraph is the dual-state lifecycle. The graph exists in either a Dynamic state, which is optimized for fast, O(1) mutations like adding nodes and edges, or a Static state, which uses a hyper-optimized Compressed Sparse Row (CSR) format for peak traversal performance. The transition is managed by freeze() and unfreeze() methods. This design is critical for emergent systems, as it allows the causal structure to be modified efficiently during an "Evolve" phase and then locked for a fast "Analyze" phase.
+
+\begin{lstlisting}[language=Rust, label={list:CausaloidGraphStruct}, caption={The DeepCausality CausaloidGraph Struct}]
+#[derive(Clone)]
+pub struct CausaloidGraph<T>
+where
+    T: Causable + PartialEq + Clone + Display,
+{
+    id: IdentificationValue,
+    // CausalGraph<T> is an alias for UltraGraphWeighted<T, u64>
+    graph: CausalGraph<T>, 
+}
+\end{lstlisting}
+
+The CausableGraph trait defines the primary API for interacting with the graph. Crucially, the recursive isomorphism of the EPP is realized here: because a Causaloid can be of type Graph, an entire CausaloidGraph can be encapsulated within a single node of another, higher-level graph. This allows for the construction of deeply nested and modular causal models that remain conceptually simple and computationally efficient.
 
 
 \subsubsection{Implementing Causal Reasoning}
 \label{sec:implementation_causal_reasoning}
 
+%% EXPAND. This section details the EPP's core dynamic.
+%% Use high-level pseudocode to describe the main algorithm of the
+%% Effect Propagation Process.
+%% Walk through the steps: initialization from triggers, the iterative/recursive
+%% evaluation of Causaloids, how the ContextAccessor is used to query the
+%% Context, and the conditions for convergence.
+
+Causal reasoning in DeepCausality is the operationalization of the Effect Propagation Process (Section \ref{sec:propagating_effect_formal}). The core dynamic is implemented in the CausableGraphReasoning trait, specifically the evaluate\_subgraph\_from\_cause method. This algorithm executes a breadth\-first traversal of the CausaloidGraph.
+The process follows these steps:
+\begin{enumerate}
+    \item \textbf{Initialization}: The process begins at a specified start\_index (typically the graph's root) with an initial\_effect. A queue is initialized with the starting node and its effect, and a visited set is created to prevent cycles.
+    \item \textbf{Iterative Evaluation}: The algorithm dequeues a (node, effect) tuple and evaluates the Causaloid at that node using the incoming effect. The Causaloid's internal function, whether a simple CausalFn or a context\-aware ContextualCausalFn, is executed.
+    \item \textbf{Contextual Query}: If the Causaloid's function is context\-aware, it uses its ContextAccessor (an Arc<Context>) to query the Context for any necessary data, making the reasoning context\-dependent. This directly implements the ContextAccessor from defintion \ref{def:context_accessor}.
+    \item \textbf{Propagation}: The output PropagatingEffect from the current node's evaluation becomes the input for all its children nodes, which are then enqueued for the next iteration.
+    \item \textbf{Adaptive Dispatch}: If a Causaloid returns a PropagatingEffect of type RelayTo(target\_index, new\_effect), the control flow is dynamically altered. The evaluation queue is cleared, and the traversal jumps to the target\_index, using new\_effect as its input. This directly implements the adaptive reasoning modality from definition \ref{def:propagating_effect}.
+    \item \textbf{Convergence}: The process continues until the queue is empty, at which point the graph has reached a stable state for the given initial trigger. 
+    \item \textbf{Return:} The last propagated effect is then returned as the final result of the reasoning chain.
+\end{enumerate}
+
+\subsubsection{Implementing The Effect Ethos}
+%% Show the final Rust struct for the Teloid. Then, detail the composite
+%% data structure of the TeleologicalStore: the primary HashMap mapping TeloidID
+%% to the Teloid, and the secondary HashMap for the Tag Index. This is a key
+%% architectural pattern that needs to be shown explicitly.
 
 \subsubsection{Implementing The Deontic Inference}
 \label{sec:implementation_inference}
 
+%% EXPAND (This is the most complex and novel algorithm in the book).
+%% This is the heart of the Effect Ethos. It must be detailed meticulously.
+%% 1. State upfront that this is the implementation of the formal Deontic
+%%    Inference Cycle from Chapter 10.
+%% 2. Walk through the two-phase "Expand-then-Resolve" algorithm step-by-step,
+%%    using pseudocode.
+%% 3. Phase 1 (Expansion): Detail how Tag Filtering (from the HashMap) and
+%%    Inheritance Traversal (from the UltraGraph DAGs) are combined to
+%%    gather the full set of applicable Teloids.
+%% 4. Phase 2 (Resolution): Detail how the engine resolves conflicts using
+%%    Lex Specialis (by comparing DAG depths), Lex Posterior (timestamps), and
+%%    Lex Superior (authority). Explain how this produces a final, consistent
+%%    belief set.
+%% 5. Conclude with the Verdict Finding via Modal Consensus.
 
 \subsubsection{Implementing The Causal State Machine}
 \label{sec:implementation_csm}
 
+%% BRIEF. The CSM's core logic is simple. Focus only on the key integration point.
+%% Detail the point of INTERCEPTION. Show the control flow:
+%% 1. CSM evaluates a CausalState to true.
+%% 2. CSM *does not* immediately execute the associated CausalAction.
+%% 3. Instead, it packages the action and its context into a ProposedAction
+%%    and calls EffectEthos.evaluate().
+%% 4. Only if the returned Verdict is Permitted, does it proceed to call
+%%    the action's .execute() method.
 
 \subsubsection{Discussion}
 \label{sec:implementation_discussion}
+
+%% BRIEF (2-3 paragraphs).
+%% Summarize the key architectural takeaways that prove the EPP's viability.
+%% Reiterate the synergy between the formal design and the implementation choices:
+%% how Rust's safety, UltraGraph's performance, and the specific data structures
+%% and algorithms come together to create a framework that is not just elegant,
+%% but robust, verifiable, and ready for real-world application.
 
 \newpage
