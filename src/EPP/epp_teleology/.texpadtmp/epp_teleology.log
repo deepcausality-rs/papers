@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  20 AUG 2025 11:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  29 AUG 2025 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -290,9 +290,20 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box63
 \@float@everytoks=\toks26
 \@floatcapt=\box64
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
+\thm@preskip=\skip70
+\thm@postskip=\skip71
+\thm@headsep=\skip72
+\dth@everypar=\toks32
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
-\@mathmargin=\skip70
+\@mathmargin=\skip73
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -331,21 +342,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip18
 \c@parentequation=\count315
 \dspbrk@lvl=\count316
-\tag@help=\toks27
+\tag@help=\toks33
 \row@=\count317
 \column@=\count318
 \maxfields@=\count319
-\andhelp@=\toks28
+\andhelp@=\toks34
 \eqnshift@=\dimen179
 \alignsep@=\dimen180
 \tagshift@=\dimen181
 \tagwidth@=\dimen182
 \totwidth@=\dimen183
 \lineht@=\dimen184
-\@envbody=\toks29
-\multlinegap=\skip71
-\multlinetaggap=\skip72
-\mathdisplay@stack=\toks30
+\@envbody=\toks35
+\multlinegap=\skip74
+\multlinetaggap=\skip75
+\mathdisplay@stack=\toks36
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -353,7 +364,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count320
 \lst@gtempboxa=\box67
-\lst@token=\toks31
+\lst@token=\toks37
 \lst@length=\count321
 \lst@currlwidth=\dimen185
 \lst@column=\count322
@@ -377,11 +388,11 @@ Package: listings 2024/09/23 1.10c (Carsten Heinz)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box69
-\beforetitleunit=\skip73
-\aftertitleunit=\skip74
+\beforetitleunit=\skip76
+\aftertitleunit=\skip77
 \ttl@plus=\dimen189
 \ttl@minus=\dimen190
-\ttl@toksa=\toks32
+\ttl@toksa=\toks38
 \titlewidth=\dimen191
 \titlewidthlast=\dimen192
 \titlewidthfirst=\dimen193
@@ -389,8 +400,8 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip75
-\bibsep=\skip76
+\bibhang=\skip78
+\bibsep=\skip79
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count328
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/base/glossaries.sty
@@ -400,15 +411,15 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks33
-\XKV@tempa@toks=\toks34
+\XKV@toks=\toks39
+\XKV@tempa@toks=\toks40
 )
 \XKV@depth=\count329
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2022/10/14 v2.08 (NLCT)
-\@glsmfirst=\toks35
-\@glsmrest=\toks36
+\@glsmfirst=\toks41
+\@glsmrest=\toks42
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-base.sty
@@ -418,9 +429,9 @@ Package: tracklang 2025/03/04 v1.6.5 (NLCT) Track Languages
  (/usr/local/texlive/2025/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-l3fp.def
 File: datatool-l3fp.def 2025/03/05 v3.0.1 (NLCT)
 )
-\@dtl@toks=\toks37
+\@dtl@toks=\toks43
 \@dtl@tmpcount=\count330
-\dtl@tmplength=\skip77
+\dtl@tmplength=\skip80
 \l__datatool_measure_box=\box70
 \dtl@sortresult=\count331
  (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
@@ -453,25 +464,25 @@ File: datatool-utf8.ldf 2025/03/05 v3.0.1 (NLCT)
 \dtl@codeB=\count354
 )
 \gls@level=\count355
-\@gls@tmpb=\toks38
-\gls@tmplen=\skip78
-\glskeylisttok=\toks39
-\glslabeltok=\toks40
-\glsshorttok=\toks41
-\glslongtok=\toks42
+\@gls@tmpb=\toks44
+\gls@tmplen=\skip81
+\glskeylisttok=\toks45
+\glslabeltok=\toks46
+\glsshorttok=\toks47
+\glslongtok=\toks48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2025/03/03 v4.56 (NLCT)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 Package: glossary-list 2025/03/03 v4.56 (NLCT)
-\glslistdottedwidth=\skip79
+\glslistdottedwidth=\skip82
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
 Package: glossary-long 2025/03/03 v4.56 (NLCT)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
-\LTleft=\skip80
-\LTright=\skip81
-\LTpre=\skip82
-\LTpost=\skip83
+\LTleft=\skip83
+\LTright=\skip84
+\LTpre=\skip85
+\LTpost=\skip86
 \LTchunksize=\count356
 \LTcapwidth=\dimen196
 \LT@head=\box71
@@ -483,19 +494,19 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \LT@rows=\count358
 \c@LT@tables=\count359
 \c@LT@chunks=\count360
-\LT@p@ftn=\toks43
+\LT@p@ftn=\toks49
 )
-\glsdescwidth=\skip84
-\glspagelistwidth=\skip85
+\glsdescwidth=\skip87
+\glspagelistwidth=\skip88
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
 Package: glossary-super 2025/03/03 v4.56 (NLCT)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2024/07/20 v4.2c the supertabular environment
 \c@tracingst=\count361
 \ST@wd=\dimen197
-\ST@rightskip=\skip86
-\ST@leftskip=\skip87
-\ST@parfillskip=\skip88
+\ST@rightskip=\skip89
+\ST@leftskip=\skip90
+\ST@parfillskip=\skip91
 \ST@pageleft=\dimen198
 \ST@headht=\dimen199
 \ST@tailht=\dimen256
@@ -509,12 +520,12 @@ Package: supertabular 2024/07/20 v4.2c the supertabular environment
 ))
 (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2025/03/03 v4.56 (NLCT)
-\glstreeindent=\skip89
+\glstreeindent=\skip92
 ))) (/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\labelindent=\skip90
+\labelindent=\skip93
 \enit@outerparindent=\dimen263
-\enit@toks=\toks44
+\enit@toks=\toks50
 \enit@inbox=\box77
 \enit@count@id=\count362
 \enitdp@description=\count363
@@ -630,12 +641,12 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 \scratchbox=\box78
 \nofMPsegments=\count365
 \nofMParguments=\count366
-\everyMPshowfont=\toks45
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count367
 \MPscratchDim=\dimen265
 \MPnumerator=\count368
 \makeMPintoPDFobject=\count369
-\everyMPtoPDFconversion=\toks46
+\everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -668,10 +679,10 @@ LaTeX Warning: Reference `sec:epp_epistemology' on page 1 undefined on input lin
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
-Package natbib Warning: Citation `olson2024DDIC' on page 2 undefined on input line 38.
+Package natbib Warning: Citation `olson2024DDIC' on page 2 undefined on input line 35.
 
 
-Package natbib Warning: Citation `olson2024DDIC' on page 2 undefined on input line 40.
+Package natbib Warning: Citation `olson2024DDIC' on page 2 undefined on input line 37.
 
 
 
@@ -679,16 +690,24 @@ Package natbib Warning: Citation `olson2024DDIC' on page 2 undefined on input li
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.70 	\item  C
+l.67 	\item  C
               onflict Resolution via Defeasibility]
 
-LaTeX Warning: Reference `sec:epp_csm' on page 3 undefined on input line 81.
+LaTeX Warning: Reference `sec:epp_csm' on page 3 undefined on input line 78.
+
+
+Package natbib Warning: Citation `olson2024DDIC' on page 3 undefined on input line 91.
+
+
+Package natbib Warning: Citation `olson2024DDIC' on page 3 undefined on input line 93.
 
 
 
 [3]
 
-[4])
+[4]
+
+[5])
 
 Package natbib Warning: There were undefined citations.
 
@@ -702,21 +721,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `epp_teleology.out' has not changed.
-(rerunfilecheck)             Checksum: BE3B7A123D707EEEF77F2793125B4CC7;1062.
+(rerunfilecheck)             Checksum: 7081B224BECC707CFC7A2FC1FE909BCE;1057.
  ) 
 Here is how much of TeX's memory you used:
- 24234 strings out of 473190
- 480403 string characters out of 5715801
- 993207 words of memory out of 5000000
- 47197 multiletter control sequences out of 15000+600000
- 584073 words of font info for 60 fonts, out of 8000000 for 9000
+ 24309 strings out of 473190
+ 481492 string characters out of 5715801
+ 993411 words of memory out of 5000000
+ 47267 multiletter control sequences out of 15000+600000
+ 580785 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,96p,2425b,1131s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on "/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/epp_teleology/.texpadtmp/epp_teleology.pdf" (4 pages, 87006 bytes).
+ 84i,11n,96p,2425b,1129s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on "/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/epp_teleology/.texpadtmp/epp_teleology.pdf" (5 pages, 108266 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
+ 91 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

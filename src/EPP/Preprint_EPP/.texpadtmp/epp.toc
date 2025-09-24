@@ -1,183 +1,222 @@
-\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
-\contentsline {section}{\numberline {2}History of Causality}{8}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Plato}{8}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Aristotle}{8}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Seneca}{8}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Gottfried Wilhelm Leibniz}{8}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}David Hume}{8}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}John Stuart Mill}{8}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Albert Einstein}{9}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Bertrand Russell}{9}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Quantum Physics}{9}{subsection.2.9}%
-\contentsline {section}{\numberline {3}Related Work}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Foundational Theories of Causal Inference}{10}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Directed Acyclic Graphs (DAGs)}{10}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Structural Causal Model (SCM)}{10}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Counterfactuals: What if?}{11}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Potential Outcomes}{11}{subsubsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.2}Invariant Prediction and Out-of-Distribution Generalization}{12}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Causal Discovery}{13}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Causal Inference and Discovery for (Hyper)graphs}{13}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Causal Inference for Time Series}{13}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}The Role of Context in Causal Inference}{14}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Hierarchical Causality}{15}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}(Geometric) Deep Learning for Causal Inference and Representation}{15}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Causal Representation Learning}{16}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}The Causaloid Framework}{16}{subsection.3.10}%
-\contentsline {subsection}{\numberline {3.11}Computational Causality Libraries}{17}{subsection.3.11}%
-\contentsline {subsubsection}{\numberline {3.11.1}DoWhy (Microsoft)}{17}{subsubsection.3.11.1}%
-\contentsline {subsubsection}{\numberline {3.11.2}EconML (Microsoft)}{17}{subsubsection.3.11.2}%
-\contentsline {subsubsection}{\numberline {3.11.3}CausalML (Uber)}{17}{subsubsection.3.11.3}%
-\contentsline {subsubsection}{\numberline {3.11.4}CausalNex (McKinsey)}{17}{subsubsection.3.11.4}%
-\contentsline {subsubsection}{\numberline {3.11.5}Meridian (Google)}{18}{subsubsection.3.11.5}%
-\contentsline {subsection}{\numberline {3.12}Causal Inference with Large Language Models (LLMs)}{18}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}In-context Causal Reasoning with Large Language Models}{18}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Causal Inference at Industry Scale}{18}{subsection.3.14}%
-\contentsline {section}{\numberline {4}Motivation}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Non-Euclidean representation}{19}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Non-linear Time}{19}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}No a-priori causal structures}{20}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Boundaries of Classical Causal Models}{20}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Beyond Classical Causal Models}{22}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Causality as Effect Propagation Process}{23}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Background}{23}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Definition}{24}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Classical Definition of Causality}{24}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Deconstructing Classical Causality}{24}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Generalized Definition of Causality}{25}{subsubsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}Axiom of Causality}{25}{subsubsection.5.2.4}%
-\contentsline {subsubsection}{\numberline {5.2.5}Higher-Order Implications}{25}{subsubsection.5.2.5}%
-\contentsline {subsection}{\numberline {5.3}Overview of the EPP}{26}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Explicit Assumptions}{27}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Context}{27}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Causaloid}{28}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Causaloid Collection}{29}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Causaloid Graph}{30}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}PropagatingEffect}{30}{subsection.5.9}%
-\contentsline {subsection}{\numberline {5.10}Dynamic Reasoning Modalities}{31}{subsection.5.10}%
-\contentsline {subsubsection}{\numberline {5.10.1}Static Reasoning}{31}{subsubsection.5.10.1}%
-\contentsline {subsubsection}{\numberline {5.10.2}Dynamic Reasoning}{31}{subsubsection.5.10.2}%
-\contentsline {subsubsection}{\numberline {5.10.3}Adaptive Reasoning}{31}{subsubsection.5.10.3}%
-\contentsline {subsubsection}{\numberline {5.10.4}Emergent Reasoning}{31}{subsubsection.5.10.4}%
-\contentsline {subsubsection}{\numberline {5.10.5}Trade-off: Adaptability vs. Verifiability}{32}{subsubsection.5.10.5}%
-\contentsline {subsection}{\numberline {5.11}Causal State Machine}{32}{subsection.5.11}%
-\contentsline {subsection}{\numberline {5.12}Teloid and Effect Ethos}{33}{subsection.5.12}%
-\contentsline {subsection}{\numberline {5.13}Mapping Pearl's Ladder of Causation to the EPP}{34}{subsection.5.13}%
-\contentsline {subsection}{\numberline {5.14}Mapping Dynamic Bayesian Networks to the EPP}{35}{subsection.5.14}%
-\contentsline {subsection}{\numberline {5.15}Mapping Granger Causality to the EPP}{36}{subsection.5.15}%
-\contentsline {subsection}{\numberline {5.16}Mapping Rubin Causal Model (RCM) to the EPP}{36}{subsection.5.16}%
-\contentsline {subsection}{\numberline {5.17}Mapping Conditional Average Treatment Effects (CATE) Inference to the EPP}{37}{subsection.5.17}%
-\contentsline {subsection}{\numberline {5.18}Comparison}{38}{subsection.5.18}%
-\contentsline {subsection}{\numberline {5.19}Discussion}{38}{subsection.5.19}%
-\contentsline {section}{\numberline {6}The Metaphysics of the Effect Propagation Process}{40}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Monoidic Primitives}{40}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Isomorphic Recursive Composition}{40}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}The Metaphysics of Context}{40}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}The Metaphysics of Being}{40}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}The Metaphysics of Dynamics}{41}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}The Metaphysics of Adaptation}{41}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}The Metaphysics of Structural Change}{41}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}The Metaphysics of Becoming}{41}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}The Metaphysics of Axiology}{43}{subsection.6.9}%
-\contentsline {subsection}{\numberline {6.10}The Metaphysics of Doing}{43}{subsection.6.10}%
-\contentsline {subsection}{\numberline {6.11}Discussion}{43}{subsection.6.11}%
-\contentsline {section}{\numberline {7}The Epistemology of the Effect Propagation Process}{45}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Overview}{45}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Ontology of Knowledge Sources}{45}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Knowledge Derivation}{45}{subsubsection.7.1.2}%
-\contentsline {subsubsection}{\numberline {7.1.3}Justification of Derived Knowledge}{45}{subsubsection.7.1.3}%
-\contentsline {subsection}{\numberline {7.2}Static EPP Epistemology}{46}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Dynamic EPP Epistemology}{46}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Emergent EPP Epistemology}{47}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Operationalized Meaning of Truth}{47}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Causal Emergence}{48}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Discussion}{49}{subsection.7.7}%
-\contentsline {section}{\numberline {8}The Teleology of the Effect Propagation Process}{50}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Overview}{50}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Defeasible Deontic Foundation}{51}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Encoding Ethics in a Teloid}{51}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Deontic Inference}{51}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Discussion}{53}{subsection.8.5}%
-\contentsline {section}{\numberline {9}The Ontology of the Effect Propagation Process}{54}{section.9}%
-\contentsline {subsection}{\numberline {9.1}The Ontology of Being}{54}{subsection.9.1}%
-\contentsline {subsubsection}{\numberline {9.1.1}The Causaloid: A Unit of Causality}{54}{subsubsection.9.1.1}%
-\contentsline {subsubsection}{\numberline {9.1.2}The Contextoid: A Unit of Context}{54}{subsubsection.9.1.2}%
-\contentsline {subsubsection}{\numberline {9.1.3}The Context: A structure for Contextoids}{55}{subsubsection.9.1.3}%
-\contentsline {subsubsection}{\numberline {9.1.4}The Evidence: A Unit of Facts}{56}{subsubsection.9.1.4}%
-\contentsline {subsubsection}{\numberline {9.1.5}The Propagating Effect: A Unit of Influence}{56}{subsubsection.9.1.5}%
-\contentsline {subsection}{\numberline {9.2}The Ontology of Becoming: Dynamics}{56}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}The Ontology of Emergence}{57}{subsection.9.3}%
-\contentsline {subsubsection}{\numberline {9.3.1}The Generative Trigger}{57}{subsubsection.9.3.1}%
-\contentsline {subsubsection}{\numberline {9.3.2}The Generative Command}{57}{subsubsection.9.3.2}%
-\contentsline {subsubsection}{\numberline {9.3.3}The Generative Process}{58}{subsubsection.9.3.3}%
-\contentsline {subsubsection}{\numberline {9.3.4}The Generative Outcome}{58}{subsubsection.9.3.4}%
-\contentsline {subsection}{\numberline {9.4}The Ontology of Action}{58}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Discussion}{59}{subsection.9.5}%
-\contentsline {section}{\numberline {10}The Formalization of the Effect Propagation Process}{60}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Axioms}{60}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Formal Derivation of the EPP Primitives}{60}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Contextual Fabric (C)}{60}{subsection.10.3}%
-\contentsline {subsubsection}{\numberline {10.3.1}The Contextoid (v)}{61}{subsubsection.10.3.1}%
-\contentsline {paragraph}{Data Payload}{61}{subsubsection.10.3.1}%
-\contentsline {paragraph}{Time Payload}{61}{subsubsection.10.3.1}%
-\contentsline {subparagraph}{Temporal Scale and Unit}{61}{subsubsection.10.3.1}%
-\contentsline {paragraph}{Space Payload}{61}{subsubsection.10.3.1}%
-\contentsline {subparagraph}{Coordinates}{61}{subsubsection.10.3.1}%
-\contentsline {subparagraph}{Spatial Interpretation}{61}{subsubsection.10.3.1}%
-\contentsline {paragraph}{SpaceTime Payload}{61}{subsubsection.10.3.1}%
-\contentsline {subsubsection}{\numberline {10.3.2}The Context Hypergraph (C)}{62}{subsubsection.10.3.2}%
-\contentsline {subsubsection}{\numberline {10.3.3}Context Collection (C\_sys)}{62}{subsubsection.10.3.3}%
-\contentsline {subsubsection}{\numberline {10.3.4}Context Accessor (ContextAccessor C\_refs)}{62}{subsubsection.10.3.4}%
-\contentsline {subsection}{\numberline {10.4}Causal Units and Structures (G)}{63}{subsection.10.4}%
-\contentsline {subsubsection}{\numberline {10.4.1}The Causaloid (chi)}{63}{subsubsection.10.4.1}%
-\contentsline {subsubsection}{\numberline {10.4.2}The CausaloidGraph (\(G\))}{64}{subsubsection.10.4.2}%
-\contentsline {subsection}{\numberline {10.5}Effect Propagation, Dynamics, and Emergence}{65}{subsection.10.5}%
-\contentsline {subsubsection}{\numberline {10.5.1}The Operational Generative Function (Phi\_gen)}{66}{subsubsection.10.5.1}%
-\contentsline {subsubsection}{\numberline {10.5.2}Core EPP Principles}{67}{subsubsection.10.5.2}%
-\contentsline {subsection}{\numberline {10.6}The Causal State Machine (CSM) }{68}{subsection.10.6}%
-\contentsline {subsubsection}{\numberline {10.6.1}CSM Operation: State Evaluation and Action Triggering}{69}{subsubsection.10.6.1}%
-\contentsline {paragraph}{Single State Evaluation and Action (\(\text {eval\_single\_state}\)):}{69}{subsubsection.10.6.1}%
-\contentsline {paragraph}{All States Evaluation and Action (\(\text {eval\_all\_states}\)):}{69}{Item.76}%
-\contentsline {subsubsection}{\numberline {10.6.2}CSM Dynamics: Managing State-Action Pairs}{69}{subsubsection.10.6.2}%
-\contentsline {subsection}{\numberline {10.7}Example: Smoking, Tar, and Cancer}{69}{subsection.10.7}%
-\contentsline {subsubsection}{\numberline {10.7.1}Defining the Causal Problem}{70}{subsubsection.10.7.1}%
-\contentsline {subsubsection}{\numberline {10.7.2}Formalizing the Components}{70}{subsubsection.10.7.2}%
-\contentsline {subsubsection}{\numberline {10.7.3}Formalizing Effect Propagation (\(\Pi _{EPP}\))}{71}{subsubsection.10.7.3}%
-\contentsline {subsubsection}{\numberline {10.7.4}Formalizing Observations}{71}{subsubsection.10.7.4}%
-\contentsline {subsection}{\numberline {10.8}Discussion}{71}{subsection.10.8}%
-\contentsline {section}{\numberline {11}Validity}{73}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Internal validity}{73}{subsection.11.1}%
-\contentsline {subsubsection}{\numberline {11.1.1}Spacetime Agnosticism \& Causaloids}{73}{subsubsection.11.1.1}%
-\contentsline {subsubsection}{\numberline {11.1.2}Effect Propagation as the Essence of Causality}{73}{subsubsection.11.1.2}%
-\contentsline {subsubsection}{\numberline {11.1.3}Compatibility with Classical Causality}{74}{subsubsection.11.1.3}%
-\contentsline {subsection}{\numberline {11.2}External validity}{74}{subsection.11.2}%
-\contentsline {subsubsection}{\numberline {11.2.1}Falsifiability}{74}{subsubsection.11.2.1}%
-\contentsline {subsubsection}{\numberline {11.2.2}Alternative interpretations}{74}{subsubsection.11.2.2}%
-\contentsline {subsubsection}{\numberline {11.2.3}Boundaries of Generalization}{75}{subsubsection.11.2.3}%
-\contentsline {subsubsection}{\numberline {11.2.4}Method Selection Criteria: Classical Causality vs. EPP}{76}{subsubsection.11.2.4}%
-\contentsline {section}{\numberline {12}The Implementation of the Effect Propagation Process}{77}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Overview}{77}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}UltraGraph}{78}{subsection.12.2}%
-\contentsline {subsubsection}{\numberline {12.2.1}Dual-state graph life-cycle}{78}{subsubsection.12.2.1}%
-\contentsline {subsubsection}{\numberline {12.2.2}SoA CsrAdjacency Type}{78}{subsubsection.12.2.2}%
-\contentsline {subsubsection}{\numberline {12.2.3}Separation of Forward and Backward CsrAdjacency}{79}{subsubsection.12.2.3}%
-\contentsline {subsubsection}{\numberline {12.2.4}Discussion}{80}{subsubsection.12.2.4}%
-\contentsline {subsection}{\numberline {12.3}DeepCausality}{81}{subsection.12.3}%
-\contentsline {subsubsection}{\numberline {12.3.1}Overview}{81}{subsubsection.12.3.1}%
-\contentsline {subsubsection}{\numberline {12.3.2}Implementing the Context}{81}{subsubsection.12.3.2}%
-\contentsline {subsubsection}{\numberline {12.3.3}Implementing the EPP Primitives}{81}{subsubsection.12.3.3}%
-\contentsline {subsubsection}{\numberline {12.3.4}Implementing Causal Reasoning}{81}{subsubsection.12.3.4}%
-\contentsline {subsubsection}{\numberline {12.3.5}Implementing The Deontic Inference}{81}{subsubsection.12.3.5}%
-\contentsline {subsubsection}{\numberline {12.3.6}Implementing The Causal State Machine}{81}{subsubsection.12.3.6}%
-\contentsline {subsubsection}{\numberline {12.3.7}Discussion}{81}{subsubsection.12.3.7}%
-\contentsline {subsection}{\numberline {12.4}Benchmarks}{82}{subsection.12.4}%
-\contentsline {subsubsection}{\numberline {12.4.1}UltraGraph Benchmarks}{82}{subsubsection.12.4.1}%
-\contentsline {section}{\numberline {13}Future Work}{83}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Indefinite Causal Structures}{83}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Contextual Causal Discovery}{83}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Formalization of the Effect Ethos}{84}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Teleological Inquiry}{84}{subsection.13.4}%
-\contentsline {subsection}{\numberline {13.5}Discussion}{85}{subsection.13.5}%
-\contentsline {section}{\numberline {14}Epilogue}{86}{section.14}%
-\contentsline {section}{Glossary}{87}{section.14}%
-\contentsline {section}{References}{89}{section.14}%
+\contentsline {section}{\numberline {1}Introduction}{8}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Precedent}{8}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Contribution}{9}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Structure}{10}{subsection.1.3}%
+\contentsline {section}{\numberline {2}History of Causality}{11}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Plato}{11}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Aristotle}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Seneca}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Gottfried Wilhelm Leibniz}{11}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}David Hume}{11}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}John Stuart Mill}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Albert Einstein}{12}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Bertrand Russell}{12}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Quantum Physics}{12}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Related Work}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Foundational Theories of Causal Inference}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Directed Acyclic Graphs (DAGs)}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Structural Causal Model (SCM)}{13}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Counterfactuals: What if?}{14}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Potential Outcomes}{14}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Invariant Prediction and Out-of-Distribution Generalization}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Causal Discovery}{16}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Causal Inference and Discovery for (Hyper)graphs}{16}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Causal Inference for Time Series}{16}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}The Role of Context in Causal Inference}{17}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Hierarchical Causality}{18}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}(Geometric) Deep Learning for Causal Inference and Representation}{18}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Causal Representation Learning}{19}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}The Causaloid Framework}{19}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Computational Causality Libraries}{20}{subsection.3.11}%
+\contentsline {subsubsection}{\numberline {3.11.1}DoWhy (Microsoft)}{20}{subsubsection.3.11.1}%
+\contentsline {subsubsection}{\numberline {3.11.2}EconML (Microsoft)}{20}{subsubsection.3.11.2}%
+\contentsline {subsubsection}{\numberline {3.11.3}CausalML (Uber)}{20}{subsubsection.3.11.3}%
+\contentsline {subsubsection}{\numberline {3.11.4}CausalNex (McKinsey)}{20}{subsubsection.3.11.4}%
+\contentsline {subsubsection}{\numberline {3.11.5}Meridian (Google)}{21}{subsubsection.3.11.5}%
+\contentsline {subsection}{\numberline {3.12}Causal Inference with Large Language Models (LLMs)}{21}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}In-context Causal Reasoning with Large Language Models}{21}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Causal Inference at Industry Scale}{21}{subsection.3.14}%
+\contentsline {section}{\numberline {4}Motivation}{22}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Non-Euclidean representation}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Non-linear Time}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}No a-priori causal structures}{23}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Boundaries of Classical Causal Models}{23}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Beyond Classical Causal Models}{25}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Causality as Effect Propagation Process}{26}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Background}{26}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Definition}{27}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Classical Definition of Causality}{27}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Deconstructing Classical Causality}{27}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Generalized Definition of Causality}{28}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}Axiom of Causality}{28}{subsubsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.5}Higher-Order Implications}{28}{subsubsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.3}Overview of the EPP}{29}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Explicit Assumptions}{30}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Context}{30}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Causaloid}{31}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Causaloid Collection}{32}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Causaloid Graph}{33}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}PropagatingEffect}{33}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.10}Dynamic Reasoning Modalities}{34}{subsection.5.10}%
+\contentsline {subsubsection}{\numberline {5.10.1}Static Reasoning}{34}{subsubsection.5.10.1}%
+\contentsline {subsubsection}{\numberline {5.10.2}Dynamic Reasoning}{34}{subsubsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.3}Adaptive Reasoning}{34}{subsubsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.4}Emergent Reasoning}{34}{subsubsection.5.10.4}%
+\contentsline {subsubsection}{\numberline {5.10.5}Trade-off: Adaptability vs. Verifiability}{35}{subsubsection.5.10.5}%
+\contentsline {subsection}{\numberline {5.11}Causal State Machine}{35}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.12}Teloid and Effect Ethos}{36}{subsection.5.12}%
+\contentsline {subsection}{\numberline {5.13}Mapping of Classical Causal Models to the EPP}{37}{subsection.5.13}%
+\contentsline {subsubsection}{\numberline {5.13.1}Mapping Pearl's Ladder of Causation to the EPP}{37}{subsubsection.5.13.1}%
+\contentsline {subsubsection}{\numberline {5.13.2}Mapping Dynamic Bayesian Networks to the EPP}{38}{subsubsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.3}Mapping Granger Causality to the EPP}{39}{subsubsection.5.13.3}%
+\contentsline {subsubsection}{\numberline {5.13.4}Mapping Rubin Causal Model (RCM) to the EPP}{39}{subsubsection.5.13.4}%
+\contentsline {subsubsection}{\numberline {5.13.5}Mapping Conditional Average Treatment Effects (CATE) Inference to the EPP}{40}{subsubsection.5.13.5}%
+\contentsline {subsection}{\numberline {5.14}Comparison}{41}{subsection.5.14}%
+\contentsline {subsection}{\numberline {5.15}Discussion}{41}{subsection.5.15}%
+\contentsline {section}{\numberline {6}The Metaphysics of the Effect Propagation Process}{43}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Monoidic Primitives}{43}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Isomorphic Recursive Composition}{43}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}The Metaphysics of Context}{43}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}The Metaphysics of Being}{43}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}The Metaphysics of Dynamics}{44}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}The Metaphysics of Adaptation}{44}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}The Metaphysics of Structural Change}{44}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}The Metaphysics of Becoming}{44}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}The Metaphysics of Axiology}{46}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}The Metaphysics of Doing}{46}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.11}Discussion}{46}{subsection.6.11}%
+\contentsline {section}{\numberline {7}The Epistemology of the Effect Propagation Process}{48}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Overview}{48}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Ontology of Knowledge Sources}{48}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Knowledge Derivation}{48}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.3}Justification of Derived Knowledge}{48}{subsubsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.2}Static EPP Epistemology}{49}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Dynamic EPP Epistemology}{49}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Emergent EPP Epistemology}{50}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Operationalized Meaning of Truth}{50}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Causal Emergence}{51}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Discussion}{52}{subsection.7.7}%
+\contentsline {section}{\numberline {8}The Teleology of the Effect Propagation Process}{53}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Overview}{53}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Defeasible Deontic Foundation}{54}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Encoding Ethics in a Teloid}{54}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Deontic Inference}{54}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Discussion}{56}{subsection.8.5}%
+\contentsline {section}{\numberline {9}The Ontology of the Effect Propagation Process}{58}{section.9}%
+\contentsline {subsection}{\numberline {9.1}The Ontology of Being}{58}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}The Causaloid: A Unit of Causality}{58}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}The Contextoid: A Unit of Context}{58}{subsubsection.9.1.2}%
+\contentsline {subsubsection}{\numberline {9.1.3}The Context: A structure for Contextoids}{59}{subsubsection.9.1.3}%
+\contentsline {subsubsection}{\numberline {9.1.4}The Evidence: A Unit of Facts}{60}{subsubsection.9.1.4}%
+\contentsline {subsubsection}{\numberline {9.1.5}The Propagating Effect: A Unit of Influence}{60}{subsubsection.9.1.5}%
+\contentsline {subsection}{\numberline {9.2}The Ontology of Becoming: Dynamics}{60}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}The Ontology of Emergence}{61}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}The Generative Trigger}{61}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}The Generative Command}{61}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}The Generative Process}{62}{subsubsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.4}The Generative Outcome}{62}{subsubsection.9.3.4}%
+\contentsline {subsection}{\numberline {9.4}The Ontology of Action}{62}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Discussion}{63}{subsection.9.5}%
+\contentsline {section}{\numberline {10}The Formalization of the Effect Propagation Process}{64}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Overview}{64}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Axioms}{64}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Formal Derivation of the EPP Primitives}{64}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}The PropagatingEffect Primitive (\(\Pi _E\))}{65}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Contextual Fabric (\(\mathcal {C}\))}{65}{subsection.10.5}%
+\contentsline {subsubsection}{\numberline {10.5.1}The Contextoid (v)}{66}{subsubsection.10.5.1}%
+\contentsline {subsubsection}{\numberline {10.5.2}The Context Hypergraph (C)}{67}{subsubsection.10.5.2}%
+\contentsline {subsubsection}{\numberline {10.5.3}Context Accessor (ContextAccessor C\_refs)}{67}{subsubsection.10.5.3}%
+\contentsline {subsection}{\numberline {10.6}Causal Units and Structures (G)}{68}{subsection.10.6}%
+\contentsline {subsubsection}{\numberline {10.6.1}The Causaloid Primitive (chi)}{68}{subsubsection.10.6.1}%
+\contentsline {paragraph}{Causal Function for Singletons (\(f_{\chi ,S}\))}{68}{definition.10.11}%
+\contentsline {subsubsection}{\numberline {10.6.2}The Causaloid Collection (\(\mathcal {X}_{coll}\))}{68}{subsubsection.10.6.2}%
+\contentsline {paragraph}{Aggregate Logic (\(\mathcal {A}_L\))}{68}{definition.10.12}%
+\contentsline {paragraph}{Causal Function for Collections (\(f_{\chi ,C}\))}{68}{definition.10.13}%
+\contentsline {subsubsection}{\numberline {10.6.3}The CausaloidGraph (\(G\))}{69}{subsubsection.10.6.3}%
+\contentsline {subsection}{\numberline {10.7}Effect Propagation, Dynamics, and Emergence}{70}{subsection.10.7}%
+\contentsline {subsubsection}{\numberline {10.7.1}The Generative Function (Phi\_gen)}{71}{subsubsection.10.7.1}%
+\contentsline {subsubsection}{\numberline {10.7.2}Core EPP Principles}{72}{subsubsection.10.7.2}%
+\contentsline {subsection}{\numberline {10.8}The Model and Verification Layer}{73}{subsection.10.8}%
+\contentsline {subsubsection}{\numberline {10.8.1}Observation, Assumption, and Inference}{73}{subsubsection.10.8.1}%
+\contentsline {subsubsection}{\numberline {10.8.2}Model (\(\mathcal {M}\))}{73}{subsubsection.10.8.2}%
+\contentsline {subsection}{\numberline {10.9}The Causal State Machine (CSM) }{73}{subsection.10.9}%
+\contentsline {subsubsection}{\numberline {10.9.1}CSM Operation: State Evaluation and Action Triggering}{74}{subsubsection.10.9.1}%
+\contentsline {paragraph}{Single State Evaluation and Action (\(\text {eval\_single\_state}\)):}{74}{subsubsection.10.9.1}%
+\contentsline {paragraph}{All States Evaluation and Action (\(\text {eval\_all\_states}\)):}{74}{Item.76}%
+\contentsline {subsubsection}{\numberline {10.9.2}CSM Dynamics: Managing State-Action Pairs}{74}{subsubsection.10.9.2}%
+\contentsline {subsection}{\numberline {10.10}The Teloid and Effect Ethos}{75}{subsection.10.10}%
+\contentsline {subsubsection}{\numberline {10.10.1}The Teloid (tau)}{75}{subsubsection.10.10.1}%
+\contentsline {subsubsection}{\numberline {10.10.2}Proposed Action and Verdict}{75}{subsubsection.10.10.2}%
+\contentsline {subsubsection}{\numberline {10.10.3}The Effect Ethos Structure}{75}{subsubsection.10.10.3}%
+\contentsline {subsubsection}{\numberline {10.10.4}The Deontic Inference Process}{76}{subsubsection.10.10.4}%
+\contentsline {subsection}{\numberline {10.11}Subsumption of Classical Causal Models}{76}{subsection.10.11}%
+\contentsline {subsubsection}{\numberline {10.11.1}Mapping Pearl's Ladder of Causation}{76}{subsubsection.10.11.1}%
+\contentsline {paragraph}{Concept}{76}{subsubsection.10.11.1}%
+\contentsline {paragraph}{EPP Formalization}{76}{subsubsection.10.11.1}%
+\contentsline {paragraph}{Concept}{76}{Item.86}%
+\contentsline {paragraph}{EPP Formalization}{76}{Item.86}%
+\contentsline {paragraph}{Concept}{77}{Item.89}%
+\contentsline {paragraph}{EPP Formalization}{77}{Item.89}%
+\contentsline {subsubsection}{\numberline {10.11.2}Mapping Dynamic Bayesian Networks (DBN)}{77}{subsubsection.10.11.2}%
+\contentsline {paragraph}{Concept}{77}{subsubsection.10.11.2}%
+\contentsline {paragraph}{EPP Formalization}{77}{subsubsection.10.11.2}%
+\contentsline {subsubsection}{\numberline {10.11.3}Mapping Granger Causality}{78}{subsubsection.10.11.3}%
+\contentsline {paragraph}{Concept}{78}{subsubsection.10.11.3}%
+\contentsline {paragraph}{EPP Formalization}{78}{subsubsection.10.11.3}%
+\contentsline {subsubsection}{\numberline {10.11.4}Mapping Rubin Causal Model (RCM)}{78}{subsubsection.10.11.4}%
+\contentsline {paragraph}{Concept}{78}{subsubsection.10.11.4}%
+\contentsline {paragraph}{EPP Formalization}{78}{subsubsection.10.11.4}%
+\contentsline {subsubsection}{\numberline {10.11.5}Mapping Conditional Average Treatment Effects (CATE)}{79}{subsubsection.10.11.5}%
+\contentsline {paragraph}{Concept}{79}{subsubsection.10.11.5}%
+\contentsline {paragraph}{EPP Formalization}{79}{subsubsection.10.11.5}%
+\contentsline {subsection}{\numberline {10.12}EPP Example: Smoking, Tar, and Cancer}{80}{subsection.10.12}%
+\contentsline {subsubsection}{\numberline {10.12.1}Defining the Causal Problem}{80}{subsubsection.10.12.1}%
+\contentsline {subsubsection}{\numberline {10.12.2}Formalizing the Components}{80}{subsubsection.10.12.2}%
+\contentsline {subsubsection}{\numberline {10.12.3}Formalizing Effect Propagation (\(\Pi _{EPP}\))}{81}{subsubsection.10.12.3}%
+\contentsline {subsubsection}{\numberline {10.12.4}Observations}{81}{subsubsection.10.12.4}%
+\contentsline {subsection}{\numberline {10.13}Discussion}{81}{subsection.10.13}%
+\contentsline {section}{\numberline {11}Validity}{83}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Internal validity}{83}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Spacetime Agnosticism \& Causaloids}{83}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Effect Propagation as the Essence of Causality}{83}{subsubsection.11.1.2}%
+\contentsline {subsubsection}{\numberline {11.1.3}Compatibility with Classical Causality}{84}{subsubsection.11.1.3}%
+\contentsline {subsection}{\numberline {11.2}External validity}{84}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Falsifiability}{84}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Alternative interpretations}{84}{subsubsection.11.2.2}%
+\contentsline {subsubsection}{\numberline {11.2.3}Boundaries of Generalization}{85}{subsubsection.11.2.3}%
+\contentsline {subsubsection}{\numberline {11.2.4}Method Selection Criteria: Classical Causality vs. EPP}{86}{subsubsection.11.2.4}%
+\contentsline {section}{\numberline {12}The Implementation of the Effect Propagation Process}{87}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Overview}{87}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}UltraGraph}{88}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Dual-state graph life-cycle}{88}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}SoA CsrAdjacency Type}{88}{subsubsection.12.2.2}%
+\contentsline {subsubsection}{\numberline {12.2.3}Separation of Forward and Backward CsrAdjacency}{89}{subsubsection.12.2.3}%
+\contentsline {subsubsection}{\numberline {12.2.4}Discussion}{90}{subsubsection.12.2.4}%
+\contentsline {subsection}{\numberline {12.3}DeepCausality}{91}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Overview}{91}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Implementing the Context}{91}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Implementing The Causaloid}{92}{subsubsection.12.3.3}%
+\contentsline {subsubsection}{\numberline {12.3.4}Implementing The Causaloid Collection}{93}{subsubsection.12.3.4}%
+\contentsline {subsubsection}{\numberline {12.3.5}The Causaloid Graph}{94}{subsubsection.12.3.5}%
+\contentsline {subsubsection}{\numberline {12.3.6}Implementing Causal Reasoning}{94}{subsubsection.12.3.6}%
+\contentsline {subsubsection}{\numberline {12.3.7}Implementing The Effect Ethos}{94}{subsubsection.12.3.7}%
+\contentsline {subsubsection}{\numberline {12.3.8}Implementing The Deontic Inference}{94}{subsubsection.12.3.8}%
+\contentsline {subsubsection}{\numberline {12.3.9}Implementing The Causal State Machine}{94}{subsubsection.12.3.9}%
+\contentsline {subsubsection}{\numberline {12.3.10}Discussion}{94}{subsubsection.12.3.10}%
+\contentsline {subsection}{\numberline {12.4}Benchmarks}{95}{subsection.12.4}%
+\contentsline {subsubsection}{\numberline {12.4.1}UltraGraph Benchmarks}{95}{subsubsection.12.4.1}%
+\contentsline {section}{\numberline {13}Future Work}{96}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Indefinite Causal Structures}{96}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Contextual Causal Discovery}{96}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Formalization of the Effect Ethos}{97}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Teleological Inquiry}{97}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Discussion}{98}{subsection.13.5}%
+\contentsline {section}{\numberline {14}Epilogue}{99}{section.14}%
+\contentsline {section}{{Appendix A: Formal Proof of SCM Subsumption}}{100}{section.14}%
+\contentsline {paragraph}{In SCM}{101}{Item.151}%
+\contentsline {paragraph}{In EPP}{101}{Item.151}%
+\contentsline {paragraph}{In SCM}{101}{Item.151}%
+\contentsline {paragraph}{In EPP}{101}{Item.151}%
+\contentsline {paragraph}{Equivalence}{101}{Item.151}%
+\contentsline {section}{Glossary}{102}{Item.151}%
+\contentsline {section}{References}{104}{Item.151}%

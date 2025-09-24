@@ -1,12 +1,36 @@
+%% ======================================================================
+%% PREAMBLE: Add the following lines to your main LaTeX document's preamble
+%% \usepackage{amsthm}
 
 %% ======================================================================
-%% Formalization 
+%% Custom definitions 
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}
 %% ======================================================================
 
+
+%% ======================================================================
+%% Formalization of the Effect Propagation Process
+%% ======================================================================
 
 \section{The Formalization of the Effect Propagation Process}
 \label{sec:formalization}
 
+%% ======================================================================
+%  Overview
+%% ======================================================================
+\subsection{Overview}
+\label{sec:overview}
+
+The Effect Propagation Process (EPP), introduced as a novel philosophical framework implemented in the DeepCausality project, fundamentally redefines causality to address the limitations inherent in classical, spacetime-bound conceptions. These limitations become particularly acute when considering insights from contemporary quantum gravity—which suggest emergent spacetime and indefinite causal order—and when tackling the practical complexities of advanced system engineering, such as non-Euclidean data structures, non-linear temporal dynamics, and emergent causal regimes. This work presents a first-principles mathematical formalization of the EPP, thereby establishing a rigorous and unambiguous foundation crucial for its continued theoretical development, consistent computational instantiation, and broader interdisciplinary engagement.
+
+The core of this formalization lies in precise set-theoretic definitions of EPP's key components. We define the {Contextual Fabric} (\(\mathcal{C}\)), an explicit and potentially dynamic structure composed of {Contextoids} and {Context Hypergraphs}, which can represent diverse Euclidean, non-Euclidean, temporal, and abstract relational information, thus operationalizing EPP's spacetime agnosticism. Subsequently, we formalize {Causal Units} (\(\mathcal{G}\)), built from operational {Causaloids} (\(\chi\))—unified entities of testable effect transfer that transcend the classical cause-effect dichotomy—and their composition into recursively isomorphic {CausaloidGraphs} (\(G\)) for modeling intricate causal webs. The Causal State Machine (CSM) is then formalized as the mechanism linking causal inferences to deterministic actions.
+
+Beyond these structural entities, the formalism meticulously details the {core dynamics} of EPP. This includes the Effect Propagation Process (\(\Pi_{EPP}\)) itself, which describes how the activation states of {Causaloids} evolve through a {CausaloidGraph} based on their intrinsic functions, contextual inputs, and defined relational logic. Furthermore, we formalize the Operational Generative Function (\(\Phi_{gen}\)), which provides the mechanisms for the dynamic evolution and emergence of both the Contextual Fabric and the CausaloidGraph structures, a key feature enabling the modeling of emergent causality and regime shifts. The work also demonstrates how foundational EPP philosophical principles, such as the emergence of temporal order and congruence with classical causality under specific conditions, are naturally reflected within this mathematical framework.
+
+The generalization of classical causality is demonstrated in section \ref{sec:subsumption_classical} which provides subsections of how the EPP expresses Pearl'SCM, DBN, Granger, RCM, and CATE methodologies using only EPP native primitives. One key insight is that the explicit context of the EPP simplifies counterfactual reasoning significantly. 
+
+By providing this clear mathematical language, the formalization of the EPP aims to enhance the overall clarity, consistency, and testability of the EPP. It seeks to empower researchers and engineers across diverse fields to apply EPP for modeling complex, context-dependent, and dynamically evolving causal phenomena, fostering a more robust and nuanced understanding of causality in both theoretical and practical domains.
 
 %% ======================================================================
 %  Axioms
@@ -16,13 +40,13 @@
 
 The theoretical foundation of the Effect Propagation Process is derived from a single axiom, which is itself a necessary consequence of detaching causality from a presupposed spacetime.
 
-\begin{quotation}
-\noindent\textbf{Axiom of Causality:} Every causal phenomenon is an instance of a spacetime-agnostic functional dependency. Let $\mathcal{C}$ be the universal set of all causal phenomena. The axiom states:
+\begin{axiom}[of Causality]
+Every causal phenomenon is an instance of a spacetime-agnostic functional dependency. Let $\mathcal{C}$ be the universal set of all causal phenomena. The axiom states:
 \begin{equation}
 \forall c \in \mathcal{C}, \exists f \text{ such that } c \equiv (E_2 = f(E_1))
 \end{equation}
 where $E_1$ and $E_2$ are effects and $f$ is a function. The nature of $E$ and $f$ are deliberately unconstrained.
-\end{quotation}
+\end{axiom}
 
 %% ======================================================================
 %  Formal Derivation of the EPP Primitives
@@ -33,111 +57,142 @@ where $E_1$ and $E_2$ are effects and $f$ is a function. The nature of $E$ and $
 The core architectural primitives of the Effect Propagation Process are not a collection of independent design choices, but are necessary logical consequences that follow from the single causal axiom. This section provides a formal summary of that derivation.
 
 \begin{enumerate}
-    \item \textbf{The Contextual Fabric ($\mathcal{H}$): The Background Condition.}
-    A function $f(E_1)$ may be conditioned on a set of background variables, $K$. The general form of the axiom is thus $E_2 = f(E_1, K)$. 
+    \item \textbf{The Contextual Fabric ($\mathcal{H}$): The Background Condition.}\newline
+    A function $f(E_1)$ may be conditioned on a set of background variables, $K$. The general form of the axiom is thus $E_2 = f(E_1, K)$.
     A mechanism to hold and provide this background information $K$ is therefore necessary.
     \begin{equation*}
-        \implies \text{Let the \textbf{Contextual Fabric} ($\mathcal{H}$) be this mechanism.}
+        \implies \text{Let the \textbf{Contextual Fabric} ($\\mathcal{H}$) be this mechanism.}
     \end{equation*}
-    
-    \item \textbf{The Causaloid ($\chi$): The Functional Primitive.}
+
+    \item \textbf{The Causaloid ($\chi$): The Functional Primitive.}\newline
     Since every causal phenomenon $c$ is defined by a function $f$, a computational primitive to encapsulate $f$ is a logical necessity.
     \begin{equation*}
-        \implies \text{Let the \textbf{Causaloid} ($\chi$) be this primitive, whose primary component is the \textbf{causal function} ($f_\chi$).}
+        \implies \text{Let the \textbf{Causaloid} ($\\chi$) be this primitive, whose primary component is the \textbf{causal function} ($f_\chi$).}
     \end{equation*}
 
-    \item \textbf{The PropagatingEffect ($\Pi_E$): The Isomorphic Message.}
+    \item \textbf{The PropagatingEffect ($\Pi_E$): The Isomorphic Message.}\newline
     A function requires inputs and produces an output. Given the compositional nature of functions (e.g., $g(f(E))$), where the output of one serves as the input to the next, a single, uniform message type is logically necessary.
     \begin{equation*}
-        \implies \text{Let the \textbf{PropagatingEffect} ($\Pi_E$) be this isomorphic primitive serving as input to and output from a Causaloid.}
+        \implies \text{Let the \textbf{PropagatingEffect} ($\\Pi_E$) be this isomorphic primitive serving as input to and output from a Causaloid.}
     \end{equation*}
 
-    \item \textbf{The Causaloid Graph ($\mathcal{L}$): The Structural Composition.}
-    A system may contain multiple causal phenomena ($c_1, c_2, \dots, c_n$) that are themselves causally related. A structure is required to represent the set of Causaloids $\{\chi_1, \chi_2, \dots, \chi_n\}$ and the dependency pathways of their `PropagatingEffect`s.
+    \item \textbf{The Causaloid Graph ($\mathcal{L}$): The Structural Composition.}\newline
+    A system may contain multiple causal phenomena ($c_1, c_2, \dots, c_n$) that are themselves causally related.
+     A structure is required to represent the set of Causaloids {$\\chi_1, \\chi_2, \dots, \\chi_n$} and the dependency pathways of their `PropagatingEffect`s.
     \begin{equation*}
-        \implies \text{Let the \textbf{Causaloid Graph} ($\mathcal{L}$) be this structure, defined as a hypergraph where nodes are Causaloids and hyperedges are the propagation pathways.}
+        \implies \text{Let the \textbf{Causaloid Graph} ($\mathcal{L}$) be a hypergraph\newline
+         where nodes are Causaloids and hyperedges are propagation effects.}
     \end{equation*}
 
 \end{enumerate}
 
-The subsequent sections of this chapter provide the detailed set-theoretic definitions of these logically necessary primitives, which together form the operational core of the Effect Propagation Process.
+\noindent The subsequent sections provide the detailed set-theoretic definitions of these primitives.
+
+%% ======================================================================
+%  Propagating Effect Primitive
+%% ======================================================================
+\subsection{The PropagatingEffect Primitive (\(\Pi_E\))}
+\label{sec:propagating_effect_formal}
+
+The \textbf{PropagatingEffect} (\(\Pi_E\)) is the isomorphic message that serves as both input and output for Causaloids. 
+It is a polymorphic type representing the disjoint union of several distinct kinds of effects.\newline
+
+\begin{definition}[PropagatingEffect]
+\label{def:propagating_effect}
+ A PropagatingEffect \(\pi \in \Pi_E\) is an element of the set defined by the disjoint union:
+\[ \Pi_E = \Pi_{\text{None}} \cup \Pi_{\text{Det}} \cup \Pi_{\text{Num}} \cup \Pi_{\text{Prob}} \cup \Pi_{\text{Link}} \cup \Pi_{\text{Map}} \cup \Pi_{\text{Graph}} \cup \Pi_{\text{Relay}} \]
+where:
+\begin{itemize}
+    \item \(\Pi_{\text{None}}\) is a singleton set representing the absence of an effect.
+    \item \(\Pi_{\text{Det}} = \{\text{Deterministic}(b) \mid b \in \{\text{true, false}\}\} \) represents a boolean effect.
+    \item \(\Pi_{\text{Num}} = \{\text{Numerical}(n) \mid n \in \mathbb{R}\} \) represents a scalar numerical effect.
+    \item \(\Pi_{\text{Prob}} = \{\text{Probabilistic}(p) \mid p \in [0, 1] \subset \mathbb{R}\} \) represents a probability.
+    \item \(\Pi_{\text{Link}} = \{\text{ContextualLink}(id_C, id_v) \mid id_C \in \mathbb{I}, id_v \in \mathbb{I}\} \) is a reference to a Contextoid within a Context.
+    \item \(\Pi_{\text{Map}} = \{\text{Map}(m) \mid m: \mathbb{I} \to \Pi_E \} \) is a map from identifiers to other PropagatingEffects.
+    \item \(\Pi_{\text{Graph}} = \{\text{Graph}(g) \mid g \text{ is a graph of } \Pi_E \} \) represents a graph of effects.
+    \item \(\Pi_{\text{Relay}} = \{\text{RelayTo}(i, \pi) \mid i \in \mathbb{N}, \pi \in \Pi_E \} $ is a control-flow directive for adaptive reasoning, instructing the engine to jump to the Causaloid at index $i$ with a new input effect $\pi$.
+\end{itemize}
+\end{definition}
 
 %% ======================================================================
 %  Contextual Fabric 
 %% ======================================================================
-\subsection[Contextual Fabric (C)]{Contextual Fabric (\(\mathcal{C}\))}
+\subsection{Contextual Fabric (\(\mathcal{C}\))}
 \label{sec:formalization_context}
 
 The Effect Propagation Process (EPP), being spacetime-agnostic, requires a formally defined structure through which effects propagate and within which causal relationships are conditioned. This structure is termed the \textbf{Contextual Fabric}, denoted abstractly as \(\mathcal{C}\). The Contextual Fabric is not a monolithic entity but can be composed of multiple, distinct contextual realms, each potentially representing different aspects of a system's environment or internal state (e.g., physical space, temporal scales, relational networks, data streams). This section provides a set-theoretic formalization of this fabric, starting from its most granular component, the Contextoid, and building up to collections of Context Hypergraphs.
 
-\newpage
 
 \subsubsection[The Contextoid (v)]{The Contextoid (\(v\))}
-\label{ssec:contextoid_formal}
+\label{ssec:contextoid_formal_revised}
 
-The atomic unit of contextual information within the EPP framework is the \textbf{Contextoid}. A Contextoid encapsulates a single, identifiable piece of data, which can be temporal, spatial, spatiotemporal, or a general data value.
+The atomic unit of contextual information within the EPP framework is the \textbf{Contextoid}. A Contextoid encapsulates a single, identifiable piece of data, which can be temporal, spatial, spatiotemporal, symbolic, or a general data value.
 
-\textbf{Contextoid Definition}
-
-A Contextoid \( v \) is an element of a set of all possible contextoids \( V_{\mathcal{C}} \) within a given Context Hypergraph (defined in Section \ref{ssec:context_hypergraph_formal}). It is formally defined as a tuple:
+\begin{definition}[Contextoid]
+\label{def:contextoid}
+A Contextoid \( v \) is an element of a set of all possible contextoids \( V_{\mathcal{C}} \). It is formally defined as a tuple:
 \[ v = (id_v, \text{payload}_v, \text{adj}_v) \]
+where \( id_v \in \mathbb{I} \) is a unique identifier, \( \text{payload}_v \) is the content-bearing element, and \( \text{adj}_v \) is an optional protocol for dynamic modification.
+\end{definition}
 
 
-\textbf{Contextoid Identifier}
+\textbf{Contextoid Payload}\newline 
 
-Let \(\mathbb{I}\) be a universal set of unique identifiers.
-Then \( id_v \in \mathbb{I} \) is a unique identifier for the contextoid \(v\). This ensures each piece of contextual information can be uniquely referenced within its encompassing Context Hypergraph \(C\).
+\begin{definition}[Contextoid Payload]
+\label{def:contextoid_paylod}
+The \( \text{payload}_v \) represents the actual contextual information. It is an element from the disjoint union of several universal sets, each representing a fundamental category of contextual information:
+\[ \text{payload}_v \in \mathcal{D} \cup \mathcal{T} \cup \mathcal{S} \cup \mathcal{ST} \cup \Sigma \]
+where \(\mathcal{D}\) is the set of data payloads, \(\mathcal{T}\) is the set of temporal payloads, \(\mathcal{S}\) is the set of spatial payloads, \(\mathcal{ST}\) is the set of spacetime payloads, and \(\Sigma\) is the set of symbolic payloads.
+\end{definition}
 
+\textbf{Data Payload}\newline 
 
-\textbf{Contextoid Payload} 
+\begin{definition}[Data Payloads (\(\mathcal{D}\))]
+\label{def:contextoid_paylod_data}
+Let \(\mathcal{D}\) be the universal set of all data payloads. Each element \(d \in \mathcal{D}\) is a tuple \( (id_d, \text{data}_d) \), where \(id_d \in \mathbb{I}\) and \(\text{data}_d\) is a value from a generic domain \(\mathcal{V}_D\).
+\end{definition}
 
-The \( \text{payload}_v \) represents the actual contextual information encapsulated by the Contextoid. It is defined as a tagged union, allowing for diverse types of context:
-\[ \text{payload}_v \in \{ \text{Data}(d) \mid d \in \mathcal{D}_T \} \cup \{ \text{Time}(t) \mid t \in \mathcal{T} \} \cup \{ \text{Space}(s) \mid s \in \mathcal{S} \} \cup \{ \text{SpaceTime}(st) \mid st \in \mathcal{ST} \} \]
-where $\mathcal{D}_T, \mathcal{T}, \mathcal{S}, \text{ and } \mathcal{ST}$ are predefined sets representing the domains of all possible data, temporal, spatial, and spatiotemporal values, respectively.
+\textbf{Temporal Payloads}\newline 
 
+\begin{definition}[Temporal Payloads (\(\mathcal{T}\))]
+\label{def:contextoid_paylod_temporal}
+Let \(\mathcal{T}\) be the universal set of all temporal payloads. Each element \(t \in \mathcal{T}\) is a tuple \( (id_t, \text{scale}_t, \text{unit}_t) \).
+\begin{itemize}
+    \item \(id_t \in \mathbb{I}\) is its unique identifier.
+    \item \(\text{scale}_t \in \mathcal{T}_{\text{scale}}\), where \(\mathcal{T}_{\text{scale}}\) is a predefined enumerated set of temporal granularities (e.g., \(\{\text{Seconds, Ticks, SymbolicEvent}\}\)).
+    \item \(\text{unit}_t \in \mathcal{V}_T\), where \(\mathcal{V}_T\) is a suitable ordered value set (e.g., \(\mathbb{R}\) or \(\mathbb{N}\)).
+\end{itemize}
+\end{definition}
+The set \(\mathcal{T}\) may be partitioned into subsets corresponding to different temporal semantics, such as discrete, continuous, or symbolic time.
 
-            \paragraph[Data Payload]{Data Payload (\(Data(d), d \in \mathcal{D}_T\))}\label{par:data_payload}
-            
-            The set \(\mathcal{D}_T\) represents the domain of all possible data values that a Data Contextoid can hold. The specific nature of \(d\) is generic (of type \(T\)) and can encapsulate arbitrary information relevant to the causal model, such as sensor readings, calculated metrics, textual features, or symbolic states.
+\textbf{Spatial Payloads}\newline 
 
+\begin{definition}[Spatial Payloads (\(\mathcal{S}\))]
+\label{def:contextoid_paylod_spatial}
+Let \(\mathcal{S}\) be the universal set of all spatial payloads. Each element \(s \in \mathcal{S}\) is defined by a tuple \( (id_s, \text{coords}_s) \).
+\begin{itemize}
+    \item \(id_s \in \mathbb{I}\) is its unique identifier.
+    \item \(\text{coords}_s\) is a vector \( (c_1, c_2, \dots, c_n) \) where each component \(c_i \in \mathcal{V}_S\) for some value set \(\mathcal{V}_S\).
+    \item The dimensionality \(n\) is given by a function \(f_{\text{dim}}: \mathcal{S} \to \mathbb{N}\).
+\end{itemize}
+For any subset of \(\mathcal{S}\), a metric \(d: (\mathcal{S}, \mathcal{S}) \to \mathbb{R}^+\) may be defined, allowing for distance calculations. This structure accommodates both Euclidean and non-Euclidean geometries (e.g., geodetic, rotational).
+\end{definition}
 
-            \paragraph[Time Payload]{Time Payload (\(Time(t), t \in \mathcal{T}\))}\label{par:time_payload}
-            
-            The set \(\mathcal{T}\) represents the domain of all possible temporal values. A temporal value \(t \in \mathcal{T}\) is typically structured as an ordered pair:
-            \[ t = (\text{scale}, \text{unit}) \]
-            
-                \subparagraph[Temporal Scale and Unit]{Formalizing Temporal Scale (\(T_{scale}\)) and Unit (\(T_{unit}\))}
-                \label{subpar:temporal_scale_unit}
-                
-                Let \(\mathcal{T}_{\text{scale}}\) be an enumerated set of possible temporal granularities, e.g., 
-                \[ \mathcal{T}_{\text{scale}} = \{\text{Year, Month, Day, Hour, Minute, Second, Nanosecond, EventStep}\} \]
-                Let \(\mathcal{T}_{\text{unit}}\) be the domain of values for the temporal unit, typically non-negative integers (\(\mathbb{N}_0\)) or a suitable ordered set, representing the count at the given \(\text{scale}\).
-                Thus, \(\text{scale} \in \mathcal{T}_{\text{scale}}\) and \(\text{unit} \in \mathcal{T}_{\text{unit}}\).
+\textbf{Spacetime Payloads}\newline 
 
+\begin{definition}[Spacetime Payloads (\(\mathcal{ST}\))]
+\label{def:contextoid_paylod_spacetime}
+Let \(\mathcal{ST}\) be the universal set of all spacetime payloads. Each element \(st \in \mathcal{ST}\) is a composite structure, formally a pair \( (s, t) \), where \(s \in \mathcal{S}\) and \(t \in \mathcal{T}\).
+\end{definition}
 
-            \paragraph[Space Payload]{Space Payload (\(Space(s), s \in \mathcal{S}\))}\label{par:space_payload}
-            
-            The set \(\mathcal{S}\) represents the domain of all possible spatial values. A spatial value \(s \in \mathcal{S}\) can be represented by coordinates, for example, as a tuple for up to three dimensions:
-            \[ s = (x, y, z) \]
-            where \(x, y, z\) are optional components.
-            
-                \subparagraph[Coordinates]{Formalizing Coordinates (\(T_{coord}\))}
-                \label{subpar:coordinates}
-                
-                Let \(T_{coord}\) be the domain for coordinate values (e.g., \(\mathbb{R}\), \(\mathbb{Z}\), or a generic type \(V\)). Each coordinate component \(x, y, z \in T_{coord} \cup \{\text{null}\}\), allowing for variable dimensionality.
-                
-                \subparagraph[Spatial Interpretation]{Formalizing Spatial Interpretation (Euclidean/Non-Euclidean via \texttt{Spatial<V>})}
-                \label{subpar:spatial_interpretation}
-                
-                The geometric interpretation of spatial coordinates (e.g., distance metrics, neighborhood relations) is not fixed but is governed by functions associated with the specific instantiation of the spatial context. In a computational framework like DeepCausality, this is typically managed through a trait or interface, analogous to the \texttt{Spatial<V>} trait discussed in the EPP philosophy \cite{Hansen2025EPP}. This allows \(s\) to represent points in Euclidean spaces, nodes in a graph (non-Euclidean), or other abstract relational structures.
+\textbf{Symbolic Payloads}\newline 
 
+\begin{definition}[Symbolic Payloads (\(\Sigma\))]
+\label{def:contextoid_paylod_symbolic}
+Let \(\Sigma\) be the universal set of all symbolic payloads. Each element \(sym \in \Sigma\) is a tuple \( (id_{sym}, \text{repr}_{sym}) \), where \(id_{sym} \in \mathbb{I}\) and \(\text{repr}_{sym}\) is an element from a domain of symbolic representations \(\mathcal{R}_{sym}\).
+\end{definition}
 
-            \paragraph[SpaceTime Payload]{SpaceTime Payload (\(SpaceTime(st), st \in \mathcal{ST}\))}\label{par:spacetime_payload}
-            
-            The set \(\mathcal{ST}\) represents the domain of all possible spatiotemporal values. A value \(st \in \mathcal{ST}\) combines spatial and temporal information, typically as a composite structure:
-            \[ st = (\text{space\_value}, \text{time\_value}) \]
-            where \(\text{space\_value} \in \mathcal{S}\) and \(\text{time\_value} \in \mathcal{T}\). This represents a specific spatial configuration at a particular temporal point or interval.
-
+This polymorphic design allows the EPP to model and reason about highly heterogeneous and complex contextual information in a consistent and formally grounded manner, closing the gap between abstract theory and practical implementation.
 
 \textbf{Contextoid Adjustability Protocol }
         
@@ -154,10 +209,14 @@ where $\mathcal{D}_T, \mathcal{T}, \mathcal{S}, \text{ and } \mathcal{ST}$ are p
 
     Individual Contextoids are organized into a structured collection called a \textbf{Context Hypergraph}. This hypergraph structure allows for the representation of complex, N-ary relationships between different pieces of contextual information, which is crucial for modeling the intricate dependencies found in real-world systems.
 
-    \paragraph*{Context Hypergraph Definition.} 
+
+    \begin{definition}[Context Hypergraph]
+    \label{def:context_hypergraph}
     An individual Context Hypergraph \( C \) is defined as a tuple:
     \[ C = (V_C, E_C, ID_C, \text{Name}_C) \]
     where \(V_C\) is its finite set of \textbf{Contextoid} nodes (each conforming to Definition 3.1, thus \( V_C = \{v_1, v_2, \dots, v_n\} \)), \(E_C\) is its finite set of \textbf{Hyperedges}, \(ID_C \in \mathbb{N}\) is a unique identifier for \(C\), and \(\text{Name}_C\) is a descriptive name.
+    \end{definition}
+
 
     \paragraph*{Set of Context Hyperedges (\(E_C\)).}
     A Hyperedge \( e \in E_C \) represents a relationship among a subset of Contextoids in \(V_C\). It is defined as a tuple:
@@ -170,20 +229,16 @@ where $\mathcal{D}_T, \mathcal{T}, \mathcal{S}, \text{ and } \mathcal{ST}$ are p
     \end{itemize}
     The use of hyperedges allows a single relational link (\(e\)) to connect an arbitrary number of Contextoids (\(V_e\)), enabling the representation of multi-way contextual dependencies.
 
-\subsubsection[Context Collection (C\_sys)]{Context Collection (\(C_{sys}\))} 
-    \label{ssec:context_collection_formal}
-
-    In many complex scenarios, causal reasoning may need to draw upon multiple, potentially distinct but interacting, contextual realms. EPP accommodates this through the concept of a \textbf{Context Collection}.
-
-    \noindent\textbf{Definition 3.4 (Context Collection):} A System Context, or Context Collection, \(C_{sys}\), is defined as a finite set of distinct Context Hypergraphs:  \[ C_{sys} = \{C_1, C_2, \dots, C_k\} \] where each \( C_i \) is an individual Context Hypergraph as defined in Definition 3.2. Each \(C_i \in C_{sys}\) possesses a unique identifier \(ID_{C_i} \in \mathbb{N}\) (distinct from other Context Hypergraphs in the collection) and a descriptive \(\text{Name}_{C_i}\).
-
-
     \subsubsection[Context Accessor (ContextAccessor C\_refs)]{Context Accessor (\(\text{ContextAccessor}(\mathcal{C}_{refs})\))}
     \label{ssec:context_accessor_formal}
 
     To enable Causaloids (defined in Section \ref{sec:formalization_causal_units}) to interact with the Contextual Fabric, a mechanism for querying and retrieving contextual information is required. This is conceptualized as a \textbf{Context Accessor}.
 
-    \noindent\textbf{Definition 3.5 (Context Accessor):} A Context Accessor, denoted \(\text{ContextAccessor}(\mathcal{C}_{refs})\), is a functional interface that provides read-access to a specified subset of Context Hypergraphs \(\mathcal{C}_{refs} \subseteq \mathcal{C}_{sys}\).
+    \begin{definition}[Context Accessor]
+    \label{def:context_accessor}
+ 	A Context Accessor, denoted \(\text{ContextAccessor}(\mathcal{C}_{refs})\), is a functional interface that provides read-access to a specified subset of Context Hypergraphs \(\mathcal{C}_{refs} \subseteq \mathcal{C}_{sys}\).
+    \end{definition}   
+   
     Its operations, denoted abstractly, would typically include functions \(f_{\text{access}}\) such that: % Changed f_{access} to f_{\text{access}}
     \begin{itemize} 
         \item \(\text{getContextoid}(id_v, ID_C) \to v \cup \{\text{null}\}\): Retrieves a Contextoid \(v\) by its identifier \(id_v\) from a specific Context Hypergraph \(C\) (identified by \(ID_C\)) within \(\mathcal{C}_{refs}\).
@@ -191,84 +246,83 @@ where $\mathcal{D}_T, \mathcal{T}, \mathcal{S}, \text{ and } \mathcal{ST}$ are p
     \end{itemize}
     The precise set of functions within the Context Accessor depends on the requirements of the Causaloid functions that utilize it. This formalism defines the accessor as a means to obtain relevant contextual data for causal evaluation based on identifiers and relational queries.
 
-
 %% ======================================================================
 %% Causal Units and Structures
 %% ======================================================================
 
-\subsection[Causal Units and Structures (G)]{Causal Units and Structures (\(\mathcal{G}\))} % Using \mathcal{G} for 
+\subsection[Causal Units and Structures (G)]{Causal Units and Structures (\(\mathcal{G}\))} 
 \label{sec:formalization_causal_units}
 
-Having formalized the Contextual Fabric (\(\mathcal{C}\)) within which effects propagate, we now turn to the formalization of the causal entities themselves. The Effect Propagation Process (EPP) posits that causal influence is mediated by discrete, operational units which can be composed into complex structures. This section defines these Causal Units and Structures, denoted abstractly as \(\mathcal{G}\). The central entity is the Causaloid (\(\chi\)), representing an individual causal mechanism, and these are organized into CausaloidGraphs (\(G\)) to model intricate webs of causal relationships.
+Having formalized the Contextual Fabric (\(\mathcal{C}\)) within which effects propagate, we now turn to the formalization of the causal entities themselves. The Effect Propagation Process (EPP) posits that causal influence is mediated by discrete, operational units which can be composed into complex structures. This section defines these Causal Units and Structures, denoted abstractly as \(\mathcal{G}\). The central entity is the Causaloid (\(\chi\)), representing an individual causal mechanism. These primitives are then composed into Causaloid Collections and CausaloidGraphs (\(G\)) to model intricate webs of causal relationships.
 
-In the EPP philosophy, Causaloids are grounded in a process of observation, assumption validation, and inference. While a full formalization of this empirical grounding process is extensive, we briefly define its key components as they inform the structure of a Causaloid, particularly its linkage to underlying evidence or hypotheses. Let \(\mathbb{I}\) be a universal set of identifiers.
-
-    
-\textbf{Observation Instance (o\_data)}
-        
-        An \textbf{Observation Instance} \(o_{data}\) represents an empirical data point or a collection of related measurements relevant to a potential causal link. It typically includes an identifier, the observed value(s), and any associated outcome or effect. Formally, one might define \(o_{data} = (id_{obs} \in \mathbb{I}, \text{val}_{obs}, \text{eff}_{obs})\). A dataset \(\mathcal{D}_{obs}\) would be a set of such observations.
-
-\textbf{Assumption Instance (A\_smp)}
-
-        An \textbf{Assumption Instance} \(A_{smp}\) articulates a condition believed to hold, under which causal interpretations are made. It includes an identifier, a description, and critically, an evaluation function \(f_{asmp}\) that tests the assumption against observational data \(\mathcal{D}_{obs}\) and/or contextual information \(\mathcal{C}_{sys}\). Formally, \(A_{smp} = (id_{asmp} \in \mathbb{I}, \text{desc}_{asmp}, f_{asmp}, \text{status}_{asmp})\), where \(f_{asmp}: \mathcal{P}(\mathcal{D}_{obs}) \times \text{ContextAccessor}(\mathcal{C}_{relevant}) \to \{\text{true, false}\}\). (\(\mathcal{P}(\mathcal{D}_{obs})\) denotes the power set or a relevant subset of observations).
-
-
-\textbf{Inference Instance (I\_inf)}
-
-An \textbf{Inference Instance} \(I_{inf}\) represents a tested hypothesis about a potential causal link, derived from observations under validated assumptions. It typically includes an identifier, the inferential question, the strength of the observed relationship, and a threshold for asserting the inference. Formally, \(I_{inf} = (id_{inf} \in \mathbb{I}, \text{question}_{inf}, \text{strength}_{obs}, \text{threshold}_{inf}, \text{status}_{inf})\).
-
-
-\subsubsection[The Causaloid (chi)]{The Causaloid (\(\chi\))}
+\subsubsection[The Causaloid Primitive (chi)]{The Causaloid Primitive (\(\chi\))}
 \label{ssec:causaloid_formal}
 
-The fundamental unit of causal interaction within EPP is the \textbf{Causaloid}, inspired by Hardy's work \cite{HardyDynamicCausalStructure} but adapted here as an abstract, operational entity for generalized causal modeling. It encapsulates a single, testable causal mechanism or hypothesis, whose activation depends on input observations and contextual information. Its definition reflects the versatile structural forms found in the DeepCausality implementation.
+The fundamental unit of causal interaction within EPP is the \textbf{Causaloid}. It is a recursively isomorphic primitive that encapsulates a single, testable causal mechanism.
 
-\textbf{Causaloid Definition}
+\begin{definition}[Causaloid]
+\label{def:causaloid}
+A Causaloid \( \chi \) is a tuple:
+\[ \chi = (id_\chi, \text{type}_\chi, f_\chi, \mathcal{C}_{refs}, \text{desc}_\chi, \mathcal{A}_{linked}, I_{linked}) \]
+where:
+\begin{itemize}
+    \item \( id_\chi \in \mathbb{I} \) is a unique identifier.
+    \item \( \text{type}_\chi \in \{\text{Singleton, Collection, Graph}\} \) specifies its structural nature.
+    \item \( f_\chi \) is the \textbf{causal function} associated with the Causaloid. Its precise signature depends on \(\text{type}_\chi\).
+    \item \( \mathcal{C}_{refs} \subseteq \mathcal{C}_{sys} \) is a set of references to Context Hypergraphs for the evaluation of \(f_\chi\).
+    \item \( \text{desc}_\chi, \mathcal{A}_{linked}, I_{linked} \) are optional metadata for description and empirical grounding.
+\end{itemize}
+\end{definition}
+
+\paragraph{Causal Function for Singletons (\(f_{\chi,S}\))} For a Causaloid of type \(\text{Singleton}\), the causal function is a direct evaluation mapping an input effect and a context to an output effect:
+\[ f_{\chi,S}: (\Pi_E \times \text{ContextAccessor}(\mathcal{C}_{refs})) \to \Pi_E \]
+
+
+\subsubsection{The Causaloid Collection (\(\mathcal{X}_{coll}\))}
+\label{ssec:causaloid_collection_formal}
+
+A \textbf{Causaloid Collection} models causal phenomena that arise from the aggregation of multiple individual causes. It encapsulates a set of Causaloids and an explicit logic for combining their effects. This structure is fundamental for representing many-to-one causal relationships in a concise and manageable way.
+
+
+\begin{definition}[Causaloid Collection]
+\label{def:causaloid_collection}
+A Causaloid Collection, \(\mathcal{X}_{coll}\), is a set of Causaloids:
+\[ \mathcal{X}_{coll} = \{\chi_1, \chi_2, \dots, \chi_p\} \]
+\end{definition}
+
+\paragraph{Aggregate Logic (\(\mathcal{A}_L\))} The evaluation of a collection is governed by a specific aggregation rule, which determines how the effects of the individual member Causaloids are combined into a single, coherent outcome.
+
+\begin{definition}[Aggregate Logic]
+\label{def:aggregate_logic}
+Let \(\mathcal{A}_L\) be the enumerated set of aggregate logics:
+\[ \mathcal{A}_L = \{\text{All, Any, None, Some(k)}\} \text{ where } k \in \mathbb{N} \]
+Each logic corresponds to a standard logical operator applied to the set of evaluated effects from the collection's members:
+\begin{itemize}
+    \item \textbf{All}: Logical conjunction (\(\land\)). The collection is active only if all member Causaloids are active.
+    \item \textbf{Any}: Logical disjunction (\(\lor\)). The collection is active if at least one member Causaloid is active.
+    \item \textbf{None}: Negated disjunction (\(\neg \lor\)). The collection is active only if no member Causaloids are active.
+    \item \textbf{Some(k)}: k-out-of-n threshold logic. The collection is active if at least \(k\) member Causaloids are active.
+\end{itemize}
+\end{definition}
+
+\paragraph{Causal Function for Collections (\(f_{\chi,C}\))} For a Causaloid of type \(\text{Collection}\), the causal function evaluates each member of its collection and aggregates the results using a specified logic.
+
+\begin{definition}[Causal Function for Collections]
+\label{def:causal_function_collection}
+The function is a mapping:
+\[ f_{\chi,C}: (\mathcal{P}(\chi) \times \Pi_E \times \mathcal{A}_L) \to \Pi_E \]
+This function, \(f_{\chi,C}\), takes a set of causaloids (the collection \(\mathcal{X}_{coll}\)), an input effect \(\pi_{in} \in \Pi_E\), and an aggregate logic \(l \in \mathcal{A}_L\). It computes a set of intermediate effects \(\{\pi_1, \pi_2, \dots, \pi_p\}\) by applying \(\pi_{in}\) to each \(\chi_i \in \mathcal{X}_{coll}\), and then applies the logic \(l\) to this set to produce a single, final output effect \(\pi_{out} \in \Pi_E\).
+\end{definition}
 
     
-    \textbf{Definition 4.1 (Causaloid):} A Causaloid \( \chi \) is defined as a tuple:
-    \[ \chi = (id_\chi, \text{type}_\chi, f_\chi, \mathcal{C}_{refs}, \text{desc}_\chi, \mathcal{A}_{linked}, I_{linked}) \]
-    where:
-    \begin{itemize}
-        \item \( id_\chi \in \mathbb{I} \) is a unique identifier for the Causaloid.
-        \item \( \text{type}_\chi \in \{\text{Singleton, Collection, Graph}\} \) specifies the structural nature of the Causaloid, determining how its causal function \(f_\chi\) is realized. This corresponds to the \texttt{CausalType} enum in the Rust implementation.
-        \item \( f_\chi \) is the \textbf{causal function or logic} associated with the Causaloid. Its precise signature and operation depend on \(\text{type}_\chi\) (detailed in Section \ref{sssec:causal_function_logic_formal_revised}). It fundamentally maps inputs and context to an activation status \(\{\text{true (active)}, \text{false (inactive)}\}\).
-        \item \( \mathcal{C}_{refs} \subseteq \mathcal{C}_{sys} \) is a set of references to Context Hypergraphs that provide contextual information for the evaluation of \(f_\chi\).
-        \item \( \text{desc}_\chi \) is a human-readable description (e.g., a string) of the causal mechanism or hypothesis. This corresponds to the output of an \texttt{explain()} method in an implementation.
-        \item \( \mathcal{A}_{linked} \) is an optional set of identifiers \(\{id_{asmp_1}, \dots\}\) referring to Assumption Instances (Section \ref{sssec:assumption_instance}) upon which this Causaloid's validity depends.
-        \item \( I_{linked} \) is an optional identifier \(id_{inf}\) referring to an Inference Instance (Section \ref{sssec:inference_instance}) that may have led to this Causaloid's formulation.
-    \end{itemize}
+\subsubsection[The CausaloidGraph (\(G\))]{The CausaloidGraph (\(G\))}
+\label{ssec:causaloidgraph_formal} 
 
-
-\textbf{Causal Function Logic (f\_chi)}
+    Individual Causaloids are composed into \textbf{CausaloidGraphs} to represent complex webs of interconnected causal relationships. A CausaloidGraph is itself a hypergraph.\newline
     
-    
-    The causal function \(f_\chi\) embodies the specific operational logic of the Causaloid \(\chi\). Its behavior is contingent on \(\text{type}_\chi\):
-
-    \begin{itemize}
-        \item If \( \text{type}_\chi = \text{Singleton} \):
-            \(f_\chi\) is a direct evaluation function, \(f_{\chi,S}: \mathcal{O}_{\text{type}} \times \text{ContextAccessor}(\mathcal{C}_{refs}) \to \{\text{true}, \text{false}\}\). This function directly tests a specific causal hypothesis against an input observation (of type \(\mathcal{O}_{\text{type}}\), often a \texttt{NumericalValue} in implementations) and the accessed context. 
-
-        \item If \( \text{type}_\chi = \text{Collection} \):
-            The Causaloid \(\chi\) encapsulates an ordered or unordered set of other Causaloids, \(\mathcal{X}_{coll} = \{\chi'_1, \chi'_2, \dots, \chi'_p\}\). 
-            In this case, \(f_\chi\) represents an aggregate reasoning logic over the activation states of the Causaloids in \(\mathcal{X}_{coll}\). For example, \(f_{\chi,C}\) might evaluate to true if all \(\chi'_j \in \mathcal{X}_{coll}\) are active, or if any one of them is active. The evaluation of each \(\chi'_j\) would itself involve its own causal function \(f_{\chi'_j}\). The input \(\mathcal{O}_{\text{type}}\) might be a collection of observations, one for each member of \(\mathcal{X}_{coll}\), or a shared observation.
-
-        \item If \( \text{type}_\chi = \text{Graph} \):
-            The Causaloid \(\chi\) encapsulates an entire CausaloidGraph \(G'=(V_{G'}, E_{G'}, \dots)\) (as defined in Section \ref{ssec:causaloidgraph_formal}). 
-            Here, \(f_\chi\) represents the outcome of the full Effect Propagation Process \(\Pi_{EPP}\) (defined in Section \ref{ssec:epp_process_formal}) operating on the encapsulated graph \(G'\). For instance, \(f_{\chi,G}\) might evaluate to true if a specific target node in \(G'\) becomes active after propagation, or if the overall graph reaches a certain state. The input \(\mathcal{O}_{\text{type}}\) would serve as the initial trigger(s) for propagation within \(G'\).
-    \end{itemize}
-    Regardless of \(\text{type}_\chi\), the causal function \(f_\chi\) ultimately determines the binary activation state of \(\chi\), providing the "testable effect transfer" mechanism central to EPP.
-
-    
-    \subsubsection[The CausaloidGraph (\(G\))]{The CausaloidGraph (\(G\))}
-    \label{ssec:causaloidgraph_formal} % Added _formal
-
-    Individual Causaloids are composed into \textbf{CausaloidGraphs} to represent complex webs of interconnected causal relationships. A CausaloidGraph is itself a hypergraph.
-
-    
-\textbf{CausaloidGraph Definition}
-        
-        \textbf{Definition 4.2 (CausaloidGraph):} A CausaloidGraph \( G \) is defined as a tuple:
+\begin{definition}[CausaloidGraph]
+\label{def:causaloid_graph}
+ A CausaloidGraph \( G \) is defined as a tuple:
         \[ G = (V_G, E_G, ID_G, \text{Name}_G) \]
         where:
         \begin{itemize}
@@ -277,10 +331,10 @@ The fundamental unit of causal interaction within EPP is the \textbf{Causaloid},
             \item \( ID_G \in \mathbb{I} \) (or \(\mathbb{N}\)) is a unique identifier for the CausaloidGraph.
             \item \( \text{Name}_G \) is a descriptive name for the CausaloidGraph (e.g., a string).
         \end{itemize}
-
-        
-\textbf{Set of Causal Nodes (V\_G)}
-        
+\end{definition}      
+      
+\begin{definition}[Set of Causal Nodes (V\_G)]
+\label{def:causaloid_graph_nodes}
         Each causal node \( v_g \in V_G \) is defined as a tuple \(v_g = (id_g, \text{payload}_g)\), where \(id_g \in \mathbb{I}\) is its unique identifier within \(G\).
         The \( \text{payload}_g \) embodies the principle of \textbf{recursive isomorphism} central to EPP, allowing for hierarchical model construction. It can be one of:
         \begin{itemize}
@@ -288,11 +342,11 @@ The fundamental unit of causal interaction within EPP is the \textbf{Causaloid},
             \item A collection of Causaloids \(\{\chi_1, \chi_2, \dots, \chi_m\}\), where the collection itself might have aggregate evaluation logic (e.g., "active if any \(\chi_i\) is active").
             \item Another entire CausaloidGraph \(G'\), enabling the nesting of causal sub-models.
         \end{itemize}
+\end{definition}
 
 
-\textbf{Set of Causal Hyperedges}
-        
-        
+\begin{definition}[Set of Causal Hyperedges]
+\label{def:causaloid_graph_edges} 
         Each causal hyperedge \( e_g \in E_G \) represents a directed functional relationship or pathway for effect propagation. It is defined as a tuple:
         \[ e_g = (V_{\text{source}}, V_{\text{target}}, \text{logic}_e) \]
         where:
@@ -301,23 +355,28 @@ The fundamental unit of causal interaction within EPP is the \textbf{Causaloid},
             \item \( V_{\text{target}} \subseteq V_G \) is a non-empty set of target causal nodes.
             \item \( \text{logic}_e \) defines the functional relationship or condition under which effects propagate from \(V_{\text{source}}\) to \(V_{\text{target}}\). This logic might range from simple conjunction/disjunction of source node states to more complex functions that determine how the activation of source nodes influences target nodes.
         \end{itemize}
-        This hypergraph structure allows for many-to-many causal relationships.
+\end{definition}
+
+This hypergraph structure allows for many-to-many causal relationships between cualoids.\newline
 
         
-\textbf{State of the CausaloidGraph (S\_G)}
-        
+\begin{definition}[State of the CausaloidGraph (S\_G)]
+\label{def:causaloid_graph_edges}        
         The state of a CausaloidGraph \( G \) at any given point in its evaluation is defined by the activation states of its constituent causal nodes. 
         
         \textbf{Definition 4.3 (State of CausaloidGraph):} The state \( S_G \) is a function mapping each causal node in \(V_G\) to an activation status:
         \[ S_G: V_G \to \{\text{active}, \text{inactive}\} \]
-        This state evolves as effects propagate through the graph according to the Causaloid functions and the logic of the hyperedges, as will be detailed in Section \ref{sec:epp_core}.
+\end{definition}
+
+This state evolves as effects propagate through the graph according to the Causaloid functions and the logic of the hyperedges.
+
+\newpage
 
 %% ======================================================================
 %%  Effect Propagation Process
 %% ======================================================================
 
-
-\subsection[Effect Propagation, Dynamics, and Emergence]{Dynamics and Emergence}
+\subsection{Effect Propagation, Dynamics, and Emergence}
 \label{sec:formalization_epp}
 
 The preceding sections formalized the static structural components of the Contextual Fabric (\(\mathcal{C}\)) and Causal Units/Structures (\(\mathcal{G}\)). This section now delves into the heart of the Effect Propagation Process (EPP): its core dynamics, the mechanisms for generating and evolving these structures, and how these formalisms embody the foundational philosophical principles of EPP. This operationalization is crucial for understanding how EPP moves beyond classical causality to address complex, dynamic, and emergent systems.
@@ -328,18 +387,21 @@ The preceding sections formalized the static structural components of the Contex
 The core dynamic of EPP is the propagation of effects through a CausaloidGraph \(G\), influenced by the Contextual Fabric \(\mathcal{C}_{sys}\) and triggered by observations or internal states. This process, denoted \(\Pi_{EPP}\), describes how the activation state \(S_G\) of the CausaloidGraph evolves from an initial state \(S_G\) to an updated state \(S_G'\).
 
 
-\textbf{Defining an Effect (epsilon) within EPP}
-    
-    Within the EPP formalism, an **"Effect"** (\(\varepsilon\)) is primarily represented by:
+\begin{definition}[Defining an Effect (epsilon) within EPP]
+\label{def:epp_effect}       
+    Within the EPP formalism, an "Effect" (\(\varepsilon\)) is primarily represented by:
     \begin{enumerate}
         \item The activation state (\(\text{active}\) or \(\text{inactive}\)) of a Causaloid (\(\chi\)) or a causal node (\(v_g\)) within a CausaloidGraph, as determined by its causal function \(f_\chi\).
         \item The transfer of this activation status, or information derived from it, to other connected Causaloids according to the graph structure and hyperedge logic.
     \end{enumerate}
-    An active state \(S_G(v_g) = \text{active}\) signifies that the causal mechanism encapsulated by \(v_g\) has met its conditions for effect transfer. The *nature* of the effect is qualitatively described by \(\text{desc}_\chi\), and its *consequence* is how its activation (or inactivation) influences other parts of the CausaloidGraph.
+    An active state \(S_G(v_g) = \text{active}\) signifies that the causal mechanism encapsulated by \(v_g\) has met its conditions for effect transfer. 
+    \end{definition}
+ 
+ The nature of the effect is qualitatively described by \(\text{desc}_\chi\), and its consequence is how its activation influences other parts of the CausaloidGraph.\newline
 
     
-\textbf{Input Observations and Triggers (O\_input)}
-    
+\begin{definition}[Input Observations and Triggers (O\_input)]
+\label{def:epp_input}  
     The propagation process \(\Pi_{EPP}\) is typically initiated or influenced by external inputs or observations.
     
     \textbf{Definition 5.1 (Input Trigger Set):} Let \(\mathcal{O}_{input}\) be the set of all possible input observations relevant to the CausaloidGraph \(G\). An input \(o_{in} \in \mathcal{O}_{input}\) is an element compatible with the \(\mathcal{O}_{\text{type}}\) expected by one or more Causaloid functions \(f_\chi\) within \(G\). 
@@ -348,12 +410,12 @@ The core dynamic of EPP is the propagation of effects through a CausaloidGraph \
         \item Directed at specific Causaloids in \(G\) (e.g., root nodes, or nodes representing sensors).
         \item Representing updates to the Context Collection \(\mathcal{C}_{sys}\) which, in turn, affect the evaluation of context-aware Causaloids.
     \end{itemize}
+\end{definition}
+    
 
-    
-\textbf{The Propagation Transition Function}
-    
+\begin{definition}[The Propagation Transition Function)]
+\label{def:epp_input}     
     The propagation of effects within a CausaloidGraph \(G\) is formalized as a state transition function \(\Pi_{EPP}\). This function describes how the graph's state evolves.
-
     \textbf{Definition 5.2 (EPP Transition Function):} The EPP Transition Function \(\Pi_{EPP}\) is a mapping:
     \[ \Pi_{EPP} : (G, S_G, \mathcal{C}_{sys}, O_{trig}) \to S_G' \]
     where \(G=(V_G, E_G, \dots)\) is a CausaloidGraph, \(S_G: V_G \to \{\text{active, inactive}\}\) is its current state, \(\mathcal{C}_{sys}\) is the Context Collection, \(O_{trig}\) is the set of current input triggers, and \(S_G': V_G \to \{\text{active, inactive}\}\) is the updated state of the CausaloidGraph.
@@ -372,29 +434,29 @@ The core dynamic of EPP is the propagation of effects through a CausaloidGraph \
             \end{enumerate}
         \item \textbf{Convergence:} The process continues until no further changes in node states occur for the given \(O_{trig}\) and \(\mathcal{C}_{sys}\), resulting in the stable updated state \(S_G'\). For CausaloidGraphs with cycles, specific convergence criteria or iteration limits may be necessary.
     \end{enumerate}
-    This operational definition emphasizes that effect propagation is a structured traversal and evaluation, where the "rules" of propagation are embedded in both the individual Causaloid functions \(f_\chi\) and the connective logic \(\text{logic}_e\) of the CausaloidGraph's hyperedges.
+ \end{definition}   
+    
+ This operational definition emphasizes that effect propagation is a structured traversal and evaluation, where the "rules" of propagation are embedded in both the individual Causaloid functions \(f_\chi\) and the connective logic \(\text{logic}_e\) of the CausaloidGraph's hyperedges.\newline
 
     
-
-
-\subsubsection[The Operational Generative Function (Phi\_gen)]{The Operational Generative Function (\(\Phi_{gen}\))}
-    \label{ssec:generative_function_formal_merged} % Renamed label
-
+\subsubsection[The Generative Function (Phi\_gen)]{The Generative Function (\(\Phi_{gen}\))}
+    \label{ssec:generative_function_formal_merged} 
+    
     The EPP philosophy posits that the Contextual Fabric and even the Causal Structures themselves can be dynamic and emergent, shaped by an underlying "generative function." This formalism operationalizes this concept as \(\Phi_{gen}\), a function or set of functions that govern the evolution of \(\mathcal{C}_{sys}\) and/or \(G\).
 
 
 \textbf{Conceptual Role of Phi\_gen in EPP}
 
         
-        \(\Phi_{gen}\) represents the meta-level rules or processes that can alter the EPP's structural components. It embodies the system's capacity for adaptation, learning, or emergence beyond simple state changes within a fixed structure. While the EPP framework itself does not mandate a specific physical interpretation for an ultimate generative function, it provides the means to model systems where such generative dynamics are at play operationally.
+\(\Phi_{gen}\) represents the meta-level rules or processes that can alter the EPP's structural components. It embodies the system's capacity for adaptation, learning, or emergence beyond simple state changes within a fixed structure. While the EPP framework itself does not mandate a specific physical interpretation for an ultimate generative function, it provides the means to model systems where such generative dynamics are at play operationally.
 
         
 \textbf{Generation and Dynamics of Contexts (Phi\_gen\_C)}
   
+Let \(\Phi_{gen\_C}\) be the component of \(\Phi_{gen}\) responsible for the evolution of the Context Collection.\newline
         
-        Let \(\Phi_{gen\_C}\) be the component of \(\Phi_{gen}\) responsible for the evolution of the Context Collection.
-        
-        \textbf{Definition 5.3 (Context Generative Function):}
+\begin{definition}[Context Generative Function]
+\label{def:epp_gen_function}  
         \[ \Phi_{gen\_C} : (\mathcal{C}_{sys}, O_{in}, E_{ext}) \to \mathcal{C}_{sys}' \]
         where \(O_{in}\) represents relevant system inputs/observations and \(E_{ext}\) represents external events or triggers. \(\mathcal{C}_{sys}'\) is the updated Context Collection.
         This function can:
@@ -403,15 +465,18 @@ The core dynamic of EPP is the propagation of effects through a CausaloidGraph \
             \item Modify the structure of a Context Hypergraph \(C_i\), e.g., by adding/removing Contextoids from \(V_{C_i}\) or Hyperedges from \(E_{C_i}\).
             \item Add new Context Hypergraphs to \(\mathcal{C}_{sys}\) or remove existing ones.
         \end{itemize}
-        The specific rules defining \(\Phi_{gen\_C}\) are domain-dependent but allow for contexts that structurally adapt to new information or changing environmental conditions (e.g., the dynamic temporal hypergraph described in the EPP philosophy \cite{Hansen2025EPP}).
+ \end{definition}   
+         
+The specific rules defining \(\Phi_{gen\_C}\) are domain-dependent but allow for contexts that structurally adapt to new information or changing environmental conditions (e.g., the dynamic temporal hypergraph described in the EPP philosophy \cite{Hansen2025EPP}).
 
 
 \textbf{Generation and Dynamics of Causal Structures (Phi\_gen\_G)]}
 
         
-        Let \(\Phi_{gen\_G}\) be the component of \(\Phi_{gen}\) responsible for the evolution of CausaloidGraphs, enabling emergent causality.
+Let \(\Phi_{gen\_G}\) be the component of \(\Phi_{gen}\) responsible for the evolution of CausaloidGraphs, enabling emergent causality.
 
-        \textbf{Definition 5.4 (Causal Structure Generative Function):}
+\begin{definition}[Causal Structure Generative Function]
+\label{def:epp_gen_function_causal}  
         \[ \Phi_{gen\_G} : (G, S_G, \mathcal{C}_{sys}, O_{in}, E_{ext}) \to (G', S_G') \]
         This function can modify the CausaloidGraph \(G=(V_G, E_G, \dots)\) into a new graph \(G'=(V_G', E_G', \dots)\) with a corresponding initial state \(S_G'\). Modifications can include:
         \begin{itemize}
@@ -419,28 +484,29 @@ The core dynamic of EPP is the propagation of effects through a CausaloidGraph \
             \item Modifying the payload of existing nodes (e.g., changing a Causaloid's function \(f_\chi\) or its linked assumptions \(\mathcal{A}_{linked}\)).
             \item Adding or removing causal hyperedges \(e_g\) from \(E_G\), or altering their \(\text{logic}_e\).
         \end{itemize}
-        This function formalizes the EPP's capacity for causal emergence, where the causal "rules of the game" themselves evolve in response to the system's experience and context.
+ \end{definition}   
+ 
+This function formalizes the EPP's capacity for causal emergence, where the causal "rules of the game" themselves evolve in response to the system's experience and context.\newline
 
-        
+       
 \textbf{Co-evolution of Context and Causal Structure (Phi\_gen\_Total)]}
-        
-        In the most general case, context and causal structure can co-evolve.
-        
-        \textbf{Definition 5.5 (Total Generative Function):}
+                
+\begin{definition}[Total Generative Function]
+\label{def:epp_gen_function_total}        
         \[ \Phi_{gen\_Total} : (G, S_G, \mathcal{C}_{sys}, O_{in}, E_{ext}) \to (G', S_G', \mathcal{C}_{sys}') \]
-        This represents the combined action of \(\Phi_{gen\_C}\) and \(\Phi_{gen\_G}\), allowing for feedback between structural changes in context and structural changes in causal models.
+ \end{definition}   
+
+This represents the combined action of \(\Phi_{gen\_C}\) and \(\Phi_{gen\_G}\), allowing for feedback between structural changes in context and structural changes in causal models.
 
 \subsubsection[Core EPP Principles]{Core EPP Principles}
-\label{ssec:epp_principles_formal_merged} % Renamed label
+\label{ssec:epp_principles_formal} 
 
     The formalism presented supports and makes explicit the core philosophical principles of EPP.
 
 \textbf{Spacetime Agnosticism}
-
         
-        The EPP formalism is inherently spacetime-agnostic. Neither the Contextoid (Def 3.1), Context Hypergraph (Def 3.2), Causaloid (Def 4.1), nor CausaloidGraph (Def 4.2) definitions mandate a spatiotemporal nature for the underlying fabric or relations. Spatial or temporal properties are introduced only if specific \(\text{payload}_v\) types (Time, Space, SpaceTime) are used within Contextoids. The core propagation function \(\Pi_{EPP}\) (Def 5.2) and generative function \(\Phi_{gen}\) (Defs 5.3-5.5) operate on these abstract structures; they only interact with spatiotemporal concepts if explicitly encoded within particular Causaloid functions \(f_\chi\) or the rules of \(\Phi_{gen}\). This formally detaches EPP causality from a presupposed spacetime, fulfilling a key requirement for modeling non-Euclidean systems or systems where spacetime is emergent.
+The EPP formalism is inherently spacetime-agnostic. Neither the Contextoid (Def \ref{def:contextoid}), Context Hypergraph (Def \ref{def:context_hypergraph}), Causaloid (Def \ref{def:causaloid}), nor CausaloidGraph (Def \ref{def:causaloid_graph}) definitions mandate a spatiotemporal nature for the underlying fabric or relations. Spatial or temporal properties are introduced only if specific \(\text{payload}_v\) types (Time, Space, SpaceTime) are used within Contextoids. The core propagation function \(\Pi_{EPP}\) (Def \ref{def:propagating_effect}) and generative function \(\Phi_{gen}\) (Def \ref{def:epp_gen_function}) operate on these abstract structures; they only interact with spatiotemporal concepts if explicitly encoded within particular Causaloid functions \(f_\chi\) or the rules of \(\Phi_{gen}\). This formally detaches EPP causality from a presupposed spacetime, fulfilling a key requirement for modeling non-Euclidean systems or systems where spacetime is emergent.
 
-        
 \textbf{Emergence of Temporal Order}
         
         While EPP does not assume a universal linear temporal order, an operational or effective temporal order can emerge within the system through several mechanisms:
@@ -463,6 +529,32 @@ The core dynamic of EPP is the propagation of effects through a CausaloidGraph \
         \end{enumerate}
         Under these (and potentially other simplifying) assumptions, EPP's effect propagation aligns with classical cause-and-effect chains.
 
+\newpage
+%% ======================================================================
+%% Model and Verification Layer
+%% ======================================================================
+\subsection{The Model and Verification Layer}
+\label{sec:formalization_model}
+
+The EPP primitives are composed into a verifiable \textbf{Model}, which encapsulates the core reasoning logic along with its operational assumptions.
+
+\subsubsection{Observation, Assumption, and Inference}
+These are empirical grounding primitives for a model.
+\begin{itemize}
+    \item An \textbf{Observation} \(O\) is a tuple \((id_O, \text{val}_O, \text{effect}_O)\) representing an empirical measurement.
+    \item An \textbf{Assumption} \(A\) is a tuple \((id_A, \text{desc}_A, f_A)\) where \(f_A: \mathcal{P}(\Pi_E) \to \{\text{true, false}\}\) is a verifiable predicate about the operational conditions.
+    \item An \textbf{Inference} \(I\) is a tuple representing a tested hypothesis about a causal link.
+\end{itemize}
+
+\subsubsection{Model (\(\mathcal{M}\))}
+
+\begin{definition}[Model]
+\label{def:epp_model}  
+A Model \(\mathcal{M}\) is a tuple:
+\[ \mathcal{M} = (id_M, \text{author}_M, \text{desc}_M, \mathcal{A}_{set}, \chi_M, \mathcal{C}_M) \]
+where \(id_M, \text{author}_M, \text{desc}_M\) are metadata, \(\mathcal{A}_{set}\) is a set of Assumptions upon which the model's validity depends, \(\chi_M\) is the root Causaloid representing the model's core logic, and \(\mathcal{C}_M\) is the Context it operates on.
+ \end{definition}   
+ 
 %% ======================================================================
 %% The Causal State Machine (CSM)
 %% ======================================================================
@@ -470,11 +562,13 @@ The core dynamic of EPP is the propagation of effects through a CausaloidGraph \
 \subsection[The Causal State Machine (CSM) ]{The Causal State Machine (CSM)}
 \label{sec:formalization_csm}
 
-The Effect Propagation Process (EPP) framework provides mechanisms for modeling how effects propagate and causal structures evolve. To translate the insights derived from such processes into concrete operations or interventions, the \textbf{Causal State Machine (CSM)} is introduced. The CSM serves as an orchestrator, linking specific causal conditions (represented as Causal States) to predefined deterministic Actions. This section formalizes the CSM, reflecting its implementation within systems like DeepCausality\footnote{\url{deepcausality.com}}.
+The Effect Propagation Process (EPP) framework provides mechanisms for modeling how effects propagate and causal structures evolve. To translate the insights derived from such processes into concrete operations or interventions, the \textbf{Causal State Machine (CSM)} is introduced. The CSM serves as an orchestrator, linking specific causal conditions (represented as Causal States) to predefined deterministic Actions. 
 
 Let \(\mathbb{I}_{CSM}\) be a set of unique identifiers for Causal States within a CSM.
 
-\noindent\textbf{Definition 6.1 (Causal State):} A \textbf{Causal State} \(q\) represents a specific condition whose truthfulness is determined by the evaluation of an associated Causaloid. It is defined as a tuple:
+\begin{definition}[Causal State]
+\label{def:csm_state}  
+A \textbf{Causal State} \(q\) represents a specific condition whose truthfulness is determined by the evaluation of an associated Causaloid. It is defined as a tuple:
 \[ q = (id_q, \text{data}_q, \chi_q, \text{version}_q) \]
 where:
 \begin{itemize}
@@ -483,9 +577,13 @@ where:
     \item \( \chi_q \) is a reference to a Causaloid (as defined in Section \ref{ssec:causaloid_formal}), \( \chi_q = (id_{\chi_q}, f_{\chi_q}, \mathcal{C}_{refs_q}, \dots) \). The function \(f_{\chi_q}\) embodies the predicate for this state.
     \item \( \text{version}_q \in \mathbb{N} \) is an optional version number for the state definition.
 \end{itemize}
+\end{definition}  
+ 
 The activation of Causal State \(q\) is determined by \( \text{eval}(q) = f_{\chi_q}(\text{data}_q, \text{ContextAccessor}(\mathcal{C}_{refs_q})) \).
 
-\noindent\textbf{Definition 6.2 (Causal Action):} A \textbf{Causal Action} \(a\) represents a deterministic operation. It is defined as a tuple:
+\begin{definition}[Causal Action]
+\label{def:csm_action}  
+A \textbf{Causal Action} \(a\) represents a deterministic operation. It is defined as a tuple:
 \[ a = (\text{exec}_a, \text{descr}_a, \text{version}_a) \]
 where:
 \begin{itemize}
@@ -493,16 +591,21 @@ where:
     \item \( \text{descr}_a \) is a descriptive label for the action.
     \item \( \text{version}_a \in \mathbb{N} \) is an optional version number for the action definition.
 \end{itemize}
-The successful execution of \( \text{exec}_a \) yields \( \text{Ok}(\text{void}) \); failure yields an \( \text{Err}(\text{ActionError}) \).
+\end{definition}  
 
-\vspace{\baselineskip} % Add some space before the next definition
 
-\noindent\textbf{Definition 6.3 (Causal State Machine):} A Causal State Machine \( M \) is defined by its collection of Causal State-Action pairs. Let \(\mathcal{Q}\) be the set of all possible Causal States and \(\mathcal{A}\) be the set of all possible Causal Actions.
+\newpage
+
+\begin{definition}[Causal State Machine]
+\label{def:csm_csm}  
+A Causal State Machine \( M \) is defined by its collection of Causal State-Action pairs. Let \(\mathcal{Q}\) be the set of all possible Causal States and \(\mathcal{A}\) be the set of all possible Causal Actions.
 \[ M = (\mathcal{SA}_M) \]
 where:
 \begin{itemize}
     \item \( \mathcal{SA}_M \subseteq \{(q, a) \mid q \in \mathcal{Q}, a \in \mathcal{A}\} \) is a finite set of ordered pairs, where each pair \( (q_j, a_j) \) associates a unique Causal State \(q_j\) (identified by \(id_{q_j}\)) with a Causal Action \(a_j\). In implementation, this is often represented as a map from \(id_q \to (q, a)\).
 \end{itemize}
+\end{definition}  
+
 The set of CausaloidGraphs \(\mathcal{G}_M\) supervised by \(M\) is implicitly defined as the set of all CausaloidGraphs containing any Causaloid \(\chi_q\) referenced by any \(q\) in \(\mathcal{SA}_M\). Similarly, the set of relevant Context Hypergraphs \(\mathcal{C}_M\) is the union of all \(\mathcal{C}_{refs_q}\) for all \(q\) in \(\mathcal{SA}_M\).
 
     \subsubsection[CSM Operation: State Evaluation and Action Triggering]{CSM Operation: State Evaluation and Action Triggering}
@@ -542,15 +645,316 @@ The set of CausaloidGraphs \(\mathcal{G}_M\) supervised by \(M\) is implicitly d
         \item \textbf{UpdateStateAction}(\(M, id_q, q_{updated}, a_{updated}\)): Replaces the pair \((q,a)\) associated with \(id_q\) with \((q_{updated}, a_{updated})\).
     \end{itemize}
 
+\newpage
 
+%% ======================================================================
+%% The Teloid and Effect Ethos
+%% ======================================================================
+
+\subsection[The Teloid and Effect Ethos]{The Teleological Fabric (\(\mathbb{E}\))}
+\label{sec:formalization_ethos}
+
+To ensure that a system's actions remain aligned with pre-defined goals, safety protocols, or ethical principles, the EPP introduces a teleological layer of governance. This is formalized as the \textbf{Effect Ethos}, a deontic reasoning engine that evaluates proposed actions from the Causal State Machine against a set of computable norms. This formalism is derived from the Defeasible Deontic Inheritance Calculus (DDIC) \cite{olson2024DDIC} and the DeepCausality reference implementation.
+
+\subsubsection[The Teloid (tau)]{The Teloid (\(\tau\))}
+\label{ssec:teloid_formal}
+
+The fundamental, atomic unit of a computable norm is the \textbf{Teloid}. It encapsulates a single, verifiable rule.\newline
+
+\begin{definition}[Teloid]
+\label{def:ethos_Teloid}  
+A Teloid \(\tau\) is defined as a tuple:
+\[ \tau = (id_\tau, a_{id}, p_\tau, m_\tau, t_\tau, s_\tau, prio_\tau, tags_\tau, meta_\tau) \]
+where:
+\begin{itemize}
+    \item \( id_\tau \in \mathbb{I} \) is a unique identifier for the Teloid.
+    \item \( a_{id} \) is a string identifier for the class of action the norm governs.
+    \item \( p_\tau: (\mathcal{C}_{sys}, A_p) \to \{\text{true, false}\} \) is the \textbf{activation predicate}, a function that determines if the norm is active based on the system Context and a Proposed Action.
+    \item \( m_\tau \in \{\text{Impermissible, Obligatory, Optional}(c)\} \) is the \textbf{deontic modality}, where \(c\) is an associated integer cost for optional norms.
+    \item \( t_\tau \in \mathbb{N} \) is a timestamp for the \textit{Lex Posterior} heuristic.
+    \item \( s_\tau \in \mathbb{N} \) is a specificity value for the \textit{Lex Specialis} heuristic.
+    \item \( prio_\tau \in \mathbb{N} \) is a priority value for the \textit{Lex Superior} heuristic.
+    \item \( tags_\tau \) is a set of string tags for filtering and indexing.
+    \item \( meta_\tau \) is an optional set of key-value metadata.
+\end{itemize}
+\end{definition}  
+
+\subsubsection[Proposed Action and Verdict]{Proposed Action (\(A_p\)) and Verdict (\(V\))}
+\label{ssec:action_verdict_formal}
+
+The Effect Ethos evaluates a \textbf{Proposed Action} and returns a \textbf{Verdict}.
+
+\begin{definition}[Proposed Action]
+\label{def:ethos_proposed_action}  
+A Proposed Action \(A_p\) is a tuple representing an action to be evaluated:
+\[ A_p = (id_A, \text{name}_A, \text{params}_A) \]
+where \(id_A\) is a unique identifier, \(\text{name}_A\) is a descriptive name, and \(\text{params}_A\) is a set of parameters for the action.
+\end{definition}  
+
+
+\begin{definition}[Verdict]
+\label{def:ethos_verdict}  
+A Verdict \(V\) is the outcome of the evaluation:
+\[ V = (m_V, J_V) \]
+where \(m_V\) is the final deontic modality, and \(J_V\) is the justification, a set of \(id_\tau\) of the Teloids that led to the verdict.
+\end{definition}  
+
+\subsubsection[The Effect Ethos Structure]{The Effect Ethos Structure (\(\mathbb{E}\))}
+\label{ssec:ethos_structure_formal}
+
+The Effect Ethos engine, \(\mathbb{E}\), comprises the norms and the relationships between them.
+
+
+\begin{definition}[Effect Ethos]
+\label{def:ethos_effect_ethos}  
+The Effect Ethos \(\mathbb{E}\) is defined as a tuple:
+\[ \mathbb{E} = (S_\tau, I_{tag}, \mathcal{G}_\tau) \]
+where:
+\begin{itemize}
+    \item \( S_\tau \) is the \textbf{Teloid Store}, a map from a Teloid ID to a Teloid: \( S_\tau: id_\tau \mapsto \tau \).
+    \item \( I_{tag} \) is the \textbf{Tag Index}, a map from a tag to a set of Teloid IDs: \( I_{tag}: \text{tag} \mapsto \{id_{\tau_1}, id_{\tau_2}, \dots\} \).
+    \item \( \mathcal{G}_\tau \) is the \textbf{Teloid Graph}, a directed graph representing deontic relationships. It is a tuple \( (V_\tau, E_\tau) \), where \(V_\tau\) is the set of all \(id_\tau\) in the store, and \(E_\tau\) is a set of directed edges \( (id_{\tau,i}, id_{\tau,j}, r) \). The relation \( r \in \{\text{Inherits, Defeats}\} \) defines how norms interact.
+\end{itemize}
+\end{definition}  
+
+\subsubsection[The Deontic Inference Process]{The Deontic Inference Process (\(\Pi_{Deontic}\))}
+\label{ssec:deontic_inference_formal}
+
+The core dynamic of the Effect Ethos is the deontic inference process, \(\Pi_{Deontic}\), which evaluates a proposed action.
+
+
+\begin{definition}[(Deontic Inference]
+\label{def:ethos_deontic_inference} 
+The inference process is a mapping:
+\[ \Pi_{Deontic}: (\mathbb{E}, A_p, \mathcal{C}_{sys}, \text{Tags}_{\text{filter}}) \to V \]
+This process is executed in the following stages:
+\begin{enumerate}
+    \item \textbf{Filtering:} A candidate set of Teloids, \(\tau_{cand}\), is selected from the Teloid Store \(S_\tau\) by retrieving all Teloid IDs associated with the input \(\text{Tags}_{\text{filter}}\) via the Tag Index \(I_{tag}\).
+    
+    \item \textbf{Activation:} A set of active Teloids, \(\tau_{active}\), is formed by evaluating the activation predicate \(p_\tau\) for each \(\tau \in \tau_{cand}\) against the Proposed Action \(A_p\) and the Context \(\mathcal{C}_{sys}\).
+    \[ \tau_{active} = \{ \tau \in \tau_{cand} \mid p_\tau(\mathcal{C}_{sys}, A_p) = \text{true} \} \]
+    
+	\item \textbf{Conflict Resolution:} A resolution function, \(f_{resolve}\), is applied to the active set \(\tau_{active}\). This function traverses the Teloid Graph \(\mathcal{G}_\tau\) and queries the Normative Ontologies to apply the DDIC heuristics (\textit{Lex Posterior, Lex Specialis, Lex Superior}). Using the timestamp, specificity, and priority attributes of the Teloids, it resolves conflicts defined by \texttt{Defeats} edges to yield a final, conflict-free set of justified norms, \(\tau_{final}\).
+    
+    \item \textbf{Verdict Finding:} A consensus function, \(f_{consensus}\), determines the final verdict \(V\) from \(\tau_{final}\). It applies a strict precedence order to the modalities: \(\text{Impermissible} > \text{Obligatory} > \text{Optional}\). The justification \(J_V\) consists of the IDs of all Teloids in \(\tau_{final}\).
+\end{enumerate}
+\end{definition} 
+
+%% ======================================================================
+%% Subsumption of Classical Causal Models
+%% ======================================================================
+
+\subsection{Subsumption of Classical Causal Models}
+\label{sec:subsumption_classical}
+
+% The EPP generalizes causality withthe
+
+%% Mapping: Pearl SCM /  Ladder of Causation
+
+\subsubsection{Mapping Pearl's Ladder of Causation}
+\label{subsec:formalization_mapping_pearl}
+
+Judea Pearl's Ladder of Causation \cite{pearl2000causality} provides a three-level hierarchy for causal reasoning. Each rung is mapped to distinct EPP mechanisms, demonstrating how the EPP's architecture provides a unified framework for association, intervention, and counterfactuals. Let \(G\) be a \texttt{CausaloidGraph} representing the Structural Causal Model (SCM).
+
+\subsubsection*{Rung 1: Association (Seeing)}
+\label{sssec:mapping_pearl_rung1}
+
+\paragraph{Concept}
+Association addresses queries of the form \(P(Y|X)\), reasoning about the statistical relationship between variables based on passive observation.
+
+\paragraph{EPP Formalization}
+In the EPP, association is the direct result of the \texttt{EffectPropagationProcess} (\(\Pi_{EPP}\)).
+\begin{enumerate}
+    
+    \item An observation, such as \(X=x\), is represented as an initial \texttt{PropagatingEffect}, \(\pi_{\text{initial}}\), which is part of the input trigger set, \(O_{trig}\).
+    
+    \item The inference is the evaluation of the \texttt{CausaloidGraph} \(G\) starting from the \texttt{Causaloid} \(\chi_X\) that corresponds to the variable X. This is formally described by the EPP Transition Function (Definition \ref{def:epp_input}):
+    \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{\text{factual}}, O_{trig}) \to S_G' \]
+    \item The resulting activation state of the \texttt{Causaloid} \(\chi_Y\) within the updated state \(S_G'\) represents the association \(P(Y|X)\).
+\end{enumerate}
+
+\subsubsection*{Rung 2: Intervention (Doing)}
+\label{sssec:mapping_pearl_rung2}
+
+\paragraph{Concept}
+Intervention addresses queries of the form \(P(Y|\text{do}(X=x))\), predicting the effect of a deliberate action that forces a variable \(X\) to take on a value \(x\).
+
+\paragraph{EPP Formalization}
+Intervention is enacted by the \texttt{Causal State Machine (CSM)} (Section \ref{sec:formalization_csm}).
+\begin{enumerate}
+    \item A \texttt{CausalState} \(q\) (Definition \ref{def:csm_state}) is defined. Its activation is determined by its associated \texttt{Causaloid} \(\chi_q\), which evaluates whether a condition for intervention is met (e.g., based on an associative inference from Rung 1).
+    \item A \texttt{CausalAction} \(a\) (Definition \ref{def:csm_action}) is defined. Its executable function, \(\text{exec}_a\), modifies the \texttt{ContextualFabric} \(\mathcal{C}\) to represent the intervention \(\text{do}(X=x)\). This is typically achieved by updating a \texttt{Contextoid} \(v_x\) within the relevant \texttt{Context} \(C\).
+    \item The CSM \(M = (\mathcal{SA}_M)\) contains the state-action pair \((q, a)\). When the evaluation \(\text{eval}(q)\) returns \(\text{true}\), the CSM triggers the function \(\text{exec}_a()\), formally executing the intervention on the system's context.
+\end{enumerate}
+
+\subsubsection*{Rung 3: Counterfactuals (Imagining)}
+\label{sssec:mapping_pearl_rung3}
+
+\paragraph{Concept}
+Counterfactuals address retrospective queries of the form \(P(Y_{x'} | X=x, Z=z)\), imagining what the outcome \(Y\) would have been had \(X\) been \(x'\), given the factual observation that \(X\) was \(x\) and \(Z\) was \(z\).
+
+\paragraph{EPP Formalization}
+Counterfactuals are resolved via \textbf{Contextual Alternation}, a core feature of the EPP that leverages the separation of causal logic from its data context.
+\begin{enumerate}
+    \item The factual observation \((X=x, Z=z)\) is represented by the state of \texttt{Contextoid}s within a factual context, \(\mathcal{C}_{\text{factual}}\).
+    \item A counterfactual context, \(\mathcal{C}_{\text{counterfactual}}\), is created. This is typically a clone of \(\mathcal{C}_{\text{factual}}\) where the \texttt{Contextoid} \(v_x\) is modified to reflect the hypothetical condition \(X=x'\) using its adjustability protocol (e.g., \(\text{update}_v(\text{payload}_{x'})\)).
+    \item The counterfactual outcome is computed by evaluating the \textit{same, unmodified} \texttt{CausaloidGraph} \(G\) against the newly created \(\mathcal{C}_{\text{counterfactual}}\):
+    \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{\text{counterfactual}}, O_{trig}) \to S'_{G_{\text{cf}}} \]
+    \item The resulting activation state of the \texttt{Causaloid} \(\chi_Y\) in the final state \(S'_{G_{\text{cf}}}\) provides the answer to the counterfactual query.
+\end{enumerate}
+
+
+
+%% Mapping: Dynamic Bayesian Networks (DBN)
+
+\subsubsection{Mapping Dynamic Bayesian Networks (DBN)}
+\label{subsec:formalization_mapping_dbn}
+
+A Dynamic Bayesian Network (DBN) models a temporal process by representing dependencies between variables across discrete time slices. The EPP models a DBN by employing a static \texttt{CausaloidGraph} that is evaluated iteratively over a dynamic, temporal \texttt{Context}. This approach externalizes the temporal evolution from the causal logic into the contextual fabric.
+
+\paragraph{Concept}
+A DBN defines the probability distribution of state variables at time \(t\) based on their state at \(t-1\), i.e., \(P(V_t | V_{t-1})\).
+
+\paragraph{EPP Formalization}
+The mapping of a DBN to EPP primitives is as follows:
+\begin{enumerate}
+    \item \textbf{Time Slices and State Variables:} The timeline is represented within a dynamic \texttt{ContextHypergraph} \(\mathcal{C}\). Each time point \(t\) corresponds to a \texttt{Tempoid} \(v_t\). The state of a DBN variable \(V\) at time \(t\) is stored in a \texttt{Datoid} \(v_{d,t}\), which is relationally linked to \(v_t\) within \(\mathcal{C}\).
+
+    \item \textbf{Causal Logic:} Each DBN state variable \(V\) is represented by a single, reusable \texttt{Causaloid}, \(\chi_V\). The dependencies between variables within a single time slice (intra-slice dependencies) are modeled as a static \texttt{CausaloidGraph} \(G\).
+
+    \item \textbf{Conditional Probability Tables (CPTs):} The CPT for a variable \(V\), which defines \(P(V_t | \text{Parents}(V_t))\), is encapsulated as the logic within the \texttt{causal\_function} \(f_{\chi_V}\) of the corresponding \texttt{Causaloid} \(\chi_V\).
+
+    \item \textbf{Temporal Dependencies:} Inter-slice dependencies (from time \(t-1\) to \(t\)) are not modeled as edges in the \texttt{CausaloidGraph} \(G\). Instead, the \texttt{causal\_function} \(f_{\chi_V}\) for a \texttt{Causaloid} \(\chi_V\) uses the \texttt{ContextAccessor} to query the \texttt{Context} \(\mathcal{C}\) for the state of its parents at the previous time step, which it identifies via the \texttt{Tempoid} \(v_{t-1}\).
+
+    \item \textbf{Inference (Filtering):} The DBN filtering process is modeled as an iterative loop. At each time step \(t\):
+    \begin{enumerate}
+        \item The \texttt{EffectPropagationProcess} \(\Pi_{EPP}\) is executed on the static graph \(G\), using the current context \(\mathcal{C}_t\) to resolve temporal dependencies.
+        \item The results of the propagation are used to update the \texttt{Context} from \(\mathcal{C}_t\) to \(\mathcal{C}_{t+1}\) via the \texttt{Context Generative Function} \(\Phi_{gen\_C}\). This typically involves adding a new \texttt{Tempoid} \(v_{t+1}\) and its associated \texttt{Datoid}s.
+    \end{enumerate}
+\end{enumerate}
+This methodology separates the static causal laws (the \texttt{CausaloidGraph}) from the evolving state of the world (the dynamic \texttt{Context}), providing a flexible framework for temporal causal modeling.
+
+
+%% Mapping: Granger Causality
+
+\subsubsection{Mapping Granger Causality}
+\label{subsec:formalization_mapping_granger}
+
+Granger causality is a statistical concept of causality based on prediction. A time series \(X\) is said to Granger-cause another time series \(Y\) if past values of \(X\) contain information that helps predict future values of \(Y\) beyond the information contained in past values of \(Y\) alone. The EPP models this as a counterfactual query comparing prediction errors under different contextual conditions.
+
+\paragraph{Concept}
+Does the history of time series \(X\) improve the prediction of time series \(Y\)?
+
+\paragraph{EPP Formalization}
+The Granger causality test is formalized via \textbf{Contextual Alternation}.
+\begin{enumerate}
+    \item \textbf{Time Series Data:} The historical data for both time series \(X\) and \(Y\) are represented as a sequence of \texttt{Datoid}s within a \texttt{ContextHypergraph}, \(\mathcal{C}_{\text{factual}}\). Each \texttt{Datoid} is linked to a \texttt{Tempoid} to preserve the temporal ordering.
+
+    \item \textbf{Predictive Model:} The predictive logic (e.g., a Vector Autoregression model) is encapsulated within the \texttt{causal\_function} \(f_{\chi}\) of a single, context-aware \texttt{Causaloid}, \(\chi_{\text{predictor}}\). This function is designed to use the history of \(X\) if it is available in its context.
+
+    \item \textbf{The Test via Contextual Alternation:}
+    \begin{enumerate}
+        \item A \textbf{factual evaluation} is performed by executing \(\chi_{\text{predictor}}\) against the complete factual context, \(\mathcal{C}_{\text{factual}}\). The resulting prediction is \(\pi_{\text{factual}}\).
+        \[ 
+         \pi_{\text{counterfactual}} = f_{\chi}(\pi_{in}, \text{ContextAccessor}(\{\mathcal{C}_{\text{counterfactual}}\}))
+        \]
+        \item A \textbf{counterfactual context}, \(\mathcal{C}_{\text{counterfactual}}\), is created from \(\mathcal{C}_{\text{factual}}\) by removing all \texttt{Datoid}s corresponding to the history of time series \(X\).
+        \item A \textbf{counterfactual evaluation} is performed by executing the exact same \texttt{Causaloid} \(\chi_{\text{predictor}}\) against the counterfactual context. The resulting prediction is \(\pi_{\text{counterfactual}}\).
+         \[ 
+          \pi_{\text{counterfactual}} = f_{\chi}(\pi_{in}, \text{ContextAccessor}(\{\mathcal{C}_{\text{counterfactual}}\}))
+         \]
+    \end{enumerate}
+    \item \textbf{Conclusion:} Let \(y_{\text{actual}}\) be the true future value of \(Y\). The prediction errors are compared. If the error of the factual prediction is significantly lower than the error of the counterfactual prediction, then \(X\) is said to Granger-cause \(Y\).
+    \[ 
+    |\pi_{\text{factual}} - y_{\text{actual}}| < |\pi_{\text{counterfactual}} - y_{\text{actual}}| \implies \text{X Granger-causes Y}
+    \]
+\end{enumerate}
+
+
+%% Mapping: Rubin Causal Model (RCM)
+
+\subsubsection{Mapping Rubin Causal Model (RCM)}
+\label{subsec:formalization_mapping_rcm}
+
+The Rubin Causal Model (RCM) defines a causal effect by comparing potential outcomes for a single unit under different treatment assignments. The EPP naturally models RCM's core concepts through its contextual alternation mechanism.
+
+\paragraph{Concept}
+The Individual Treatment Effect (ITE) for a unit \(i\) is defined as \(Y_i(1) - Y_i(0)\), where \(Y_i(1)\) is the outcome if unit \(i\) receives treatment, and \(Y_i(0)\) is the outcome if unit \(i\) does not.
+
+\paragraph{EPP Formalization}
+The RCM is formalized in the EPP using \textbf{Contextual Alternation} to compute potential outcomes.
+\begin{enumerate}
+    \item \textbf{Unit Representation:} An individual unit \(i\) is represented by a base \texttt{Context}, \(\mathcal{C}_i\), containing its pre-treatment covariates as \texttt{Contextoid}s.
+
+    \item \textbf{Causal Model:} The underlying causal laws that determine the outcome are represented by a \texttt{CausaloidGraph} \(G\).
+
+    \item \textbf{Potential Outcomes via Contextual Alternation:}
+    \begin{enumerate}
+        \item A \textbf{treatment context} \(\mathcal{C}_{i,\text{treatment}}\)
+ is created by adding a \texttt{Datoid} \(v_T=1\) (representing treatment) to \(\mathcal{C}_i\).
+        \item A \textbf{control context} \(\mathcal{C}_{i,\text{control}}\)
+ is created by adding a \texttt{Datoid} \(v_T=0\) (representing no treatment) to \(\mathcal{C}_i\).
+    \end{enumerate}
+
+    \item \textbf{Computation of Potential Outcomes:}
+    \begin{enumerate}
+        \item \(Y_i(1)\) is the final \texttt{PropagatingEffect} \(\Pi_{E,1}\) resulting from evaluating the \texttt{CausaloidGraph} \(G\) against the treatment context:
+        \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{i,\text{treatment}}, O_{trig}) \to S'_{G,1} \]
+        \item \(Y_i(0)\) is the final \texttt{PropagatingEffect} \(\Pi_{E,0}\) resulting from evaluating the \texttt{CausaloidGraph} \(G\) against the control context:
+        \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{i,\text{control}}, O_{trig}) \to S'_{G,0} \]
+    \end{enumerate}
+
+    \item \textbf{Individual Treatment Effect (ITE):} The ITE for unit \(i\) is the computed difference between the final \texttt{PropagatingEffect}s:
+    \[ \text{ITE}_i = \Pi_{E,1} - \Pi_{E,0} \]
+\end{enumerate}
+
+This mapping directly operationalizes the RCM's counterfactual logic within the EPP by leveraging the explicit separation of causal mechanisms from contextual data.
+
+%% Mapping: Conditional Average Treatment Effects (CATE)
+
+\subsubsection{Mapping Conditional Average Treatment Effects (CATE)}
+\label{sec:formalization_mapping_cate}
+
+Conditional Average Treatment Effects (CATE) aim to estimate the average treatment effect for a specific subgroup of 
+a population, conditioned on their characteristics. The EPP extends the RCM mapping to handle CATE by leveraging its ability to manage multiple contexts and aggregate results.
+
+\paragraph{Concept}
+ CATE is defined as \(\tau(x) = E[Y(1) - Y(0) | X=x]\), representing the average treatment effect for individuals with covariates  \(X=x\).
+
+\paragraph{EPP Formalization}
+CATE is formalized in the EPP by building upon the RCM mapping and extending it to handle subgroups.
+
+\begin{enumerate}
+	\item \textbf{Subgroup Definition:} A subgroup of the population is represented as a set of factual \texttt{Context}s,
+      \(\{\mathcal{C}_1, \mathcal{C}_2, \dots, \mathcal{C}_n\}\), where each \(\mathcal{C}_i\) contains the covariates \(X=x\) for a
+      specific individual \(i\).
+    
+   \item \textbf{Learned Function:} The function \(\tau(x)\), which estimates the CATE (e.g., derived from a machine learning
+      model), is encapsulated as the \texttt{causal\_function} \(f_{\chi}\) within a \texttt{CausaloidGraph} \(G\).
+    
+   \item \textbf{Individual Treatment Effect (ITE) Calculation:} For each individual \(\mathcal{C}_i\) in the subgroup, the ITE
+      is calculated exactly as described in the RCM mapping (Section \ref{sec:formalization_mapping_rcm}). This involves:
+   		\begin{enumerate}
+         \item Creating a treatment context \(\mathcal{C}_{i,\text{treatment}}\) and a control context \(\mathcal{C}_{i,\text
+      {control}}\) for individual \(i\).
+          \item Evaluating the \texttt{CausaloidGraph} \(G\) against both contexts to obtain \(\Pi_{E,1}\) and \(\Pi_{E,0}\).
+         \item Computing \(\text{ITE}_i = \Pi_{E,1} - \Pi_{E,0}\).
+      \end{enumerate}
+    
+   \item \textbf{CATE Calculation:} The Conditional Average Treatment Effect for the subgroup is the statistical average of all computed \(\text{ITE}_i\) values: \[ \text{CATE}(x) = \frac{1}{n} \sum_{i=1}^{n} \text{ITE}_i \]
+\end{enumerate}
+
+This mapping demonstrates how the EPP's modularity and contextual reasoning capabilities allow for the composition of complex causal inference tasks, such as CATE, from simpler primitives.
+
+\newpage
 %% ======================================================================
 %% Example
 %% ======================================================================
 
-\subsection{Example: Smoking, Tar, and Cancer}
+\subsection{EPP Example: Smoking, Tar, and Cancer}
 \label{sec:formalization_example_smoking_tar_cancer}
 
-To illustrate the core concepts of the Effect Propagation Process (EPP) formalism in a more concrete manner, we consider the well-known causal chain: Smoking \(\rightarrow\) Tar in Lungs \(\rightarrow\) Lung Cancer. This example demonstrates how Causaloids, Contexts (implicitly for this simplification), and a CausaloidGraph can represent this system, and how effect propagation leads to an inference. This example is simplified and inspired by the structure typically modeled as a Directed Acyclic Graph (DAG) in classical causal inference \cite{pearl2000causality}, here adapted to EPP principles.
+To illustrate the core concepts of the Effect Propagation Process (EPP) formalism in a more concrete manner, we consider the well-known causal chain: Smoking \(\rightarrow\) Tar in Lungs \(\rightarrow\) Lung Cancer. This example demonstrates how Causaloids, Contexts (implicitly for this simplification), and a CausaloidGraph can represent this system, and how effect propagation leads to an inference. This example is simplified and inspired by the structure typically modeled as a Directed Acyclic Graph (DAG) in classical causal inference \cite{pearl2000causality}, here adapted to EPP.
 
     \subsubsection{Defining the Causal Problem}
     \label{ssec:example_problem_definition}
@@ -627,7 +1031,7 @@ We construct a CausaloidGraph \(G_{STC} = (V_G, E_G, ID_G, \text{Name}_G)\) to r
     \end{enumerate}
     This illustrative propagation shows how individual Causaloid evaluations, based on specific inputs, contribute to the overall state of the causal model. The \(\text{logic}_e\) of the hyperedge \(e_{g1}\) here implies a dependency or sequential consideration in this chain.
 
-    \subsubsection{Formalizing Observations}
+    \subsubsection{Observations}
     \label{ssec:example_observations_connection}
     This simplified example illustrates:
     \begin{itemize}
@@ -649,6 +1053,6 @@ The preceding sections have laid out a formal, set-theoretic definition of the E
 
 The primary significance of the EPP formalism lies in its principled detachment from spacetime. By making Context (\(\mathcal{C}\)) an explicit, definable, and potentially non-Euclidean, dynamic fabric, and by defining Causaloids (\(\chi\)) as operational units of effect transfer independent of a priori temporal ordering, EPP achieves a level of generality that classical causal formalisms cannot. This enables the modeling of causality in non-physical or abstract domains, systems with complex multi-scale temporal dynamics and feedback loops, and, crucially, systems where causal relationships themselves can emerge, transform, or dissolve in response to evolving contexts (dynamic regime shifts). The recursive isomorphism of CausaloidGraphs (\(G\)) further enhances expressive power, allowing for modular construction of complex causal models, while the clear separation of causal logic, contextual data, and propagation mechanisms facilitates transparency.
 
-This foundational formalism, while potent, has current limitations. It primarily defines a deterministic framework, though probabilistic behavior can be encapsulated within Causaloid functions or edge logic. A more deeply integrated probabilistic EPP, or a full formal treatment of quantum indefinite causal order, remains an area for future development. Furthermore, EPP does not, in itself, provide algorithms for automated causal discovery of its structures from raw data; it provides the language to represent and reason with such structures once hypothesized. Compared to established frameworks like Pearl's SCMs, EPP offers greater flexibility for cyclic and emergent systems but currently lacks an equivalent to the extensive \textit{do}-calculus, though the Causal State Machine (CSM) provides a mechanism for linking EPP inferences to actions. EPP generalizes classical notions where necessary but does not seek to replace them where they are already sufficient.
+This foundational formalism, while potent, has current limitations. The EPP does not, in itself, provide algorithms for automated causal discovery of its structures from raw data; it provides the language to represent and reason with such structures once hypothesized. Compared to established frameworks like Pearl's SCMs, EPP offers greater flexibility for cyclic and emergent systems but currently lacks an equivalent to the extensive \textit{do}-calculus.
 
 \newpage    

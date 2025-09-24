@@ -1,5 +1,34 @@
 \begin{thebibliography}{100}
 
+\bibitem{pearl2000causality}
+J~Pearl.
+\newblock Causality: models, reasoning, and inference cambridge university press new york.
+\newblock {\em NY, USA}, 2000.
+
+\bibitem{pearl2018theoretical}
+Judea Pearl.
+\newblock Theoretical impediments to machine learning with seven sparks from the causal revolution.
+\newblock {\em arXiv preprint arXiv:1801.04016}, 2018.
+
+\bibitem{bareinboim2012transportability}
+Elias Bareinboim and Judea Pearl.
+\newblock Transportability of causal effects: Completeness results.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial Intelligence}, volume~26, pages 698--704, 2012.
+
+\bibitem{olson2024DDIC}
+Taylor Olson, Roberto Salas-Damian, and Kenneth~D. Forbus.
+\newblock A defeasible deontic calculus for resolving norm conflicts, 2024.
+
+\bibitem{hardy2005probability}
+Lucien Hardy.
+\newblock Probability theories with dynamic causal structure: a new framework for quantum gravity.
+\newblock {\em arXiv preprint gr-qc/0509120}, 2005.
+
+\bibitem{bornholt2014uncertain}
+James Bornholt, Todd Mytkowicz, Kathryn~S McKinley, and Kathryn McKinley.
+\newblock Uncertain< t >: A first-order type for uncertain data.
+\newblock March 2014.
+
 \bibitem{archer1888timaeus}
 Richard~Dacre Archer-Hind et~al.
 \newblock {\em The Timaeus of Plato}.
@@ -59,11 +88,6 @@ Lucien Hardy.
 \newblock arXiv preprint, 2005.
 \newblock arXiv:gr-qc/0509120.
 
-\bibitem{pearl2018theoretical}
-Judea Pearl.
-\newblock Theoretical impediments to machine learning with seven sparks from the causal revolution.
-\newblock {\em arXiv preprint arXiv:1801.04016}, 2018.
-
 \bibitem{verma1986causal}
 Thomas~S Verma.
 \newblock Causal networks: semantics and expressiveness.
@@ -88,11 +112,6 @@ Daphne Koller and Nir Friedman.
 Judea Pearl.
 \newblock {\em Causality}.
 \newblock Cambridge university press, 2009.
-
-\bibitem{pearl2000causality}
-J~Pearl.
-\newblock Causality: models, reasoning, and inference cambridge university press new york.
-\newblock {\em NY, USA}, 2000.
 
 \bibitem{Peters2017Elements}
 Jonas Peters, Dominik Janzing, and Bernhard Sch{\"o}lkopf.
@@ -262,6 +281,10 @@ Uzma Hasan and Md~Osman Gani.
 Xun Zheng, Bryon Aragam, Pradeep~K Ravikumar, and Eric~P Xing.
 \newblock {Dags with no tears: Continuous optimization for structure learning}.
 \newblock In {\em {Advances in Neural Information Processing Systems}}, volume~31, 2018.
+
+\bibitem{hasan2024surveycausaldiscoverymethods}
+Uzma Hasan, Emam Hossain, and Md~Osman Gani.
+\newblock A survey on causal discovery methods for i.i.d. and time series data, 2024.
 
 \bibitem{ma2022learning}
 Jing Ma, Mengting Wan, Longqi Yang, Jundong Li, Brent Hecht, and Jaime Teevan.
@@ -460,11 +483,6 @@ Bernhard Schölkopf, Francesco Locatello, Stefan Bauer, Nan~Rosemary Ke, Nal Kal
 Francesco Locatello, Stefan Bauer, Mario Lucic, Gunnar Rätsch, Sylvain Gelly, Bernhard Schölkopf, and Olivier Bachem.
 \newblock Challenging common assumptions in the unsupervised learning of disentangled representations, 2019.
 
-\bibitem{hardy2005probability}
-Lucien Hardy.
-\newblock Probability theories with dynamic causal structure: a new framework for quantum gravity.
-\newblock {\em arXiv preprint gr-qc/0509120}, 2005.
-
 \bibitem{sharma2020dowhy}
 Amit Sharma and Emre Kiciman.
 \newblock Dowhy: An end-to-end library for causal inference.
@@ -565,10 +583,6 @@ Ruta Binkyte, Ivaxi Sheth, Zhijing Jin, Mohammad Havaei, Bernhard Schölkopf, an
 Montgomery Furth et~al.
 \newblock {\em Metaphysics: Zeta, Eta, Theta, Iota. Books VII-X}.
 \newblock Hackett Publishing, 1985.
-
-\bibitem{olson2024DDIC}
-Taylor Olson, Roberto Salas-Damian, and Kenneth~D. Forbus.
-\newblock A defeasible deontic calculus for resolving norm conflicts, 2024.
 
 \bibitem{Hansen2025EPP}
 Marvin Hansen.

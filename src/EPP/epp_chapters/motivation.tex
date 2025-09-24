@@ -90,40 +90,6 @@ The framework assumes:
     \item \textbf{Emergent Causality:} The assumption of static causal structure prevents any handling of causal emergence.
 \end{itemize}
 
-
-\subsubsection*{Rubin Causal Model (RCM)}
-
-The Rubin Causal Model \cite{rubin2005causal} (RCM) is a statistical framework for estimating causal effects by comparing potential outcomes under different treatment assignments.
-
-\textbf{Assumptions:}
-
-RCM assumes stable units, no interference between units (SUTVA), and that treatment assignment is ignorable conditional on observed covariates. RCM also assumes a stable causal structure and a fixed background spacetime.
-
-\textbf{Implications:}
-
-\begin{itemize}
-    \item \textbf{Non-Linear Time:} RCM is not designed to handle non-linear or multi-scale time representation.
-    \item \textbf{Non-Euclidean Representation:} RCM is designed for variables representing treatments, outcomes, and covariates, without any mechanism for complex relational types. Therefore, RCM cannot infer across non-Euclidean data representations.
-    \item \textbf{Emergent Causality:} RCM estimates effects within a stable causal structure and therefore cannot handle emergent causality.
-\end{itemize}
-
-\subsubsection*{Dynamic Bayesian Networks}
-
-Dynamic Bayesian Networks \cite{dagum1992dynamic} (DBN) extend Bayesian Networks to model temporal processes by defining transition probabilities between states.
-
-\textbf{Assumptions:}
-
-Dynamic Bayesian Networks, similar to Granger causality, require a linear and uniform time representation. DBNs model changes in the state of variables over time according to a fixed probabilistic causal structure assumed to be static.
-
-
-\textbf{Implications:}
-
-\begin{itemize}
-    \item \textbf{Non-Linear Time:} DBNs cannot handle non-linear time.
-    \item \textbf{Non-Euclidean Representation:} DBNs reason over probabilities, not non-Euclidean space itself.
-    \item \textbf{Emergent Causality:}  DBNs assume a static causal structure and thus cannot handle emergent causality.
-\end{itemize}
-
 The analysis of classical models reveals a consistent set of boundaries, built upon assumptions of a fixed, linear spacetime and a static causal structure. While these assumptions enable powerful reasoning within their defined domains, they become untenable when confronted with a class of problems of increasing importance in safety-critical and complex systems. 
 
 \subsection{Beyond Classical Causal Models}
