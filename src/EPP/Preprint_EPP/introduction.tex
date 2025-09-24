@@ -1,28 +1,113 @@
 \section{Introduction}
 \label{sec:introduction}
 
-The study of cause and effect served humanity for millennia and provided a foundation for scientific inquiry and intervention. Contemporary frameworks for computational causality, from Pearl's Structural Causal Models to Granger's time-series analysis, provide a formal basis for causal inference within systems governed by fixed causal structures. These classical models, however, are predicated on a set of core assumptions, including a fixed background spacetime, linear temporal progression, and static causal structures. However, at the frontiers of science and engineering a new category of challenges arise where the rules of causality itself become dynamic. For these complex dynamic systems, the classical assumption of a static causal structure embedded in a fixed background spacetime is no longer applicable and imposes a fundamental limitation. From the dynamic regime shifts in financial markets to the context-dependent safety of autonomous vehicles, there is a need for a new foundation to model systems where causal structures themselves can evolve dynamically.
+The study of cause and effect has served humanity for millennia and provided a foundation for scientific inquiry and understanding. Contemporary frameworks for computational causality, from Pearl's Structural Causal Models to Granger's time-series analysis, provide a formal basis for causal inference within systems governed by fixed causal structures. These classical models, however, are predicated on a set of core assumptions, including a fixed background spacetime, linear temporal progression, and static causal structures. However, at the frontiers of science and engineering, a new category of challenges arises where the rules of causality themselves become dynamic. For these complex dynamic systems, the classical assumption of a static causal structure embedded in a fixed background spacetime is no longer applicable and imposes a fundamental limitation. From the dynamic regime shifts in financial markets with complex, multi-scale temporal feedback loops to context-dependent safety of autonomous vehicles, there is a need for a new foundation to model systems where causal structures themselves can evolve dynamically.
 
-This monograph introduces the Effect Propagation Process (EPP), an axiomatic foundation for composition and evaluation of dynamic causal models. Its purpose is to serve as a foundation upon which a new generation of domain specific dynamic causal theories can be built for systems that operate beyond the classical scope. Categorically, the EPP is closest to a meta-calculus because it defines the abstract mechanisms of dynamic causality while leaving the specifics to a derived dynamic causal model. However, the EPP also borrows from other categories:
+The presented monograph introduces the Effect Propagation Process (EPP), a single axiomatic foundation for dynamic causal models. Its purpose is to serve as a foundation upon which a new generation of domain-specific dynamic causal models can be built. Categorically, the EPP is closest to a meta-calculus because it defines the abstract mechanisms of dynamic causality while leaving the specifics to a derived dynamic causal model. However, the EPP also borrows from other categories:
 
 \begin{itemize}
 \item A Meta-Theory: The EPP provides the philosophical and logical foundation via its metaphysics and ontology upon which one can build a theory of dynamic causality.
-\item A Meta-Algebra: The EPP provides the formal, abstract language via its formalization of the Causaloids, Contextoids, and their structural relationships.
+\item A Meta-Algebra: The EPP provides the formal, abstract language via its formalization of Causaloids, Contextoids, and their structural relationships.
 \item A Meta-Calculus: The EPP provides the formal, computational elements of dynamic causality via the Effect Propagation Process and the Deontic Inference Cycle.
 \end{itemize}
+  
+The EPP adds dynamics as a first class principle to causality based on a single axiomatic foundation that generalizes causality as a spacetime-agnostic functional dependency. The operationalization of the EPP's single axiomatic foundation necessitates a trifecta of computable, first-class primitives: The Context, the Causaloid, and the Causal State Machine.
 
-The EPP's single axiomatic foundation that defines causality as a spacetime-agnostic functional dependency necessitates a trifecta of computable, first-class primitives. The detachment from a fixed background spacetime requires an explicit and dynamic the Context. The EPP design of the context enables Euclidean and non-Euclidean representation and linear and non-linear temporal structures and thus supports modeling rich, dynamic, and complex operational environments.
+ The detachment from a fixed background spacetime requires an explicit and dynamic Context. The EPP design of the context enables Euclidean and non-Euclidean representation and linear and non-linear temporal structures, thus supporting the modeling of rich, dynamic, and complex operational environments.
 
-The functional nature of the axiom requires a polymorphic container for any specific causal calculus, the Causaloid. The causaloid, a concept borrowed from physicist Lucian Hardy, unifies cause and effect into one single abstract entity that solve a fundamental problem of structural composition by enabling isomorphic recursive causal structures. The EPP introduces three modalities of dynamic causality: dynamic, adaptive, and emergent. While dynamic and adaptive causality remain deterministic, the introduction of emergent causality where causal structures itself co-emerge with its context, also introduces non-determinism with the implication that verifiability is no longer possible.
+The functional nature of the axiom requires a polymorphic container for any specific causal calculus, the Causaloid. The causaloid, a concept borrowed from physicist Lucian Hardy, unifies cause and effect into a single abstract entity that solves a fundamental problem of structural composition by enabling isomorphic recursive causal structures. The EPP introduces three modalities of dynamic causality: dynamic, adaptive, and emergent. While dynamic and adaptive causality remain deterministic, the introduction of emergent causality, where causal structures co-emerge with their context, also introduces non-determinism with the implication that static verifiability is no longer possible. The Effect Ethos provides an operational guardrail to emergent causality based on a defeasible deontic calculus.
 
-The Causal State Machine is a formal mechanism that translates causal reasoning into actions that follow directly from a causal inference. The Teloid and Effect Ethos provide an operational guardrail to causal state machines based on a defeasible deontic calculus. The Effect Ethos enable operating a dynamic causal system in a non-deterministic, emergent environment while ensuring compliance as code and enforcable mission parameters. 
+The Causal State Machine is a formal mechanism that translates causal reasoning into actions. A causal state machine separates its state from an action to allow an optional Effect Ethos to verify a proposed action against a set of norms to decide the permissibility of an action relative to the encoded ethos. The causal state machine combined with an Effect Ethos enable dynamic causal system in a dynamic environment while ensuring compliance as code to enforce alignment of derived actions.
 
-The presented Effect Propagation Process has been fully implemented in the open source DeepCausality project hosted at the Linux Foundation for Data \& Ai since 2023. At the time of writing, the implementaiton has reached a total of fifty thousand lines of Rust code, with an average unit test coverage of 95\%. While the EPP provides the formal methods to construct, and test domain-specific dynamic causal theories, the DeepCausality project enables the implementation, simulation, and application of derived dynamic causal systems.   
+\subsection{Precedent}
 
-The presented monograph can be read from multiple angles. For the reader with a background in Philosophy, a natural path is to begin with the overview of the EPP (Chapter \ref{sec:epp}), and then delve into its philosophical foundation: the Metaphysics (Chapter \ref{sec:metaphysics}), the Epistemology (Chapter \ref{sec:epp_epistemology}), and the Teleology (Chapter \ref{sec:teleology}).
-For the reader with a background in Formal Methods, the EPP's core concepts are in Chapter \ref{sec:epp}), then the formal Ontology (Chapter \ref{sec:epp_ontology}) and the Formalization of the meta-calculus (Chapter \ref{sec:formalization}) and its soundness in Chapter \ref{sec:validity}.
-A reader with a background in Engineering may start with the Motivation (Chapter \ref{sec:motivation}), understand the high-level EPP framework (Chapter  \ref{sec:epp}), and then see how these concepts are applied in the DeepCausality Implementation (Chapter \ref{sec:implementation}). The Metaphysics in (Chapter \ref{sec:metaphysics}) provides details about the orthogonal design used throughout the implementation.
+The presented Effect Propagation Process builds upon rich and diverse preceding scholarly work. 
+
+\textbf{Whitehead's Process Philosophy}
+
+The EPP's primary departure point is a fundamental rejection of the classical Newtonian conception of a static, absolute background spacetime. This move is deeply rooted in the tradition of process philosophy, which argues that reality is not composed of enduring, static substances but is a dynamic flow of interconnected events. This idea finds its clearest expression in the work of Alfred North Whitehead, who posited a universe of "actual occasions"\cite{whitehead2010process}, and Henri Bergson, who described reality as a continuous "creative evolution"\cite{bergson2022creative}. Their shared insight of reality as a process inspires the EPP's foundational redefinition of causality itself, shifting from a static, happen-before relation to a dynamic process of effect propagation.
+
+\newpage
+
+\textbf{Einstein's Theory of General Relativity}
+
+Einstein's theory of General Relativity\cite{EinsteinPapers1915}, demonstrate that spacetime is a dynamic fabric, 
+its geometry shaped through the gravity of the matter within it, which in turn influences the motion of matter. 
+The EPP's concept of a Contextual Relativity that is both influenced by and influences the entities within 
+is a direct analogue of this profound physical insight.
+
+\textbf{Pearl's SCM}
+
+Judea Pearl, with his SCM, established the foundation upon which the entire field of computational work was subsequently built. His foundational work in "Causality: Models, Reasoning, and Inference" \cite{pearl2000causality} was as influential as his foundational critique in "Theoretical Impediments to Machine Learning with Seven Sparks from the Causal Revolution" \cite{pearl2018theoretical}. In particular, his contribution to the algorithmization of counterfactuals has proven instrumental for the development of contextual counterfactuals.
+
+\textbf{Bareinboim's Transportability of Causal Effects}
+
+Bareinboim's calculus of transportability \cite{bareinboim2012transportability} and his subsequent work on data fusion formalize the very problem of contextual variance that the EPP's explicit context is designed to manage at a computational level. Where Bareinboim provides the definitive logical framework for reasoning about moving causality between discrete contexts, the EPP provides the computational primitive, the dynamic, queryable, and multi-modal Context, to operationalize this reasoning as part of the EPP.
+
+\textbf{Forbus's Defeasible Deontic Calculus}
+
+Kenneth Forbus's work on formalizing deontic calculus \cite{olson2024DDIC} has proven invaluable to solve the complex topic of conflicting norms in the effect ethos. In practice, it is rarely possible to write conflict-free norms, and during the development of the effect ethos, a recurring theme was the acceptance of this reality. The subsequent search for a solution led to the adoption of Forbus's Defeasible Deontic Calculus as the primary means to resolve normative conflicts.
+
+\textbf{Russel's Critique on Causality}
+
+Bertrand Russell critique on causality  formulated in his 1912 essay ``On the Notion of Cause''\cite{RussellOnCause} directly lead to the realization that it's not necessarily causality that is central to Russels objection, but the underlying assumption of time asymmetry that is at odds with his observation that most successful theories in physics are based on time symmetry. Russel hinted at a profound truth because while physics routinely models dynamic change in complex systems, computational causality consistently struggles with capturing dynamic causality.  While there is truth to causal invariance, there is also the reality that dynamic systems emit different causal structures depending on dynamic change and that is where computational causality is fundamentally at odds with physics and to an extent with reality. From there, it became clear that for causality to handle dynamics requires a new foundation of causality itself.
+
+\textbf{Hardy's Causaloid}
+
+Lucian Hardy introduced the "causaloid,"\cite{HardyDynamicCausalStructure} a concept that encapsulates a spatial region and the causal connections within 
+as a foundation for his work on finding a theory of Quantum Gravity. Critically, unlike all prior forms of causality, 
+Hardy's causaloid is spacetime-agnostic because it folds cause and effect into one entity and thus removes the need for temporal order. His seminal work "Probability Theories with Dynamic Causal Structure" \cite{hardy2005probability} had a three-fold impact.
+First, during the foundational work of lifting causality into geometric structures, his causaloid formalism has
+proven instrumental in the formation of isomorphic recursive causal data structures. 
+Second, his insight that the causaloid formalism puts deterministic and probabilistic structures on equal footing directly led to the multi-modal reasoning of the EPP. 
+Third, his demonstration that fundamental differences of theoretical foundations are contained in a causaloid directly informed the representation of causal relations 
+as a causal function, which then resulted in the single axiomatic formulation of the EPP.
+
+\textbf{Bornholdt's Uncertain Type}
+
+Bornholdt's et al. contribution in "Uncertain< T >: A First-Order Type for Uncertain Data" \cite{bornholt2014uncertain} directly informed the unification of deterministic and probabilistic reasoning in the EPP. Instead of representing a value with a single number, the Uncertain type in the EPP represents a probability with a full probability distribution (e.g., Normal, Bernoulli) or even a complex computation graph that produces a distribution. More importantly, the EPP reasoning logic can seamlessly "lift" simpler Deterministic and Probabilistic effects into the Uncertain distribution, aggregate all distributions, and then infer a logical combination of all the input distributions without loss of information. The final output is an Uncertain<bool> that collapses rich uncertainties into a single value at the very last moment while preserving second-order properties such as the standard deviation or confidence level. As a result, decisions, and crucially, deontic reasoning become more robust under uncertainty.
+
+
+\subsection{Contribution}
+
+The Effect Propagation Process contribution spans three distinctive areas. First and foremost a single axiomatic foundation  formally derives the entire EPP from first principles. Second, the EPP establishes dynamic and emergent causal structures and an accompanying computable ethics framework for verifiable safety of dynamic causal systems. Third, a reference implementation in Rust demonstrates the feasibility of dynamic causality.   
+
+
+\textbf{A Single Axiomatic Foundation of Dynamic Causality}
+
+The EPP's single axiom, causality as a spacetime-agnostic functional dependency generalizes causality so that the classical definition becomes a special case of it. Section \ref{sec:philosophy} establishes the underlying philosophical foundation of the EPP. The details of the single axiomatic foundation are established in section \ref{sec:epp_definition}, the implications of the generalization are discussed throughout section \ref{sec:metaphysics} and \ref{sec:teleology}, and the formalization substantiates the EPP in section \ref{sec:formalization} further. The generalization is further substantiated in section \ref{sec:epp_subsumption_classical} where five established methods of classical causality are expressed through the EPP  and in Appendix A with a formal proof that the EPP subsumes the SCM. The SCM was chosen for the proof because of its historical and foundational significance to the field of computational causality. The reframing of causality as a single axiomatic functional dependency establishes explicit context and the causaloid as first-class structures. On important conjecture that follows from the axiom of functional dependency is that the field of function theory becomes applicable to causality as derived in section \ref{sub:epp_general_def_causality} and further discussed in section \ref{sec:future_work_functional_causality}. The impact of the new foundation results in a single, coherent language to model advanced dynamic causality in physics, software, finance, and system biology with equal rigor.
+
+\textbf{A Formalism for Dynamic and Emergent Causal Structures}
+
+
+The EPP is designed form the ground up to model meta-causality, or the causality of causal change. The EPP defines an operational Generative Function is a function that can modify the causal model, its context, or both dynamically to describe causal emergence. Section \ref{sec:metaphysics} establishes the foundation of causal emergence, the higher-order implications are discussed in section \ref{sec:teleology}, and section \ref{sec:formalization_epp} establishes the formalization. The impact of causal emergence enables systems that can generate novel causal strategies in response to unforeseen circumstances. When safeguarded by the Effect Ethos, this provides a path to creating robust and resilient systems that can safely navigate a dynamically changing world.
+
+\textbf{A Computable Ethics Framework for Verifiable Safety}
+
+Traditional causal models are overwhelmingly focused on passive inference and prediction. They provide a powerful way to answer "what if" questions but lack a formal, verifiable, and safe bridge from that knowledge to taking action. Safety, ethics, and alignment are treated as post-hoc problems to be solved with testing and ad-hoc rules.
+
+The EPP is the first computational causality framework to treat verifiable safety as first-class formal primitives directly integrated into the foundation itself. The motivation for the Effect Ethos is rooted in safeguarding causal emergence, and the EPP achieves this with two mechanisms:
+
+\begin{itemize}
+\item The Causal State Machine (CSM):  Links a causal inference to a deterministic action.
+\item The Effect Ethos: The Effect Ethos allows a system to formally verify that a proposed action is compliant with its mission and safety objectives before it is executed.
+\end{itemize}
+
+The impact of the Effect Ethos results in a feasible roadmap for building trustworthy, high-stakes autonomous systems that adhere to contextual rules of engagement encoded in an immutable ethos. The effect ethos inverts the entire verification and validation model by shifting the safety objectives of a system into the pre-design stage to convert existing rules of engagement into a testable effect ethos, which enables design-time safety and provable alignment.
+
+\textbf{A Reference Implementation in Rust}
+
+The presented Effect Propagation Process has been fully implemented in the open\-source DeepCausality\footnote{\url{www.deepcausality.com}} project hosted at the Linux Foundation for Data \& AI. The reference implementation contributes three sub-projects. UltraGraph, a high performance, two-phase hyper-graph data structure used in the DeepCausality project. Uncertain, an implementation of Bornholdt's Uncertain Type in Rust. DeepCausality, the reference implementation of the EPP. The five established methods of classical causality expressed through the EPP in section \ref{sec:epp_subsumption_classical} are demonstrated as code examples\footnote{\url{https://github.com/deepcausality-rs/deep_causality/tree/main/examples}} in the DeepCausality project. At the time of writing, the DeepCausality mono-repository has reached a total of fifty thousand lines of Rust code with a sustained three months average test coverage\footnote{\url{https://app.codecov.io/gh/deepcausality-rs/deep_causality}} of 95\%. 
+
+
+\subsection{Structure}
+
+The presented monograph can be read from multiple angles. For the reader with a background in Philosophy, a natural path is to begin with the philosophy of causality (Chapter \ref{}) and the overview of the EPP (Chapter \ref{sec:epp}), and then delve into its philosophical foundation: the Metaphysics (Chapter \ref{sec:metaphysics}), the Epistemology (Chapter \ref{sec:epp_epistemology}), and the Teleology (Chapter \ref{sec:teleology}).
+
+For the reader with a background in Formal Methods, the EPP's core concepts are in Chapter \ref{sec:epp}), then the formal Ontology (Chapter \ref{sec:epp_ontology}), the Formalization of the meta-calculus (Chapter \ref{sec:formalization}), and its soundness in Chapter \ref{sec:validity}.
+
+A reader with a background in Engineering may start with the Motivation (Chapter \ref{sec:motivation}), understand the high-level EPP framework (Chapter \ref{sec:epp}), and then see how these concepts are applied in the DeepCausality Implementation (Chapter \ref{sec:implementation}). The Metaphysics in (Chapter \ref{sec:metaphysics}) provides details about the orthogonal design used throughout the implementation.
+
 The reader with a background in Computational Causality may start with the critique of classical models in the Motivation (Chapter \ref{sec:motivation}) and the Related Work (Chapter \ref{sec:related_work}) is a good start. Following the EPP's core concepts (Chapter \ref{sec:epp}), the next step is the Formalization (Chapter \ref{sec:formalization}) and validity (Chapter \ref{sec:validity}). From there, the Future Work (Chapter \ref{sec:future_work}) will be of particular interest.
 
 \newpage
- 

@@ -1,0 +1,85 @@
+% ===================================================================
+% APPENDIX A: FORMAL PROOF OF SCM SUBSUMPTION
+% ===================================================================
+
+\section*{Appendix A: Formal Proof of SCM Subsumption}
+ % Add it to TOC without a number 
+\addcontentsline{toc}{section}{{Appendix A: Formal Proof of SCM Subsumption}}
+\label{appendix:scm_subsumption} 
+
+\subsection*{Overview}
+
+This proof demonstrates that the EPP is a strict generalization of the SCM, with the SCM being a special case of the EPP under specific constraints. This is achieved by constructing a mapping function from the set of all SCMs to the set of all EPP models and proving that this mapping preserves the core semantics of observation and intervention. By implication, any system representable by a Structural Causal Model (SCM) can be fully represented by an equivalent Effect Propagation Process (EPP) model. 
+
+\subsection*{Formal Definitions}
+
+We begin by formally defining the source and target structures of our mapping.
+
+\begin{definition}[Structural Causal Model (SCM)]
+A Structural Causal Model \(\mathcal{M}_{SCM}\) is a tuple \(\langle \mathcal{U}, \mathcal{V}, \mathcal{F} \rangle\), where:
+\begin{itemize}
+    \item \(\mathcal{U}\) is a set of exogenous variables, which are uncaused within the model.
+    \item \(\mathcal{V}\) is a set of endogenous variables, \(\{V_1, V_2, \dots, V_n\}\).
+    \item \(\mathcal{F}\) is a set of structural functions, \(\{f_1, f_2, \dots, f_n\}\), such that each \(V_i \in \mathcal{V}\) is determined by a function of its causal parents \(PA_i \subseteq \mathcal{V}\) and a unique exogenous variable \(U_i \in \mathcal{U}\):
+    \[ V_i = f_i(PA_i, U_i) \]
+\end{itemize}
+\end{definition}
+
+\begin{definition}[EPP Model]
+An EPP Model \(\mathcal{M}_{EPP}\), as defined in Section \ref{sec:formalization_model}, is a tuple \(\langle G, \mathcal{C}, \text{CSM} \rangle\), where:
+\begin{itemize}
+    \item \(G\) is a \texttt{CausaloidGraph}.
+    \item \(\mathcal{C}\) is a \texttt{ContextualFabric}.
+    \item \(\text{CSM}\) is a \texttt{CausalStateMachine}.
+\end{itemize}
+\end{definition}
+
+\subsection*{The Constructive Mapping Function (\(\Phi\))}
+
+We define a constructive mapping function \(\Phi: \text{SCM} \to \text{EPP}\) that transforms any SCM \(\mathcal{M}_{SCM}\) into a corresponding EPP Model \(\mathcal{M}_{EPP}\).
+
+\begin{enumerate}
+    \item \textbf{Map Exogenous Variables to Context:} For each exogenous variable \(u_i \in \mathcal{U}\), we construct a corresponding \texttt{Contextoid} \(v_i\) within a single \texttt{ContextHypergraph} \(\mathcal{C}_0\) in the \texttt{ContextualFabric} \(\mathcal{C}\). The \texttt{payload} of \(v_i\) holds the value of \(u_i\).
+    \[ \Phi(\mathcal{U}) \mapsto \mathcal{C} \quad \text{where } \mathcal{C} = \{\mathcal{C}_0\} \text{ and } V_{\mathcal{C}_0} = \{v_i \mid u_i \in \mathcal{U}\} \]
+
+    \item \textbf{Map Endogenous Variables and Functions to Causaloids:} For each endogenous variable \(v_i \in \mathcal{V}\) and its associated structural function \(f_i\), we construct a \texttt{Singleton Causaloid} \(\chi_i\) in the \texttt{CausaloidGraph} \(G\).
+    \[ \Phi(\mathcal{V}, \mathcal{F}) \mapsto G \quad \text{where } V_G = \{\chi_i \mid v_i \in \mathcal{V}\} \]
+    The \texttt{causal\_function} \(f_{\chi_i}\) of each \(\chi_i\) is defined to be a context-aware function that:
+    \begin{enumerate}
+        \item Accepts \texttt{PropagatingEffect}s from its parent Causaloids (representing the values of \(PA_i\)).
+        \item Uses its \texttt{ContextAccessor} to query \(\mathcal{C}_0\) for the value of the \texttt{Contextoid} \(v_i\) (representing \(u_i\)).
+        \item Computes and returns the value \(f_i(PA_i, U_i)\) as its output \texttt{PropagatingEffect}.
+    \end{enumerate}
+
+    \item \textbf{Map Causal Dependencies to Hyperedges:} For each dependency \(V_i = f_i(PA_i, U_i)\), we construct a \texttt{CausalHyperedge} \(e_i \in E_G\).
+    \begin{itemize}
+        \item \(V_{\text{source}}\) of \(e_i\) is the set of Causaloids \(\{\chi_j \mid V_j \in PA_i\}\).
+        \item \(V_{\text{target}}\) of \(e_i\) is the singleton set \(\{\chi_i\}\).
+        \item \(\text{logic}_e\) is a simple propagation trigger, activating \(\chi_i\) once all its parents are active.
+    \end{itemize}
+\end{enumerate}
+This construction \(\Phi(\mathcal{M}_{SCM})\) yields a complete EPP Model \(\mathcal{M}_{EPP}\).
+
+\newpage
+
+\subsection*{Proof of Semantic Equivalence}
+
+We now prove that the semantics of observation and intervention are preserved under the mapping \(\Phi\).
+
+\subsection*{Case 1: Observation (Seeing)}
+\paragraph{In SCM} The computation of \(P(Y=y | X=x)\) is performed by setting the value of variable \(X\) to \(x\), propagating values through the equations in \(\mathcal{F}\) in topological order, and reading the resulting value of \(Y\).
+
+\paragraph{In EPP} This corresponds to triggering the Effect Propagation Process \(\Pi_{EPP}\) on the graph \(G\) with an initial \texttt{PropagatingEffect} \(\pi_{\text{initial}}\) (carrying the value \(x\)) applied to the Causaloid \(\chi_X\). The propagation through the graph, dictated by the hyperedges, follows the same topological order as the SCM's directed acyclic graph. Because each \(f_{\chi_i}\) is defined to be identical to \(f_i\), the final \texttt{PropagatingEffect} produced by Causaloid \(\chi_Y\) will be a distribution centered on the value of \(Y\). Thus, the observational semantics are preserved.
+
+\subsection*{Case 2: Intervention (Doing)}
+\paragraph{In SCM} The intervention \(\text{do}(X=x)\) is a "graph surgery" where the structural equation for \(X\) is replaced by the constant \(X=x\), severing the influence of \(PA_X\).
+
+\paragraph{In EPP} We model this using the \texttt{Causal State Machine (CSM)} and \textbf{Contextual Alternation}. We define a \texttt{CausalAction} \(a_{\text{do}(x)}\) whose \(\text{exec}_a\) function modifies the context. It performs a stateful update on a designated "interventional context" \(\mathcal{C}_{\text{int}}\), setting the value of a \texttt{Contextoid} \(v_x^{\text{int}}\) to \(x\). The \texttt{causal\_function} of the Causaloid \(\chi_X\) is defined with a priority logic: it first checks its \texttt{ContextAccessor} for an interventional value in \(\mathcal{C}_{\text{int}}\). If present, it returns that value directly, ignoring any inputs from its parent Causaloids. Otherwise, it proceeds with its standard computation.
+
+\paragraph{Equivalence} Executing the \texttt{CausalAction} \(a_{\text{do}(x)}\) via the CSM ensures that any subsequent evaluation of \(G\) operates in a state where the interventional context is active. When the propagation reaches \(\chi_X\), its function finds the value \(x\) in \(\mathcal{C}_{\text{int}}\) and returns it, thereby ignoring the \texttt{PropagatingEffect}s from its parents. This perfectly replicates the "graph surgery" of the \textit{do}-operator by severing the functional dependency at runtime through a contextual override. Thus, the interventional semantics are preserved.
+
+\subsection*{Conclusion}
+We have constructed a function \(\Phi\) that provides a complete mapping from any SCM to an EPP model. We have demonstrated that this mapping preserves the core semantics of both observation and intervention. Therefore, any SCM can be expressed as a specialized instance of the EPP.The SCM corresponds to an EPP model that is constrained to a static \texttt{CausaloidGraph} and a static \texttt{ContextualFabric}.
+
+
+\newpage

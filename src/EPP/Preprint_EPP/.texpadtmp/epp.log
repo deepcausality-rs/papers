@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  27 AUG 2025 13:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  4 SEP 2025 17:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -290,9 +290,20 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box63
 \@float@everytoks=\toks26
 \@floatcapt=\box64
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
+\thm@preskip=\skip70
+\thm@postskip=\skip71
+\thm@headsep=\skip72
+\dth@everypar=\toks32
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
-\@mathmargin=\skip70
+\@mathmargin=\skip73
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -331,21 +342,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip18
 \c@parentequation=\count315
 \dspbrk@lvl=\count316
-\tag@help=\toks27
+\tag@help=\toks33
 \row@=\count317
 \column@=\count318
 \maxfields@=\count319
-\andhelp@=\toks28
+\andhelp@=\toks34
 \eqnshift@=\dimen179
 \alignsep@=\dimen180
 \tagshift@=\dimen181
 \tagwidth@=\dimen182
 \totwidth@=\dimen183
 \lineht@=\dimen184
-\@envbody=\toks29
-\multlinegap=\skip71
-\multlinetaggap=\skip72
-\mathdisplay@stack=\toks30
+\@envbody=\toks35
+\multlinegap=\skip74
+\multlinetaggap=\skip75
+\mathdisplay@stack=\toks36
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -353,7 +364,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count320
 \lst@gtempboxa=\box67
-\lst@token=\toks31
+\lst@token=\toks37
 \lst@length=\count321
 \lst@currlwidth=\dimen185
 \lst@column=\count322
@@ -377,11 +388,11 @@ Package: listings 2024/09/23 1.10c (Carsten Heinz)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box69
-\beforetitleunit=\skip73
-\aftertitleunit=\skip74
+\beforetitleunit=\skip76
+\aftertitleunit=\skip77
 \ttl@plus=\dimen189
 \ttl@minus=\dimen190
-\ttl@toksa=\toks32
+\ttl@toksa=\toks38
 \titlewidth=\dimen191
 \titlewidthlast=\dimen192
 \titlewidthfirst=\dimen193
@@ -389,8 +400,8 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip75
-\bibsep=\skip76
+\bibhang=\skip78
+\bibsep=\skip79
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count328
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/base/glossaries.sty
@@ -400,15 +411,15 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks33
-\XKV@tempa@toks=\toks34
+\XKV@toks=\toks39
+\XKV@tempa@toks=\toks40
 )
 \XKV@depth=\count329
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2022/10/14 v2.08 (NLCT)
-\@glsmfirst=\toks35
-\@glsmrest=\toks36
+\@glsmfirst=\toks41
+\@glsmrest=\toks42
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-base.sty
@@ -418,9 +429,9 @@ Package: tracklang 2025/03/04 v1.6.5 (NLCT) Track Languages
  (/usr/local/texlive/2025/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-l3fp.def
 File: datatool-l3fp.def 2025/03/05 v3.0.1 (NLCT)
 )
-\@dtl@toks=\toks37
+\@dtl@toks=\toks43
 \@dtl@tmpcount=\count330
-\dtl@tmplength=\skip77
+\dtl@tmplength=\skip80
 \l__datatool_measure_box=\box70
 \dtl@sortresult=\count331
  (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
@@ -453,25 +464,25 @@ File: datatool-utf8.ldf 2025/03/05 v3.0.1 (NLCT)
 \dtl@codeB=\count354
 )
 \gls@level=\count355
-\@gls@tmpb=\toks38
-\gls@tmplen=\skip78
-\glskeylisttok=\toks39
-\glslabeltok=\toks40
-\glsshorttok=\toks41
-\glslongtok=\toks42
+\@gls@tmpb=\toks44
+\gls@tmplen=\skip81
+\glskeylisttok=\toks45
+\glslabeltok=\toks46
+\glsshorttok=\toks47
+\glslongtok=\toks48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
 Package: glossary-hypernav 2025/03/03 v4.56 (NLCT)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 Package: glossary-list 2025/03/03 v4.56 (NLCT)
-\glslistdottedwidth=\skip79
+\glslistdottedwidth=\skip82
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
 Package: glossary-long 2025/03/03 v4.56 (NLCT)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
-\LTleft=\skip80
-\LTright=\skip81
-\LTpre=\skip82
-\LTpost=\skip83
+\LTleft=\skip83
+\LTright=\skip84
+\LTpre=\skip85
+\LTpost=\skip86
 \LTchunksize=\count356
 \LTcapwidth=\dimen196
 \LT@head=\box71
@@ -483,19 +494,19 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \LT@rows=\count358
 \c@LT@tables=\count359
 \c@LT@chunks=\count360
-\LT@p@ftn=\toks43
+\LT@p@ftn=\toks49
 )
-\glsdescwidth=\skip84
-\glspagelistwidth=\skip85
+\glsdescwidth=\skip87
+\glspagelistwidth=\skip88
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
 Package: glossary-super 2025/03/03 v4.56 (NLCT)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2024/07/20 v4.2c the supertabular environment
 \c@tracingst=\count361
 \ST@wd=\dimen197
-\ST@rightskip=\skip86
-\ST@leftskip=\skip87
-\ST@parfillskip=\skip88
+\ST@rightskip=\skip89
+\ST@leftskip=\skip90
+\ST@parfillskip=\skip91
 \ST@pageleft=\dimen198
 \ST@headht=\dimen199
 \ST@tailht=\dimen256
@@ -509,12 +520,12 @@ Package: supertabular 2024/07/20 v4.2c the supertabular environment
 ))
 (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2025/03/03 v4.56 (NLCT)
-\glstreeindent=\skip89
+\glstreeindent=\skip92
 ))) (/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
-\labelindent=\skip90
+\labelindent=\skip93
 \enit@outerparindent=\dimen263
-\enit@toks=\toks44
+\enit@toks=\toks50
 \enit@inbox=\box77
 \enit@count@id=\count362
 \enitdp@description=\count363
@@ -531,7 +542,16 @@ Package translations Info: No language package found. I am going to use `english
 LaTeX Warning: Label `sec:metaphysics_becoming' multiply defined.
 
 
+LaTeX Warning: Label `def:causaloid_graph_edges' multiply defined.
+
+
+LaTeX Warning: Label `def:epp_input' multiply defined.
+
+
 LaTeX Warning: Label `sec:implementation_overview' multiply defined.
+
+
+LaTeX Warning: Label `list:CausaloidType' multiply defined.
 
 )
 \openout1 = `epp.aux'.
@@ -637,12 +657,12 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 \scratchbox=\box78
 \nofMPsegments=\count365
 \nofMParguments=\count366
-\everyMPshowfont=\toks45
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count367
 \MPscratchDim=\dimen265
 \MPnumerator=\count368
 \makeMPintoPDFobject=\count369
-\everyMPtoPDFconversion=\toks46
+\everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -670,68 +690,67 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [4]
 
-[5])
+[5]
+
+[6])
 \tf@toc=\write4
 \openout4 = `epp.toc'.
 
 
 
-[6] (./introduction.tex
+[7] (./introduction.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-[7]) (../epp_chapters/history.tex
-
 [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[9]) (../epp_chapters/related_work.tex
 
-[10]
+
+[9]
+
+[10]) (../epp_chapters/history.tex
 
 [11]
 
-[12]
-
-Package natbib Warning: Citation `hasan2024surveycausaldicovery' on page 13 undefined on input line 71.
-
-
-Underfull \vbox (badness 2818) has occurred while \output is active []
-
-
+[12]) (../epp_chapters/related_work.tex
 
 [13]
 
 [14]
 
 [15]
+Underfull \vbox (badness 2818) has occurred while \output is active []
+
+
 
 [16]
+
+[17]
+
+[18]
+
+[19]
 Underfull \vbox (badness 5302) has occurred while \output is active []
 
 
 
-[17]
+[20]
 
-[18]) (../epp_chapters/motivation.tex
+[21]) (../epp_chapters/motivation.tex
 Underfull \vbox (badness 1237) has occurred while \output is active []
 
 
 
-[19]
-
-[20]
-
-[21]
-
-[22]) (../epp_chapters/causality_as_epp.tex
+[22]
 
 [23]
 
 [24]
 
-[25]
+[25]) (../epp_chapters/causality_as_epp.tex
 
 [26]
 
@@ -748,213 +767,337 @@ Underfull \vbox (badness 1237) has occurred while \output is active []
 [32]
 
 [33]
-Underfull \hbox (badness 1584) in paragraph at lines 564--565
-[]|\T1/ptm/m/n/10 Execution of a \T1/cmtt/m/n/10 Causal Action \T1/ptm/m/n/10 by
- []
-
-
-Underfull \hbox (badness 4416) in paragraph at lines 564--565
-\T1/ptm/m/n/10 the \T1/cmtt/m/n/10 Causal State Machine (CSM)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 567--567
-[]|\T1/ptm/m/n/10 Three-step al-go-rithm: Ab-duc-tion
- []
-
-
-Underfull \hbox (badness 6944) in paragraph at lines 568--569
-[]|\T1/ptm/m/n/10 Three-step pro-cess: Con-text Pin-
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 568--569
-\T1/ptm/m/n/10 evaluation of the \T1/ptm/m/it/10 un-mod-i-fied model
- []
-
-
 
 [34]
 
-[35
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.614 ...ion{Mapping Granger Causality to the EPP}
-                                                  ]
+[35]
 
 [36]
 
 [37]
+Underfull \hbox (badness 1584) in paragraph at lines 576--577
+[]|\T1/ptm/m/n/10 Execution of a \T1/cmtt/m/n/10 Causal Action \T1/ptm/m/n/10 by
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 576--577
+\T1/ptm/m/n/10 the \T1/cmtt/m/n/10 Causal State Machine (CSM)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+[]|\T1/ptm/m/n/10 Three-step al-go-rithm: Ab-duc-tion
+ []
+
+
+Underfull \hbox (badness 6944) in paragraph at lines 580--581
+[]|\T1/ptm/m/n/10 Three-step pro-cess: Con-text Pin-
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 580--581
+\T1/ptm/m/n/10 evaluation of the \T1/ptm/m/it/10 un-mod-i-fied model
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
+
+ []
+
+
 
 [38
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.745 \newpage
-              ]
+l.613 ...bf{Conditional Probability Tables (CPT):}
+                                                  ]
 
-[39]) (../epp_chapters/metaphysics.tex
+[39]
 
 [40]
 
-[41]
+[41
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.753 
+      ]
+
+[42]) (../epp_chapters/metaphysics.tex
+
+[43]
+
+[44]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[42]
-
-[43]
-
-[44]) (../epp_chapters/epistemology.tex
-
 [45]
+
+[46]
+
+[47]) (../epp_chapters/epistemology.tex
+
+[48]
 Underfull \vbox (badness 7415) has occurred while \output is active []
 
 
 
-[46]
+[49]
 Underfull \vbox (badness 7486) has occurred while \output is active []
-
-
-
-[47]
-
-[48]
-
-[49]) (../epp_chapters/teleology.tex
-Underfull \vbox (badness 1137) has occurred while \output is active []
 
 
 
 [50]
 
-[51
+[51]
+
+[52]) (../epp_chapters/teleology.tex
+Underfull \vbox (badness 1137) has occurred while \output is active []
+
+
+
+[53]
+
+[54
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.80 
+l.77 
      ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[52]
 
-[53]) (../epp_chapters/ontology.tex
-
-[54]
 
 [55]
 
 [56]
 
-[57]
+[57]) (../epp_chapters/ontology.tex
 
 [58]
 
-[59]) (../epp_chapters/formalization.tex
-Overfull \hbox (32.94054pt too wide) detected at line 53
- \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  []
- []
-
-
-Overfull \hbox (178.4315pt too wide) detected at line 59
- \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  []
- []
-
-
+[59]
 
 [60]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 129.
-
 
 [61]
 
 [62]
-Underfull \hbox (badness 1466) in paragraph at lines 218--219
-\T1/ptm/m/n/10 of the ob-served re-la-tion-ship, and a thresh-old for as-sert-ing the in-fer-ence. For-mally, $\OML/cmm/m/it/10 I[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 id[] \OMS/cmsy/m/n/10 2
- []
 
-
-LaTeX Warning: Reference `sssec:causal_function_logic_formal_revised' on page 63 undefined on input line 235.
-
-
-
-[63]
-
-LaTeX Warning: Reference `sssec:assumption_instance' on page 64 undefined on input line 238.
-
-
-LaTeX Warning: Reference `sssec:inference_instance' on page 64 undefined on input line 239.
-
-
-LaTeX Warning: Reference `ssec:epp_process_formal' on page 64 undefined on input line 258.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 263.
-
+[63]) (../epp_chapters/formalization.tex
+\c@definition=\count371
+\c@axiom=\count372
 
 
 [64]
+Overfull \hbox (36.69469pt too wide) detected at line 77
+ \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  []
+ []
 
-LaTeX Warning: Reference `sec:epp_core' on page 65 undefined on input line 313.
+
+Overfull \hbox (50.23274pt too wide) detected at line 85
+ \OT1/cmr/m/n/10 =[]\OMS/cmsy/m/n/10 )  []
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 94.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Pi' on input line 94.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 94.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 120.
 
 
 
 [65]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 162--163
+[]$[][] \OMS/cmsy/m/n/10 2 T[]$\T1/ptm/m/it/10 , where $\OMS/cmsy/m/n/10 T[]$ \T1/ptm/m/it/10 is a pre-de-fined enu-mer-ated set of tem-po-ral gran-u-lar-i-ties (e.g.,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
 
 [66]
 
 [67]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 318.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+
+
 [68]
-Underfull \hbox (badness 3148) in paragraph at lines 542--543
-[]\T1/ptm/b/n/10 UpdateStateAction\T1/ptm/m/n/10 ($\OML/cmm/m/it/10 M; id[]; q[]; a[]$\T1/ptm/m/n/10 ): Re-places the pair $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q; a\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 as-so-ci-ated with $\OML/cmm/m/it/10 id[]$ \T1/ptm/m/n/10 with
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
  []
 
 
 
 [69]
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 612.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Pi' on input line 612.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 612.
+ []
 
 
 
 [70]
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
-LaTeX Warning: Reference `ssec:epp_process_formal' on page 71 undefined on input line 636.
+ []
 
 
-LaTeX Warning: Reference `sssec:state_of_causaloidgraph_formal' on page 71 undefined on input line 637.
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
+
+ []
 
 
 
 [71]
 
-[72]) (../epp_chapters/validity.tex
+[72]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 549.
+
+
 
 [73]
+Underfull \hbox (badness 3148) in paragraph at lines 645--646
+[]\T1/ptm/b/n/10 UpdateStateAction\T1/ptm/m/n/10 ($\OML/cmm/m/it/10 M; id[]; q[]; a[]$\T1/ptm/m/n/10 ): Re-places the pair $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q; a\OT1/cmr/m/n/10 )$ \T1/ptm/m/n/10 as-so-ci-ated with $\OML/cmm/m/it/10 id[]$ \T1/ptm/m/n/10 with
+ []
+
+
 
 [74]
+Underfull \hbox (badness 10000) in paragraph at lines 662--663
+
+ []
+
+
 
 [75]
+Underfull \hbox (badness 1990) in paragraph at lines 786--787
+[]\T1/ptm/m/n/10 A \T1/cmtt/m/n/10 CausalAction $\OML/cmm/m/it/10 a$ \T1/ptm/m/n/10 (Def-i-ni-tion []10.27[]) is de-fined. Its ex-e-cutable func-tion, $[][]$, mod-i-fies the
+ []
+
+
+
+[76]
+
+[77]
+Underfull \hbox (badness 2856) in paragraph at lines 889--890
+[]\T1/ptm/b/n/10 Causal Model: \T1/ptm/m/n/10 The un-der-ly-ing causal laws that de-ter-mine the out-come are rep-re-sented by a
+ []
+
+
+
+[78]
+
+LaTeX Warning: Reference `sec:formalization_mapping_rcm' on page 79 undefined on input line 936.
+
+
+
+[79]
+
+[80]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1016.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Pi' on input line 1016.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1016.
+
+
+LaTeX Warning: Reference `ssec:epp_process_formal' on page 81 undefined on input line 1040.
+
+
+LaTeX Warning: Reference `sssec:state_of_causaloidgraph_formal' on page 81 undefined on input line 1041.
+
+
+
+[81]
+
+[82]) (../epp_chapters/validity.tex
+
+[83]
+
+[84]
+
+[85]
 Overfull \hbox (56.08925pt too wide) in paragraph at lines 153--207
 [][]
  []
 
 
 
-[76
+[86
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -966,21 +1109,38 @@ Underfull \hbox (badness 1436) in paragraph at lines 11--14
 
 
 
-[77
+[87
 
 ]) (../epp_chapters/implementation_ultragraph.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 42.
 
 
-[78]
+[88]
 
-[79]
+[89]
 
-[80]) (../epp_chapters/implementation_deep_causality.tex
+[90]) (../epp_chapters/implementation_deep_causality.tex
 
-[81]) (../epp_chapters/implementation_benchmarks.tex
+[91]
 
-[82
+[92]
+Underfull \vbox (badness 2837) has occurred while \output is active []
+
+
+
+[93]
+Underfull \hbox (badness 1769) in paragraph at lines 179--180
+[]\T1/ptm/b/n/10 Contextual Query\T1/ptm/m/n/10 : If the Causa-loid's func-tion is context-aware, it uses its Con-tex-tAc-ces-sor (an
+ []
+
+
+
+[94]) (../epp_chapters/implementation_benchmarks.tex
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 46.
+
+
+[95
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -992,7 +1152,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has 
 l.74 \newpage
              ]) (../epp_chapters/future_work.tex
 
-[83]
+[96]
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
@@ -1012,46 +1172,46 @@ Underfull \vbox (badness 6526) has occurred while \output is active []
 
 
 
-[84]
+[97]
 
-[85]) (../epp_chapters/epilogue.tex
+[98]) (../epp_chapters/epilogue.tex
 
-[86]) (../epp_chapters/glossary.tex
+[99]) (../epp_appendices/appendix_a.tex
+
+[100]
+
+[101]) (../epp_chapters/glossary.tex
 Underfull \hbox (badness 10000) in paragraph at lines 30--31
 \T1/ptm/m/n/10 The fun-da-men-tal, op-er-a-tional unit of causal in-ter-ac-tion, de-fined as $\OML/cmm/m/it/10 ^^_ \OT1/cmr/m/n/10 =
  []
 
 
 
-[87])
+[102]
 
-[88] (/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.bbl
+[103]) (/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.bbl
 
-[89]
+[104]
 
-[90]
+[105]
 
-[91]
+[106]
 
-[92]
-Underfull \hbox (badness 10000) in paragraph at lines 586--590
+[107]
+Underfull \hbox (badness 10000) in paragraph at lines 600--604
 []\T1/ptm/m/n/10 Defense Ad-vanced Re-search Projects Agency (DARPA).  As-sured neuro sym-bolic learn-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--590
+Underfull \hbox (badness 10000) in paragraph at lines 600--604
 \T1/ptm/m/n/10 ing and rea-son-ing (ansr) sum-mary.  []$\T1/cmtt/m/n/10 https : / / www . darpa . mil / research / programs /
  []
 
 
 
-[93])
+[108])
 
-Package natbib Warning: There were undefined citations.
-
-
-
-[94] (/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.aux)
+[109] (/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1064,21 +1224,25 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `epp.out' has not changed.
-(rerunfilecheck)             Checksum: 2E897FA0C0E57645354FB1CAF2157DA6;34522.
- ) 
+(rerunfilecheck)             Checksum: 66C84C6EEB2EBA3F22D81B85A8327101;39739.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 18 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 25999 strings out of 473190
- 512897 string characters out of 5715801
- 1106133 words of memory out of 5000000
- 48369 multiletter control sequences out of 15000+600000
- 608456 words of font info for 91 fonts, out of 8000000 for 9000
+ 26465 strings out of 473190
+ 520358 string characters out of 5715801
+ 1235222 words of memory out of 5000000
+ 48607 multiletter control sequences out of 15000+600000
+ 614409 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,96p,2415b,2162s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfst1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.pdf" (94 pages, 621152 bytes).
+ 84i,15n,96p,2415b,2654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfst1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "/Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.pdf" (109 pages, 724292 bytes).
 PDF statistics:
- 1978 PDF objects out of 2073 (max. 8388607)
- 1827 compressed objects within 19 object streams
- 524 named destinations out of 1000 (max. 500000)
- 1393 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2425 PDF objects out of 2487 (max. 8388607)
+ 2251 compressed objects within 23 object streams
+ 741 named destinations out of 1000 (max. 500000)
+ 1585 words of extra memory for PDF output out of 10000 (max. 10000000)
 

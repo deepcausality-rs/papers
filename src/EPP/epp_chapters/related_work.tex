@@ -190,6 +190,48 @@ The first is causal discovery, where the goal is to learn the graph structure fr
 \newline
  The second is in causal effect estimation, especially in the presence of high-dimensional confounding. To address this, a significant body of work has emerged around Double/Debiased Machine Learning (DML) \cite{Chernozhukov2018Double}. The DML framework provides a recipe for using powerful, arbitrary machine learning models to flexibly control for a large number of confounders without introducing bias into the final treatment effect estimate. This line of research is explicitly motivated by the need to apply causal inference in settings where the number of variables makes traditional statistical methods intractable.
  In response to these challenges, a major engineering focus has been the development of causal inference platforms. These internal systems are designed to automate and scale causal analyses, enabling data scientists to run thousands of experiments and quasi-experiments reliably and efficiently.
+ 
+ 
+\subsection{Boundaries of Classical Causal Methods}
+
+The established methods of computational causality, particularly the frameworks developed by Pearl, Granger, and Rubin, represent monumental intellectual achievements that form the foundation of the field. The following assumptions are commonly shared by classical methods:
+
+\begin{itemize}
+    \item Acyclicity (DAG): Causal relationships are acyclical in a directed acyclic graph.
+    \item Static Causal Structure: The causal graph, once defined, is assumed to be static.
+    \item Fixed background spacetime: Variables in the DAG are assumed to be within a fixed background spacetime.
+\end{itemize}
+
+\textbf{Implications:}
+
+\begin{itemize}
+    \item \textbf{Non-Linear Time:} The acyclical assumption explicitly prohibits feedback loops, and the fixed background spacetime assumption prevents any form of non-linear time.
+    \item \textbf{Non-Euclidean Representation:} The assumption of a fixed background spacetime assumes Euclidean structures and thus does not allow for non-Euclidean representation.
+    \item \textbf{Non-Dynamic structures:} The assumption of static causal structure prevents  dynamic causality. 
+\end{itemize}
+
+While these assumptions enable powerful reasoning within their defined boundaries, they become untenable in complex dynamic systems, a view shared by DARPA:
+
+\begin{quote}
+    “In the real world, observations are often correlated and a product of an underlying causal mechanism, which can be modeled and understood.”\cite{DARPA_ANSR}
+\end{quote}
+
+The problem is not a simple choice between correlation and causation. The deeper issue, as contemporary philosophers such as  Luciano Floridi have argued, is that the predominant mental model underlying complex system design remains rooted in an outdated Aristotelian and Newtonian "Ur-philosophy" of fixed space and time \cite{floridi2025applied}.
+
+\subsection{Beyond Classical Causal Models}
+
+The need for the Effect Propagation Process arises directly from modeling complex dynamic systems, which are characterized by three deeply interrelated challenges: non-Euclidean representation, non-linear temporality, and dynamic causal emergence. The most critical challenge is dynamic causal emergence, where the causal laws of a system are themselves subject to change. This is  a practical reality in numerous domains. In financial markets, for instance, the causal relationships between assets are relatively stable during normal conditions but undergo a fundamental "regime shift" following a black swan event or a major policy change. 
+
+In contemporary plasma fusion, it is well understood that the magnetic confinement field and the turbulent plasma it contains exist in a tightly\-coupled feedback loop, where each dynamically influences the other in real-time. In such systems, the very nature of the causal relationships can change depending on the energy scale, a phenomenon known as "dynamic phase alignment", rendering classical acyclic or linear-temporal causal models insufficient\cite{Milanese_2021}.
+
+Similarly, in climate science, ecological systems can cross "tipping points" where gradual changes trigger new, powerful feedback loops, fundamentally altering the causal structure of the climate model. This dynamic nature exacerbates the problem of non-linear time. In a system with emergent feedback loops, such as in climate modeling or high-frequency trading, the notion of a single, uniform temporal progression becomes untenable. Events on nanosecond, daily, and quarterly scales can all interact, forming a complex temporal hypergraph where causal influence is no longer follow a simple unidirectional time arrow. 
+
+Complex causal relations are often expressed through non-Euclidean representations. 
+For example, a medical record documenting a patient's health cannot be reduced to a simple vector of measurements. 
+It is a complex graph of relationships between genomic data, electronic health records, comorbidities, and environmental factors. Likewise, a global supply chain is not a rigid grid but a dynamic network of dependencies. Reducing these relational structures to a Euclidean vector space to fit classical models often destroys the very information needed for accurate causal inference. 
+
+These challenges, emergent causality, complex temporality, and non-Euclidean data, are not independent issues to be solved in isolation. They are deeply interrelated and jointly point to a single, underlying problem: modeling reality in complex, adaptive, and dynamic systems. This requires a fundamental rethinking of causality itself, moving away from a static, linear interpretation and towards a dynamic, context-aware, and dynamic process. More profoundly, a new foundation of causality becomes necessary from which contextual dynamic causal systems can be build upon. 
+
 
 \newpage
 

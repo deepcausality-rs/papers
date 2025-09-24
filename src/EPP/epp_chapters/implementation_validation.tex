@@ -1,0 +1,78 @@
+%% ======================================================================
+%% Validation and verification 
+%% ======================================================================
+
+\subsection{Validation and Verification}
+\label{sec:implementation_validation}
+
+\subsubsection{Overview}
+
+Regulated industries such as avionics, robotics, or defense have to comply with strict regulatory requirements for software certification. Rust as a language provides a significant amount of safety relevant features that are difficult to achieve with C/C++ while still providing compatibility with existing code C/C++. Furthermore, the existence of a certified Rust compiler enables the validation and verification process of Rust systems in regulated industries. Build on this foundation, the DeepCausality project, while not certified, provides a plausible pathway towards certification. 
+
+\subsubsection{Toolchain}
+
+Rust a a language was chose because of its memory safety and the availability of certified compilers from vendors such
+as Ferrocene\footnote{\url{https://ferrocene.dev/en}} (ISO 26262 ASIL D, IEC 61508 SIL 3, IEC 62304 / Class C) HighTec EDV-Systeme\footnote{\url{https://hightec-rt.com/products/rust-development-platform}} (ISO 26262 ASIL D), and AdaCore\footnote{\url{https://www.adacore.com/gnatpro-rust}}. 
+
+\subsubsection{Hermetic Builds and Tests}
+
+Beyond the language-level assurances, DeepCausality implements a robust build and test infrastructure specifically designed for high-integrity environments. Regulatory standards like ISO 26262 (Automotive Safety), IEC 61508 (Functional Safety), DO-178C (Avionics Software), and IEC 62304 (Medical Device Software) demand that the software build process fulfils:
+
+\begin{itemize}
+	\item Reproducibility: Given the same inputs, the system must always produce the same outputs. 
+	\item Traceability: Every output (including test results) must be traceable back to its exact inputs.
+	\item Independence: Tests must be independent of each other. The failure of one component should not mask or cause the failure of another.
+	\item Controlled Environment: The testing environment must be fully specified and controlled.
+\end{itemize}
+
+
+The entire DeepCausality mono-repository is built and tested using the Bazel build system. Bazel's core principle of running tests in fully isolated, hermetic sandboxes ensures that each test executes independently, free from external state or interference from other tests. Bazel enforces hermeticity by:
+
+\begin{itemize}
+	\item Reproducible Inputs: Bazel requires all inputs (source code, compilers, libraries, tools) to be explicitly declared. This makes builds and tests fully reproducible.
+	\item Isolation: Each test runs in its own isolated environment (a "sandbox"). This guarantees isolation and prevents side effects.
+	\item Traceability: Each artifact in Bazel can be fully traced via the build graph. Bazel supports search and through the build graph which means one can quickly find all affected dependencies in case an issue has been found. 
+\end{itemize}
+
+\subsubsection{Design Principles}
+
+The DeepCausality project has been designed with regulatory requirements in mind to streamline the validation and verification process that precedes certification. Specifically, DeepCausality is built upon three core principles that establish a baseline for trustworthiness:
+
+\begin{itemize}
+	\item Zero External Dependencies
+	\item Zero Unsafe Code
+	\item Zero Macros in Libraries
+\end{itemize}
+
+\newpage
+
+\subsubsection{Zero External Dependencies}
+
+The DeepCausality codebase, including its custom tensor and random number generation primitives, compiles without external third-party dependencies by default. The decision to implement a custom CausalTensor as foundation for the various algorithms used in the DeepCausality project as well as the decision to implement a custom random number generation that underpins the Uncertain crate fundamentally enabled the zero dependency achievement. Among other benefits, this ensures that the Effect Ethos's deontic inference process operates with predictable and auditable determinism, which is critical for proofing end to end alignment. 
+The zero external dependency principle reduces supply chain risk by eliminating unknown code from external sources and effective mitigates a key security concern in high-integrity systems. It ensures that the entire intellectual supply chain is auditable and simplifies cross-platform compilation for diverse embedded hardware targets.
+
+
+The only exception is an optional feature flag, os-random, in the deep\_causality\_rand crate. When enabled, this flag introduces a dependency on a thin Rust wrapper for libc to access the operating system’s secure random number generator. This is clearly documented and is strictly opt-in for developers who require a cryptographically secure random numbers provided by the host system. Alternatively, the deep\_causality\_rand crate also contains a flexible trait that exposes the random number generator (RNG) functionality. For regulated industries, the trait-based architecture for RNG allows them to seamlessly swap in their own certified hardware RNG binding by simply implementing one trait, which means DeepCausality becomes compatible with  existing certified hardware. 
+
+For the development process, there are a handful of external dependencies i.e. Criterion for running benchmarks or CSV for reading data files, but these are very limited, all contained outside the DeepCausality codebase, and only applicable to the development process with the understanding that none of these will be part of a production build.  
+
+\subsubsection{Zero Unsafe Code}
+
+The entire DeepCausality codebase including all internal dependencies, examples, and tests, are implemented entirely in safe Rust. This preserves Rust's guarantee of memory safety and therefore eliminating an entire class of catastrophic failures (e.g., buffer overflows, data races) at compile time. It significantly reduces the burden of memory safety audits, which are typically one of the most complex and costly aspects of high-integrity software.
+
+\subsubsection{Zero Macros in Libraries}
+
+The entire DeepCausality codebase is free of macros to ensures maximum code clarity and audibility. The entire codebase can be read, understood, and analyzed line-by-line, which is essential for formal verification processes and human review in regulated environments. The only area where macros had to be used is in bulk testing for generic traits as, for example, in the deep\_causality\_num trait. The reason is quite obvious, core numerical traits such as "mul" that defines the multiplication operation for every numerical type would require identical tests for every possible numerical type in Rust. In those cases, a macro is used to derive the test mainly to keep the test files largely free of duplicates. It is important to understand that this practice is contained only to tests and only applies to very specific foundational crates i.e. deep\_causality\_rand and deep\_causality\_num. 
+
+
+These key principles are complemented by a rigorous testing regimen that maintains a 3-month rolling average code coverage of 97\% across its 80,000+ lines of Rust code. While code coverage does not constitute formal verification, it is a critical quantitative indicator of testing thoroughness. For certification bodies, this high coverage, coupled with the inherent safety of Rust and the absence of external dependencies, substantially lowers the time, effort and cost associated with verification and validation activities. Combined, these three key principles enable a number of properties particular relevant to regulated industries:
+
+\begin{itemize}
+	\item Supply Chain Security: By being entirely self-contained, DeepCausality guarantees the integrity of its code. 
+	\item Cross-Compilation \& Embedded Systems: The std-only approach makes DeepCausality inherently portable across a vast array of embedded target platforms supported by Rust. 
+	\item Performance \& Development Velocity: Because the DeepCausality codebase is self-contained, the entire mono-repository (est. 80K Lines of Code), completes a full clean build within 1o seconds translates directly to developer productivity. 
+\end{itemize}
+
+The DeepCausality project provides a clear and plausible pathway towards regulatory certification because of the existence of a certified Rust compiler, the already established hermetic build system, and the achieved zero dependencies, unsafe, and macros best practice across the entire project codebase. Systems build with DeepCausality that seek certification still need to comply with all regulatory requirements, but because of the careful preparations already made, the process of validation and verification becomes manageable for an experienced team.
+
+\newpage

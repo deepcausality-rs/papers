@@ -45,7 +45,7 @@
 \begin{abstract}
 Contemporary frameworks for computational causality provide a formal basis for inference within systems governed by static causal structures. These models, however, are predicated on assumptions of a fixed background spacetime and linear temporal progression, which become fundamental limitations when addressing complex dynamic systems where the causal laws themselves can evolve.
 
-This monograph introduces the Effect Propagation Process (EPP), a formal meta-calculus for dynamic causality. It provides an axiomatic foundation, a formal language, and a set of computable primitives for constructing, composing, and verifying domain-specific, causal theories. The EPP's single axiomatic foundation that causality is a spacetime-agnostic functional dependency necessitates a trifecta of core architectural components. The Context is an explicit and dynamic hypergraph that models the operational environment, supporting non-Euclidean and non-linear temporal structures. The Causaloid is a polymorphic, composable unit of causal mechanism that can encapsulate any specific object-level calculus. The Effect Ethos is a  deontic guardrail that uses a defeasible calculus to ensure a system's actions remain verifiably aligned with its safety and mission objectives.
+This monograph introduces the Effect Propagation Process (EPP), a formal meta-calculus for dynamic causality. It provides a single axiomatic foundation, a formal language, and a set of computable primitives for constructing, composing, and verifying domain-specific, causal theories. The EPP's single axiomatic foundation that causality is a spacetime-agnostic functional dependency necessitates a trifecta of core architectural components. The Context is an explicit and dynamic hypergraph that models the operational environment, supporting non-Euclidean and non-linear temporal structures. The Causaloid is a polymorphic, composable unit of causal mechanism that can encapsulate any specific object-level calculus. The Effect Ethos is a  deontic guardrail that uses a defeasible calculus to ensure a system's actions remain verifiably aligned with its safety and mission objectives.
 
 The EPP is fully implemented in the open-source DeepCausality peoject, demonstrating the work's practical application. Together, the EPP and its implementation in DeepCausality provide a foundation for the design, simulation, and implementation of a new generation of robust, context-aware, and verifiably aligned dynamic causal systems.
 
@@ -67,9 +67,6 @@ The EPP is fully implemented in the open-source DeepCausality peoject, demonstra
 %% Related Work
 \input{../epp_chapters/related_work.tex}
 
-%% Motivation
-\input{../epp_chapters/motivation.tex}
-
 %% Effect Propagation Process
 \input{../epp_chapters/causality_as_epp.tex}
 
@@ -89,19 +86,23 @@ The EPP is fully implemented in the open-source DeepCausality peoject, demonstra
 \input{../epp_chapters/formalization.tex}
 
 %% Validity 
-\input{../epp_chapters/validity.tex}
+%%\input{../epp_chapters/validity.tex}
 
 %% Implementation 
 \input{../epp_chapters/implementation.tex}
 \input{../epp_chapters/implementation_ultragraph.tex}
 \input{../epp_chapters/implementation_deep_causality.tex}
 \input{../epp_chapters/implementation_benchmarks.tex}
+\input{../epp_chapters/implementation_validation.tex}
 
 %% Future Work
 \input{../epp_chapters/future_work.tex}
 
 %% Epilogue
 \input{../epp_chapters/epilogue.tex}
+
+%% Appendix A
+\input{../epp_appendices/appendix_a.tex}
 
 %% Glossary
 \input{../epp_chapters/glossary.tex}

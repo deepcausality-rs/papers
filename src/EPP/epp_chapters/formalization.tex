@@ -8,12 +8,29 @@
 \newtheorem{axiom}{Axiom}
 %% ======================================================================
 
+
 %% ======================================================================
 %% Formalization of the Effect Propagation Process
 %% ======================================================================
 
 \section{The Formalization of the Effect Propagation Process}
 \label{sec:formalization}
+
+%% ======================================================================
+%  Overview
+%% ======================================================================
+\subsection{Overview}
+\label{sec:overview}
+
+The Effect Propagation Process (EPP), introduced as a novel philosophical framework implemented in the DeepCausality project, fundamentally redefines causality to address the limitations inherent in classical, spacetime-bound conceptions. These limitations become particularly acute when considering insights from contemporary quantum gravity—which suggest emergent spacetime and indefinite causal order—and when tackling the practical complexities of advanced system engineering, such as non-Euclidean data structures, non-linear temporal dynamics, and emergent causal regimes. This work presents a first-principles mathematical formalization of the EPP, thereby establishing a rigorous and unambiguous foundation crucial for its continued theoretical development, consistent computational instantiation, and broader interdisciplinary engagement.
+
+The core of this formalization lies in precise set-theoretic definitions of EPP's key components. We define the {Contextual Fabric} (\(\mathcal{C}\)), an explicit and potentially dynamic structure composed of {Contextoids} and {Context Hypergraphs}, which can represent diverse Euclidean, non-Euclidean, temporal, and abstract relational information, thus operationalizing EPP's spacetime agnosticism. Subsequently, we formalize {Causal Units} (\(\mathcal{G}\)), built from operational {Causaloids} (\(\chi\))—unified entities of testable effect transfer that transcend the classical cause-effect dichotomy—and their composition into recursively isomorphic {CausaloidGraphs} (\(G\)) for modeling intricate causal webs. The Causal State Machine (CSM) is then formalized as the mechanism linking causal inferences to deterministic actions.
+
+Beyond these structural entities, the formalism meticulously details the {core dynamics} of EPP. This includes the Effect Propagation Process (\(\Pi_{EPP}\)) itself, which describes how the activation states of {Causaloids} evolve through a {CausaloidGraph} based on their intrinsic functions, contextual inputs, and defined relational logic. Furthermore, we formalize the Operational Generative Function (\(\Phi_{gen}\)), which provides the mechanisms for the dynamic evolution and emergence of both the Contextual Fabric and the CausaloidGraph structures, a key feature enabling the modeling of emergent causality and regime shifts. The work also demonstrates how foundational EPP philosophical principles, such as the emergence of temporal order and congruence with classical causality under specific conditions, are naturally reflected within this mathematical framework.
+
+The generalization of classical causality is demonstrated in section \ref{sec:subsumption_classical} which provides subsections of how the EPP expresses Pearl'SCM, DBN, Granger, RCM, and CATE methodologies using only EPP native primitives. One key insight is that the explicit context of the EPP simplifies counterfactual reasoning significantly. 
+
+By providing this clear mathematical language, the formalization of the EPP aims to enhance the overall clarity, consistency, and testability of the EPP. It seeks to empower researchers and engineers across diverse fields to apply EPP for modeling complex, context-dependent, and dynamically evolving causal phenomena, fostering a more robust and nuanced understanding of causality in both theoretical and practical domains.
 
 %% ======================================================================
 %  Axioms
@@ -71,7 +88,6 @@ The core architectural primitives of the Effect Propagation Process are not a co
 
 \noindent The subsequent sections provide the detailed set-theoretic definitions of these primitives.
 
-\newpage
 %% ======================================================================
 %  Propagating Effect Primitive
 %% ======================================================================
@@ -101,7 +117,7 @@ where:
 %% ======================================================================
 %  Contextual Fabric 
 %% ======================================================================
-\subsection[Contextual Fabric (C)]{Contextual Fabric (\(\mathcal{C}\))}
+\subsection{Contextual Fabric (\(\mathcal{C}\))}
 \label{sec:formalization_context}
 
 The Effect Propagation Process (EPP), being spacetime-agnostic, requires a formally defined structure through which effects propagate and within which causal relationships are conditioned. This structure is termed the \textbf{Contextual Fabric}, denoted abstractly as \(\mathcal{C}\). The Contextual Fabric is not a monolithic entity but can be composed of multiple, distinct contextual realms, each potentially representing different aspects of a system's environment or internal state (e.g., physical space, temporal scales, relational networks, data streams). This section provides a set-theoretic formalization of this fabric, starting from its most granular component, the Contextoid, and building up to collections of Context Hypergraphs.
@@ -128,8 +144,6 @@ The \( \text{payload}_v \) represents the actual contextual information. It is a
 \[ \text{payload}_v \in \mathcal{D} \cup \mathcal{T} \cup \mathcal{S} \cup \mathcal{ST} \cup \Sigma \]
 where \(\mathcal{D}\) is the set of data payloads, \(\mathcal{T}\) is the set of temporal payloads, \(\mathcal{S}\) is the set of spatial payloads, \(\mathcal{ST}\) is the set of spacetime payloads, and \(\Sigma\) is the set of symbolic payloads.
 \end{definition}
-
-\newpage
 
 \textbf{Data Payload}\newline 
 
@@ -240,8 +254,6 @@ This polymorphic design allows the EPP to model and reason about highly heteroge
 \label{sec:formalization_causal_units}
 
 Having formalized the Contextual Fabric (\(\mathcal{C}\)) within which effects propagate, we now turn to the formalization of the causal entities themselves. The Effect Propagation Process (EPP) posits that causal influence is mediated by discrete, operational units which can be composed into complex structures. This section defines these Causal Units and Structures, denoted abstractly as \(\mathcal{G}\). The central entity is the Causaloid (\(\chi\)), representing an individual causal mechanism. These primitives are then composed into Causaloid Collections and CausaloidGraphs (\(G\)) to model intricate webs of causal relationships.
-
-\newpage
 
 \subsubsection[The Causaloid Primitive (chi)]{The Causaloid Primitive (\(\chi\))}
 \label{ssec:causaloid_formal}
@@ -729,13 +741,220 @@ This process is executed in the following stages:
 \end{definition} 
 
 %% ======================================================================
+%% Subsumption of Classical Causal Models
+%% ======================================================================
+
+\subsection{Subsumption of Classical Causal Models}
+\label{sec:subsumption_classical}
+
+% The EPP generalizes causality withthe
+
+%% Mapping: Pearl SCM /  Ladder of Causation
+
+\subsubsection{Mapping Pearl's Ladder of Causation}
+\label{subsec:formalization_mapping_pearl}
+
+Judea Pearl's Ladder of Causation \cite{pearl2000causality} provides a three-level hierarchy for causal reasoning. Each rung is mapped to distinct EPP mechanisms, demonstrating how the EPP's architecture provides a unified framework for association, intervention, and counterfactuals. Let \(G\) be a \texttt{CausaloidGraph} representing the Structural Causal Model (SCM).
+
+\subsubsection*{Rung 1: Association (Seeing)}
+\label{sssec:mapping_pearl_rung1}
+
+\paragraph{Concept}
+Association addresses queries of the form \(P(Y|X)\), reasoning about the statistical relationship between variables based on passive observation.
+
+\paragraph{EPP Formalization}
+In the EPP, association is the direct result of the \texttt{EffectPropagationProcess} (\(\Pi_{EPP}\)).
+\begin{enumerate}
+    
+    \item An observation, such as \(X=x\), is represented as an initial \texttt{PropagatingEffect}, \(\pi_{\text{initial}}\), which is part of the input trigger set, \(O_{trig}\).
+    
+    \item The inference is the evaluation of the \texttt{CausaloidGraph} \(G\) starting from the \texttt{Causaloid} \(\chi_X\) that corresponds to the variable X. This is formally described by the EPP Transition Function (Definition \ref{def:epp_input}):
+    \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{\text{factual}}, O_{trig}) \to S_G' \]
+    \item The resulting activation state of the \texttt{Causaloid} \(\chi_Y\) within the updated state \(S_G'\) represents the association \(P(Y|X)\).
+\end{enumerate}
+
+\subsubsection*{Rung 2: Intervention (Doing)}
+\label{sssec:mapping_pearl_rung2}
+
+\paragraph{Concept}
+Intervention addresses queries of the form \(P(Y|\text{do}(X=x))\), predicting the effect of a deliberate action that forces a variable \(X\) to take on a value \(x\).
+
+\paragraph{EPP Formalization}
+Intervention is enacted by the \texttt{Causal State Machine (CSM)} (Section \ref{sec:formalization_csm}).
+\begin{enumerate}
+    \item A \texttt{CausalState} \(q\) (Definition \ref{def:csm_state}) is defined. Its activation is determined by its associated \texttt{Causaloid} \(\chi_q\), which evaluates whether a condition for intervention is met (e.g., based on an associative inference from Rung 1).
+    \item A \texttt{CausalAction} \(a\) (Definition \ref{def:csm_action}) is defined. Its executable function, \(\text{exec}_a\), modifies the \texttt{ContextualFabric} \(\mathcal{C}\) to represent the intervention \(\text{do}(X=x)\). This is typically achieved by updating a \texttt{Contextoid} \(v_x\) within the relevant \texttt{Context} \(C\).
+    \item The CSM \(M = (\mathcal{SA}_M)\) contains the state-action pair \((q, a)\). When the evaluation \(\text{eval}(q)\) returns \(\text{true}\), the CSM triggers the function \(\text{exec}_a()\), formally executing the intervention on the system's context.
+\end{enumerate}
+
+\subsubsection*{Rung 3: Counterfactuals (Imagining)}
+\label{sssec:mapping_pearl_rung3}
+
+\paragraph{Concept}
+Counterfactuals address retrospective queries of the form \(P(Y_{x'} | X=x, Z=z)\), imagining what the outcome \(Y\) would have been had \(X\) been \(x'\), given the factual observation that \(X\) was \(x\) and \(Z\) was \(z\).
+
+\paragraph{EPP Formalization}
+Counterfactuals are resolved via \textbf{Contextual Alternation}, a core feature of the EPP that leverages the separation of causal logic from its data context.
+\begin{enumerate}
+    \item The factual observation \((X=x, Z=z)\) is represented by the state of \texttt{Contextoid}s within a factual context, \(\mathcal{C}_{\text{factual}}\).
+    \item A counterfactual context, \(\mathcal{C}_{\text{counterfactual}}\), is created. This is typically a clone of \(\mathcal{C}_{\text{factual}}\) where the \texttt{Contextoid} \(v_x\) is modified to reflect the hypothetical condition \(X=x'\) using its adjustability protocol (e.g., \(\text{update}_v(\text{payload}_{x'})\)).
+    \item The counterfactual outcome is computed by evaluating the \textit{same, unmodified} \texttt{CausaloidGraph} \(G\) against the newly created \(\mathcal{C}_{\text{counterfactual}}\):
+    \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{\text{counterfactual}}, O_{trig}) \to S'_{G_{\text{cf}}} \]
+    \item The resulting activation state of the \texttt{Causaloid} \(\chi_Y\) in the final state \(S'_{G_{\text{cf}}}\) provides the answer to the counterfactual query.
+\end{enumerate}
+
+
+
+%% Mapping: Dynamic Bayesian Networks (DBN)
+
+\subsubsection{Mapping Dynamic Bayesian Networks (DBN)}
+\label{subsec:formalization_mapping_dbn}
+
+A Dynamic Bayesian Network (DBN) models a temporal process by representing dependencies between variables across discrete time slices. The EPP models a DBN by employing a static \texttt{CausaloidGraph} that is evaluated iteratively over a dynamic, temporal \texttt{Context}. This approach externalizes the temporal evolution from the causal logic into the contextual fabric.
+
+\paragraph{Concept}
+A DBN defines the probability distribution of state variables at time \(t\) based on their state at \(t-1\), i.e., \(P(V_t | V_{t-1})\).
+
+\paragraph{EPP Formalization}
+The mapping of a DBN to EPP primitives is as follows:
+\begin{enumerate}
+    \item \textbf{Time Slices and State Variables:} The timeline is represented within a dynamic \texttt{ContextHypergraph} \(\mathcal{C}\). Each time point \(t\) corresponds to a \texttt{Tempoid} \(v_t\). The state of a DBN variable \(V\) at time \(t\) is stored in a \texttt{Datoid} \(v_{d,t}\), which is relationally linked to \(v_t\) within \(\mathcal{C}\).
+
+    \item \textbf{Causal Logic:} Each DBN state variable \(V\) is represented by a single, reusable \texttt{Causaloid}, \(\chi_V\). The dependencies between variables within a single time slice (intra-slice dependencies) are modeled as a static \texttt{CausaloidGraph} \(G\).
+
+    \item \textbf{Conditional Probability Tables (CPTs):} The CPT for a variable \(V\), which defines \(P(V_t | \text{Parents}(V_t))\), is encapsulated as the logic within the \texttt{causal\_function} \(f_{\chi_V}\) of the corresponding \texttt{Causaloid} \(\chi_V\).
+
+    \item \textbf{Temporal Dependencies:} Inter-slice dependencies (from time \(t-1\) to \(t\)) are not modeled as edges in the \texttt{CausaloidGraph} \(G\). Instead, the \texttt{causal\_function} \(f_{\chi_V}\) for a \texttt{Causaloid} \(\chi_V\) uses the \texttt{ContextAccessor} to query the \texttt{Context} \(\mathcal{C}\) for the state of its parents at the previous time step, which it identifies via the \texttt{Tempoid} \(v_{t-1}\).
+
+    \item \textbf{Inference (Filtering):} The DBN filtering process is modeled as an iterative loop. At each time step \(t\):
+    \begin{enumerate}
+        \item The \texttt{EffectPropagationProcess} \(\Pi_{EPP}\) is executed on the static graph \(G\), using the current context \(\mathcal{C}_t\) to resolve temporal dependencies.
+        \item The results of the propagation are used to update the \texttt{Context} from \(\mathcal{C}_t\) to \(\mathcal{C}_{t+1}\) via the \texttt{Context Generative Function} \(\Phi_{gen\_C}\). This typically involves adding a new \texttt{Tempoid} \(v_{t+1}\) and its associated \texttt{Datoid}s.
+    \end{enumerate}
+\end{enumerate}
+This methodology separates the static causal laws (the \texttt{CausaloidGraph}) from the evolving state of the world (the dynamic \texttt{Context}), providing a flexible framework for temporal causal modeling.
+
+
+%% Mapping: Granger Causality
+
+\subsubsection{Mapping Granger Causality}
+\label{subsec:formalization_mapping_granger}
+
+Granger causality is a statistical concept of causality based on prediction. A time series \(X\) is said to Granger-cause another time series \(Y\) if past values of \(X\) contain information that helps predict future values of \(Y\) beyond the information contained in past values of \(Y\) alone. The EPP models this as a counterfactual query comparing prediction errors under different contextual conditions.
+
+\paragraph{Concept}
+Does the history of time series \(X\) improve the prediction of time series \(Y\)?
+
+\paragraph{EPP Formalization}
+The Granger causality test is formalized via \textbf{Contextual Alternation}.
+\begin{enumerate}
+    \item \textbf{Time Series Data:} The historical data for both time series \(X\) and \(Y\) are represented as a sequence of \texttt{Datoid}s within a \texttt{ContextHypergraph}, \(\mathcal{C}_{\text{factual}}\). Each \texttt{Datoid} is linked to a \texttt{Tempoid} to preserve the temporal ordering.
+
+    \item \textbf{Predictive Model:} The predictive logic (e.g., a Vector Autoregression model) is encapsulated within the \texttt{causal\_function} \(f_{\chi}\) of a single, context-aware \texttt{Causaloid}, \(\chi_{\text{predictor}}\). This function is designed to use the history of \(X\) if it is available in its context.
+
+    \item \textbf{The Test via Contextual Alternation:}
+    \begin{enumerate}
+        \item A \textbf{factual evaluation} is performed by executing \(\chi_{\text{predictor}}\) against the complete factual context, \(\mathcal{C}_{\text{factual}}\). The resulting prediction is \(\pi_{\text{factual}}\).
+        \[ 
+         \pi_{\text{counterfactual}} = f_{\chi}(\pi_{in}, \text{ContextAccessor}(\{\mathcal{C}_{\text{counterfactual}}\}))
+        \]
+        \item A \textbf{counterfactual context}, \(\mathcal{C}_{\text{counterfactual}}\), is created from \(\mathcal{C}_{\text{factual}}\) by removing all \texttt{Datoid}s corresponding to the history of time series \(X\).
+        \item A \textbf{counterfactual evaluation} is performed by executing the exact same \texttt{Causaloid} \(\chi_{\text{predictor}}\) against the counterfactual context. The resulting prediction is \(\pi_{\text{counterfactual}}\).
+         \[ 
+          \pi_{\text{counterfactual}} = f_{\chi}(\pi_{in}, \text{ContextAccessor}(\{\mathcal{C}_{\text{counterfactual}}\}))
+         \]
+    \end{enumerate}
+    \item \textbf{Conclusion:} Let \(y_{\text{actual}}\) be the true future value of \(Y\). The prediction errors are compared. If the error of the factual prediction is significantly lower than the error of the counterfactual prediction, then \(X\) is said to Granger-cause \(Y\).
+    \[ 
+    |\pi_{\text{factual}} - y_{\text{actual}}| < |\pi_{\text{counterfactual}} - y_{\text{actual}}| \implies \text{X Granger-causes Y}
+    \]
+\end{enumerate}
+
+
+%% Mapping: Rubin Causal Model (RCM)
+
+\subsubsection{Mapping Rubin Causal Model (RCM)}
+\label{subsec:formalization_mapping_rcm}
+
+The Rubin Causal Model (RCM) defines a causal effect by comparing potential outcomes for a single unit under different treatment assignments. The EPP naturally models RCM's core concepts through its contextual alternation mechanism.
+
+\paragraph{Concept}
+The Individual Treatment Effect (ITE) for a unit \(i\) is defined as \(Y_i(1) - Y_i(0)\), where \(Y_i(1)\) is the outcome if unit \(i\) receives treatment, and \(Y_i(0)\) is the outcome if unit \(i\) does not.
+
+\paragraph{EPP Formalization}
+The RCM is formalized in the EPP using \textbf{Contextual Alternation} to compute potential outcomes.
+\begin{enumerate}
+    \item \textbf{Unit Representation:} An individual unit \(i\) is represented by a base \texttt{Context}, \(\mathcal{C}_i\), containing its pre-treatment covariates as \texttt{Contextoid}s.
+
+    \item \textbf{Causal Model:} The underlying causal laws that determine the outcome are represented by a \texttt{CausaloidGraph} \(G\).
+
+    \item \textbf{Potential Outcomes via Contextual Alternation:}
+    \begin{enumerate}
+        \item A \textbf{treatment context} \(\mathcal{C}_{i,\text{treatment}}\)
+ is created by adding a \texttt{Datoid} \(v_T=1\) (representing treatment) to \(\mathcal{C}_i\).
+        \item A \textbf{control context} \(\mathcal{C}_{i,\text{control}}\)
+ is created by adding a \texttt{Datoid} \(v_T=0\) (representing no treatment) to \(\mathcal{C}_i\).
+    \end{enumerate}
+
+    \item \textbf{Computation of Potential Outcomes:}
+    \begin{enumerate}
+        \item \(Y_i(1)\) is the final \texttt{PropagatingEffect} \(\Pi_{E,1}\) resulting from evaluating the \texttt{CausaloidGraph} \(G\) against the treatment context:
+        \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{i,\text{treatment}}, O_{trig}) \to S'_{G,1} \]
+        \item \(Y_i(0)\) is the final \texttt{PropagatingEffect} \(\Pi_{E,0}\) resulting from evaluating the \texttt{CausaloidGraph} \(G\) against the control context:
+        \[ \Pi_{EPP}(G, S_G, \mathcal{C}_{i,\text{control}}, O_{trig}) \to S'_{G,0} \]
+    \end{enumerate}
+
+    \item \textbf{Individual Treatment Effect (ITE):} The ITE for unit \(i\) is the computed difference between the final \texttt{PropagatingEffect}s:
+    \[ \text{ITE}_i = \Pi_{E,1} - \Pi_{E,0} \]
+\end{enumerate}
+
+This mapping directly operationalizes the RCM's counterfactual logic within the EPP by leveraging the explicit separation of causal mechanisms from contextual data.
+
+%% Mapping: Conditional Average Treatment Effects (CATE)
+
+\subsubsection{Mapping Conditional Average Treatment Effects (CATE)}
+\label{sec:formalization_mapping_cate}
+
+Conditional Average Treatment Effects (CATE) aim to estimate the average treatment effect for a specific subgroup of 
+a population, conditioned on their characteristics. The EPP extends the RCM mapping to handle CATE by leveraging its ability to manage multiple contexts and aggregate results.
+
+\paragraph{Concept}
+ CATE is defined as \(\tau(x) = E[Y(1) - Y(0) | X=x]\), representing the average treatment effect for individuals with covariates  \(X=x\).
+
+\paragraph{EPP Formalization}
+CATE is formalized in the EPP by building upon the RCM mapping and extending it to handle subgroups.
+
+\begin{enumerate}
+	\item \textbf{Subgroup Definition:} A subgroup of the population is represented as a set of factual \texttt{Context}s,
+      \(\{\mathcal{C}_1, \mathcal{C}_2, \dots, \mathcal{C}_n\}\), where each \(\mathcal{C}_i\) contains the covariates \(X=x\) for a
+      specific individual \(i\).
+    
+   \item \textbf{Learned Function:} The function \(\tau(x)\), which estimates the CATE (e.g., derived from a machine learning
+      model), is encapsulated as the \texttt{causal\_function} \(f_{\chi}\) within a \texttt{CausaloidGraph} \(G\).
+    
+   \item \textbf{Individual Treatment Effect (ITE) Calculation:} For each individual \(\mathcal{C}_i\) in the subgroup, the ITE
+      is calculated exactly as described in the RCM mapping (Section \ref{sec:formalization_mapping_rcm}). This involves:
+   		\begin{enumerate}
+         \item Creating a treatment context \(\mathcal{C}_{i,\text{treatment}}\) and a control context \(\mathcal{C}_{i,\text
+      {control}}\) for individual \(i\).
+          \item Evaluating the \texttt{CausaloidGraph} \(G\) against both contexts to obtain \(\Pi_{E,1}\) and \(\Pi_{E,0}\).
+         \item Computing \(\text{ITE}_i = \Pi_{E,1} - \Pi_{E,0}\).
+      \end{enumerate}
+    
+   \item \textbf{CATE Calculation:} The Conditional Average Treatment Effect for the subgroup is the statistical average of all computed \(\text{ITE}_i\) values: \[ \text{CATE}(x) = \frac{1}{n} \sum_{i=1}^{n} \text{ITE}_i \]
+\end{enumerate}
+
+This mapping demonstrates how the EPP's modularity and contextual reasoning capabilities allow for the composition of complex causal inference tasks, such as CATE, from simpler primitives.
+
+\newpage
+%% ======================================================================
 %% Example
 %% ======================================================================
 
 \subsection{EPP Example: Smoking, Tar, and Cancer}
 \label{sec:formalization_example_smoking_tar_cancer}
 
-To illustrate the core concepts of the Effect Propagation Process (EPP) formalism in a more concrete manner, we consider the well-known causal chain: Smoking \(\rightarrow\) Tar in Lungs \(\rightarrow\) Lung Cancer. This example demonstrates how Causaloids, Contexts (implicitly for this simplification), and a CausaloidGraph can represent this system, and how effect propagation leads to an inference. This example is simplified and inspired by the structure typically modeled as a Directed Acyclic Graph (DAG) in classical causal inference \cite{pearl2000causality}, here adapted to EPP principles.
+To illustrate the core concepts of the Effect Propagation Process (EPP) formalism in a more concrete manner, we consider the well-known causal chain: Smoking \(\rightarrow\) Tar in Lungs \(\rightarrow\) Lung Cancer. This example demonstrates how Causaloids, Contexts (implicitly for this simplification), and a CausaloidGraph can represent this system, and how effect propagation leads to an inference. This example is simplified and inspired by the structure typically modeled as a Directed Acyclic Graph (DAG) in classical causal inference \cite{pearl2000causality}, here adapted to EPP.
 
     \subsubsection{Defining the Causal Problem}
     \label{ssec:example_problem_definition}

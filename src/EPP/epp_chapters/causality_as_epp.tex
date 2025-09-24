@@ -1,35 +1,13 @@
 \section{Causality as Effect Propagation Process}
 \label{sec:epp}
 
-The foundational premise of the EPP is the detachment of causality from a presupposed spacetime. This premise necessitates a re-evaluation of the causal relation itself, shifting its conceptualization to a more general process of effect propagation. From this re-evaluation, the core architectural components of the EPP are derived. The theoretical foundations of the EPP result from a multi-disciplinary background. 
-
-%
-% Background
-%
-\subsection{Background}
-\label{sec:epp_background}
-
-The Effect Propagation Process (EPP) builds upon a confluence of ideas from process philosophy, modern physics, and contemporary machine learning. Its conception follows a progression from a core philosophy to a specific architecture that addresses contemporary computational challenges.
-
-The EPP's primary departure point is a fundamental rejection of the classical Newtonian conception of a static, absolute background spacetime. This move is deeply rooted in the tradition of process philosophy, which argues that reality is not composed of enduring, static substances but is a dynamic flow of interconnected events. This idea finds its clearest expression in the work of Alfred North Whitehead, who posited a universe of "actual occasions"\cite{whitehead2010process}, and Henri Bergson, who described reality as a continuous "creative evolution"\cite{bergson2022creative}. Their shared insight of reality as a process inspires the EPP's foundational redefinition of causality itself, shifting from a static, happen-before relation to a dynamic process of effect propagation.
-
-The EPP is inspired by Einstein's theory of General Relativity\cite{EinsteinPapers1915}, which demonstrated that spacetime is a dynamic fabric, its geometry determined by the matter within it, which in turn dictates the motion of matter. The EPP's concept of a Contextual Relativity that is both influenced by and influences the entities within is a direct metaphysical analogue of this profound physical insight. 
-
-Luciano Floridi's view\cite{floridi2025applied} that the design principles for  dynamic systems require a relational paradigm was profoundly inspirational to the formalization of the Effect Propagation Process. The EPP leverages the hypergraph as its foundational structure to model rich and complex causality through relationships. 
-
- Bernhard Schölkopf\cite{binkyte2025causalitykeyunderstandbalance} advocates that integrating causal methods into machine learning helps to navigate fairness, privacy, robustness, accuracy, and explainability. He argues that  a causal approach is essential for balancing multiple competing objectives and, ideally, these objectives should ideally be satisfied simultaneously. The EPP embraces his line of reasoning and takes a principled integrated stance as a result.  
- 
-Lucian Hardy introduced the "causaloid,"\cite{HardyDynamicCausalStructure} a concept that encapsulates a spatial region and the causal connections within as a foundation for his work on finding a theory of Quantum Gravity. Critically, unlike all prior forms of causality, Hardy's causaloid is spacetime-agnostic because it folds cause and effect into one entity and thus removes the need for temporal order. The EPP draws direct inspiration from Hardy’s pioneering work by using the term Causaloid, honoring Hardy's concept of a unified, self-contained unit of causality, though it has been adapted for a more general, computational context. However, to operationalize spacetime-agnostic causality, a new definition of causality became necessary. 
-
- 
- \newpage
- 
+The foundational premise of the EPP is the detachment of causality from a presupposed spacetime. 
+This premise necessitates a re-evaluation of the causal relation itself, shifting its conceptualization to a more general process of effect propagation. 
  
 % Definitions
 %
 \subsection{Definition}
 \label{sec:epp_definition}
-
 
 The notion of a generative process that underlies the fabric of spacetime leads to the implication that causality has to evolve beyond the strict “before-after” relation towards a spacetime-agnostic view. The critical question then becomes:
 
@@ -91,8 +69,6 @@ The third one, effect propagation, needs elaboration because it is commonly assu
 
 In this definition, X does not have a designated label and instead is described in terms of its emitting effect. Therefore, X can be seen as a preceding effect, which then propagates its effect further. 
 
-\newpage
-
 Thus, we can write without loss of information:
 
 
@@ -108,6 +84,7 @@ Therefore, causality becomes an effect propagation process. The effect propagati
 
 
 \subsubsection{Generalized Definition of Causality}
+\label{sub:epp_general_def_causality}
 
 The generalized definition of causality used by the EPP is:
 
@@ -125,7 +102,7 @@ To illustrate why that is the case, let's deconstruct the new definition:
 
 
 \begin{enumerate}
-    \item "If Effect E1 happens, then its effect propagates to Effect E2." Here, the state of E2 functionally depends on E1.
+    \item "If Effect E1 happens, then its effect propagates to Effect E2." Here, E2 functionally depends on E1.
     \item "If Effect E1 does not happen, then its effect does not propagate to Effect E2." The counter-factual case for E2 is equally functionally dependent on E1. That also means, a different input (NOT E1) necessarily leads to a different output (NOT E2), assuming the function is not a constant.
 \end{enumerate}
 
@@ -134,6 +111,8 @@ For the initial question, "What is the minimum necessary and sufficient conditio
 	if one cannot use temporal precedence ('happen-before') in the definition?", the answer is that the relationship is causal because one effect state is a function of another's. As a direct consequence of the generalized definition of causality, the single, minimum necessary and sufficient condition for a relationship to be causal is Functional Dependency. 
 
 \subsubsection{Axiom of Causality}
+\label{sub:epp_axiom_causality}
+
 
  For the generalized definition of causality, the only applicable axiom is a spacetime-independent functional dependency between Effect E1 and Effect E2. Therefore, we can write:
 
@@ -141,12 +120,28 @@ For the initial question, "What is the minimum necessary and sufficient conditio
 	\textbf{E2 = f(E1)}
 \end{quotation}
 
-It is important to recognize that E1 and E2 are deliberately chosen to be unconstrained. That means, effects E1 and E2 might be deterministic, probabilistic, symbolic, or of arbitrarily complex structure. Furthermore, f() does not assume any particular modality either and thus could be a simple logical expression, a SCM, a DBN, a differential equation, or even a neural net. The only practical constraint is that the function must compute within a time constraint deemed acceptable to meet its requirements. 
+It is important to recognize that the function f() and both effects are deliberately chosen to be unconstrained. That means, effects E1 and E2 might be deterministic, probabilistic, symbolic, or of arbitrarily complex structure. Furthermore, f() does not assume any particular modality either and thus could be a simple logical expression, a SCM, a DBN, a differential equation, or even a neural net. The only practical constraint is that the function must compute eventually. Application specific constraints can be imposed on the function and the effects, for example to support methods of formal verification.  
+
+\subsubsection{Functional Conjecture}
+\label{sub:epp_functional_conjecture}
+
+Based on the single axiom \textbf{E2 = f(E1)}, an important conjecture follows:
+
+\begin{quote}
+	let x = E1 
+	
+	let y = E2\newline
+
+	\textbf{E2 = f(E1)} <==> \textbf{y = f(x)} 
+\end{quote}
+
+ The axiom of causality as functional dependency directly leads to the application of the field of mathematical function theory and category theory. The application of category theory, for example, enables the formulation of a causal calculus, an idea further explored as Functional Causality in section \ref{sec:future_work_causal_calculus}.
 
 \subsubsection{Higher-Order Implications}
+\label{sub:epp_higher_order_implications}
 
 
-The higher-order Implications of a single axiomatic foundation of causality entail, among others:
+The higher-order implications of a single axiomatic foundation of causality entail, among others:
 
 \begin{itemize}
 	\item If causality is functional dependency, then the fundamental unit of causality must be a container for a function. More precisely, the resulting unit will be equivalent to a higher-order function of $apply(f(E1))$.
@@ -155,10 +150,12 @@ The higher-order Implications of a single axiomatic foundation of causality enta
 	\item If the function interacts with the outside world, then the system must provide the context. 
 	\item If the outside world changes, then the system must provide a mechanism to reflect those changes in the context. 
 	\item If these function-containers are to relate to one another, there must be a structure to hold them and define their pathways. This logically necessitates a causal graph structure.
-	\item If the causal graph is to model complex, real-world systems, it must be scalable and composable. 
+	\item If the causal graph model complex, real-world systems, it must be scalable and composable. 
 \end{itemize}
 
-The author needs to emphasize that the currently identified higher-order effects most likely will remain incomplete for the foreseeable future despite the EPP's attempt to describe and formalize an initial set. A result of an irreducible single axiomatic definition  is a vast space of new possibilities and, while this monograph captures a selected set of relevant to computational causality, the full exploration of the new possibilities will take some meaningful time. However, the EPP accepts the premise of detaching causality from spacetime, it embraces the necessary and sufficient condition of causality as functional dependency as its core tenets and, as a result, many of the properties of the EPP are necessary consequences that arise from its single axiomatic foundation. This monograph presents and explores the EPP to further understand its higher-order implications and how to utilize it for causal modeling. 
+The currently identified higher-order effects most likely will remain incomplete for the foreseeable future despite the EPP's attempt to describe and formalize an initial set. It is understood that the full exploration of the new possibilities that follow from the new axiomatic will take some meaningful time and effort. 
+
+The EPP accepts the premise of detaching causality from spacetime, it embraces causality as functional dependency as its core tenets and, as a result, many of the properties of the EPP are necessary consequences that arise from its single axiomatic foundation. This monograph explores the higher order implications listed in \ref{sub:epp_higher_order_implications} and its application to computational causality. 
 % 
 % Overview
 %
@@ -189,8 +186,6 @@ The detachment from a fixed spacetime necessitates the externalization of the en
  \textbf{Unified Causal Unit:} 
  
  The EPP resolves the untenability of the classical 'cause-effect' separation by introducing the Causaloid. The Causaloid is a single, computable entity that unifies the mechanism of a cause with its effect. The Causaloid comprises a causal function and therefore establishes function theory and the related lambda calculus as the foundation for causality in the EPP. 
-
- \newpage
 
 \textbf{Fractal, Self-referential Causal Structure:} 
 
@@ -420,6 +415,7 @@ The EPP deliberately supports both modalities to enable practitioners to choose 
 
 In practice, it is realistic to see a largely deterministic system that leverages the full spectrum of static and dynamic context, static, dynamic, and even adaptive causal reasoning and only in very specific corner cases, a very small portion of a system would be designed as emergent albeit with  carefully crafted boundaries to the generating functions. The EPP already enables a large part of dynamic use cases with dynamic context, dynamic and adaptive reasoning and therefore it is most likely that dynamic emergence will be reserved for a small and highly specialized set of use cases. In that sense, the EPP scales with growing requirements, from simple static models, complex dynamic models interacting with multiple contexts, to most advanced use cases of dynamic emergence. 
 
+
 %
 % Causal State Machine
 %
@@ -453,11 +449,7 @@ The CSM is an inference-to-action state machine that is both deterministic in it
 
 The EffectEthos acts as a deontic (rule-based) gatekeeper for the CSM. The CausalStateMachine is responsible for determining what could happen based on causal logic, while the EffectEthos determines what should happen based on a predefined set of rules and goals. This adds a layer of governance on top of the CSM and allows to enforce safety protocols, ethical guidelines, or business rules before executing actions.
  
-A CSM is optionally configured with an EffectEthos upon creation. If an ethos is provided, it must be pre-verified, meaning its internal graph of norms is validated and ready for inference.
-
-The interaction begins when the CSM evaluates one of its CausalStates and a state becomes "active" if its internal evaluation yields true.
-
-This is where the EffectEthos comes into play. Before firing the CausalAction associated with the active state, the CSM performs the following checks:
+A CSM is optionally configured with an EffectEthos upon creation. If an ethos is provided, it must be pre-verified, meaning its internal graph of norms is validated and ready for inference. The interaction begins when the CSM evaluates one of its CausalStates and a state becomes "active" if its internal evaluation yields true. This is where the EffectEthos comes into play. Before firing the CausalAction associated with the active state, the CSM performs the following checks:
 
 \begin{itemize}
 	\item It verifies if an EffectEthos was configured. If not, it fires the action directly, and the process ends here.
@@ -475,7 +467,7 @@ The EffectEthos performs the following steps for norm resolution:
 
 The CSM inspects the Verdict returned by the ethos:
 \begin{itemize}
-	\item Impermissible: If there is just one norm violated, the proposes action will be denied and the causal action will not fire. 
+	\item Impermissible: If there is just one norm violated, the proposes action will be denied. 
 	\item Obligatory: The action must be taken and the causal action will be fired.
 	\item Optional: In case an action is deemed optional, the CSM receives a cost estimate associated with the optional so it can decide if the action should be fired relative to a budget stored in the context.   
 \end{itemize}
@@ -484,10 +476,22 @@ The EffectEthos acts as a deontic  gatekeeper for the CSM and it provides a mech
 
 \newpage
 
+\subsection{Mapping of Classical Causal Models to the EPP}
+\label{sec:epp_subsumption_classical}
+
+One key property of the generalized definition of causality used by the EPP
+is that classical causality can be expressed as a specialized case. In
+practical terms, that also means that methods build upon the classical definition
+of causality can be expressed through the EPP. The following subsections demonstrate
+that is indeed that case for Pearl's Ladder of Causation, Dynamic Bayesian Networks,
+Granger Causality, Rubin Causal Models, and Conditional Average Treatment Effects (CATE).
+For a full formalization of the subsumption of classical methods, see section \ref{sec:subsumption_classical}
+and for a formal proof that the EPP is a strict generalization of the SCM, see Appendix A. 
+
 %
 % Mapping Pearl's Ladder of Causation 
 %
-\subsection{Mapping Pearl's Ladder of Causation to the EPP}
+\subsubsection{Mapping Pearl's Ladder of Causation to the EPP}
 \label{sec:epp_ladder_causation}
 
 Judea Pearl's Ladder of Causation\cite{pearl2000causality} defines three distinct levels of ability required for causal reasoning: Association, Intervention, and Counterfactuals. The EPP achieves these three rungs of the ladder by different means than the established methods of the SCM and Causal DAG.  
@@ -573,11 +577,10 @@ Three-step process: Context Pinning, Contextual Alternation, and Re-evaluation o
 The decision to separate causal logic (the Causaloid Graph) from its data (the Context) that underpins
 contextual alternation leads to some welcome properties. For example, through contextual alternation,  counterfactual reasoning becomes an "embarrassingly parallel" problem because, if 100 alternate contexts are derived, all of them are independent from each other and thus can be evaluated in parallel. 
 
-
 %
 % Mapping Dynamic Bayesian Networks
 %
-\subsection{Mapping Dynamic Bayesian Networks to the EPP}
+\subsubsection{Mapping Dynamic Bayesian Networks to the EPP}
 \label{sec:epp_Dynamic_Bayesian_Networks}
 
 Dynamic Bayesian Network is the established framework for modeling dynamic causal systems. A DBN models a temporal process by "unrolling" a causal graph over discrete time slices, creating separate nodes for a variable at each point in time. The EPP represents this same process   by evaluating a single, static causal model over a dynamic, temporal context hypergraph. The mapping of DBN to EPP components is as follows:
@@ -596,7 +599,7 @@ A state variable in a DBN (e.g., the concept of Weather across time) corresponds
 The directed edges in a DBN can reference within the same time slice or across different time slices.
 For edges within the same time slice, (e.g., $\text{Weather}_t \to \text{Umbrella}_t$), the causal function simply references its causal logic to the one tempoid at time t in the graph. If "Weather" is a complex state object, then the causaloid may loads it from another context before evaluating the causal rule that would lead to Umbrella become true.
 
-For edges between different time slices (e.g., $\text{Weather}_{t-1} \to \text{Weather}_t$) are represented by the hyperedges in the Causaloid Graph by referencing two different Tempoid nodes. Practically, one would implement a dynamic temporal graph index with accessors for frequently used "current" or "previous" values. 
+For edges between different time slices (e.g., $\text{Weather}_{t-1} \to \text{Weather}_t$) are represented by the hyperedges in the Causaloid Graph by referencing two different Tempoid nodes. Practically, one would implement a dynamic temporal graph index with accessors for frequently used "current" or "previous" values. \newline
 
 
 \textbf{Conditional Probability Tables (CPT):}
@@ -611,7 +614,7 @@ To compute the state of the system at time t, the causal function of a Causaloid
 %
 % Mapping Granger Causality
 %
-\subsection{Mapping Granger Causality to the EPP}
+\subsubsection{Mapping Granger Causality to the EPP}
 \label{sec:epp_Granger_Causality}
 
 Granger causality is a foundational concept for causal inference in time-series data, particularly in econometrics. It is used to solve practical problems, for instance, determining if past changes in the price of oil can be said to "Granger-cause" future changes in shipping industry activity. 
@@ -638,7 +641,7 @@ The EPP's temporal Context is not restricted to linear time steps; it can be a r
 %
 % Mapping Rubin Causal Model
 %
-\subsection{Mapping Rubin Causal Model (RCM) to the EPP}
+\subsubsection{Mapping Rubin Causal Model (RCM) to the EPP}
 \label{sec:epp_rubin_causal_model}
 
 The Rubin Causal Model (RCM), also known as the Potential Outcomes framework, is a cornerstone of modern causal inference, particularly in statistics, econometrics, and the social sciences. The RCM defines the causal effect on a specific unit, $i$, as the difference between two potential outcomes: $Y_{i}(1)$, the outcome if the unit receives the treatment, and $Y_{i}(0)$,  the outcome if the unit does not receive the treatment. The central challenge of the RCM, termed the "fundamental problem of causal inference," is that for any given unit, only one of these two potential outcomes can ever be factually observed.  
@@ -656,7 +659,7 @@ From the EPP's perspective, the "fundamental problem of causal inference" is a p
 %
 % Mapping Conditional Average Treatment Effects (CATE)
 %
-\subsection{Mapping Conditional Average Treatment Effects (CATE) Inference to the EPP}
+\subsubsection{Mapping Conditional Average Treatment Effects (CATE) Inference to the EPP}
 \label{sec:epp_cate}
 
 The estimation of Conditional Average Treatment Effects (CATE) is a critical goal of modern applied causal inference, particularly in domains like personalized medicine. CATE is defined as the expected causal effect of an intervention for a specific individual or sub-population, conditioned on their unique characteristics. The purpose of CATE is to move beyond population averages and determine for whom a treatment is beneficial, harmful, or ineffective.
@@ -725,6 +728,75 @@ Primary Goal      & Causal Discovery \& Inference                 & Dynamic Caus
 
 From table \ref{tab:epp_comparison}, it is evident that classical methods operate within a defined static structure, whereas the EPP is designed for less certain, dynamic structures. Therefore, classical causality provides verifiability through determinism: given a static model, one can prove the outcome of an intervention. The EPP treats static models as a specialized case for which determinism still holds. However, for its dynamic modalities, the EPP trades the predictability of a fixed structure for greater expressive power, which necessitates a different method of verifiability. The EPP provides this by shifting the focus of verification from system states to system intent. It introduces a computable teleology, enabling the formal verification of a system's actions against a predefined purpose (telos) and ethical constraints (ethos). Thus, while a system's causal structure may emerge, its behavior can be proven to remain aligned with its core principles as a prerequisite for establishing verifiable safety in complex adaptive systems.
 
+\subsection{Selection Criteria}
+
+In cases where methods of classical causality and conventional machine learning do not solve the problem at hand, methodologies rooted in EPP might be preferred. Table \ref{tab:method_matrix} provides guidance on selecting an appropriate causal modeling approach based on the temporal and spatial complexity of the system under investigation.
+
+% Please add the following required packages to your document preamble:
+\begin{table}[h!]
+\begin{tabular}{llll}
+Feature Assessed &
+  System Characteristic &
+  Classical Methods &
+  EPP Methods \\ \hline
+\multicolumn{1}{|l|}{Temporal Complexity} &
+  \multicolumn{1}{l|}{} &
+  \multicolumn{1}{l|}{} &
+  \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|l|}{} &
+  \multicolumn{1}{l|}{Single timescale + linear progression} &
+  \multicolumn{1}{l|}{Preferred} &
+  \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|l|}{} &
+  \multicolumn{1}{l|}{Multiple timescales OR nonlinear temporal relationships} &
+  \multicolumn{1}{l|}{May struggle} &
+  \multicolumn{1}{l|}{Consider EPP} \\ \hline
+\multicolumn{1}{|l|}{} &
+  \multicolumn{1}{l|}{Multiple timescales AND nonlinear temporal relationships} &
+  \multicolumn{1}{l|}{Not Possible} &
+  \multicolumn{1}{l|}{EPP Preferred} \\ \hline
+\multicolumn{1}{|l|}{Spatial Structure} &
+  \multicolumn{1}{l|}{} &
+  \multicolumn{1}{l|}{} &
+  \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|l|}{} &
+  \multicolumn{1}{l|}{Euclidean space with fixed coordinates} &
+  \multicolumn{1}{l|}{Preferred} &
+  \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|l|}{} &
+  \multicolumn{1}{l|}{Non-Euclidean OR dynamic spatial relationships} &
+  \multicolumn{1}{l|}{Limited/Difficult} &
+  \multicolumn{1}{l|}{EPP Advantageous} \\ \hline
+\multicolumn{1}{|l|}{} &
+  \multicolumn{1}{l|}{Non-Euclidean AND dynamic spatial relationships} &
+  \multicolumn{1}{l|}{Not Possible} &
+  \multicolumn{1}{l|}{EPP Preferred} \\ \hline
+\multicolumn{1}{|l|}{Combined Complexity} &
+  \multicolumn{1}{l|}{} &
+  \multicolumn{1}{l|}{} &
+  \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|l|}{Scenario 1} &
+  \multicolumn{1}{l|}{Linear Time \& Euclidean Space} &
+  \multicolumn{1}{l|}{Preferred} &
+  \multicolumn{1}{l|}{} \\ \hline
+\multicolumn{1}{|l|}{Scenario 2} &
+  \multicolumn{1}{l|}{Nonlinear Time OR Complex Spatial} &
+  \multicolumn{1}{l|}{Limited/Difficult} &
+  \multicolumn{1}{l|}{Consider EPP} \\ \hline
+\multicolumn{1}{|l|}{Scenario 3} &
+  \multicolumn{1}{l|}{Nonlinear Time AND Complex Spatial} &
+  \multicolumn{1}{l|}{Not Possible} &
+  \multicolumn{1}{l|}{EPP Preferred} \\ \hline
+\end{tabular}
+\caption{Causal Method Selection Matrix}
+\label{tab:method_matrix}
+\end{table}
+
+\textbf{Emergent Causality:} If the problem involves emergent causal structures (where the causal graph itself is not fixed and changes dynamically based on context, i.e., dynamic regime shifts), EPP-based methodologies become the only viable option.
+
+
+
+\newpage
 
 \subsection{Discussion}
 \label{sec:epp_discussion}

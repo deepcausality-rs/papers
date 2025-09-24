@@ -3,47 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /Users/marvin/Library/Mobile Documents/com~apple~CloudDocs/TexMaker/EPP/Preprint_EPP/.texpadtmp/epp.aux
 The style file: unsrt.bst
 Database file #1: ../../epp_bib/references.bib
-Warning--I didn't find a database entry for "hasan2024surveycausaldicovery"
+Warning--can't use both volume and number fields in bareinboim2012transportability
+Warning--empty booktitle in bornholt2014uncertain
 Warning--empty journal in falcon2006aristotlecausality
-You've used 125 entries,
+You've used 128 entries,
             1791 wiz_defined-function locations,
-            1169 strings with 27137 characters,
-and the built_in function-call counts, 29306 in all, are:
-= -- 2545
-> -- 1389
-< -- 36
-+ -- 513
-- -- 388
-* -- 1830
-:= -- 4521
-add.period$ -- 384
-call.type$ -- 125
-change.case$ -- 112
+            1180 strings with 27604 characters,
+and the built_in function-call counts, 30028 in all, are:
+= -- 2602
+> -- 1422
+< -- 38
++ -- 525
+- -- 397
+* -- 1871
+:= -- 4620
+add.period$ -- 392
+call.type$ -- 128
+change.case$ -- 115
 chr.to.int$ -- 0
-cite$ -- 126
-duplicate$ -- 1363
-empty$ -- 2903
-format.name$ -- 388
-if$ -- 6649
+cite$ -- 131
+duplicate$ -- 1400
+empty$ -- 2982
+format.name$ -- 397
+if$ -- 6819
 int.to.chr$ -- 0
-int.to.str$ -- 125
-missing$ -- 120
-newline$ -- 626
-num.names$ -- 137
-pop$ -- 496
+int.to.str$ -- 128
+missing$ -- 122
+newline$ -- 640
+num.names$ -- 140
+pop$ -- 515
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 708
+skip$ -- 733
 stack$ -- 0
-substring$ -- 1652
-swap$ -- 395
-text.length$ -- 36
+substring$ -- 1684
+swap$ -- 410
+text.length$ -- 38
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 270
-width$ -- 128
-write$ -- 1339
-(There were 2 warnings)
+warning$ -- 3
+while$ -- 276
+width$ -- 131
+write$ -- 1368
+(There were 3 warnings)
